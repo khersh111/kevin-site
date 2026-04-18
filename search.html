@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search — Kevin Hershberger</title>
-    <meta name="description" content="Search articles and book notes by Dr. Kevin Hershberger.">
+    <meta name="description" content="Search articles by Dr. Kevin Hershberger.">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,11 +19,11 @@
         <div class="search-inner">
             <h1 class="search-title anim-in">Search</h1>
             <div class="search-box anim-in">
-                <input type="text" id="search-input" class="search-input" placeholder="Search articles and book notes..." autofocus>
+                <input type="text" id="search-input" class="search-input" placeholder="Search articles..." autofocus>
                 <span class="search-icon">⌕</span>
             </div>
             <div class="search-results" id="search-results">
-                <p class="search-hint">Start typing to search across all articles and book notes.</p>
+                <p class="search-hint">Start typing to search across all articles.</p>
             </div>
         </div>
     </section>
@@ -57,40 +57,6 @@
         { type: 'article', slug: 'my-fitness-routine-as-a-physical-therapist', title: 'My Fitness Routine as a Physical Therapist', category: 'Fitness', url: 'article.html?slug=my-fitness-routine-as-a-physical-therapist' },
         { type: 'article', slug: 'perfecting-your-sleep', title: 'Perfecting Your Sleep', category: 'Wellness', url: 'article.html?slug=perfecting-your-sleep' },
         { type: 'article', slug: 'how-reading-changed-my-life', title: 'How Reading Changed My Life And How It Can Change Yours', category: 'Books', url: 'article.html?slug=how-reading-changed-my-life' },
-        // Book Notes
-        { type: 'book', slug: 'stillness-is-the-key', title: 'Stillness Is The Key', category: 'Ryan Holiday', url: 'book-note.html?slug=stillness-is-the-key' },
-        { type: 'book', slug: 'atomic-habits', title: 'Atomic Habits', category: 'James Clear', url: 'book-note.html?slug=atomic-habits' },
-        { type: 'book', slug: 'deep-work', title: 'Deep Work', category: 'Cal Newport', url: 'book-note.html?slug=deep-work' },
-        { type: 'book', slug: 'outlive', title: 'Outlive', category: 'Peter Attia', url: 'book-note.html?slug=outlive' },
-        { type: 'book', slug: 'essentialism', title: 'Essentialism', category: 'Greg McKeown', url: 'book-note.html?slug=essentialism' },
-        { type: 'book', slug: 'ego-is-the-enemy', title: 'Ego is the Enemy', category: 'Ryan Holiday', url: 'book-note.html?slug=ego-is-the-enemy' },
-        { type: 'book', slug: 'die-with-zero', title: 'Die With Zero', category: 'Bill Perkins', url: 'book-note.html?slug=die-with-zero' },
-        { type: 'book', slug: 'the-obstacle-is-the-way', title: 'The Obstacle is the Way', category: 'Ryan Holiday', url: 'book-note.html?slug=the-obstacle-is-the-way' },
-        { type: 'book', slug: 'the-psychology-of-money', title: 'The Psychology of Money', category: 'Morgan Housel', url: 'book-note.html?slug=the-psychology-of-money' },
-        { type: 'book', slug: 'why-we-sleep', title: 'Why We Sleep', category: 'Matthew Walker', url: 'book-note.html?slug=why-we-sleep' },
-        { type: 'book', slug: 'never-split-the-difference', title: 'Never Split The Difference', category: 'Chris Voss', url: 'book-note.html?slug=never-split-the-difference' },
-        { type: 'book', slug: 'mastery', title: 'Mastery', category: 'Robert Greene', url: 'book-note.html?slug=mastery' },
-        { type: 'book', slug: 'the-48-laws-of-power', title: 'The 48 Laws of Power', category: 'Robert Greene', url: 'book-note.html?slug=the-48-laws-of-power' },
-        { type: 'book', slug: 'four-thousand-weeks', title: 'Four Thousand Weeks', category: 'Oliver Burkeman', url: 'book-note.html?slug=four-thousand-weeks' },
-        { type: 'book', slug: 'feel-good-productivity', title: 'Feel Good Productivity', category: 'Ali Abdaal', url: 'book-note.html?slug=feel-good-productivity' },
-        { type: 'book', slug: 'the-comfort-crisis', title: 'The Comfort Crisis', category: 'Michael Easter', url: 'book-note.html?slug=the-comfort-crisis' },
-        { type: 'book', slug: 'digital-minimalism', title: 'Digital Minimalism', category: 'Cal Newport', url: 'book-note.html?slug=digital-minimalism' },
-        { type: 'book', slug: 'factfulness', title: 'Factfulness', category: 'Hans Rosling', url: 'book-note.html?slug=factfulness' },
-        { type: 'book', slug: 'lifespan', title: 'Lifespan', category: 'David A. Sinclair', url: 'book-note.html?slug=lifespan' },
-        { type: 'book', slug: 'courage-is-calling', title: 'Courage Is Calling', category: 'Ryan Holiday', url: 'book-note.html?slug=courage-is-calling' },
-        { type: 'book', slug: 'the-subtle-art-of-not-giving-a-fck', title: "The Subtle Art of Not Giving a F*ck", category: 'Mark Manson', url: 'book-note.html?slug=the-subtle-art-of-not-giving-a-fck' },
-        { type: 'book', slug: 'stumbling-on-happiness', title: 'Stumbling on Happiness', category: 'Daniel Gilbert', url: 'book-note.html?slug=stumbling-on-happiness' },
-        { type: 'book', slug: 'how-to-win-friends-influence-people', title: 'How to Win Friends & Influence People', category: 'Dale Carnegie', url: 'book-note.html?slug=how-to-win-friends-influence-people' },
-        { type: 'book', slug: 'a-short-history-of-nearly-everything', title: 'A Short History of Nearly Everything', category: 'Bill Bryson', url: 'book-note.html?slug=a-short-history-of-nearly-everything' },
-        { type: 'book', slug: 'a-guide-to-the-good-life', title: 'A Guide to the Good Life', category: 'William B. Irvine', url: 'book-note.html?slug=a-guide-to-the-good-life' },
-        { type: 'book', slug: 'show-your-work', title: 'Show Your Work', category: 'Austin Kleon', url: 'book-note.html?slug=show-your-work' },
-        { type: 'book', slug: 'steal-like-an-artist', title: 'Steal Like an Artist', category: 'Austin Kleon', url: 'book-note.html?slug=steal-like-an-artist' },
-        { type: 'book', slug: 'benjamin-franklin', title: 'Benjamin Franklin: An American Life', category: 'Walter Isaacson', url: 'book-note.html?slug=benjamin-franklin' },
-        { type: 'book', slug: 'einstein', title: 'Einstein: His Life and Universe', category: 'Walter Isaacson', url: 'book-note.html?slug=einstein' },
-        { type: 'book', slug: 'the-4-hour-workweek', title: 'The 4-Hour Workweek', category: 'Tim Ferriss', url: 'book-note.html?slug=the-4-hour-workweek' },
-        { type: 'book', slug: 'so-good-they-cant-ignore-you', title: "So Good They Can't Ignore You", category: 'Cal Newport', url: 'book-note.html?slug=so-good-they-cant-ignore-you' },
-        { type: 'book', slug: 'exercised', title: 'Exercised', category: 'Daniel E. Lieberman', url: 'book-note.html?slug=exercised' },
-        { type: 'book', slug: 'the-story-of-the-human-body', title: 'The Story of the Human Body', category: 'Daniel E. Lieberman', url: 'book-note.html?slug=the-story-of-the-human-body' },
     ];
 
     const input = document.getElementById('search-input');
@@ -113,7 +79,7 @@
     function doSearch() {
         const q = input.value.trim().toLowerCase();
         if (q.length < 2) {
-            results.innerHTML = '<p class="search-hint">Start typing to search across all articles and book notes.</p>';
+            results.innerHTML = '<p class="search-hint">Start typing to search across all articles.</p>';
             return;
         }
 
@@ -130,7 +96,7 @@
 
         results.innerHTML = matches.map(item => `
             <a href="${item.url}" class="search-result">
-                <span class="search-result-type">${item.type === 'article' ? 'Article' : 'Book Note'}</span>
+                <span class="search-result-type">Article</span>
                 <h3 class="search-result-title">${highlight(item.title, q)}</h3>
                 <span class="search-result-cat">${item.category}</span>
             </a>
