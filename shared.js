@@ -11,6 +11,7 @@ function getNavHTML(activePage) {
                 <a href="/free-guides.html" class="nav-link ${activePage === 'guides' ? 'active' : ''}" data-num="02">Free Guides</a>
                 <a href="/articles.html" class="nav-link ${activePage === 'articles' ? 'active' : ''}" data-num="03">Articles</a>
                 <a href="/newsletter.html" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}" data-num="04">Newsletter</a>
+                <a href="/newsletter-archive.html" class="nav-link ${activePage === 'archive' ? 'active' : ''}" data-num="05">Archive</a>
             </div>
             <div class="nav-actions">
                 <form class="nav-search-form" action="/search.html" method="get">
@@ -42,6 +43,8 @@ function getFooterHTML() {
                     <a href="/about.html">About</a>
                     <a href="/free-guides.html">Free Guides</a>
                     <a href="/articles.html">Articles</a>
+                    <a href="/newsletter.html">Newsletter</a>
+                    <a href="/newsletter-archive.html">Archive</a>
                 </div>
                 <div class="footer-col">
                     <span class="footer-col-label">Connect</span>

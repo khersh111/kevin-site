@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter — Kevin Hershberger</title>
+    <meta name="description" content="A newsletter issue by Dr. Kevin Hershberger.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <article class="article-page" id="article-page">
+        <div class="article-header anim-in">
+            <a href="newsletter-archive.html" class="article-back">← Back to Archive</a>
+            <span class="article-category" id="nl-date"></span>
+            <h1 class="article-title" id="nl-title">Loading…</h1>
+        </div>
+        <div class="article-body" id="nl-body">
+            <div class="article-loading">Loading newsletter…</div>
+        </div>
+    </article>
+
+    <section class="article-cta anim-in">
+        <div class="article-cta-inner">
+            <h3>Want more like this?</h3>
+            <p>Subscribe to the free weekly newsletter for practical health insights.</p>
+            <a href="newsletter.html" class="article-cta-btn">Subscribe — it's free →</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="shared.js"></script>
+    <script>
+    const slug = new URLSearchParams(window.location.search).get('slug');
+
+    fetch('newsletters.json')
+        .then(r => r.json())
+        .then(data => {
+            const issue = data.find(n => n.slug === slug);
+            if (!issue) {
+                document.getElementById('nl-title').textContent = 'Newsletter not found.';
+                document.getElementById('nl-body').innerHTML = '<p>Could not find this newsletter issue.</p>';
+                return;
+            }
+
+            document.title = `${issue.title} — Kevin Hershberger`;
+            document.getElementById('nl-date').textContent = issue.date;
+            document.getElementById('nl-title').textContent = issue.title;
+
+            const body = issue.body
+                .split('\n\n')
+                .filter(p => p.trim())
+                .map(p => `<p>${p.trim()}</p>`)
+                .join('\n');
+
+            document.getElementById('nl-body').innerHTML = body || '<p>No content available for this issue.</p>';
+        })
+        .catch(() => {
+            document.getElementById('nl-title').textContent = 'Error loading newsletter.';
+            document.getElementById('nl-body').innerHTML = '<p>Could not load newsletter data.</p>';
+        });
+
+    initSharedLayout('newsletter');
+    </script>
+</body>
+</html>
