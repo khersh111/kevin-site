@@ -22,6 +22,9 @@
             </div>
             <h1 class="article-title" id="article-title">Loading...</h1>
         </div>
+        <div class="article-hero" id="article-hero" style="display:none;">
+            <img id="article-hero-img" src="" alt="" loading="eager">
+        </div>
         <div class="article-body" id="article-body">
             <div class="article-loading">Loading article content...</div>
         </div>
@@ -46,30 +49,30 @@
     const slug = params.get('slug');
 
     const articleMeta = {
-        "the-best-books-i-read-in-2025": { title: "The Best Books I Read in 2025", category: "Books", date: "2025" },
-        "a-guide-to-tracking-your-fitness-progress": { title: "A Guide to Tracking Your Fitness Progress", category: "Fitness", date: "2025" },
-        "the-best-books-i-read-in-2024": { title: "The Best Books I Read in 2024", category: "Books", date: "2024" },
-        "why-i-chose-to-do-an-orthopedic-fellowship": { title: "Why I Chose To Do An Orthopedic Fellowship", category: "Career", date: "2024" },
-        "lessons-i-learned-in-my-first-year-working-as-a-physical-therapist": { title: "Lessons I Learned in my First Year Working as a Physical Therapist", category: "Career", date: "2024" },
-        "why-i-became-a-physical-therapist": { title: "Why I Became a Physical Therapist", category: "Career", date: "April 21, 2024" },
-        "should-you-stretch-your-upper-traps": { title: "Should You Stretch Your Upper Traps?", category: "Injury", date: "March 17, 2024" },
-        "3-things-ive-learned-from-leonardo-da-vinci": { title: "3 Things I've Learned From Leonardo da Vinci", category: "Wellness", date: "March 5, 2024" },
-        "a-needed-paradigm-shift-for-the-physical-therapy-profession": { title: "A Needed Paradigm Shift for the Physical Therapy Profession", category: "Career", date: "February 25, 2024" },
-        "on-managing-stress": { title: "On Managing Stress", category: "Wellness", date: "February 19, 2023" },
-        "i-quit-alcohol-for-30-days": { title: "I Quit Alcohol For 30 Days", category: "Wellness", date: "January 30, 2023" },
-        "supplements-i-take-to-boost-health-and-longevity": { title: "Supplements I Take To Boost Health & Longevity", category: "Fitness", date: "January 23, 2023" },
-        "show-your-work": { title: "Show Your Work", category: "Wellness", date: "January 16, 2023" },
-        "whats-in-my-bag": { title: "What's in my Bag", category: "Wellness", date: "January 6, 2023" },
-        "the-best-books-i-read-in-2023": { title: "The Best Books I Read in 2023", category: "Books", date: "December 17, 2023" },
-        "on-journaling": { title: "On Journaling", category: "Mindfulness", date: "November 30, 2023" },
-        "what-5-years-of-meditation-has-taught-me": { title: "What 5 Years of Meditation Has Taught Me", category: "Mindfulness", date: "November 4, 2023" },
-        "the-recent-rise-of-stoicism": { title: "The Recent Rise of Stoicism", category: "Wellness", date: "June 7, 2023" },
-        "maximizing-life-fulfillment": { title: "Maximizing Life Fulfillment", category: "Wellness", date: "May 16, 2023" },
-        "how-to-manage-your-time": { title: "How to Manage Your Time", category: "Wellness", date: "April 28, 2023" },
-        "my-fitness-routine-as-a-physical-therapist": { title: "My Fitness Routine as a Physical Therapist", category: "Fitness", date: "April 11, 2023" },
-        "perfecting-your-sleep": { title: "Perfecting Your Sleep", category: "Wellness", date: "April 4, 2023" },
-        "how-reading-changed-my-life": { title: "How Reading Changed My Life And How It Can Change Yours", category: "Books", date: "February 24, 2023" }
-};
+        "the-best-books-i-read-in-2025": { title: "The Best Books I Read in 2025", category: "Books", date: "2025", hero: "images/articles/the-best-books-i-read-in-2025-hero.jpg" },
+        "a-guide-to-tracking-your-fitness-progress": { title: "A Guide to Tracking Your Fitness Progress", category: "Fitness", date: "2025", hero: "images/articles/a-guide-to-tracking-your-fitness-progress-hero.jpg" },
+        "the-best-books-i-read-in-2024": { title: "The Best Books I Read in 2024", category: "Books", date: "2024", hero: "images/articles/the-best-books-i-read-in-2024-hero.jpeg" },
+        "why-i-chose-to-do-an-orthopedic-fellowship": { title: "Why I Chose To Do An Orthopedic Fellowship", category: "Career", date: "2024", hero: "images/articles/why-i-chose-to-do-an-orthopedic-fellowship-hero.jpg" },
+        "lessons-i-learned-in-my-first-year-working-as-a-physical-therapist": { title: "Lessons I Learned in my First Year Working as a Physical Therapist", category: "Career", date: "2024", hero: "images/articles/lessons-i-learned-hero.jpeg" },
+        "why-i-became-a-physical-therapist": { title: "Why I Became a Physical Therapist", category: "Career", date: "April 21, 2024", hero: "images/articles/why-i-became-a-physical-therapist-hero.jpg" },
+        "should-you-stretch-your-upper-traps": { title: "Should You Stretch Your Upper Traps?", category: "Injury", date: "March 17, 2024", hero: "images/articles/should-you-stretch-your-upper-traps-hero.jpeg" },
+        "3-things-ive-learned-from-leonardo-da-vinci": { title: "3 Things I've Learned From Leonardo da Vinci", category: "Wellness", date: "March 5, 2024", hero: "images/articles/3-things-ive-learned-from-leonardo-da-vinci-hero.jpeg" },
+        "a-needed-paradigm-shift-for-the-physical-therapy-profession": { title: "A Needed Paradigm Shift for the Physical Therapy Profession", category: "Career", date: "February 25, 2024", hero: "images/articles/a-needed-paradigm-shift-hero.jpeg" },
+        "on-managing-stress": { title: "On Managing Stress", category: "Wellness", date: "February 19, 2023", hero: "images/articles/on-managing-stress-hero.jpeg" },
+        "i-quit-alcohol-for-30-days": { title: "I Quit Alcohol For 30 Days", category: "Wellness", date: "January 30, 2023", hero: "images/articles/i-quit-alcohol-hero.jpeg" },
+        "supplements-i-take-to-boost-health-and-longevity": { title: "Supplements I Take To Boost Health & Longevity", category: "Fitness", date: "January 23, 2023", hero: "images/articles/supplements-hero.jpeg" },
+        "show-your-work": { title: "Show Your Work", category: "Wellness", date: "January 16, 2023", hero: "images/articles/show-your-work-hero.jpeg" },
+        "whats-in-my-bag": { title: "What’s in my Bag", category: "Wellness", date: "January 6, 2023", hero: "images/articles/whats-in-my-bag-hero.jpg" },
+        "the-best-books-i-read-in-2023": { title: "The Best Books I Read in 2023", category: "Books", date: "December 17, 2023", hero: "images/articles/the-best-books-i-read-in-2023-hero.jpg" },
+        "on-journaling": { title: "On Journaling", category: "Mindfulness", date: "November 30, 2023", hero: "images/articles/on-journaling-hero.jpeg" },
+        "what-5-years-of-meditation-has-taught-me": { title: "What 5 Years of Meditation Has Taught Me", category: "Mindfulness", date: "November 4, 2023", hero: "images/articles/what-5-years-of-meditation-hero.jpeg" },
+        "the-recent-rise-of-stoicism": { title: "The Recent Rise of Stoicism", category: "Wellness", date: "June 7, 2023", hero: "images/articles/the-recent-rise-of-stoicism-hero.jpg" },
+        "maximizing-life-fulfillment": { title: "Maximizing Life Fulfillment", category: "Wellness", date: "May 16, 2023", hero: "images/articles/maximizing-life-fulfillment-hero.jpg" },
+        "how-to-manage-your-time": { title: "How to Manage Your Time", category: "Wellness", date: "April 28, 2023", hero: "images/articles/how-to-manage-your-time-hero.jpg" },
+        "my-fitness-routine-as-a-physical-therapist": { title: "My Fitness Routine as a Physical Therapist", category: "Fitness", date: "April 11, 2023", hero: "images/articles/my-fitness-routine-hero.jpg" },
+        "perfecting-your-sleep": { title: "Perfecting Your Sleep", category: "Wellness", date: "April 4, 2023", hero: "images/articles/perfecting-your-sleep-hero.jpg" },
+        "how-reading-changed-my-life": { title: "How Reading Changed My Life And How It Can Change Yours", category: "Books", date: "February 24, 2023", hero: "images/articles/how-reading-changed-my-life-hero.jpg" }
+    };
 
     // Merge content — links version overrides base content
     const allContent = Object.assign({}, ARTICLE_CONTENT, ARTICLE_CONTENT_EXTRA,
@@ -85,6 +88,15 @@
             document.getElementById('article-date').style.display = 'none';
         }
         document.title = `${meta.title} — Kevin Hershberger`;
+
+        // Show hero image if available
+        if (meta.hero) {
+            const heroContainer = document.getElementById('article-hero');
+            const heroImg = document.getElementById('article-hero-img');
+            heroImg.src = meta.hero;
+            heroImg.alt = meta.title;
+            heroContainer.style.display = 'block';
+        }
         document.querySelector('meta[name="description"]').content = `${meta.title} — an article by Dr. Kevin Hershberger.`;
 
         if (allContent[slug]) {

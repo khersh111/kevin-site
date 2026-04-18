@@ -162,10 +162,22 @@ const ARTICLE_CONTENT_LINKS = {
 <h3>What can you do if you have long upper traps?</h3>
 <p>I see it every week. A patient comes into the clinic and says “My upper traps are tight, do you have any stretches for them?” When someone asks me this question, I need to first assess the position of their shoulder blades to see if the upper traps are actually short.</p>
 <p>Let’s start with what the upper trapezius muscle is and what it does. The trapezius muscle originates from the skull, nuchal ligament, and C7-T12 vertebrae. It inserts on the lateral portion of the clavicle, the spine of the scapula, and the acromion process. The role of the upper trapezius muscle is to elevate and upwardly rotate the scapula (shoulder blade).</p>
+<div class="article-inline-img">
+    <img src="images/articles/trapezius-diagram.jpg" alt="Anatomy of the trapezius muscle">
+    <figcaption>Anatomy of the trapezius muscle</figcaption>
+</div>
 <p>To fully reach overhead, you need 120 degrees of motion from your true shoulder joint and 60 degrees of upward rotation from your scapula. If the upper trapezius is long, it can’t function properly to upwardly rotate the scapula when you reach overhead, and this can be a contributor to shoulder pain.</p>
 <p>Also, since the upper trapezius is attached to the neck and the skull, if the muscle is long, it can affect your ability to rotate your head. To show my patients this effect, I first have them turn their heads from side to side with their shoulder blades in the resting position. Then, I passively elevate their shoulder blades, placing them in their proper position, and have the patient rotate their head again. Often, they can look further in each direction with the shoulder blades in the proper position.</p>
 <p>Many times, the upper trapezius muscles are tight, but also long, and in that case, you wouldn’t want to stretch a muscle that is already long. To determine if the upper trapezius is lengthened, I look at the angle of the person’s collarbone. Since the collarbone and shoulder blade are connected at the acromioclavicular joint, the angle of the collarbone tells me if the shoulder blade is too high or too low.</p>
 <p>Ideally, the collarbone should be at an angle of 15-20 degrees from the horizontal. If the patient has collarbones near parallel to the horizontal, then the upper trapezius muscles are long and likely weak. In this case, stretching would worsen the situation, and the patient needs to strengthen/shorten the upper trapezius muscles.</p>
+<div class="article-inline-img">
+    <img src="images/articles/clavicle-parallel.jpeg" alt="Clavicle parallel to horizontal - long upper trapezius">
+    <figcaption>The clavicle is parallel to the horizontal indicating a long upper trapezius muscle.</figcaption>
+</div>
+<div class="article-inline-img">
+    <img src="images/articles/clavicle-angled.jpeg" alt="Clavicle at 15-20 degrees - ideal upper trapezius length">
+    <figcaption>The clavicle forms a 15-20 degree angle with the horizontal indicating the ideal length of the upper trapezius.</figcaption>
+</div>
 <p>Wall slides with a shoulder shrug is a great exercise for engaging the upper traps in a shortened position—to help reposition the shoulder blades in their proper location.</p>
 <p>To perform this exercise, stand about a foot away from a wall. Then, slide your hands up the wall and shrug your shoulders toward your ears at the top. Maintain the shrug as you bring your arms down in front of you until your hands are level with your head, then relax your shoulders.</p>
 <p>You can do this exercise many times throughout the day. It is better to perform a few repetitions periodically throughout the day versus performing many repetitions only once per day.</p>

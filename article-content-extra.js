@@ -12,6 +12,10 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>Commonplace books are personal collections of notes, quotes, and observations that date back centuries. They are used to compile knowledge in a central location. Some people may keep a similar version of a commonplace book in a notes app on their phone, but I prefer to keep a physical commonplace book.</p>
 <p>Leonardo’s work was incredible for many reasons, but one of his most salient traits was his ability to combine art with science, engineering, and optics. He was able to combine these topics in one place to formulate his work—in his commonplace book.</p>
 <p>Here is just a sample of what da Vinci used to keep in his commonplace books.</p>
+<div class="article-inline-img">
+    <img src="images/articles/da-vinci-notebook.jpg" alt="A page from Leonardo da Vinci's commonplace book">
+    <figcaption>A page from Leonardo da Vinci's commonplace book</figcaption>
+</div>
 <p>The human brain can generate many novel ideas and solutions, but it is not a great way to store information. This is why when you come across a piece of information that you believe is useful, you should write it down before you forget.</p>
 <p>Done is better than perfect.</p>
 <p>Winston Churchill said, “The maxim, ‘Nothing prevails but perfection,’ may be spelled PARALYSIS.”</p>
@@ -41,6 +45,10 @@ const ARTICLE_CONTENT_EXTRA = {
 <h3>So why don’t we do the same maintenance work for our bodies?</h3>
 <p>Physical therapists are movement specialists who can identify areas of compensation and weakness in people—even those who aren’t in pain.</p>
 <p>Next time you see a toddler, watch how they move their bodies. They typically have beautiful mechanics with foundational movements like squatting and deadlifting. But as we age, we are forced to sit at desks for most of our adolescent lives and come out of high school with less-than-ideal movement patterns.</p>
+<div class="article-inline-img">
+    <img src="images/articles/baby-squat.jpeg" alt="A toddler performing a natural deep squat with ideal mechanics">
+    <figcaption>A toddler performing a natural deep squat with ideal mechanics</figcaption>
+</div>
 <p>If people came to see a PT every 6 months or so for a movement screening, we could get ahead of many injuries before they occur. Unfortunately, the current medical model isn’t designed for preventive care and these sessions likely won’t be covered by insurance.</p>
 <p>This is where physical therapy and the healthcare field need to go. Rather than fighting against the current, we need to go upstream and stop the problems before they flow down.</p>
 <p>Shifting to preventive care is not going to happen overnight, and may not even happen fully in my lifetime, but we can start to shift our mindsets when it comes to taking care of our bodies, learning foundational movements, and getting ahead of injuries before they happen.</p>
@@ -236,6 +244,10 @@ const ARTICLE_CONTENT_EXTRA = {
 <h3>The effects of long-term stress</h3>
 <p>If we are stressed for long periods, our bodies replace the release of adrenaline with cortisol. Cortisol is made by the adrenal glands and has many functions. It decreases the release of substances that cause inflammation which is why it can be beneficial with musculoskeletal injuries. But it also can damage cells in the hippocampus—a part of the body involved in forming memories.</p>
 <p>Long-term elevated cortisol levels can lead to high blood pressure, diabetes, decreased muscle mass, and a weakened immune system. Elevations in cortisol over long periods negatively impact health.</p>
+<div class="article-inline-img">
+    <img src="images/articles/cortisol-graphic.png" alt="The cortisol-melatonin cycle">
+    <figcaption>The cortisol-melatonin cycle</figcaption>
+</div>
 <p>However, there is a natural spike in cortisol in the morning that is beneficial in regulating our circadian rhythms. Each day there is a steep rise in cortisol after awakening, promoting wakefulness and alertness. But as the day goes on, cortisol levels should decrease as you wind down in the evening and prepare for bed.</p>
 <p>The cortisol-melatonin cycle.</p>
 <h3>Tools to manage stress</h3>
@@ -329,12 +341,15 @@ const ARTICLE_CONTENT_EXTRA = {
 "should-you-stretch-your-upper-traps": `
 <p>I see it every week. A patient comes into the clinic and says “My upper traps are tight, do you have any stretches for them?” When someone asks me this question, I need to first assess the position of their shoulder blades to see if the upper traps are actually short.</p>
 <p>Let’s start with what the upper trapezius muscle is and what it does. The trapezius muscle originates from the skull, nuchal ligament, and C7-T12 vertebrae. It inserts on the lateral portion of the clavicle, the spine of the scapula, and the acromion process. The role of the upper trapezius muscle is to elevate and upwardly rotate the scapula (shoulder blade).</p>
+<img src="images/articles/trapezius-diagram.jpg" alt="Anatomy of the trapezius muscle">
 <p>Photo from Wikipedia</p>
 <p>To fully reach overhead, you need 120 degrees of motion from your true shoulder joint and 60 degrees of upward rotation from your scapula. If the upper trapezius is long, it can’t function properly to upwardly rotate the scapula when you reach overhead, and this can be a contributor to shoulder pain.</p>
 <p>Also, since the upper trapezius is attached to the neck and the skull, if the muscle is long, it can affect your ability to rotate your head. To show my patients this effect, I first have them turn their heads from side to side with their shoulder blades in the resting position. Then, I passively elevate their shoulder blades, placing them in their proper position, and have the patient rotate their head again. Often, they can look further in each direction with the shoulder blades in the proper position.</p>
 <p>Many times, the upper trapezius muscles are tight, but also long, and in that case, you wouldn’t want to stretch a muscle that is already long. To determine if the upper trapezius is lengthened, I look at the angle of the person’s collarbone. Since the collarbone and shoulder blade are connected at the acromioclavicular joint, the angle of the collarbone tells me if the shoulder blade is too high or too low.</p>
 <p>Ideally, the collarbone should be at an angle of 15-20 degrees from the horizontal. If the patient has collarbones near parallel to the horizontal, then the upper trapezius muscles are long and likely weak. In this case, stretching would worsen the situation, and the patient needs to strengthen/shorten the upper trapezius muscles.</p>
+<img src="images/articles/clavicle-parallel.jpeg" alt="Clavicle parallel to horizontal - long upper trapezius">
 <p>The clavicle is parallel to the horizontal indicating a long upper trapezius muscle.</p>
+<img src="images/articles/clavicle-angled.jpeg" alt="Clavicle at 15-20 degrees - ideal upper trapezius length">
 <p>The clavicle forms a 15-20 degree angle with the horizontal indicating the ideal length of the upper trapezius.</p>
 <h3>What can you do if you have long upper traps?</h3>
 <p>Wall slides with a shoulder shrug is a great exercise for engaging the upper traps in a shortened position—to help reposition the shoulder blades in their proper location.</p>
