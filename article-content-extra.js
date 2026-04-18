@@ -2,8 +2,8 @@
 const ARTICLE_CONTENT_EXTRA = {
 
 "3-things-ive-learned-from-leonardo-da-vinci": `
-<p>Leonardo da Vinci is arguably the greatest artist of all time, and I’ve been fascinated by how he lived and more importantly—how he thought.</p>
-<p>Walter Isaacson wrote a great biography of da Vinci that piqued my interest and started my fascination for the great Italian Renaissance painter. After reading the biography, I was able to see some of his work in person at the Louvre Museum in Paris, France, and was blown away by the thought and detail that went into each of his paintings.</p>
+<p><a href="https://en.wikipedia.org/wiki/Leonardo_da_Vinci" target="_blank" rel="noopener">Leonardo da Vinci</a> is arguably the greatest artist of all time, and I’ve been fascinated by how he lived and more importantly—how he thought.</p>
+<p><a href="https://en.wikipedia.org/wiki/Walter_Isaacson" target="_blank" rel="noopener">Walter Isaacson</a> wrote a great biography of da Vinci that piqued my interest and started my fascination for the great <a href="https://en.wikipedia.org/wiki/Italian_Renaissance" target="_blank" rel="noopener">Italian Renaissance</a> painter. After reading the biography, I was able to see some of his work in person at the Louvre Museum in Paris, France, and was blown away by the thought and detail that went into each of his paintings.</p>
 <p>Here are a few key takeaways that I’ve learned from da Vinci.</p>
 <p>Have an insatiable curiosity about the world.</p>
 <p>One of Leonardo’s greatest traits was his incessant questioning of everything in the world. Ordinary things and events that we take for granted, he broke them down into first principles. Slowing down to question how things work like electricity, faucets, or engines may lead to new ideas and connections that you’ve never thought of before.</p>
@@ -67,7 +67,7 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>But, by reading just beyond your capacity to retain every bit of information, you train your brain to process the information faster and you can sift through more information without dramatically sacrificing retention.</p>
 <h3>How to pick what books to read</h3>
 <p>Picking which book to read is the most important step in reading. If you're not intrigued by the topic, then it will feel like a chore to get through it. Also, if the book is too complex or too simple for you, you won't find yourself optimally challenged to read it.</p>
-<p>Finding good books that interest you can be difficult. I recommend you start by looking up books on topics that fascinate you on the internet. Personally, I use GoodReads to find new books and to read reviews on them before I purchase a copy. Amazon can also be a useful tool to read reviews and buy cheap books. Some may enjoy going to Barnes & Noble because they prefer physically going to a bookstore to purchase books. I find that Half Price Books has a great selection for a fraction of the Barnes & Noble price.</p>
+<p>Finding good books that interest you can be difficult. I recommend you start by looking up books on topics that fascinate you on the internet. Personally, I use <a href="https://www.goodreads.com/" target="_blank" rel="noopener">GoodReads</a> to find new books and to read reviews on them before I purchase a copy. Amazon can also be a useful tool to read reviews and buy cheap books. Some may enjoy going to Barnes & Noble because they prefer physically going to a bookstore to purchase books. I find that Half Price Books has a great selection for a fraction of the Barnes & Noble price.</p>
 <p>Inevitably, there will be books that you simply don't enjoy reading. If you start a bad book and you find it a burden to read it, stop reading it and find a different book! There's no shame in stopping a book that doesn't grip you. Life is too short to suffer through a bad book just because you think you need to finish it. A good rule of thumb is to give a book 100 pages - your age before you decide to quit reading it. For example, I'm 24, so if I follow this rule and I'm 76 pages into a book that I can't stand, I put the book back and move on.</p>
 <h3>How to retain information from books</h3>
 <p>Once you start reading a book, it's now time to find a method that helps you retain the material. Over the years I have found a system that enhances my recall and comprehension of the text without slowing down my reading speed.</p>
@@ -79,7 +79,7 @@ const ARTICLE_CONTENT_EXTRA = {
 <li>How the book has changed me</li>
 <li>My highlights and summaries from the book</li>
 </ul>
-<p>Thank you to Ali Abdaal for creating this template on Notion for public use. You can find his template by clicking here.</p>
+<p>Thank you to Ali Abdaal for creating this template on Notion for public use. You can find his template by clicking <a href="https://www.notion.so/templates/ali-abdaal-book-notes" target="_blank" rel="noopener">here</a>.</p>
 <p>Finally, summarizing a book into a few bullet points or sentences can drastically improve your comprehension. By formulating a book's key points in just a few sentences, you're able to better understand the author's arguments and you're more likely to implement them into your life.</p>
 <h3>The power of reading</h3>
 <p>Many underestimate the significance of daily reading. If you want to enhance your knowledge, opportunities, and the way you think about your life, look no further than formulating reading as a habit. In order for a habit to stick, you need to make it easy and fun. The best way to make reading a habit is to always have a book around you to pick up that you find appealing. Once you formulate the habit of reading, you can see the transformative benefits that come with it and improve your life.</p>
@@ -108,7 +108,7 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>Shallow work is non-cognitively demanding work often done while distracted. This is where most people operate most of the time. Shallow work is easier than fully diving into the task at hand. If you can set aside 3 or 4 hours per day of distraction-free deep work on a consistent basis, you’ll be surprised at how much you can accomplish in a short period of time.</p>
 <p>By eliminating distractions in your environment, you can complete a task in a few hours that may have taken you days in a typical shallow work environment. Embracing deep work is what allowed me to be a successful student in grad school without ever pulling an all-nighter or rarely studying in the late evening. Find a time of day when you’re mentally at your best and can allocate time to meaningful and distraction-free work.</p>
 <h3>The power of no</h3>
-<p>Saying no is a powerful tool for managing your time. When you say yes to something, you are saying no to everything else. In an ideal world, you would be able to accept every invitation or meeting that sounds like a good use of time; however, we are living in a finite world with limited resources. Greg McKeown in his book Essentialism said, “The more you think about what you’re giving up by saying yes, the easier it is to say no.”</p>
+<p>Saying no is a powerful tool for managing your time. When you say yes to something, you are saying no to everything else. In an ideal world, you would be able to accept every invitation or meeting that sounds like a good use of time; however, we are living in a finite world with limited resources. Greg McKeown in his book <a href="https://www.amazon.com/Essentialism-Disciplined-Pursuit-Greg-McKeown/dp/0804137382" target="_blank" rel="noopener">Essentialism</a> said, “The more you think about what you’re giving up by saying yes, the easier it is to say no.”</p>
 <p>Before you commit to something, take time to think about what you will be giving up to say yes to this opportunity. Don’t be afraid to say no to things that don’t serve you, your values, or your goals.</p>
 <p>A general rule of thumb is, if an opportunity comes your way and you’re not 100% excited about it, don’t do it! You may sacrifice your popularity by saying no, but you will gain respect in the long run.</p>
 <h3>Take a break</h3>
@@ -121,7 +121,7 @@ const ARTICLE_CONTENT_EXTRA = {
 
 "i-quit-alcohol-for-30-days": `
 <p>Alcohol is a substance that has become so ubiquitous that we sometimes forget why we use it and the effects it has on our bodies. Ever since I was in college, I can’t remember a time when I took an extended break from using alcohol. It’s hard to realize its impact on the body without taking time off from it.</p>
-<p>Once I listened to Andrew Huberman's podcast "What Alcohol Does to Your Body, Brain &amp; Health," I decided to rethink my relationship with the drug.</p>
+<p>Once I listened to Andrew Huberman's podcast "<a href="https://www.hubermanlab.com/episode/what-alcohol-does-to-your-body-brain-health" target="_blank" rel="noopener">What Alcohol Does to Your Body, Brain &amp; Health</a>," I decided to rethink my relationship with the drug.</p>
 <p>Alcohol quiets down our prefrontal cortex (the area of the brain where high-level executive function takes place) and sedates the nervous system. This is why alcohol is often referred to as “liquid courage” and can lead to bad decision-making. It can also make a shy and anxious introvert into a gregarious extrovert. The social benefits of alcohol though do not come without costs.</p>
 <p>First, drinking alcohol can make you fall asleep more quickly, but the sleep that ensues is not restorative. Even just one drink at night can be enough to ruin your sleep. I will say that over the past month, I’ve been able to wake up most mornings feeling refreshed.</p>
 <p>Also, the financial costs of alcohol are nontrivial. I've noticed a significant difference in my bank account by only getting water instead of a cocktail or beer with dinner. It’s been a nice perk to save some money and avoid waking up the next day groggy, anxious, and depressed when checking my bank statement.</p>
@@ -133,7 +133,7 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "maximizing-life-fulfillment": `
-<p>I recently read a book that has profoundly changed how I approach living my life. Die With Zero by Bill Perkins made me question my notions of time, money, and what I want out of life. The central theme of the book is how to live a maximally fulfilled life without having extra money in your bank account when you die. Here are some of my takeaways from the book.</p>
+<p>I recently read a book that has profoundly changed how I approach living my life. <a href="https://amzn.to/3pLSMFu" target="_blank" rel="noopener">Die With Zero</a> by Bill Perkins made me question my notions of time, money, and what I want out of life. The central theme of the book is how to live a maximally fulfilled life without having extra money in your bank account when you die. Here are some of my takeaways from the book.</p>
 <h3>The ingredients of life fulfillment</h3>
 <p>Wealth, health, and free time are the constituents for maximizing life fulfillment, and their quantities shift throughout a lifetime.</p>
 <p>When you’re young, you typically have good health and a plethora of time, but limited wealth. When you’re middle-aged, you generally have good health and enough money, but lack free time. And finally, when you’re older, your health declines while you have ample free time and money.</p>
@@ -170,14 +170,14 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>This post is not intended for everyone. If you are currently struggling from paycheck to paycheck, you would be better off learning how to leverage your time and grow your knowledge on how to make more money.</p>
 <p>Also, if you are someone who spends lavishly, you may be spending too much money and not saving enough to the point where you will run out of money before you die. It can be difficult to find a balance between spending on experiences, without spending foolishly to send you into financial hardship.</p>
 <h3>Further resources</h3>
-<p>Die with Zero: Getting All You Can from Your Money and Your Life by Bill Perkins</p>
-<p>My book notes on the book Die With Zero</p>
+<p><a href="https://www.amazon.com/Die-Zero-Getting-Your-Money/dp/B089MFKS77" target="_blank" rel="noopener">Die with Zero: Getting All You Can from Your Money and Your Life by Bill Perkins</a></p>
+<p><a href="https://kevin-hershberger.com/book-notes/die-with-zero" target="_blank" rel="noopener">My book notes on the book Die With Zero</a></p>
 `,
 
 "my-fitness-routine-as-a-physical-therapist": `
 <p>Regular exercise can increase longevity, improve mental health, enhance cognitive function, maintain bone density, prevent muscle loss, improve metabolic function, and more. I have been exercising consistently for the past 6 years and it has been one of the best habits I have acquired. Find out more below about the benefits of exercise and what I do to stay fit.</p>
 <h3>Cardiovascular benefits</h3>
-<p>Heart disease and ischemic stroke are by far the leading causes of death. Exercise increases the efficiency of the cardiovascular system. Cardiovascular-specific exercise, can improve the functioning of the heart, lower blood pressure, and decrease the overall risk of death from cardiovascular disease.</p>
+<p>Heart disease and ischemic stroke are by far the <a href="https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death" target="_blank" rel="noopener">leading causes of death</a>. Exercise increases the efficiency of the cardiovascular system. Cardiovascular-specific exercise, can improve the functioning of the heart, lower blood pressure, and decrease the overall risk of death from cardiovascular disease.</p>
 <h3>Bone and muscle health</h3>
 <p>Over time, the human body loses bone mass and density. Namely, bones get weaker and more fragile as you age, making you more susceptible to fractures. Bone mineral density can be influenced and preserved with proper nutrition and exercise. Calcium is the major mineral found in bones, and a diet consisting of adequate calcium and vitamin D can help you maintain bone mass and prevent osteoporosis.</p>
 <p>Your body also loses muscle mass as you age, and is termed sarcopenia.</p>
@@ -204,9 +204,9 @@ const ARTICLE_CONTENT_EXTRA = {
 <h3>The bottom line</h3>
 <p>The benefits of exercise are unequivocal. It is essential to physical and mental health and is one of the best habits you can adopt. The best way to start exercising is to start small and gradually progress with each workout. In my opinion, everyone should be performing some type of strengthening and cardiovascular training each week. This provides you with the basic foundation to live a long and highly functioning life.</p>
 <h3>Other resources</h3>
-<h3>Andrew Huberman’s Foundational Fitness Protocol</h3>
-<h3>Andy Galpin’s Training Basics</h3>
-<h3>Peter Attia: Exercising for Longevity</h3>
+<p><a href="https://hubermanlab.com/foundational-fitness-protocol/" target="_blank" rel="noopener">Andrew Huberman’s Foundational Fitness Protocol</a></p>
+<p><a href="https://www.xptlife.com/going-back-to-basics-in-your-training" target="_blank" rel="noopener">Andy Galpin’s Training Basics</a></p>
+<p><a href="https://peterattiamd.com/category/exercise/" target="_blank" rel="noopener">Peter Attia: Exercising for Longevity</a></p>
 `,
 
 "on-journaling": `
@@ -222,8 +222,8 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>What should you write in your journal? There are many ways to journal including bullet journaling, morning pages, gratitude practices, and daily reflections. The form and method you use do not matter. I have experimented with many different kinds and have found that the simpler the better. If you’ve never journaled before, I recommend that you start by writing the date at the top of the page, write what you did that day, how you’re feeling, and what you could have done better. Even if it feels like you have nothing to write or say, just start writing. It does not need to be pretty or eloquent. It is for you to create space between your mind and your thoughts.</p>
 <p>Many of the best thinkers and leaders have used journals to elucidate their thoughts, capture ideas, and analyze their behaviors to improve themselves. It doesn’t matter if you write in a physical or digital journal. And it doesn’t even matter what you write in the journal. Just start and you will see how it changes the way you think and feel.</p>
 <h3>What I use to journal</h3>
-<p>Leuchtturm1917 Notebook, A5 (Dotted paper)</p>
-<p>Zebra Sarasa Clip 0.5mm Pen</p>
+<p><a href="https://www.amazon.com/Leuchtturm1917-Medium-Dotted-Hardcover-Notebook/dp/B002TSIMW4" target="_blank" rel="noopener">Leuchtturm1917 Notebook, A5 (Dotted paper)</a></p>
+<p><a href="https://www.amazon.com/Zebra-Sarasa-0-5mm-JJ15-BK-refill/dp/B075YNTT8S" target="_blank" rel="noopener">Zebra Sarasa Clip 0.5mm Pen</a></p>
 `,
 
 "on-managing-stress": `
@@ -241,7 +241,7 @@ const ARTICLE_CONTENT_EXTRA = {
 <h3>Tools to manage stress</h3>
 <p>Encountering stress in our daily lives is inevitable, but we can train ourselves to manage and cope with the stressors of life in better ways. Here are some tools that you can use to manage stress and avoid suffering the consequences of long-term elevated cortisol levels.</p>
 <h3>Meditation/mindfulness</h3>
-<p>There are many free apps that you can use for guided meditation practices. I like the Waking Up app by Sam Harris.</p>
+<p>There are many free apps that you can use for guided meditation practices. I like the <a href="https://www.wakingup.com/" target="_blank" rel="noopener">Waking Up</a> app by Sam Harris.</p>
 <h3>Exercise</h3>
 <ul>
 <li>Movement can be a great outlet for managing stress. Pick the mode of activity that you enjoy whether it be walking outside, running, biking, or lifting weights. Exercise is typically thought of as something to improve your physical health but the mental benefits should not be underestimated.</li>
@@ -251,20 +251,19 @@ const ARTICLE_CONTENT_EXTRA = {
 <li>Placing yourself in uncomfortable situations can help you increase your stress tolerance. It’s similar to lifting weights to strengthen your muscles. By training your mental fortitude, you can prepare yourself to remain tranquil in chaotic situations.</li>
 </ul>
 <h3>Breathing techniques</h3>
-<p>The physiologic sigh is a great tool for decreasing your sympathetic nervous system activation and increasing your parasympathetic nervous system. Simply take two full inhalations through your nose, then slowly exhale all that air through pursed lips.</p>
+<p>The <a href="https://www.youtube.com/watch?v=rBdhqBGqiMc" target="_blank" rel="noopener">physiologic sigh</a> is a great tool for decreasing your sympathetic nervous system activation and increasing your parasympathetic nervous system. Simply take two full inhalations through your nose, then slowly exhale all that air through pursed lips.</p>
 <h3>Progressive muscle relaxation</h3>
 <ul>
 <li>This practice involves tensing a muscle group in your body, followed by deliberate relaxation of that muscle group. Pick a muscle to contract for 5 seconds, then relax and move on to a different muscle.</li>
 </ul>
 <h3>Proper sleep hygiene</h3>
 <ul>
-<li>Getting 7-9 hours of sleep can improve our resilience and ability to cope with different stressors. Read more about improving your sleep</li>
+<li>Getting 7-9 hours of sleep can improve our resilience and ability to cope with different stressors. Read more about improving your sleep <a href="article.html?slug=perfecting-your-sleep">here</a>.</li>
 </ul>
-<p>here</p>
-<p>.</p>
 <h3>Journaling</h3>
 <ul>
-<li>The act of writing down your anxieties and worries can help reduce their impact on your mental well-being. Read more on journaling here.</p>
+<li>The act of writing down your anxieties and worries can help reduce their impact on your mental well-being. Read more on journaling <a href="article.html?slug=on-journaling">here</a>.</li>
+</ul>
 <h3>Laughter/humor</h3>
 <ul>
 <li>There is merit to the statement that “laughter is the best medicine.” Watching a comedy special or a funny movie can help relieve stress and promote relaxation.</li>
@@ -322,9 +321,9 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>Stick to a sleep schedule, but don’t worry if it gets disrupted. Your quality of life is just as important as the quantity of your life.</p>
 <p>If you consistently have trouble sleeping, try the tips mentioned above and consult with your healthcare professional.</p>
 <h3>Further resources</h3>
-<h3>Andrew Huberman’s toolkit for sleep</h3>
-<h3>Why We Sleep: Unlocking the Power of Sleep and Dreams by Matthew Walker</h3>
-<h3>My book notes on Why We Sleep</h3>
+<p><a href="https://hubermanlab.com/toolkit-for-sleep/" target="_blank" rel="noopener">Andrew Huberman’s toolkit for sleep</a></p>
+<p><a href="https://www.amazon.com/Why-We-Sleep-Matthew-Walker-audiobook/dp/B0752XRB5F" target="_blank" rel="noopener">Why We Sleep: Unlocking the Power of Sleep and Dreams by Matthew Walker</a></p>
+<p><a href="https://kevin-hershberger.com/book-notes/why-we-sleep" target="_blank" rel="noopener">My book notes on Why We Sleep</a></p>
 `,
 
 "should-you-stretch-your-upper-traps": `
@@ -348,7 +347,7 @@ const ARTICLE_CONTENT_EXTRA = {
 "show-your-work": `
 <h3>Why you should show your work</h3>
 <p>If you’re like most people, you spend the majority of your time relaxing, working, and consuming, with little time creating things. Showing your work and creating content can be hugely fulfilling, lead to new friendships, and even be profitable.</p>
-<p>I first came across this notion in a book titled Show Your Work! by Austin Kleon, and it inspired me to build this website and write consistently. Before reading the book, I never thought much about the ratio of content consumption to creation. I have been consuming information from the internet, books, podcasts, and school, yet I never shared what I was learning or what I thought was interesting and may have even helped others.</p>
+<p>I first came across this notion in a book titled <a href="https://austinkleon.com/show-your-work/" target="_blank" rel="noopener">Show Your Work!</a> by <a href="https://austinkleon.com/" target="_blank" rel="noopener">Austin Kleon</a>, and it inspired me to build this website and write consistently. Before reading the book, I never thought much about the ratio of content consumption to creation. I have been consuming information from the internet, books, podcasts, and school, yet I never shared what I was learning or what I thought was interesting and may have even helped others.</p>
 <p>Many of the great thinkers who moved society forward had one thing in common—they shared their thoughts and ideas in public to help others and to spark new conversations. Sometimes, I wonder how many great minds we will never know of because they did not publish their work or write their thoughts down.</p>
 <p>By working in public, you can create a community of like-minded people and build a body of work that future employers and clients can view to see who you are and what you stand for.</p>
 <h3>What should you share?</h3>
@@ -363,13 +362,13 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>doing and what you</p>
 <p>are</p>
 <p>doing.</p>
-<p>Additionally, creating things is hard. Steven Pressfield talks about “resistance” in his book The War of Art.</p>
+<p>Additionally, creating things is hard. Steven Pressfield talks about “resistance” in his book <a href="https://www.amazon.com/War-Art-Through-Creative-Battles/dp/1936891026" target="_blank" rel="noopener">The War of Art</a>.</p>
 <p>“Resistance cannot be seen, touched, heard, or smelled. But it can be felt. We experience it as an energy field radiating from a work-in-potential. It’s a repelling force. It’s negative. Its aim is to shove us away, distract us, prevent us from doing our work.”</p>
 <p>Not giving in to “resistance” and fighting through it are the ways to consistently create and produce meaningful work pieces.</p>
 <h3>Where to start?</h3>
 <p>Hopefully, you are excited to start sharing your work. There are a plethora of platforms and media to disseminate your content, but which one should you choose?</p>
 <p>I’d start with the platform or mode of social media that you are most familiar with or spend the most time on. It could be YouTube, TikTok, Instagram, X, or even Snapchat. If you’re not on social media or do not enjoy spending time on these apps (like me), then you may want to consider building your own website.</p>
-<p>Building a website is not as intimidating as it used to be, and you don’t need to know how to code to build an aesthetically pleasing website. I used Squarespace to build this website and newsletter without prior knowledge of code or web design.</p>
+<p>Building a website is not as intimidating as it used to be, and you don’t need to know how to code to build an aesthetically pleasing website. I used <a href="https://www.squarespace.com/" target="_blank" rel="noopener">Squarespace</a> to build this website and newsletter without prior knowledge of code or web design.</p>
 <p>The key is just to get started and experiment until you find a method you like and can produce content consistently. You may not have a voice now and not know what to write about, but you won’t know until you’ve done it hundreds of times. Just keep going.</p>
 `,
 
@@ -437,7 +436,7 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>Some may feel uncomfortable with this practice at first. But once you realize how little time you have left, you can finally make time for the essential things in life: family, friends, and purpose.</p>
 <p>Remember: there will be a last time for everything in life. There will be the last time you pet your dog, go for a walk in nature, or talk to a loved one. Don’t dwell on the fact that there will be a last time for everything in life, let it help you appreciate the little things in life.</p>
 <p>A life calendar can also help with this practice. This is a poster with all the weeks you have already lived and an estimate of how many you have left.</p>
-<p>Here is a calendar you can use. By filling out a life calendar, you should feel a sense of urgency in your life to put your energy into the things that are most important to you.</p>
+<p><a href="https://www.amazon.com/LifeTimeTM-Weeks-Poster-Memento-Calendar/dp/B0BQW5W5N9" target="_blank" rel="noopener">Here is a calendar you can use</a>. By filling out a life calendar, you should feel a sense of urgency in your life to put your energy into the things that are most important to you.</p>
 <p>When you are stressed, anxious, or caught up in minutiae in life, just remember that one day you will die.</p>
 <h3>Applying Stoicism in your daily life</h3>
 <p>One reason that the Stoic philosophy has grown in popularity is due to its applicability in daily living. Practicing Stoicism can yield immediate benefits to improve your mood, resilience, and overall life satisfaction.</p>
@@ -449,10 +448,10 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>The practices of Stoicism have lasted for almost 2,000 years and are just as relevant today as they were back in Greece in 300 B.C.E. The ideas are simple—focus on what you control, see things for what they are in objectivity, challenge yourself, remember that you are mortal, and look for silver linings.</p>
 <p>I will end with a quote from one of the greats of Stoicism, Marcus Aurelius, who summed up the practice in one sentence, “Objective judgment, unselfish action, willing acceptance. That’s all you need.”</p>
 <h3>Further resources</h3>
-<p>The Stoic Path: by Robert B. Irvine on the Waking Up app</p>
-<p>Stillness Is the Key: by Ryan Holiday</p>
-<p>Meditations: by Marcus Aurelius</p>
-<p>The Daily Stoic: by Ryan Holiday</p>
+<p><a href="https://dynamic.wakingup.com/pack/PK7REQC" target="_blank" rel="noopener">The Stoic Path: by Robert B. Irvine on the Waking Up app</a></p>
+<p><a href="https://www.amazon.com/Stillness-Key-Ryan-Holiday/dp/0525538585" target="_blank" rel="noopener">Stillness Is the Key: by Ryan Holiday</a></p>
+<p><a href="https://www.amazon.com/Meditations-New-Translation-Marcus-Aurelius/dp/0812968255" target="_blank" rel="noopener">Meditations: by Marcus Aurelius</a></p>
+<p><a href="https://www.amazon.com/Daily-Stoic-Meditations-Wisdom-Perseverance/dp/0735211736" target="_blank" rel="noopener">The Daily Stoic: by Ryan Holiday</a></p>
 `,
 
 "what-5-years-of-meditation-has-taught-me": `
@@ -461,9 +460,9 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>The health benefits associated with meditation are numerous and include lowered blood pressure, decreased anxiety and depression, and better mood regulation. It has also been linked to increased gray matter thickness and cortical folding in the brain.</p>
 <h3>How I got into meditation</h3>
 <p>In undergraduate school, I had an assignment that required me to perform a new habit for 30 days and then reflect on my experience. At the time, I had just read an article on the benefits of meditation in regard to physical health, and I was interested in improving my fitness. I thought, “We train our bodies to become stronger by lifting weights, why not treat my mind the same way?”</p>
-<p>I started using the Headspace app and used it for those 30 days. At the end of the project, I missed a few days and noticed that I was in a better mood, calmer, and could think more clearly on the days that I meditated. Ever since completing that project, I have incorporated meditation into my daily routine.</p>
+<p>I started using the <a href="https://www.headspace.com/" target="_blank" rel="noopener">Headspace</a> app and used it for those 30 days. At the end of the project, I missed a few days and noticed that I was in a better mood, calmer, and could think more clearly on the days that I meditated. Ever since completing that project, I have incorporated meditation into my daily routine.</p>
 <h3>How I meditate?</h3>
-<p>Over the years, my meditative habits and forms have evolved. I currently use the Waking Up app by Sam Harris. If you are new to meditating, I recommend starting with the Introductory Course. I typically use “mindfulness” meditation for the majority of my sessions. But I’ve also been enjoying a different type of meditation called “Metta.” Metta is a meditation used to improve loving-kindness. It sounds a bit cheesy at first, but by consciously wishing others good luck and good fortune, I’ve noticed improved relationships and that I’ve become a more empathetic person.</p>
+<p>Over the years, my meditative habits and forms have evolved. I currently use the <a href="https://www.wakingup.com/" target="_blank" rel="noopener">Waking Up</a> app by Sam Harris. If you are new to meditating, I recommend starting with the Introductory Course. I typically use “mindfulness” meditation for the majority of my sessions. But I’ve also been enjoying a different type of meditation called “Metta.” Metta is a meditation used to improve loving-kindness. It sounds a bit cheesy at first, but by consciously wishing others good luck and good fortune, I’ve noticed improved relationships and that I’ve become a more empathetic person.</p>
 <p>Most mornings, I sit upright in a chair and put on my noise-canceling headphones to listen to the daily meditation on the Waking Up app for 10-20 minutes. I try to do it within the first hour after awakening because if I put it off for later in the day, I likely won’t get around to doing it.</p>
 <p>If I’ve had a busy or stressful morning, I will do a yoga nidra meditation which means “yogic sleep” at lunch to help calm my mind and reset for the afternoon. It can also be a useful tool for relaxing the mind before bedtime and letting go of pestering thoughts.</p>
 <h3>Noticing the transient nature of things</h3>
