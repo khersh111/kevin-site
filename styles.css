@@ -41,8 +41,8 @@
     --bg: #141414;
     --bg-alt: #1e1e1e;
     --text: #e8e4df;
-    --text-light: #a0a0a0;
-    --text-muted: #777;
+    --text-light: rgba(232, 228, 223, 0.95);
+    --text-muted: rgba(232, 228, 223, 0.85);
     --border: rgba(255, 255, 255, 0.1);
     --accent: #d97b5f;
 }
