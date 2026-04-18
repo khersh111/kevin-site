@@ -2,9 +2,6 @@
 const ARTICLE_CONTENT_EXTRA = {
 
 "3-things-ive-learned-from-leonardo-da-vinci": `
-<p>3 Things I’ve Learned From Leonardo da Vinci</p>
-<h3>Mar 5</h3>
-<h3>Written By</h3>
 <h3>Leonardo da Vinci</h3>
 <p>is arguably the greatest artist of all time, and I’ve been fascinated by how he lived and more importantly—how he thought.</p>
 <h3>Walter Isaacson</h3>
@@ -35,9 +32,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "a-needed-paradigm-shift-for-the-physical-therapy-profession": `
-<h3>A Needed Paradigm Shift for the Physical Therapy Profession</h3>
-<h3>Feb 25</h3>
-<h3>Written By</h3>
 <p>Physical therapy is a profession that is largely misunderstood by the general population. In this article, I want to clarify what physical therapy is, and why a shift in the current mode of thinking is necessary to improve human health.</p>
 <h3>The birth of physical therapy</h3>
 <p>The devastating effects of World War I led to the widespread need for rehabilitation services for injured soldiers. Physical therapy began to emerge as a profession during this time, with trained therapists providing rehabilitation to wounded soldiers. The polio epidemics of the early 20th century further highlighted the importance of physical therapy in helping individuals regain mobility and function.</p>
@@ -66,9 +60,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "how-reading-changed-my-life": `
-<h3>How Reading Changed My Life And How It Can Change Yours</h3>
-<h3>Feb 24</h3>
-<h3>Written By</h3>
 <p>Reading consistently has been the best habit I have made in my life. It has changed the way I think and live. If you want to learn how reading has changed my life and how it can change yours, continue reading.</p>
 <h3>Why I started reading</h3>
 <p>Reading used to be like pulling teeth. For most of my life, I avoided it at all costs, with one exception: the Harry Potter series. Reading the Harry Potter series was the first time reading didn't feel like a chore to me. The mandatory readings that I was assigned throughout my pre-college education did not interest me.</p>
@@ -113,9 +104,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "how-to-manage-your-time": `
-<h3>How to Manage Your Time</h3>
-<h3>Apr 28</h3>
-<h3>Written By</h3>
 <p>Everyone is allotted 168 hours per week. If you sleep 8 hours each night and work 40 hours a week, you’re left with 72 hours of</p>
 <p>free time</p>
 <p>per week. That is 3 full days of time to spend however you’d like. Time is our most valuable resource—are you spending it wisely?</p>
@@ -163,9 +151,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "i-quit-alcohol-for-30-days": `
-<h3>I Quit Alcohol For 30 Days</h3>
-<h3>Jan 30</h3>
-<h3>Written By</h3>
 <p>Alcohol is a substance that has become so ubiquitous that we sometimes forget why we use it and the effects it has on our bodies. Ever since I was in college, I can’t remember a time when I took an extended break from using alcohol. It’s hard to realize its impact on the body without taking time off from it.</p>
 <h3>Once I listened to Andrew Huberman’s podcast “</h3>
 <h3>What Alcohol Does to Your Body, Brain & Health</h3>
@@ -182,9 +167,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "maximizing-life-fulfillment": `
-<h3>Maximizing Life Fulfillment</h3>
-<h3>May 16</h3>
-<h3>Written By</h3>
 <p>I recently read a book that has profoundly changed how I approach living my life.</p>
 <h3>Die With Zero</h3>
 <p>by Bill Perkins made me question my notions of time, money, and what I want out of life. The central theme of the book is how to live a maximally fulfilled life without having extra money in your bank account when you die. Here are some of my takeaways from the book.</p>
@@ -233,9 +215,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "my-fitness-routine-as-a-physical-therapist": `
-<h3>My Fitness Routine as a Physical Therapist</h3>
-<h3>Apr 11</h3>
-<h3>Written By</h3>
 <p>Regular exercise can increase longevity, improve mental health, enhance cognitive function, maintain bone density, prevent muscle loss, improve metabolic function, and more. I have been exercising consistently for the past 6 years and it has been one of the best habits I have acquired. Find out more below about the benefits of exercise and what I do to stay fit.</p>
 <h3>Cardiovascular benefits</h3>
 <h3>Heart disease and ischemic stroke are by far the</h3>
@@ -278,9 +257,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "on-journaling": `
-<h3>On Journaling</h3>
-<h3>Nov 30</h3>
-<h3>Written By</h3>
 <p>If you’ve read any “self-improvement” books, chances are that you’ve heard of the endless benefits of keeping a journal. A few years ago, I finally gave in and started keeping a daily journal and the impact it’s had on my life has been profound.</p>
 <p>It’s been especially helpful to have a timeline of my activities and moods to see how I’ve handled different situations. The proclaimed benefits of keeping a journal are numerous, but the benefits I have experienced include increased gratitude, improved mental clarity, and better decision-making.</p>
 <p>Many of the greatest thinkers have used journals to straighten out and clarify their thoughts. A few prominent figures that have used a journal include Mark Twain, Isaac Newton, Charles Darwin, Leonardo Da Vinci, and Ernest Hemingway.</p>
@@ -299,9 +275,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "on-managing-stress": `
-<h3>On Managing Stress</h3>
-<h3>Feb 19</h3>
-<h3>Written By</h3>
 <h3>What is stress and why is it important?</h3>
 <p>The World Health Organization defines stress as “a state of worry or mental tension caused by a difficult situation. Stress is a natural human response that prompts us to address challenges and threats in our lives.”</p>
 <p>When stressed, the “fight-or-flight” or sympathetic nervous system activates and releases adrenaline. This increases your heart rate, blood pressure, and respiratory rate which causes hypervigilance.</p>
@@ -361,9 +334,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "perfecting-your-sleep": `
-<h3>Perfecting Your Sleep</h3>
-<h3>Apr 4</h3>
-<h3>Written By</h3>
 <p>Feel free to skip to the bottom of this article to see my 10 tips to improve your sleep.</p>
 <h3>What is sleep?</h3>
 <p>Sleep is a crucial aspect of our lives that often goes overlooked. It is when our bodies and minds are able to recover and optimize physical and mental well-being. But what exactly is sleep, and why is it so important?</p>
@@ -426,9 +396,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "should-you-stretch-your-upper-traps": `
-<h3>Should You Stretch Your Upper Traps?</h3>
-<h3>Mar 17</h3>
-<h3>Written By</h3>
 <p>I see it every week. A patient comes into the clinic and says “My upper traps are tight, do you have any stretches for them?” When someone asks me this question, I need to first assess the position of their shoulder blades to see if the upper traps are actually short.</p>
 <p>Let’s start with what the upper trapezius muscle is and what it does. The trapezius muscle originates from the skull, nuchal ligament, and C7-T12 vertebrae. It inserts on the lateral portion of the clavicle, the spine of the scapula, and the acromion process. The role of the upper trapezius muscle is to elevate and upwardly rotate the scapula (shoulder blade).</p>
 <p>.fe-block-26ed911fa69a4d9f5126 {mix-blend-mode: ;</p>
@@ -452,9 +419,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "show-your-work": `
-<h3>Show Your Work</h3>
-<h3>Jan 16</h3>
-<h3>Written By</h3>
 <h3>Why you should show your work</h3>
 <p>If you’re like most people, you spend the majority of your time relaxing, working, and consuming, with little time creating things. Showing your work and creating content can be hugely fulfilling, lead to new friendships, and even be profitable.</p>
 <h3>I first came across this notion in a book titled</h3>
@@ -492,9 +456,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "supplements-i-take-to-boost-health-and-longevity": `
-<h3>Supplements I Take To Boost Health & Longevity</h3>
-<h3>Jan 23</h3>
-<h3>Written By</h3>
 <p>Supplementation is a controversial topic in the health and wellness community, but if done with prudence, it may help you function and perform better.</p>
 <p>Supplements can be great for pushing your fitness and health goals ahead, but if you’re not exercising consistently, sleeping 7-9 hours most nights, and not eating right, you should focus on those domains before spending your money on them.</p>
 <p>The supplement industry can be full of false claims and benefits, so be aware and always do your homework before purchasing a product. Supplements are also not regulated by the FDA and don’t need to undergo rigorous quality control inspections like the rest of the food you typically see in grocery stores. So if possible, seek out a well-known, reputable brand to ensure the ingredients inside match up with what reads on the label.</p>
@@ -542,9 +503,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "the-best-books-i-read-in-2023": `
-<h3>The Best Books I Read in 2023</h3>
-<h3>Dec 17</h3>
-<h3>Written By</h3>
 <p>2023 was a great year of reading. There were many good books I came across this past year, but I’ve boiled it down to my absolute favorites below. I predominantly read nonfiction books, but one of my goals for 2024 is to start reading fiction as well, so stay tuned for next year's book recommendations for more fiction recommendations.</p>
 <h3>Factfulness</h3>
 <p>by Hans Rosling</p>
@@ -575,9 +533,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "the-recent-rise-of-stoicism": `
-<h3>The Recent Rise of Stoicism</h3>
-<h3>Jun 7</h3>
-<h3>Written By</h3>
 <p>Stoicism is an ancient philosophical school of thought that originated in Greece around 300 BCE. It has gained popularity in recent years as a practical philosophy that can help individuals increase their mental fortitude and resilience.</p>
 <h3>What is Stoicism?</h3>
 <p>Stoicism is a philosophy that emphasizes the importance of accepting things outside your control, focusing on what you</p>
@@ -628,9 +583,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "what-5-years-of-meditation-has-taught-me": `
-<h3>What 5 Years of Meditation Has Taught Me</h3>
-<h3>Nov 4</h3>
-<h3>Written By</h3>
 <h3>What is meditation?</h3>
 <p>Meditation is the act of fully immersing oneself in one's environment and sensations. It’s experiencing a clear awareness of thoughts, sensations, and moods. There are many variations of meditation, but in its essence, it is a tool for training attention and awareness.</p>
 <p>The health benefits associated with meditation are numerous and include lowered blood pressure, decreased anxiety and depression, and better mood regulation. It has also been linked to increased gray matter thickness and cortical folding in the brain.</p>
@@ -668,9 +620,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "whats-in-my-bag": `
-<h3>What’s in my Bag</h3>
-<h3>Jan 6</h3>
-<h3>Written By</h3>
 <p>Here’s a look into my everyday carry backpack. These are the essentials that I have with me whenever I leave the house.</p>
 <h3>Aer City Pack Pro</h3>
 <p>.</p>
@@ -746,9 +695,6 @@ const ARTICLE_CONTENT_EXTRA = {
 `,
 
 "why-i-became-a-physical-therapist": `
-<h3>Why I Became a Physical Therapist</h3>
-<h3>Apr 21</h3>
-<h3>Written By</h3>
 <p>Here’s me competing in my first collegiate golf tournament.</p>
 <p>While growing up, school was always secondary to athletics. I loved and played many sports including baseball, basketball, football, soccer, and golf. I did quite poorly academically in high school—especially in my freshmen and sophomore years.</p>
 <p>Not much changed when I went off to college. I chose a school where I was able to get a scholarship to play golf. But, early on in my collegiate golfing career, I injured my back. I experienced debilitating pain which prevented me from being able to tie my shoes, walk a mile, and even attend class at times.</p>
