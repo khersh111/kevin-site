@@ -16,8 +16,8 @@
     --bg-dark-alt: #242424;
     
     --text: #1a1a1a;
-    --text-light: #666;
-    --text-muted: #999;
+    --text-light: rgba(26, 26, 26, 0.85);
+    --text-muted: rgba(26, 26, 26, 0.75);
     --text-on-dark: #f4f1ec;
     --text-on-dark-muted: #aaa;
     
