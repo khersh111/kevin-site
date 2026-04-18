@@ -21,9 +21,9 @@
     --text-on-dark: #ffffff;
     --text-on-dark-muted: rgba(255, 255, 255, 0.85);
     
-    --accent: #47a0dd;
-    --accent-light: #6fb5e6;
-    --accent-dark: #3580b3;
+    --accent: #00aeef;
+    --accent-light: #33c2ff;
+    --accent-dark: #0082b3;
     
     --border: #e4e4e4;
     --border-dark: #292929;
@@ -44,7 +44,7 @@
     --text-light: rgba(255, 255, 255, 0.95);
     --text-muted: rgba(255, 255, 255, 0.85);
     --border: #292929;
-    --accent: #47a0dd;
+    --accent: #00aeef;
 }
 
 [data-theme="dark"] img {
