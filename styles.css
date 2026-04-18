@@ -861,7 +861,7 @@ img { max-width: 100%; display: block; }
 .newsletter-desc {
     font-size: 1rem;
     color: var(--text);
-    opacity: 0.85;
+    opacity: 0.95;
     line-height: 1.65;
     margin-bottom: 32px;
     max-width: 420px;
@@ -1519,7 +1519,7 @@ img { max-width: 100%; display: block; }
 .newsletter-page-desc {
     font-size: 1.05rem;
     color: var(--text);
-    opacity: 0.85;
+    opacity: 0.95;
     line-height: 1.6;
     margin-bottom: 32px;
 }
@@ -1555,7 +1555,7 @@ img { max-width: 100%; display: block; }
 .newsletter-feature p {
     font-size: 0.9rem;
     color: var(--text);
-    opacity: 0.85;
+    opacity: 0.95;
     line-height: 1.5;
 }
 
@@ -1587,7 +1587,7 @@ img { max-width: 100%; display: block; }
 .newsletter-archive-desc {
     font-size: 1.05rem;
     color: var(--text);
-    opacity: 0.85;
+    opacity: 0.95;
 }
 
 .archive-search-wrap {
