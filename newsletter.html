@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter — Kevin Hershberger</title>
+    <meta name="description" content="Subscribe to Kevin Hershberger's free weekly newsletter for practical injury prevention advice, real patient cases, and training insights.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="newsletter-page">
+        <div class="newsletter-page-layout">
+            <div class="newsletter-page-image anim-in">
+                <img src="kevin-writing.jpg" alt="Kevin writing and studying">
+            </div>
+            <div class="newsletter-page-content">
+                <span class="page-hero-label anim-in">05 — Newsletter</span>
+                <h1 class="newsletter-page-title anim-in">Move Better,<br><em>Stay Active Longer.</em></h1>
+                <p class="newsletter-page-desc anim-in">Weekly emails with real patient cases, practical injury prevention advice, and training insights you can actually use.</p>
+                
+                <div class="newsletter-features anim-in">
+                    <div class="newsletter-feature">
+                        <span class="feature-icon">①</span>
+                        <div>
+                            <strong>Real Patient Cases</strong>
+                            <p>Learn from actual cases I see in the clinic — what went wrong and how we fixed it.</p>
+                        </div>
+                    </div>
+                    <div class="newsletter-feature">
+                        <span class="feature-icon">②</span>
+                        <div>
+                            <strong>Injury Prevention</strong>
+                            <p>Practical strategies to avoid the injuries that sideline active people.</p>
+                        </div>
+                    </div>
+                    <div class="newsletter-feature">
+                        <span class="feature-icon">③</span>
+                        <div>
+                            <strong>Training Insights</strong>
+                            <p>Evidence-based tips to train smarter — not just harder.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Replace with your actual ConvertKit form action endpoint -->
+                <form class="newsletter-form anim-in" action="https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions" method="post" target="_blank">
+                    <div class="form-fields">
+                        <input type="text" name="first_name" class="form-input" placeholder="First name" required>
+                        <input type="email" name="email_address" class="form-input" placeholder="Email address" required>
+                    </div>
+                    <button type="submit" class="form-submit" id="newsletter-submit">Subscribe — it's free →</button>
+                </form>
+                <p class="newsletter-note anim-in">No spam. No fear-mongering. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="shared.js"></script>
+    <script>
+    initSharedLayout('newsletter');
+    </script>
+</body>
+</html>

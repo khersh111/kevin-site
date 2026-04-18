@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Kevin Hershberger</title>
+    <meta name="description" content="Get in touch with Dr. Kevin Hershberger. Questions about physical therapy, injury prevention, or content — reach out here.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="contact-page">
+        <div class="contact-layout">
+            <div class="contact-info anim-in">
+                <span class="page-hero-label">Contact</span>
+                <h1 class="contact-title">Get in <em>touch.</em></h1>
+                <p class="contact-desc">Have a question about physical therapy, injury prevention, or just want to say hello? I'd love to hear from you.</p>
+                
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/dr.kevinhershberger/" target="_blank" rel="noopener" class="contact-link-item">
+                        <span class="contact-link-label">Instagram</span>
+                        <span class="contact-link-handle">@dr.kevinhershberger</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kevinhershberger/" target="_blank" rel="noopener" class="contact-link-item">
+                        <span class="contact-link-label">LinkedIn</span>
+                        <span class="contact-link-handle">Kevin Hershberger</span>
+                    </a>
+                    <a href="https://www.goodreads.com/user/show/Kevin-Hershberger" target="_blank" rel="noopener" class="contact-link-item">
+                        <span class="contact-link-label">Goodreads</span>
+                        <span class="contact-link-handle">Kevin Hershberger</span>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form-wrap anim-in">
+                <!-- Replace with your actual Formspree endpoint in production -->
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/mqazknyq" method="POST">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="What's on your mind?" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" id="contact-submit">Send Message →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="shared.js"></script>
+    <script>
+    initSharedLayout('contact');
+    </script>
+</body>
+</html>

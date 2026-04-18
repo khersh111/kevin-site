@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article — Kevin Hershberger</title>
+    <meta name="description" content="An article by Dr. Kevin Hershberger.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <article class="article-page" id="article-page">
+        <div class="article-header anim-in">
+            <a href="articles.html" class="article-back">← Back to Articles</a>
+            <span class="article-category" id="article-category"></span>
+            <h1 class="article-title" id="article-title">Loading...</h1>
+        </div>
+        <div class="article-body" id="article-body">
+            <div class="article-loading">Loading article content...</div>
+        </div>
+    </article>
+
+    <!-- Newsletter CTA -->
+    <section class="article-cta anim-in">
+        <div class="article-cta-inner">
+            <h3>Enjoyed this article?</h3>
+            <p>Join the weekly newsletter for more practical health insights.</p>
+            <a href="newsletter.html" class="article-cta-btn">Subscribe — it's free →</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="shared.js"></script>
+    <script src="article-content.js"></script>
+    <script src="article-content-extra.js"></script>
+    <script src="article-content-links.js"></script>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+
+    const articleMeta = {
+        "the-best-books-i-read-in-2025": { title: "The Best Books I Read in 2025", category: "Books" },
+        "a-guide-to-tracking-your-fitness-progress": { title: "A Guide to Tracking Your Fitness Progress", category: "Fitness" },
+        "the-best-books-i-read-in-2024": { title: "The Best Books I Read in 2024", category: "Books" },
+        "why-i-chose-to-do-an-orthopedic-fellowship": { title: "Why I Chose To Do An Orthopedic Fellowship", category: "Career" },
+        "lessons-i-learned-in-my-first-year-working-as-a-physical-therapist": { title: "Lessons I Learned in my First Year Working as a Physical Therapist", category: "Career" },
+        "why-i-became-a-physical-therapist": { title: "Why I Became a Physical Therapist", category: "Career" },
+        "should-you-stretch-your-upper-traps": { title: "Should You Stretch Your Upper Traps?", category: "Injury" },
+        "3-things-ive-learned-from-leonardo-da-vinci": { title: "3 Things I've Learned From Leonardo da Vinci", category: "Wellness" },
+        "a-needed-paradigm-shift-for-the-physical-therapy-profession": { title: "A Needed Paradigm Shift for the Physical Therapy Profession", category: "Career" },
+        "on-managing-stress": { title: "On Managing Stress", category: "Wellness" },
+        "i-quit-alcohol-for-30-days": { title: "I Quit Alcohol For 30 Days", category: "Wellness" },
+        "supplements-i-take-to-boost-health-and-longevity": { title: "Supplements I Take To Boost Health & Longevity", category: "Fitness" },
+        "show-your-work": { title: "Show Your Work", category: "Wellness" },
+        "whats-in-my-bag": { title: "What's in my Bag", category: "Wellness" },
+        "the-best-books-i-read-in-2023": { title: "The Best Books I Read in 2023", category: "Books" },
+        "on-journaling": { title: "On Journaling", category: "Mindfulness" },
+        "what-5-years-of-meditation-has-taught-me": { title: "What 5 Years of Meditation Has Taught Me", category: "Mindfulness" },
+        "the-recent-rise-of-stoicism": { title: "The Recent Rise of Stoicism", category: "Wellness" },
+        "maximizing-life-fulfillment": { title: "Maximizing Life Fulfillment", category: "Wellness" },
+        "how-to-manage-your-time": { title: "How to Manage Your Time", category: "Wellness" },
+        "my-fitness-routine-as-a-physical-therapist": { title: "My Fitness Routine as a Physical Therapist", category: "Fitness" },
+        "perfecting-your-sleep": { title: "Perfecting Your Sleep", category: "Wellness" },
+        "how-reading-changed-my-life": { title: "How Reading Changed My Life And How It Can Change Yours", category: "Books" }
+    };
+
+    // Merge content — links version overrides base content
+    const allContent = Object.assign({}, ARTICLE_CONTENT, ARTICLE_CONTENT_EXTRA,
+        typeof ARTICLE_CONTENT_LINKS !== 'undefined' ? ARTICLE_CONTENT_LINKS : {});
+
+    if (slug && articleMeta[slug]) {
+        const meta = articleMeta[slug];
+        document.getElementById('article-title').textContent = meta.title;
+        document.getElementById('article-category').textContent = meta.category;
+        document.title = `${meta.title} — Kevin Hershberger`;
+        document.querySelector('meta[name="description"]').content = `${meta.title} — an article by Dr. Kevin Hershberger.`;
+
+        if (allContent[slug]) {
+            // Render native content
+            document.getElementById('article-body').innerHTML = allContent[slug];
+        } else {
+            // Fallback: link to original site 
+            document.getElementById('article-body').innerHTML = `
+                <p style="text-align:center; padding: 40px 0;">
+                    This article is being migrated to the new site.<br><br>
+                    <a href="https://kevin-hershberger.com/articles/${slug}" class="article-original-link" target="_blank" rel="noopener">
+                        Read on original site →
+                    </a>
+                </p>
+            `;
+        }
+    } else {
+        document.getElementById('article-title').textContent = 'Article Not Found';
+        document.getElementById('article-body').innerHTML = '<p>This article could not be found. <a href="articles.html">Browse all articles.</a></p>';
+    }
+
+    initSharedLayout('articles');
+    </script>
+</body>
+</html>

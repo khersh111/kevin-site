@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Note — Kevin Hershberger</title>
+    <meta name="description" content="Book notes and key takeaways by Dr. Kevin Hershberger.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <article class="article-page" id="book-note-page">
+        <div class="article-header anim-in">
+            <a href="book-notes.html" class="article-back">← Back to Book Notes</a>
+            <span class="article-category" id="book-author"></span>
+            <h1 class="article-title" id="book-title">Loading...</h1>
+        </div>
+        <div class="article-body" id="book-body">
+            <div class="article-loading">Loading book notes...</div>
+        </div>
+    </article>
+
+    <section class="article-cta anim-in">
+        <div class="article-cta-inner">
+            <h3>Want more book recommendations?</h3>
+            <p>Check out my annual reading lists and subscribe for weekly insights.</p>
+            <a href="newsletter.html" class="article-cta-btn">Subscribe — it's free →</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="shared.js"></script>
+    <script src="book-content.js"></script>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+
+    const bookMeta = {
+        "stillness-is-the-key": { title: "Stillness Is The Key", author: "Ryan Holiday" },
+        "atomic-habits": { title: "Atomic Habits", author: "James Clear" },
+        "deep-work": { title: "Deep Work", author: "Cal Newport" },
+        "factfulness": { title: "Factfulness", author: "Hans Rosling" },
+        "digital-minimalism": { title: "Digital Minimalism", author: "Cal Newport" },
+        "lifespan": { title: "Lifespan", author: "David A. Sinclair" },
+        "essentialism": { title: "Essentialism", author: "Greg McKeown" },
+        "ego-is-the-enemy": { title: "Ego is the Enemy", author: "Ryan Holiday" },
+        "die-with-zero": { title: "Die With Zero", author: "Bill Perkins" },
+        "courage-is-calling": { title: "Courage Is Calling", author: "Ryan Holiday" },
+        "outlive": { title: "Outlive", author: "Peter Attia" },
+        "why-we-sleep": { title: "Why We Sleep", author: "Matthew Walker" },
+        "never-split-the-difference": { title: "Never Split The Difference", author: "Chris Voss" },
+        "the-subtle-art-of-not-giving-a-fck": { title: "The Subtle Art of Not Giving a F*ck", author: "Mark Manson" },
+        "the-obstacle-is-the-way": { title: "The Obstacle is the Way", author: "Ryan Holiday" },
+        "stumbling-on-happiness": { title: "Stumbling on Happiness", author: "Daniel Gilbert" },
+        "how-to-win-friends-influence-people": { title: "How to Win Friends & Influence People", author: "Dale Carnegie" },
+        "a-short-history-of-nearly-everything": { title: "A Short History of Nearly Everything", author: "Bill Bryson" },
+        "a-guide-to-the-good-life": { title: "A Guide to the Good Life", author: "William B. Irvine" },
+        "show-your-work": { title: "Show Your Work", author: "Austin Kleon" },
+        "steal-like-an-artist": { title: "Steal Like an Artist", author: "Austin Kleon" },
+        "benjamin-franklin": { title: "Benjamin Franklin: An American Life", author: "Walter Isaacson" },
+        "the-48-laws-of-power": { title: "The 48 Laws of Power", author: "Robert Greene" },
+        "einstein": { title: "Einstein: His Life and Universe", author: "Walter Isaacson" },
+        "four-thousand-weeks": { title: "Four Thousand Weeks", author: "Oliver Burkeman" },
+        "the-psychology-of-money": { title: "The Psychology of Money", author: "Morgan Housel" },
+        "the-4-hour-workweek": { title: "The 4-Hour Workweek", author: "Tim Ferriss" },
+        "so-good-they-cant-ignore-you": { title: "So Good They Can't Ignore You", author: "Cal Newport" },
+        "mastery": { title: "Mastery", author: "Robert Greene" },
+        "the-comfort-crisis": { title: "The Comfort Crisis", author: "Michael Easter" },
+        "the-story-of-the-human-body": { title: "The Story of the Human Body", author: "Daniel E. Lieberman" },
+        "feel-good-productivity": { title: "Feel Good Productivity", author: "Ali Abdaal" },
+        "exercised": { title: "Exercised", author: "Daniel E. Lieberman" }
+    };
+
+    if (slug && bookMeta[slug]) {
+        const meta = bookMeta[slug];
+        document.getElementById('book-title').textContent = meta.title;
+        document.getElementById('book-author').textContent = `By ${meta.author}`;
+        document.title = `${meta.title} — Book Notes — Kevin Hershberger`;
+        document.querySelector('meta[name="description"]').content = `Notes and key takeaways from ${meta.title} by ${meta.author}.`;
+
+        if (typeof BOOK_CONTENT !== 'undefined' && BOOK_CONTENT[slug]) {
+            document.getElementById('book-body').innerHTML = BOOK_CONTENT[slug];
+        } else {
+            document.getElementById('book-body').innerHTML = `
+                <p style="text-align:center; padding: 40px 0;">
+                    These book notes are being migrated to the new site.<br><br>
+                    <a href="https://kevin-hershberger.com/book-notes/${slug}" class="article-original-link" target="_blank" rel="noopener">
+                        Read on original site →
+                    </a>
+                </p>
+            `;
+        }
+    } else {
+        document.getElementById('book-title').textContent = 'Book Note Not Found';
+        document.getElementById('book-body').innerHTML = '<p>This book note could not be found. <a href="book-notes.html">Browse all book notes.</a></p>';
+    }
+
+    initSharedLayout('book-notes');
+    </script>
+</body>
+</html>

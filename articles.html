@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles — Kevin Hershberger</title>
+    <meta name="description" content="Articles on physical therapy, fitness, injury prevention, mindfulness, and personal growth by Dr. Kevin Hershberger.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <span class="page-hero-label anim-in">03 — Writing</span>
+            <h1 class="page-hero-title anim-in">Articles & <em>essays.</em></h1>
+            <p class="page-hero-desc anim-in">Thoughts on physical therapy, fitness, injury prevention, mindfulness, and living better.</p>
+        </div>
+    </section>
+
+    <section class="listing-page">
+        <div class="listing-filters anim-in">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="fitness">Fitness</button>
+            <button class="filter-btn" data-filter="injury">Injury</button>
+            <button class="filter-btn" data-filter="books">Books</button>
+            <button class="filter-btn" data-filter="wellness">Wellness</button>
+            <button class="filter-btn" data-filter="career">Career</button>
+            <button class="filter-btn" data-filter="mindfulness">Mindfulness</button>
+        </div>
+
+        <div class="article-list" id="article-list">
+            <!-- Articles injected by JS -->
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="shared.js"></script>
+    <script>
+    const articles = [
+        { slug: "the-best-books-i-read-in-2025", title: "The Best Books I Read in 2025", category: "books", date: "2025" },
+        { slug: "a-guide-to-tracking-your-fitness-progress", title: "A Guide to Tracking Your Fitness Progress", category: "fitness", date: "2025" },
+        { slug: "the-best-books-i-read-in-2024", title: "The Best Books I Read in 2024", category: "books", date: "2024" },
+        { slug: "why-i-chose-to-do-an-orthopedic-fellowship", title: "Why I Chose To Do An Orthopedic Fellowship", category: "career", date: "2024" },
+        { slug: "lessons-i-learned-in-my-first-year-working-as-a-physical-therapist", title: "Lessons I Learned in my First Year Working as a Physical Therapist", category: "career", date: "2024" },
+        { slug: "why-i-became-a-physical-therapist", title: "Why I Became a Physical Therapist", category: "career", date: "2024" },
+        { slug: "should-you-stretch-your-upper-traps", title: "Should You Stretch Your Upper Traps?", category: "injury", date: "2024" },
+        { slug: "3-things-ive-learned-from-leonardo-da-vinci", title: "3 Things I've Learned From Leonardo da Vinci", category: "wellness", date: "2024" },
+        { slug: "a-needed-paradigm-shift-for-the-physical-therapy-profession", title: "A Needed Paradigm Shift for the Physical Therapy Profession", category: "career", date: "2024" },
+        { slug: "on-managing-stress", title: "On Managing Stress", category: "wellness", date: "2023" },
+        { slug: "i-quit-alcohol-for-30-days", title: "I Quit Alcohol For 30 Days", category: "wellness", date: "2023" },
+        { slug: "supplements-i-take-to-boost-health-and-longevity", title: "Supplements I Take To Boost Health & Longevity", category: "fitness", date: "2023" },
+        { slug: "show-your-work", title: "Show Your Work", category: "wellness", date: "2023" },
+        { slug: "whats-in-my-bag", title: "What's in my Bag", category: "wellness", date: "2023" },
+        { slug: "the-best-books-i-read-in-2023", title: "The Best Books I Read in 2023", category: "books", date: "2023" },
+        { slug: "on-journaling", title: "On Journaling", category: "mindfulness", date: "2023" },
+        { slug: "what-5-years-of-meditation-has-taught-me", title: "What 5 Years of Meditation Has Taught Me", category: "mindfulness", date: "2023" },
+        { slug: "the-recent-rise-of-stoicism", title: "The Recent Rise of Stoicism", category: "wellness", date: "2023" },
+        { slug: "maximizing-life-fulfillment", title: "Maximizing Life Fulfillment", category: "wellness", date: "2023" },
+        { slug: "how-to-manage-your-time", title: "How to Manage Your Time", category: "wellness", date: "2023" },
+        { slug: "my-fitness-routine-as-a-physical-therapist", title: "My Fitness Routine as a Physical Therapist", category: "fitness", date: "2023" },
+        { slug: "perfecting-your-sleep", title: "Perfecting Your Sleep", category: "wellness", date: "2023" },
+        { slug: "how-reading-changed-my-life", title: "How Reading Changed My Life And How It Can Change Yours", category: "books", date: "2023" }
+    ];
+
+    const list = document.getElementById('article-list');
+    let currentFilter = 'all';
+
+    function renderArticles(filter) {
+        const filtered = filter === 'all' ? articles : articles.filter(a => a.category === filter);
+        list.innerHTML = filtered.map((a, i) => `
+            <a href="article.html?slug=${a.slug}" class="writing-item anim-in" style="animation-delay: ${i * 0.05}s">
+                <span class="writing-item-cat">${a.category}</span>
+                <h3 class="writing-item-title">${a.title}</h3>
+                <span class="writing-item-arrow">→</span>
+            </a>
+        `).join('');
+
+        // Re-observe animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        list.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
+    }
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelector('.filter-btn.active').classList.remove('active');
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
+            renderArticles(currentFilter);
+        });
+    });
+
+    initSharedLayout('articles');
+    renderArticles('all');
+    </script>
+</body>
+</html>
