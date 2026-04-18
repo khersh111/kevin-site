@@ -1556,6 +1556,55 @@ img { max-width: 100%; display: block; }
     line-height: 1.5;
 }
 
+/* ==================== NEWSLETTER ARCHIVE (ON NEWSLETTER PAGE) ==================== */
+.newsletter-archive {
+    border-top: 1px solid var(--border);
+    background: var(--bg-alt);
+    padding: 80px 0 100px;
+}
+
+.newsletter-archive-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.newsletter-archive-header {
+    margin-bottom: 40px;
+}
+
+.newsletter-archive-title {
+    font-family: var(--font-sans);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.newsletter-archive-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+.archive-search-wrap {
+    margin-bottom: 40px;
+}
+.archive-search {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border: 1.5px solid var(--border);
+    border-radius: 9999px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--bg);
+    color: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.archive-search:focus {
+    border-color: var(--accent);
+}
+
 /* ==================== CONTACT PAGE ==================== */
 .contact-page {
     max-width: 1100px;
