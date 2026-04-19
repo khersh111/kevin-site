@@ -867,6 +867,19 @@ img { max-width: 100%; display: block; }
     max-width: 420px;
 }
 
+.form-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.newsletter-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
 .form-input {
     width: 100%;
     padding: 14px 18px;
@@ -1141,7 +1154,11 @@ img { max-width: 100%; display: block; }
     .newsletter-content {
         padding: 48px 24px;
     }
-    
+
+    .form-fields {
+        grid-template-columns: 1fr;
+    }
+
     .footer-top {
         flex-direction: column;
     }

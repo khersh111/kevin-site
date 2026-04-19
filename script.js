@@ -74,6 +74,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==================== NEWSLETTER FORM ====================
+async function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('newsletter-submit');
+    const email = document.getElementById('newsletter-email').value;
+    const firstName = document.getElementById('newsletter-first').value;
+
+    btn.textContent = 'Subscribing...';
+    btn.disabled = true;
+
+    try {
+        await fetch('https://app.beehiiv.com/subscribe/dc3c0cf8-d6f5-41c2-a5aa-5f915f7ff67b', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `email=${encodeURIComponent(email)}&first_name=${encodeURIComponent(firstName)}`
+        });
+        btn.textContent = '✓ You\'re in!';
+        e.target.reset();
+        setTimeout(() => {
+            btn.textContent = 'Subscribe — it\'s free →';
+            btn.disabled = false;
+        }, 4000);
+    } catch {
+        btn.textContent = 'Try again →';
+        btn.disabled = false;
+    }
+}
+
 // ==================== GUIDE ROW HOVER SOUND (subtle) ====================
 document.querySelectorAll('.guide-row').forEach(row => {
     row.addEventListener('click', () => {

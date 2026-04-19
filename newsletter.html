@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
 </head>
 <body>
     <div id="nav-placeholder"></div>
@@ -48,7 +47,14 @@
                     </div>
                 </div>
 
-                <iframe src="https://subscribe-forms.beehiiv.com/dc3c0cf8-d6f5-41c2-a5aa-5f915f7ff67b" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 501px; height: 513px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>
+                <form class="newsletter-form anim-in" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                    <div class="form-fields">
+                        <input type="text" id="newsletter-first" class="form-input" placeholder="First name" required>
+                        <input type="email" id="newsletter-email" class="form-input" placeholder="Email address" required>
+                    </div>
+                    <button type="submit" class="form-submit" id="newsletter-submit">Subscribe — it's free →</button>
+                </form>
+                <p class="newsletter-note anim-in">No spam. No fear-mongering. Unsubscribe anytime.</p>
             </div>
         </div>
     </section>
