@@ -179,11 +179,11 @@ def main():
                         web_path = f"images/newsletters/{local_filename}"
                         
                         if download_image(src, local_path):
-                            html_parts.append(f'<div class="article-inline-img">\\n    <img src="{web_path}" alt="{alt}">\\n</div>')
+                            html_parts.append(f'<div class="article-inline-img">\n    <img src="{web_path}" alt="{alt}">\n</div>')
                             img_count += 1
                 
                 if html_parts:
-                    final_html = "\\n".join(html_parts)
+                    final_html = "\n".join(html_parts)
                     final_html = format_quotes_html(final_html)
                     nl['html_body'] = final_html
                     print(f"  ✓ Extracted HTML ({len(final_html)} chars), downloaded {img_count} images")
