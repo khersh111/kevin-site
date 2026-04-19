@@ -51,11 +51,16 @@
             document.getElementById('nl-date').textContent = issue.date;
             document.getElementById('nl-title').textContent = issue.title;
 
-            const body = issue.body
-                .split('\n\n')
-                .filter(p => p.trim())
-                .map(p => `<p>${p.trim()}</p>`)
-                .join('\n');
+            let body;
+            if (issue.html_body) {
+                body = issue.html_body;
+            } else {
+                body = issue.body
+                    .split('\n\n')
+                    .filter(p => p.trim())
+                    .map(p => `<p>${p.trim()}</p>`)
+                    .join('\n');
+            }
 
             document.getElementById('nl-body').innerHTML = body || '<p>No content available for this issue.</p>';
         })
