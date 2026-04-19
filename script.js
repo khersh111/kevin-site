@@ -84,18 +84,10 @@ async function handleNewsletterSubmit(e) {
     btn.disabled = true;
 
     try {
-        const res = await fetch('https://api.beehiiv.com/v2/publications/pub_a2ec6133-bbc5-463e-a855-f393a1b74db6/subscriptions', {
+        const res = await fetch('/api/subscribe', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer S7trGaco7Ub1RaRdz28DzkGEVZFVNBrgIZKz2j2dQhsUtPFHqY7mxGNTtYskKgnf'
-            },
-            body: JSON.stringify({
-                email,
-                first_name: firstName,
-                reactivate_existing: false,
-                send_welcome_email: true
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, first_name: firstName })
         });
 
         if (res.ok) {
