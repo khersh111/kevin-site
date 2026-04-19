@@ -74,21 +74,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==================== NEWSLETTER FORM ====================
-function handleNewsletterSubmit(e) {
-    e.preventDefault();
-    const btn = document.getElementById('newsletter-submit');
-    btn.textContent = '✓ You\'re in!';
-    btn.style.background = '#2d8a5e';
-    btn.disabled = true;
-    
-    setTimeout(() => {
-        btn.textContent = 'Subscribe — it\'s free →';
-        btn.style.background = '';
-        btn.disabled = false;
-        e.target.reset();
-    }, 3000);
-}
-
 // ==================== GUIDE ROW HOVER SOUND (subtle) ====================
 document.querySelectorAll('.guide-row').forEach(row => {
     row.addEventListener('click', () => {

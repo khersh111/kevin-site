@@ -867,13 +867,6 @@ img { max-width: 100%; display: block; }
     max-width: 420px;
 }
 
-.form-fields {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 12px;
-}
-
 .form-input {
     width: 100%;
     padding: 14px 18px;
@@ -917,12 +910,6 @@ img { max-width: 100%; display: block; }
 
 .form-submit:active {
     transform: translateY(0);
-}
-
-.newsletter-note {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    margin-top: 16px;
 }
 
 /* ==================== FOOTER ==================== */
@@ -1155,10 +1142,6 @@ img { max-width: 100%; display: block; }
         padding: 48px 24px;
     }
     
-    .form-fields {
-        grid-template-columns: 1fr;
-    }
-
     .footer-top {
         flex-direction: column;
     }
@@ -2049,19 +2032,6 @@ img { max-width: 100%; display: block; }
     opacity: 0.6;
 }
 
-/* Form fields row */
-.form-fields {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-@media (max-width: 600px) {
-    .form-fields {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Form submit button */
 .form-submit {
     font-family: var(--font-sans);
@@ -2084,13 +2054,6 @@ img { max-width: 100%; display: block; }
     opacity: 0.7;
     cursor: default;
     transform: none;
-}
-
-/* Newsletter note */
-.newsletter-note {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    opacity: 0.7;
 }
 
 /* Scroll to top button */
