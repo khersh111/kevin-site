@@ -1817,9 +1817,18 @@ img { max-width: 100%; display: block; }
     color: var(--text-muted);
 }
 
-.article-body h2, .article-body h3 {
+.article-body h2 {
     font-family: var(--font-sans);
     color: var(--text);
+    font-size: 1.6rem;
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+
+.article-body h3 {
+    font-family: var(--font-sans);
+    color: var(--text);
+    font-size: 1.3rem;
     margin-top: 36px;
     margin-bottom: 12px;
 }
