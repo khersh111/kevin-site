@@ -259,9 +259,9 @@ const ARTICLE_CONTENT_EXTRA = {
 <h3>Progressive muscle relaxation</h3>
 <p>This practice involves tensing a muscle group in your body, followed by deliberate relaxation of that muscle group. Pick a muscle to contract for 5 seconds, then relax and move on to a different muscle.</p>
 <h3>Proper sleep hygiene</h3>
-<p>Getting 7-9 hours of sleep can improve our resilience and ability to cope with different stressors. Read more about improving your sleep <a href=”article?slug=perfecting-your-sleep”>here</a>.</p>
+<p>Getting 7-9 hours of sleep can improve our resilience and ability to cope with different stressors.</p>
 <h3>Journaling</h3>
-<p>The act of writing down your anxieties and worries can help reduce their impact on your mental well-being. Read more on journaling <a href=”article?slug=on-journaling”>here</a>.</p>
+<p>The act of writing down your anxieties and worries can help reduce their impact on your mental well-being.</p>
 <h3>Laughter/humor</h3>
 <p>There is merit to the statement that “laughter is the best medicine.” Watching a comedy special or a funny movie can help relieve stress and promote relaxation.</p>
 <p>I hope you found this article helpful and that you can use some of these tools to better manage stress in your daily life.</p>
