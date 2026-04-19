@@ -1767,7 +1767,7 @@ img { max-width: 100%; display: block; }
 
 .article-body img {
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
     height: auto;
     border-radius: 8px;
     margin: 1.5rem auto;
