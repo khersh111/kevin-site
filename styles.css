@@ -1029,8 +1029,8 @@ img { max-width: 100%; display: block; }
         height: 100vh;
         background: var(--bg);
         flex-direction: column;
-        padding: 100px 32px;
-        gap: 4px;
+        padding: 80px 32px 40px; /* Top, Left/Right, Bottom */
+        gap: 8px;
         transition: right 0.35s var(--ease-out);
         border-left: 1px solid var(--border);
         z-index: 99;
@@ -1043,6 +1043,16 @@ img { max-width: 100%; display: block; }
 
     .mobile-only {
         display: block !important;
+    }
+
+    .nav-links .nav-cta {
+        margin-top: auto;
+        align-self: center;
+        width: 100%;
+        max-width: 180px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        text-align: center;
     }
     
     .nav-link {
