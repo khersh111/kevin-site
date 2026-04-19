@@ -1782,6 +1782,16 @@ img { max-width: 100%; display: block; }
     display: block;
 }
 
+.article-hero.hero-portrait {
+    max-height: 800px;
+}
+
+.article-hero.hero-portrait img {
+    max-height: 800px;
+    object-fit: contain;
+    object-position: center top;
+}
+
 .article-body img {
     width: 100%;
     max-width: 600px;

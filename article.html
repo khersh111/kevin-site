@@ -54,7 +54,7 @@
         "the-best-books-i-read-in-2024": { title: "The Best Books I Read in 2024", category: "Books", date: "2024", hero: "images/articles/the-best-books-i-read-in-2024-hero.jpeg" },
         "why-i-chose-to-do-an-orthopedic-fellowship": { title: "Why I Chose To Do An Orthopedic Fellowship", category: "Career", date: "2024", hero: "images/articles/why-i-chose-to-do-an-orthopedic-fellowship-hero.jpg" },
         "lessons-i-learned-in-my-first-year-working-as-a-physical-therapist": { title: "Lessons I Learned in my First Year Working as a Physical Therapist", category: "Career", date: "2024", hero: "images/articles/lessons-i-learned-hero.jpeg" },
-        "why-i-became-a-physical-therapist": { title: "Why I Became a Physical Therapist", category: "Career", date: "April 21, 2024", hero: "images/articles/why-i-became-a-physical-therapist-hero.jpg" },
+        "why-i-became-a-physical-therapist": { title: "Why I Became a Physical Therapist", category: "Career", date: "April 21, 2024", hero: "images/articles/why-i-became-a-physical-therapist-hero.jpg", heroPortrait: true },
         "should-you-stretch-your-upper-traps": { title: "Should You Stretch Your Upper Traps?", category: "Injury", date: "March 17, 2024", hero: "images/articles/should-you-stretch-your-upper-traps-hero.jpeg" },
         "3-things-ive-learned-from-leonardo-da-vinci": { title: "3 Things I've Learned From Leonardo da Vinci", category: "Wellness", date: "March 5, 2024", hero: "images/articles/3-things-ive-learned-from-leonardo-da-vinci-hero.jpeg" },
         "a-needed-paradigm-shift-for-the-physical-therapy-profession": { title: "A Needed Paradigm Shift for the Physical Therapy Profession", category: "Career", date: "February 25, 2024", hero: "images/articles/a-needed-paradigm-shift-hero.jpeg" },
@@ -96,6 +96,7 @@
             heroImg.src = meta.hero;
             heroImg.alt = meta.title;
             heroContainer.style.display = 'block';
+            if (meta.heroPortrait) heroContainer.classList.add('hero-portrait');
         }
         document.querySelector('meta[name="description"]').content = `${meta.title} — an article by Dr. Kevin Hershberger.`;
 
