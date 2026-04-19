@@ -179,7 +179,6 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>Also, if you are someone who spends lavishly, you may be spending too much money and not saving enough to the point where you will run out of money before you die. It can be difficult to find a balance between spending on experiences, without spending foolishly to send you into financial hardship.</p>
 <h3>Further resources</h3>
 <p><a href="https://www.amazon.com/Die-Zero-Getting-Your-Money/dp/B089MFKS77" target="_blank" rel="noopener">Die with Zero: Getting All You Can from Your Money and Your Life by Bill Perkins</a></p>
-<p><a href="https://kevin-hershberger.com/book-notes/die-with-zero" target="_blank" rel="noopener">My book notes on the book Die With Zero</a></p>
 `,
 
 "my-fitness-routine-as-a-physical-therapist": `
@@ -249,37 +248,24 @@ const ARTICLE_CONTENT_EXTRA = {
     <figcaption>The cortisol-melatonin cycle</figcaption>
 </div>
 <p>However, there is a natural spike in cortisol in the morning that is beneficial in regulating our circadian rhythms. Each day there is a steep rise in cortisol after awakening, promoting wakefulness and alertness. But as the day goes on, cortisol levels should decrease as you wind down in the evening and prepare for bed.</p>
-<p>The cortisol-melatonin cycle.</p>
 <h3>Tools to manage stress</h3>
 <p>Encountering stress in our daily lives is inevitable, but we can train ourselves to manage and cope with the stressors of life in better ways. Here are some tools that you can use to manage stress and avoid suffering the consequences of long-term elevated cortisol levels.</p>
 <h3>Meditation/mindfulness</h3>
 <p>There are many free apps that you can use for guided meditation practices. I like the <a href="https://www.wakingup.com/" target="_blank" rel="noopener">Waking Up</a> app by Sam Harris.</p>
 <h3>Exercise</h3>
-<ul>
-<li>Movement can be a great outlet for managing stress. Pick the mode of activity that you enjoy whether it be walking outside, running, biking, or lifting weights. Exercise is typically thought of as something to improve your physical health but the mental benefits should not be underestimated.</li>
-</ul>
+<p>Movement can be a great outlet for managing stress. Pick the mode of activity that you enjoy whether it be walking outside, running, biking, or lifting weights. Exercise is typically thought of as something to improve your physical health but the mental benefits should not be underestimated.</p>
 <h3>Deliberate heat and cold therapy</h3>
-<ul>
-<li>Placing yourself in uncomfortable situations can help you increase your stress tolerance. It’s similar to lifting weights to strengthen your muscles. By training your mental fortitude, you can prepare yourself to remain tranquil in chaotic situations.</li>
-</ul>
+<p>Placing yourself in uncomfortable situations can help you increase your stress tolerance. It’s similar to lifting weights to strengthen your muscles. By training your mental fortitude, you can prepare yourself to remain tranquil in chaotic situations.</p>
 <h3>Breathing techniques</h3>
-<p>The <a href="https://www.youtube.com/watch?v=rBdhqBGqiMc" target="_blank" rel="noopener">physiologic sigh</a> is a great tool for decreasing your sympathetic nervous system activation and increasing your parasympathetic nervous system. Simply take two full inhalations through your nose, then slowly exhale all that air through pursed lips.</p>
+<p>The <a href=”https://www.youtube.com/watch?v=rBdhqBGqiMc” target=”_blank” rel=”noopener”>physiologic sigh</a> is a great tool for decreasing your sympathetic nervous system activation and increasing your parasympathetic nervous system. Simply take two full inhalations through your nose, then slowly exhale all that air through pursed lips.</p>
 <h3>Progressive muscle relaxation</h3>
-<ul>
-<li>This practice involves tensing a muscle group in your body, followed by deliberate relaxation of that muscle group. Pick a muscle to contract for 5 seconds, then relax and move on to a different muscle.</li>
-</ul>
+<p>This practice involves tensing a muscle group in your body, followed by deliberate relaxation of that muscle group. Pick a muscle to contract for 5 seconds, then relax and move on to a different muscle.</p>
 <h3>Proper sleep hygiene</h3>
-<ul>
-<li>Getting 7-9 hours of sleep can improve our resilience and ability to cope with different stressors. Read more about improving your sleep <a href="article?slug=perfecting-your-sleep">here</a>.</li>
-</ul>
+<p>Getting 7-9 hours of sleep can improve our resilience and ability to cope with different stressors. Read more about improving your sleep <a href=”article?slug=perfecting-your-sleep”>here</a>.</p>
 <h3>Journaling</h3>
-<ul>
-<li>The act of writing down your anxieties and worries can help reduce their impact on your mental well-being. Read more on journaling <a href="article?slug=on-journaling">here</a>.</li>
-</ul>
+<p>The act of writing down your anxieties and worries can help reduce their impact on your mental well-being. Read more on journaling <a href=”article?slug=on-journaling”>here</a>.</p>
 <h3>Laughter/humor</h3>
-<ul>
-<li>There is merit to the statement that “laughter is the best medicine.” Watching a comedy special or a funny movie can help relieve stress and promote relaxation.</li>
-</ul>
+<p>There is merit to the statement that “laughter is the best medicine.” Watching a comedy special or a funny movie can help relieve stress and promote relaxation.</p>
 <p>I hope you found this article helpful and that you can use some of these tools to better manage stress in your daily life.</p>
 `,
 
@@ -288,11 +274,8 @@ const ARTICLE_CONTENT_EXTRA = {
 <h3>What is sleep?</h3>
 <p>Sleep is a crucial aspect of our lives that often goes overlooked. It is when our bodies and minds are able to recover and optimize physical and mental well-being. But what exactly is sleep, and why is it so important?</p>
 <p>At its most basic level, sleep is a naturally recurring state of mind and body characterized by altered consciousness, reduced sensory activity, and inhibition of voluntary muscles.</p>
-<h3>Sleep is regulated by the circadian rhythm (</h3>
-<p>circa</p>
-<p>, meaning “around,” and</p>
-<p>diam</p>
-<p>, meaning ”day”)—an internal biological clock that is responsible for the timing of the sleep-wake cycle. A variety of factors influence the circadian rhythm including light exposure, exercise, temperature changes, and social cues. But not everyone has the same circadian rhythm; about 40% of people are considered morning people, 30% night owls, and the remaining 30% are somewhere in between.</p>
+<h3>Sleep is regulated by the circadian rhythm</h3>
+<p>(<em>circa</em>, meaning “around,” and <em>diam</em>, meaning ”day”)—an internal biological clock that is responsible for the timing of the sleep-wake cycle. A variety of factors influence the circadian rhythm including light exposure, exercise, temperature changes, and social cues. But not everyone has the same circadian rhythm; about 40% of people are considered morning people, 30% night owls, and the remaining 30% are somewhere in between.</p>
 <h3>Different types of sleep</h3>
 <p>You may have heard of the two types of sleep: non-REM (Rapid Eye Movement) sleep, and REM sleep.</p>
 <p>Non-REM sleep is divided into three stages. During the first stage, you transition from being awake to being asleep, and typically lasts 5-10 minutes. In the second stage, your body temperature drops, and your heart rate slows down. This lasts around 20-30 minutes and is characterized by deeper sleep. The final stage is the deepest stage of sleep, also known as slow-wave sleep, and is when your body is primed for restoring and repairing its tissues. This stage typically lasts around 30-60.</p>
@@ -315,18 +298,19 @@ const ARTICLE_CONTENT_EXTRA = {
 <h3>What about melatonin?</h3>
 <p>Melatonin helps regulate the timing of when sleep occurs by signaling darkness throughout your body. Melatonin itself has little influence on the generation of sleep, it only initiates the sleeping process. Thus, it shouldn’t be thought of as a powerful sleeping aid, but as a molecule that tells the body when it is time to sleep.</p>
 <p>Its supplemental form can be useful for those traveling to different time zones. Jet lag is a dreadful side effect of global travel and can make adjusting to the new sleep schedule difficult. A helpful tip is to take a melatonin supplement a few hours before the normal bedtime at your new destination to trick your brain and body into feeling like it is time to sleep.</p>
-<p>10 tips to improve your sleep</p>
-<p>Stick to a consistent sleep schedule, even on weekends.</p>
-<p>View sunlight soon after awakening to help maintain a steady circadian rhythm.</p>
-<p>Create a relaxing bedtime routine to help you unwind and prepare for sleep. This could include reading a book, listening to peaceful music, or meditation.</p>
-<p>Avoid caffeine at least 8-10 hours before bedtime.</p>
-<p>Limit exposure to screens and bright lights before bedtime.</p>
-<p>Make your sleeping environment cool, dark, and quiet.</p>
-<p>Your body temperature drops 2-3 degrees to fall and stay asleep.</p>
-<p>Take a hot bath or shower before bed. This helps divert blood to the surface of your skin and cool down your core body temperature.</p>
-<p>Exercise during the day.</p>
-<p>Keep your clocks out of sight in the bedroom. Worrying about what time it is when you can’t fall asleep only makes matters worse.</p>
-<p>If you can’t fall asleep, or you wake up and can’t go back to sleep, get out of bed to read or meditate until you feel sleepy.</p>
+<h3>10 tips to improve your sleep</h3>
+<ol>
+<li>Stick to a consistent sleep schedule, even on weekends.</li>
+<li>View sunlight soon after awakening to help maintain a steady circadian rhythm.</li>
+<li>Create a relaxing bedtime routine to help you unwind and prepare for sleep. This could include reading a book, listening to peaceful music, or meditation.</li>
+<li>Avoid caffeine at least 8-10 hours before bedtime.</li>
+<li>Limit exposure to screens and bright lights before bedtime.</li>
+<li>Make your sleeping environment cool, dark, and quiet. Your body temperature drops 2-3 degrees to fall and stay asleep.</li>
+<li>Take a hot bath or shower before bed. This helps divert blood to the surface of your skin and cool down your core body temperature.</li>
+<li>Exercise during the day.</li>
+<li>Keep your clocks out of sight in the bedroom. Worrying about what time it is when you can’t fall asleep only makes matters worse.</li>
+<li>If you can’t fall asleep, or you wake up and can’t go back to sleep, get out of bed to read or meditate until you feel sleepy.</li>
+</ol>
 <h3>Summary</h3>
 <p>Get 7-9 hours of sleep most nights of your life to optimize health and longevity.</p>
 <p>Sleeping less than 7 hours has detrimental effects on health including increased risk of heart disease, memory loss, weight gain, depression, and more.</p>
@@ -335,7 +319,6 @@ const ARTICLE_CONTENT_EXTRA = {
 <h3>Further resources</h3>
 <p><a href="https://hubermanlab.com/toolkit-for-sleep/" target="_blank" rel="noopener">Andrew Huberman’s toolkit for sleep</a></p>
 <p><a href="https://www.amazon.com/Why-We-Sleep-Matthew-Walker-audiobook/dp/B0752XRB5F" target="_blank" rel="noopener">Why We Sleep: Unlocking the Power of Sleep and Dreams by Matthew Walker</a></p>
-<p><a href="https://kevin-hershberger.com/book-notes/why-we-sleep" target="_blank" rel="noopener">My book notes on Why We Sleep</a></p>
 `,
 
 "should-you-stretch-your-upper-traps": `
