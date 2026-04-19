@@ -74,45 +74,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==================== NEWSLETTER FORM ====================
-function handleNewsletterSubmit(e) {
+async function handleNewsletterSubmit(e) {
     e.preventDefault();
     const btn = document.getElementById('newsletter-submit');
     const email = document.getElementById('newsletter-email').value;
     const firstName = document.getElementById('newsletter-first').value;
 
-    // Submit to Beehiiv via a hidden form targeting a hidden iframe (bypasses CORS)
-    let sink = document.getElementById('beehiiv-sink');
-    if (!sink) {
-        sink = document.createElement('iframe');
-        sink.name = 'beehiiv-sink';
-        sink.id = 'beehiiv-sink';
-        sink.style.display = 'none';
-        document.body.appendChild(sink);
-    }
-
-    const hidden = document.createElement('form');
-    hidden.method = 'POST';
-    hidden.action = 'https://app.beehiiv.com/subscribe/dc3c0cf8-d6f5-41c2-a5aa-5f915f7ff67b';
-    hidden.target = 'beehiiv-sink';
-    [['email', email], ['first_name', firstName]].forEach(([name, value]) => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = name;
-        input.value = value;
-        hidden.appendChild(input);
-    });
-    document.body.appendChild(hidden);
-    hidden.submit();
-    document.body.removeChild(hidden);
-
-    btn.textContent = '✓ Success!';
+    btn.textContent = 'Subscribing...';
     btn.disabled = true;
-    e.target.reset();
 
-    setTimeout(() => {
-        btn.textContent = 'Subscribe — it\'s free →';
+    try {
+        const res = await fetch('https://api.beehiiv.com/v2/publications/pub_a2ec6133-bbc5-463e-a855-f393a1b74db6/subscriptions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer S7trGaco7Ub1RaRdz28DzkGEVZFVNBrgIZKz2j2dQhsUtPFHqY7mxGNTtYskKgnf'
+            },
+            body: JSON.stringify({
+                email,
+                first_name: firstName,
+                reactivate_existing: false,
+                send_welcome_email: true
+            })
+        });
+
+        if (res.ok) {
+            btn.textContent = '✓ Success!';
+            e.target.reset();
+            setTimeout(() => {
+                btn.textContent = 'Subscribe — it\'s free →';
+                btn.disabled = false;
+            }, 4000);
+        } else {
+            throw new Error('API error');
+        }
+    } catch {
+        btn.textContent = 'Something went wrong — try again';
         btn.disabled = false;
-    }, 4000);
+    }
 }
 
 // ==================== GUIDE ROW HOVER SOUND (subtle) ====================
