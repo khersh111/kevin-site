@@ -1015,7 +1015,7 @@ img { max-width: 100%; display: block; }
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
-    .nav-links, .nav-cta { display: none; }
+    .nav-links { display: none; }
     .nav-toggle { display: flex; }
     
     .nav-links {
@@ -1036,6 +1036,11 @@ img { max-width: 100%; display: block; }
     .nav-links.open {
         display: flex;
         right: 0;
+    }
+
+    .nav-cta {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
     
     .nav-link {

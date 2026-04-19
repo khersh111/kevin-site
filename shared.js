@@ -8,8 +8,8 @@ function getNavHTML(activePage) {
             <a href="/" class="nav-logo" id="nav-logo">KH<span class="nav-logo-dot">.</span></a>
             <div class="nav-links" id="nav-links">
                 <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}" data-num="01">About</a>
-                <a href="/articles" class="nav-link ${activePage === 'articles' ? 'active' : ''}" data-num="03">Articles</a>
-                <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}" data-num="04">Newsletter</a>
+                <a href="/articles" class="nav-link ${activePage === 'articles' ? 'active' : ''}" data-num="02">Articles</a>
+                <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}" data-num="03">Newsletter</a>
             </div>
             <div class="nav-actions">
                 <form class="nav-search-form" action="/search" method="get">
