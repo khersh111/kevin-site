@@ -353,11 +353,7 @@ const ARTICLE_CONTENT_EXTRA = {
 <p>Creating content doesn’t need to be esoteric and arduous; sometimes, it is just sharing what you are working on or learning about with others.</p>
 <h3>Why most people never show their work</h3>
 <p>Fear of what our friends and family think is often the main deterrent for not sharing work publicly. Once you post content on the internet, it is at the disposal of others to make fun of and mock. Inevitably, as your audience grows, so too will trolls and people who denounce your work. I don’t think we should completely ignore negative feedback, as it can be helpful to identify our own blindspots, but we should take them with a grain of salt.</p>
-<p>If someone leaves a negative comment or attacks your work, ask yourself, “Is this person actually trying to help me, or are they taking out their own frustrations on me?” Say someone constantly critiques or criticizes your content yet doesn’t produce or create any work of their own. That says much more about what they</p>
-<p>aren’t</p>
-<p>doing and what you</p>
-<p>are</p>
-<p>doing.</p>
+<p>If someone leaves a negative comment or attacks your work, ask yourself, “Is this person actually trying to help me, or are they taking out their own frustrations on me?” Say someone constantly critiques or criticizes your content yet doesn’t produce or create any work of their own. That says much more about what they <em>aren’t</em> doing and what you <em>are</em> doing.</p>
 <p>Additionally, creating things is hard. Steven Pressfield talks about “resistance” in his book <a href="https://www.amazon.com/War-Art-Through-Creative-Battles/dp/1936891026" target="_blank" rel="noopener">The War of Art</a>.</p>
 <p>“Resistance cannot be seen, touched, heard, or smelled. But it can be felt. We experience it as an energy field radiating from a work-in-potential. It’s a repelling force. It’s negative. Its aim is to shove us away, distract us, prevent us from doing our work.”</p>
 <p>Not giving in to “resistance” and fighting through it are the ways to consistently create and produce meaningful work pieces.</p>
