@@ -1012,10 +1012,13 @@ img { max-width: 100%; display: block; }
     opacity: 1;
     pointer-events: auto;
 }
+.mobile-only {
+    display: none !important;
+}
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
-    .nav-links { display: none; }
+    .nav-links, .nav-cta { display: none; }
     .nav-toggle { display: flex; }
     
     .nav-links {
@@ -1038,9 +1041,8 @@ img { max-width: 100%; display: block; }
         right: 0;
     }
 
-    .nav-cta {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.85rem;
+    .mobile-only {
+        display: block !important;
     }
     
     .nav-link {

@@ -10,6 +10,7 @@ function getNavHTML(activePage) {
                 <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}" data-num="01">About</a>
                 <a href="/articles" class="nav-link ${activePage === 'articles' ? 'active' : ''}" data-num="02">Articles</a>
                 <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}" data-num="03">Newsletter</a>
+                <a href="/contact" class="nav-link mobile-only" data-num="04">Contact</a>
             </div>
             <div class="nav-actions">
                 <form class="nav-search-form" action="/search" method="get">
