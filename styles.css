@@ -1514,7 +1514,7 @@ img { max-width: 100%; display: block; }
 .newsletter-page-image img {
     width: 100%;
     border-radius: 4px;
-    aspect-ratio: 4/5;
+    aspect-ratio: 1/1;
     object-fit: cover;
 }
 
@@ -1978,7 +1978,7 @@ img { max-width: 100%; display: block; }
     .newsletter-page { padding: 100px 24px 60px; }
     .newsletter-page-layout { grid-template-columns: 1fr; gap: 40px; }
     .newsletter-page-image { order: -1; }
-    .newsletter-page-image img { aspect-ratio: 16/10; }
+    .newsletter-page-image img { aspect-ratio: 1/1; }
     .contact-page { padding: 120px 24px 60px; }
     .contact-layout { grid-template-columns: 1fr; gap: 40px; }
     .article-page { padding: 120px 24px 60px; }
