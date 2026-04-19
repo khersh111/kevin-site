@@ -1767,11 +1767,15 @@ img { max-width: 100%; display: block; }
 
 .article-body img {
     width: 100%;
-    max-width: 300px;
+    max-width: 600px;
     height: auto;
     border-radius: 8px;
     margin: 1.5rem auto;
     display: block;
+}
+
+.article-body img.img-small {
+    max-width: 350px;
 }
 
 .article-body .article-inline-img {
