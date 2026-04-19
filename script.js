@@ -80,18 +80,34 @@ function handleNewsletterSubmit(e) {
     const email = document.getElementById('newsletter-email').value;
     const firstName = document.getElementById('newsletter-first').value;
 
-    // Show success immediately
+    // Submit to Beehiiv via a hidden form targeting a hidden iframe (bypasses CORS)
+    let sink = document.getElementById('beehiiv-sink');
+    if (!sink) {
+        sink = document.createElement('iframe');
+        sink.name = 'beehiiv-sink';
+        sink.id = 'beehiiv-sink';
+        sink.style.display = 'none';
+        document.body.appendChild(sink);
+    }
+
+    const hidden = document.createElement('form');
+    hidden.method = 'POST';
+    hidden.action = 'https://app.beehiiv.com/subscribe/dc3c0cf8-d6f5-41c2-a5aa-5f915f7ff67b';
+    hidden.target = 'beehiiv-sink';
+    [['email', email], ['first_name', firstName]].forEach(([name, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.value = value;
+        hidden.appendChild(input);
+    });
+    document.body.appendChild(hidden);
+    hidden.submit();
+    document.body.removeChild(hidden);
+
     btn.textContent = '✓ Success!';
     btn.disabled = true;
     e.target.reset();
-
-    // Submit to Beehiiv in the background
-    fetch('https://app.beehiiv.com/subscribe/dc3c0cf8-d6f5-41c2-a5aa-5f915f7ff67b', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `email=${encodeURIComponent(email)}&first_name=${encodeURIComponent(firstName)}`
-    }).catch(() => {});
 
     setTimeout(() => {
         btn.textContent = 'Subscribe — it\'s free →';
