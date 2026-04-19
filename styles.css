@@ -1778,6 +1778,10 @@ img { max-width: 100%; display: block; }
     max-width: 350px;
 }
 
+.article-body img.img-xsmall {
+    max-width: 250px;
+}
+
 .article-body .article-inline-img {
     text-align: center;
     margin: 1.5rem 0;
