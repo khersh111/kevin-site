@@ -270,11 +270,11 @@ const ARTICLE_CONTENT_EXTRA = {
 </ul>
 <h3>Proper sleep hygiene</h3>
 <ul>
-<li>Getting 7-9 hours of sleep can improve our resilience and ability to cope with different stressors. Read more about improving your sleep <a href="article.html?slug=perfecting-your-sleep">here</a>.</li>
+<li>Getting 7-9 hours of sleep can improve our resilience and ability to cope with different stressors. Read more about improving your sleep <a href="article?slug=perfecting-your-sleep">here</a>.</li>
 </ul>
 <h3>Journaling</h3>
 <ul>
-<li>The act of writing down your anxieties and worries can help reduce their impact on your mental well-being. Read more on journaling <a href="article.html?slug=on-journaling">here</a>.</li>
+<li>The act of writing down your anxieties and worries can help reduce their impact on your mental well-being. Read more on journaling <a href="article?slug=on-journaling">here</a>.</li>
 </ul>
 <h3>Laughter/humor</h3>
 <ul>

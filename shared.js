@@ -7,18 +7,18 @@ function getNavHTML(activePage) {
         <div class="nav-inner">
             <a href="/" class="nav-logo" id="nav-logo">KH<span class="nav-logo-dot">.</span></a>
             <div class="nav-links" id="nav-links">
-                <a href="/about.html" class="nav-link ${activePage === 'about' ? 'active' : ''}" data-num="01">About</a>
-                <a href="/free-guides.html" class="nav-link ${activePage === 'guides' ? 'active' : ''}" data-num="02">Free Guides</a>
-                <a href="/articles.html" class="nav-link ${activePage === 'articles' ? 'active' : ''}" data-num="03">Articles</a>
-                <a href="/newsletter.html" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}" data-num="04">Newsletter</a>
+                <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}" data-num="01">About</a>
+                <a href="/free-guides" class="nav-link ${activePage === 'guides' ? 'active' : ''}" data-num="02">Free Guides</a>
+                <a href="/articles" class="nav-link ${activePage === 'articles' ? 'active' : ''}" data-num="03">Articles</a>
+                <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}" data-num="04">Newsletter</a>
             </div>
             <div class="nav-actions">
-                <form class="nav-search-form" action="/search.html" method="get">
+                <form class="nav-search-form" action="/search" method="get">
                     <span class="nav-search-icon">⌕</span>
                     <input type="text" name="q" class="nav-search-input" placeholder="Search..." aria-label="Search" required>
                 </form>
                 <button class="nav-theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
-                <a href="/contact.html" class="nav-cta" id="nav-cta">Contact →</a>
+                <a href="/contact" class="nav-cta" id="nav-cta">Contact →</a>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -39,10 +39,10 @@ function getFooterHTML() {
             <div class="footer-links-group">
                 <div class="footer-col">
                     <span class="footer-col-label">Site</span>
-                    <a href="/about.html">About</a>
-                    <a href="/free-guides.html">Free Guides</a>
-                    <a href="/articles.html">Articles</a>
-                    <a href="/newsletter.html">Newsletter</a>
+                    <a href="/about">About</a>
+                    <a href="/free-guides">Free Guides</a>
+                    <a href="/articles">Articles</a>
+                    <a href="/newsletter">Newsletter</a>
                 </div>
                 <div class="footer-col">
                     <span class="footer-col-label">Connect</span>
@@ -52,8 +52,8 @@ function getFooterHTML() {
                 </div>
                 <div class="footer-col">
                     <span class="footer-col-label">Legal</span>
-                    <a href="/privacy-policy.html">Privacy</a>
-                    <a href="/disclaimer.html">Disclaimer</a>
+                    <a href="/privacy-policy">Privacy</a>
+                    <a href="/disclaimer">Disclaimer</a>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
 
     <article class="article-page" id="article-page">
         <div class="article-header anim-in">
-            <a href="articles.html" class="article-back">← Back to Articles</a>
+            <a href="articles" class="article-back">← Back to Articles</a>
             <div class="article-meta-top" style="display: flex; gap: 12px; align-items: center; margin-bottom: 0.5rem;">
                 <span class="article-category" id="article-category"></span>
                 <span class="article-date" id="article-date" style="color: var(--text-muted); font-size: 0.9rem; font-weight: 500;"></span>
@@ -35,7 +35,7 @@
         <div class="article-cta-inner">
             <h3>Enjoyed this article?</h3>
             <p>Join the weekly newsletter for more practical health insights.</p>
-            <a href="newsletter.html" class="article-cta-btn">Subscribe — it's free →</a>
+            <a href="newsletter" class="article-cta-btn">Subscribe — it's free →</a>
         </div>
     </section>
 
@@ -115,7 +115,7 @@
         }
     } else {
         document.getElementById('article-title').textContent = 'Article Not Found';
-        document.getElementById('article-body').innerHTML = '<p>This article could not be found. <a href="articles.html">Browse all articles.</a></p>';
+        document.getElementById('article-body').innerHTML = '<p>This article could not be found. <a href="articles">Browse all articles.</a></p>';
     }
 
     initSharedLayout('articles');
