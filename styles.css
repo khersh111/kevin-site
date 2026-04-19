@@ -1943,7 +1943,7 @@ img { max-width: 100%; display: block; }
     .page-hero { padding: 120px 24px 40px; }
     .about-page { padding: 40px 24px 60px; }
     .about-page-layout { grid-template-columns: 1fr; gap: 32px; }
-    .about-page-image img { aspect-ratio: 16/10; }
+    .about-page-image img { aspect-ratio: 1/1; object-position: top center; }
     .timeline { grid-template-columns: 1fr; gap: 20px; }
     .listing-page { padding: 20px 24px 60px; }
     .book-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
