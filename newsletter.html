@@ -170,7 +170,35 @@
         });
 
     initSharedLayout('newsletter');
+
+    async function handleNewsletterSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('newsletter-submit');
+        const email = document.getElementById('newsletter-email').value;
+        const firstName = document.getElementById('newsletter-first').value;
+        btn.textContent = 'Subscribing...';
+        btn.disabled = true;
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, first_name: firstName })
+            });
+            if (res.ok) {
+                btn.textContent = '✓ Success!';
+                e.target.reset();
+                setTimeout(() => {
+                    btn.textContent = 'Subscribe — it\'s free →';
+                    btn.disabled = false;
+                }, 4000);
+            } else {
+                throw new Error('API error');
+            }
+        } catch {
+            btn.textContent = 'Something went wrong — try again';
+            btn.disabled = false;
+        }
+    }
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
