@@ -133,8 +133,14 @@ function initSharedLayout(activePage) {
             document.body.style.overflow = 'hidden';
         }
 
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.contains('open') ? closeMenu() : openMenu();
+        navToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (navLinks.classList.contains('open')) {
+                closeMenu();
+            } else {
+                if (document.activeElement) document.activeElement.blur();
+                openMenu();
+            }
         });
 
         menuOverlay.addEventListener('click', closeMenu);
