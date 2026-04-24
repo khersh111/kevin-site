@@ -102,7 +102,7 @@ img { max-width: 100%; display: block; }
     left: 0;
     right: 0;
     z-index: 100;
-    height: 72px;
+    height: 96px;
     transition: all 0.4s var(--ease-out);
 }
 
@@ -125,7 +125,7 @@ img { max-width: 100%; display: block; }
 
 .nav-logo {
     font-family: var(--font-sans);
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: 700;
     letter-spacing: -1px;
     color: var(--text);
@@ -180,6 +180,71 @@ img { max-width: 100%; display: block; }
     color: white;
 }
 
+/* ==================== NAV ACTIONS ==================== */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 200px;
+}
+
+.nav-search-input {
+    width: 100%;
+    padding: 8px 16px 8px 36px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    background: var(--bg-alt);
+    color: var(--text);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.nav-search-input:focus {
+    border-color: var(--accent);
+    background: transparent;
+    width: 240px;
+}
+
+.nav-search-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.nav-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-theme-toggle:hover {
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.nav-theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -203,7 +268,7 @@ img { max-width: 100%; display: block; }
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 72px;
+    padding-top: 96px;
     position: relative;
     overflow: hidden;
 }
@@ -1018,8 +1083,12 @@ img { max-width: 100%; display: block; }
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
-    .nav-links, .nav-cta { display: none; }
-    .nav-toggle { display: flex; }
+    .nav-links, .nav-cta, .nav-search-form { display: none !important; }
+    .nav-toggle { 
+        display: flex;
+        z-index: 1000;
+        position: relative;
+    }
     
     .nav-links {
         position: fixed;
@@ -2312,70 +2381,7 @@ img { max-width: 100%; display: block; }
     font-size: 0.9rem;
 }
 
-/* ==================== NAV ACTIONS ==================== */
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
 
-.nav-search-form {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 200px;
-}
-
-.nav-search-input {
-    width: 100%;
-    padding: 8px 16px 8px 36px;
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    background: var(--bg-alt);
-    color: var(--text);
-    outline: none;
-    transition: all 0.2s ease;
-}
-
-.nav-search-input:focus {
-    border-color: var(--accent);
-    background: transparent;
-    width: 240px;
-}
-
-.nav-search-icon {
-    position: absolute;
-    left: 12px;
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    pointer-events: none;
-}
-
-.nav-theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    color: var(--text);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.nav-theme-toggle:hover {
-    color: var(--accent);
-    transform: translateY(-1px);
-}
-
-.nav-theme-toggle svg {
-    width: 20px;
-    height: 20px;
-}
 
 @media (max-width: 768px) {
     .error-code { font-size: 5rem; }
