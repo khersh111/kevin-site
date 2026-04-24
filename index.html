@@ -9,25 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <!-- ==================== NAVIGATION ==================== -->
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="/" class="nav-logo" id="nav-logo">KH<span class="nav-logo-dot">.</span></a>
-            <div class="nav-links" id="nav-links">
-                <a href="about" class="nav-link" data-num="01">About</a>
-                <a href="articles" class="nav-link" data-num="02">Articles</a>
-                <a href="newsletter" class="nav-link" data-num="03">Newsletter</a>
-                <a href="contact" class="nav-cta mobile-only">Contact →</a>
-            </div>
-            <a href="contact" class="nav-cta" id="nav-cta">Contact →</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- ==================== HERO ==================== -->
     <section class="hero" id="hero">
@@ -210,38 +198,10 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer" id="footer">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <span class="footer-logo">KH<span class="nav-logo-dot">.</span></span>
-                <p class="footer-tagline">Dr. Kevin Hershberger<br>Physical Therapist · DPT, FAAOMPT<br>Chicago, Illinois</p>
-            </div>
-            <div class="footer-links-group">
-                <div class="footer-col">
-                    <span class="footer-col-label">Site</span>
-                    <a href="about">About</a>
-                    <a href="articles">Articles</a>
-                </div>
-                <div class="footer-col">
-                    <span class="footer-col-label">Connect</span>
-                    <a href="https://www.instagram.com/dr.kevinhershberger/" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://www.linkedin.com/in/kevinhershberger/" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://www.goodreads.com/user/show/Kevin-Hershberger" target="_blank" rel="noopener">Goodreads</a>
-                </div>
-                <div class="footer-col">
-                    <span class="footer-col-label">Legal</span>
-                    <a href="privacy-policy">Privacy</a>
-                    <a href="disclaimer">Disclaimer</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2025 Kevin Hershberger</span>
-            <span class="footer-bottom-right">Chicago, IL</span>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="shared.js"></script>
     <script src="script.js"></script>
+    <script>initSharedLayout('home');</script>
 </body>
 </html>
