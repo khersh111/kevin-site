@@ -125,7 +125,7 @@ img { max-width: 100%; display: block; }
 
 .nav-logo {
     font-family: var(--font-sans);
-    font-size: 3rem;
+    font-size: 1.98rem;
     font-weight: 700;
     letter-spacing: -1px;
     color: var(--text);
@@ -1084,10 +1084,20 @@ img { max-width: 100%; display: block; }
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
     .nav-links, .nav-cta, .nav-search-form { display: none !important; }
-    .nav-toggle { 
+    .nav-toggle {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
         z-index: 1000;
         position: relative;
+        padding: 8px 4px;
+        margin-right: 0;
+    }
+
+    .nav-toggle span {
+        width: 22px;
+        height: 2px;
     }
     
     .nav-links {
@@ -1106,8 +1116,14 @@ img { max-width: 100%; display: block; }
     }
 
     .nav-links.open {
-        display: flex;
+        display: flex !important;
         right: 0;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+        margin-right: 16px;
+        gap: 16px;
     }
 
     .mobile-only {
@@ -1244,8 +1260,12 @@ img { max-width: 100%; display: block; }
         letter-spacing: -1px;
     }
     
+    .nav-logo {
+        font-size: 1.65rem;
+    }
+    
     .nav-inner {
-        padding: 0 20px;
+        padding: 0 24px;
     }
     
     .philosophy {
