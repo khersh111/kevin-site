@@ -1,0 +1,12 @@
+{
+  "name": "kevin-site",
+  "version": "1.0.0",
+  "description": "Kevin Hershberger's personal website",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
