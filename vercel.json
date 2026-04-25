@@ -1,4 +1,10 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/newsletter-:slug([a-z]+-[0-9]+-[0-9]+.*)",
+      "destination": "/newsletter-detail"
+    }
+  ]
 }

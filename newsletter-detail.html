@@ -36,7 +36,7 @@
     <div id="footer-placeholder"></div>
     <script src="shared.js"></script>
     <script>
-    const slug = new URLSearchParams(window.location.search).get('slug');
+    const slug = window.location.pathname.replace(/^\/newsletter-/, '') || new URLSearchParams(window.location.search).get('slug');
 
     fetch('newsletters.json')
         .then(r => r.json())

@@ -116,7 +116,7 @@
         }
 
         list.innerHTML = items.map((n, i) => `
-            <a href="newsletter-detail?slug=${encodeURIComponent(n.slug)}" class="writing-item anim-in" style="animation-delay:${i * 0.02}s">
+            <a href="newsletter-${n.slug}" class="writing-item anim-in" style="animation-delay:${i * 0.02}s">
                 <span class="writing-item-cat">${n.date}</span>
                 <h3 class="writing-item-title">${n.title}</h3>
                 <span class="writing-item-arrow">→</span>
