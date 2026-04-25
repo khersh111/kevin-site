@@ -42,7 +42,7 @@ const ARTICLE_CONTENT_LINKS = {
 `,
 
 "the-best-books-i-read-in-2024": `
-<p>I enjoyed writing this&nbsp;<a href="/articles/the-best-books-i-read-in-2023" target="_blank">last year</a>&nbsp;and thought I’d continue the tradition this year. Shoutout to <a href="https://ryanholiday.net/" target="_blank">Ryan Holiday</a> for inspiring this post. </p>
+<p>I enjoyed writing this&nbsp;<a href="/article-the-best-books-i-read-in-2023" target="_blank">last year</a>&nbsp;and thought I’d continue the tradition this year. Shoutout to <a href="https://ryanholiday.net/" target="_blank">Ryan Holiday</a> for inspiring this post. </p>
 
 <p>My New Year’s resolution last year was to read more fiction, but as you can see, it didn’t hold up. Fans of non-fiction may enjoy this article. If you’re a fiction reader, stay tuned for next year.</p>
 
@@ -166,7 +166,7 @@ const ARTICLE_CONTENT_LINKS = {
 <p>Ashwagandha decreases cortisol levels in the body. I do not take this year-round, as it is a potent <a href="https://www.uclahealth.org/news/what-are-adaptogens-and-should-you-be-taking-them#:~:text=Adaptogens%20are%20herbs%2C%20roots%20and,soups%2C%20smoothies%20and%20other%20foods." target="_blank" rel="noopener">adaptogen</a>.  There is a natural spike in cortisol when you first wake up, which is a healthy response, but chronically elevated levels of cortisol can cause weight gain, diabetes, a weakened immune system, and high blood pressure. I take 600 mg of ashwagandha during periods when I’m especially stressed.</p>
 <p><strong>Daily greens (</strong><a href="https://drinkag1.com/cart/042?gad_source=1&gclid=CjwKCAiA5L2tBhBTEiwAdSxJX1Veki6BVm31hpE4eV56B8hTAxqr3BKgFJzEotTeMAae7sz9LOvJsxoC7e4QAvD_BwE&gclsrc=aw.ds&product=pouch" target="_blank" rel="noopener">AG1</a><strong> or </strong><a href="https://drinkag1.com/cart/042?gad_source=1&gclid=CjwKCAiA5L2tBhBTEiwAdSxJX1Veki6BVm31hpE4eV56B8hTAxqr3BKgFJzEotTeMAae7sz9LOvJsxoC7e4QAvD_BwE&gclsrc=aw.ds&product=pouch" target="_blank" rel="noopener">Huel Daily Greens</a><strong>)</strong></p>
 <p>I take a daily greens supplement to ensure I get all of the micronutrients my body requires. The exact brand doesn’t matter, but I’ve found that AG1 and Huel Daily Greens have the ingredients I’m looking for without tasting like a kale smoothie.</p>
-<p><a href="http://Examine.com" target="_blank" rel="noopener">Examine.com</a> is a free resource I rely on to look up research regarding nutrition and supplementation. I hope you found this list helpful! See more information on <a href="https://kevin-hershberger.com/articles/my-fitness-routine-as-a-physical-therapist" target="_blank" rel="noopener">my exercise program</a> and on how to<a href="https://kevin-hershberger.com/articles/perfecting-your-sleep" target="_blank" rel="noopener"> improve your sleep</a>.</p>
+<p><a href="http://Examine.com" target="_blank" rel="noopener">Examine.com</a> is a free resource I rely on to look up research regarding nutrition and supplementation. I hope you found this list helpful! See more information on <a href="https://kevin-hershberger.com/article-my-fitness-routine-as-a-physical-therapist" target="_blank" rel="noopener">my exercise program</a> and on how to<a href="https://kevin-hershberger.com/article-perfecting-your-sleep" target="_blank" rel="noopener"> improve your sleep</a>.</p>
 `,
 
 "should-you-stretch-your-upper-traps": `

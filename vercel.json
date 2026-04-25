@@ -5,6 +5,10 @@
     {
       "source": "/newsletter-:slug([a-z]+-[0-9]+-[0-9]+.*)",
       "destination": "/newsletter-detail"
+    },
+    {
+      "source": "/article-:slug([a-z0-9].*)",
+      "destination": "/article"
     }
   ]
 }

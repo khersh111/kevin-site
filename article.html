@@ -46,8 +46,7 @@
     <script src="article-content-extra.js"></script>
     <script src="article-content-links.js"></script>
     <script>
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get('slug');
+    const slug = window.location.pathname.replace(/^\/article-/, '') || new URLSearchParams(window.location.search).get('slug');
 
     const articleMeta = {
         "the-best-books-i-read-in-2025": { title: "The Best Books I Read in 2025", category: "Books", date: "2025", hero: "images/articles/the-best-books-i-read-in-2025-hero.jpg" },
@@ -109,7 +108,7 @@
             document.getElementById('article-body').innerHTML = `
                 <p style="text-align:center; padding: 40px 0;">
                     This article is being migrated to the new site.<br><br>
-                    <a href="https://kevin-hershberger.com/articles/${slug}" class="article-original-link" target="_blank" rel="noopener">
+                    <a href="https://kevin-hershberger.com/article-${slug}" class="article-original-link" target="_blank" rel="noopener">
                         Read on original site →
                     </a>
                 </p>

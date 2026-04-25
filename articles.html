@@ -73,7 +73,7 @@
     function renderArticles(filter) {
         const filtered = filter === 'all' ? articles : articles.filter(a => a.category === filter);
         list.innerHTML = filtered.map((a, i) => `
-            <a href="article?slug=${a.slug}" class="writing-item anim-in" style="animation-delay: ${i * 0.05}s">
+            <a href="article-${a.slug}" class="writing-item anim-in" style="animation-delay: ${i * 0.05}s">
                 <span class="writing-item-cat">${a.category}</span>
                 <h3 class="writing-item-title">${a.title}</h3>
                 <span class="writing-item-arrow">→</span>
