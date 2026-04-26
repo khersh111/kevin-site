@@ -16,13 +16,14 @@
 
     <section class="page-hero">
         <div class="page-hero-inner">
-            <span class="page-hero-label anim-in">02 — Resources</span>
+            <span class="page-hero-label anim-in">03 — Free Resources · 02 — Free Guides</span>
             <h1 class="page-hero-title anim-in">Free <em>guides.</em></h1>
-            <p class="page-hero-desc anim-in">Evidence-based resources to move better, train smarter, and build habits that last.</p>
+            <p class="page-hero-desc anim-in">Evidence-based resources to move better, train smarter, and build habits that last. Enter your email to get any guide delivered instantly.</p>
         </div>
     </section>
 
     <section class="guides-page">
+
         <div class="guide-card-full anim-in">
             <div class="guide-card-number">01</div>
             <div class="guide-card-content">
@@ -34,7 +35,11 @@
                     <span class="guide-tag">Free PDF</span>
                 </div>
             </div>
-            <a href="newsletter" class="guide-card-cta">Get Free Guide →</a>
+            <form class="guide-capture-form" onsubmit="handleGuideSubmit(event, this)" data-guide-url="/guide-longevity-lift-library">
+                <input type="email" class="form-input guide-email" placeholder="Email address" required>
+                <button type="submit" class="form-submit guide-capture-btn">Get Free Guide →</button>
+                <p class="guide-capture-note">Free. No spam. Unsubscribe anytime.</p>
+            </form>
         </div>
 
         <div class="guide-card-full anim-in">
@@ -48,7 +53,11 @@
                     <span class="guide-tag">Free PDF</span>
                 </div>
             </div>
-            <a href="newsletter" class="guide-card-cta">Get Free Guide →</a>
+            <form class="guide-capture-form" onsubmit="handleGuideSubmit(event, this)" data-guide-url="/guide-posture">
+                <input type="email" class="form-input guide-email" placeholder="Email address" required>
+                <button type="submit" class="form-submit guide-capture-btn">Get Free Guide →</button>
+                <p class="guide-capture-note">Free. No spam. Unsubscribe anytime.</p>
+            </form>
         </div>
 
         <div class="guide-card-full anim-in">
@@ -62,7 +71,11 @@
                     <span class="guide-tag">Free PDF</span>
                 </div>
             </div>
-            <a href="newsletter" class="guide-card-cta">Get Free Guide →</a>
+            <form class="guide-capture-form" onsubmit="handleGuideSubmit(event, this)" data-guide-url="/guide-movement-screen">
+                <input type="email" class="form-input guide-email" placeholder="Email address" required>
+                <button type="submit" class="form-submit guide-capture-btn">Get Free Guide →</button>
+                <p class="guide-capture-note">Free. No spam. Unsubscribe anytime.</p>
+            </form>
         </div>
 
         <div class="guide-card-full anim-in">
@@ -76,7 +89,11 @@
                     <span class="guide-tag">Free PDF</span>
                 </div>
             </div>
-            <a href="newsletter" class="guide-card-cta">Get Free Guide →</a>
+            <form class="guide-capture-form" onsubmit="handleGuideSubmit(event, this)" data-guide-url="/guide-total-body-mobility">
+                <input type="email" class="form-input guide-email" placeholder="Email address" required>
+                <button type="submit" class="form-submit guide-capture-btn">Get Free Guide →</button>
+                <p class="guide-capture-note">Free. No spam. Unsubscribe anytime.</p>
+            </form>
         </div>
 
         <div class="guide-card-full anim-in">
@@ -90,14 +107,49 @@
                     <span class="guide-tag">Free PDF</span>
                 </div>
             </div>
-            <a href="newsletter" class="guide-card-cta">Get Free Guide →</a>
+            <form class="guide-capture-form" onsubmit="handleGuideSubmit(event, this)" data-guide-url="/guide-healthy-habits">
+                <input type="email" class="form-input guide-email" placeholder="Email address" required>
+                <button type="submit" class="form-submit guide-capture-btn">Get Free Guide →</button>
+                <p class="guide-capture-note">Free. No spam. Unsubscribe anytime.</p>
+            </form>
         </div>
-
 
     </section>
 
     <div id="footer-placeholder"></div>
     <script src="shared.js"></script>
-    <script>initSharedLayout('guides');</script>
+    <script>
+    initSharedLayout('guides');
+
+    async function handleGuideSubmit(e, form) {
+        e.preventDefault();
+        const btn = form.querySelector('.guide-capture-btn');
+        const email = form.querySelector('.guide-email').value;
+        const guideUrl = form.dataset.guideUrl;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            if (res.ok) {
+                // Replace form with a success link to the guide
+                const link = document.createElement('a');
+                link.href = guideUrl;
+                link.className = 'form-submit guide-capture-btn';
+                link.style.cssText = 'display:block; text-align:center; text-decoration:none;';
+                link.textContent = 'View Your Free Guide →';
+                form.replaceWith(link);
+            } else {
+                throw new Error('API error');
+            }
+        } catch {
+            btn.textContent = 'Something went wrong — try again';
+            btn.disabled = false;
+        }
+    }
+    </script>
 </body>
 </html>

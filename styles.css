@@ -260,7 +260,112 @@ img { max-width: 100%; display: block; }
     width: 24px;
     height: 1.5px;
     background: var(--text);
-    transition: all 0.3s ease;
+    transition: transform 0.4s var(--ease-out), background-color 0.3s ease;
+    transform-origin: center;
+}
+
+/* ==================== NAV DROPDOWN ==================== */
+.nav-dropdown-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-light);
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.2px;
+}
+
+.nav-dropdown-trigger::before {
+    content: attr(data-num) " ";
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    vertical-align: super;
+    margin-right: 2px;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-wrap.open .nav-dropdown-trigger {
+    color: var(--text);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.nav-dropdown-caret {
+    font-size: 0.7rem;
+    transition: transform 0.25s var(--ease-out);
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.nav-dropdown-wrap.open .nav-dropdown-caret {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 170px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.06);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-6px);
+    transition: opacity 0.22s var(--ease-out), transform 0.22s var(--ease-out), visibility 0.22s;
+    z-index: 200;
+}
+
+.nav-dropdown-wrap.open .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 9px 14px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-light);
+    border-radius: 7px;
+    transition: all 0.15s ease;
+    letter-spacing: 0.2px;
+}
+
+.nav-dropdown-item::before {
+    content: attr(data-num) " ";
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    vertical-align: super;
+    margin-right: 4px;
+}
+
+.nav-dropdown-item:hover,
+.nav-dropdown-item.active {
+    color: var(--text);
+    background: var(--bg-alt);
+}
+
+.nav-dropdown-item.active {
+    color: var(--accent);
 }
 
 /* ==================== HERO ==================== */
@@ -1108,7 +1213,7 @@ img { max-width: 100%; display: block; }
         height: 100vh;
         background: var(--bg);
         flex-direction: column;
-        padding: 80px 32px 100px; /* Top, Left/Right, Bottom - increased bottom to clear Safari controls */
+        padding: 80px 24px 100px; /* Top, Left/Right, Bottom - aligned with nav-inner */
         gap: 8px;
         transition: right 0.35s var(--ease-out);
         border-left: 1px solid var(--border);
@@ -1146,15 +1251,56 @@ img { max-width: 100%; display: block; }
     }
     
     .nav-toggle.active span:first-child {
-        transform: rotate(45deg) translate(4px, 4px);
+        transform: translateY(3.5px) rotate(45deg);
     }
     .nav-toggle.active span:last-child {
-        transform: rotate(-45deg) translate(4px, -4px);
+        transform: translateY(-3.5px) rotate(-45deg);
+    }
+
+    /* Hide desktop dropdown wrap on mobile — use mobile-only list instead */
+    .nav-dropdown-wrap {
+        display: none !important;
+    }
+
+    /* Mobile Free Resources sub-section */
+    .nav-mobile-resources {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 8px 0;
+        margin: 4px 0;
+    }
+
+    .nav-mobile-resources-label {
+        font-family: var(--font-sans);
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--text-muted);
+        padding: 6px 16px 2px;
+    }
+
+    .nav-link-sub {
+        padding: 10px 16px 10px 24px;
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+
+    .nav-link-sub::before {
+        content: attr(data-num) " ";
+        font-size: 0.6rem;
+        color: var(--text-muted);
+        vertical-align: super;
+        margin-right: 4px;
     }
 
     .hero-layout {
         grid-template-columns: 1fr;
         padding-top: 40px;
+        padding-bottom: 40px;
     }
     
     .hero-right {
@@ -1514,6 +1660,125 @@ img { max-width: 100%; display: block; }
 
 .book-card:hover .book-card-arrow {
     opacity: 1;
+}
+
+.book-card-cover {
+    width: 72px;
+    height: 108px;
+    margin-bottom: 16px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    flex-shrink: 0;
+    background: var(--bg-alt);
+}
+
+.book-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==================== BOOK COVER ON INDIVIDUAL PAGE ==================== */
+.book-cover-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    margin-bottom: 8px;
+}
+
+.book-cover-wrap .book-header-text {
+    flex: 1;
+}
+
+.book-cover-img {
+    width: 90px;
+    height: 134px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+    display: block;
+    margin-top: 4px;
+}
+
+/* ==================== ACCORDION SECTIONS ==================== */
+.book-accordion {
+    border-bottom: 1px solid var(--border);
+}
+
+.book-accordion:first-of-type {
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+}
+
+.book-accordion > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    color: var(--text);
+    list-style: none;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.book-accordion > summary::-webkit-details-marker {
+    display: none;
+}
+
+.book-accordion > summary::after {
+    content: '+';
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.book-accordion[open] > summary::after {
+    content: '−';
+}
+
+.book-accordion > summary:hover {
+    color: var(--accent);
+}
+
+.book-accordion-body {
+    padding: 4px 0 20px;
+}
+
+/* ==================== RESOURCES SECTION HEADERS ==================== */
+.resources-section-header {
+    padding: 20px 0 8px;
+    border-top: 1px solid var(--border);
+    margin-bottom: 8px;
+}
+
+.resources-section-title {
+    font-family: var(--font-sans);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.resources-section-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.resources-section-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
 }
 
 /* ==================== FREE GUIDES PAGE ==================== */
@@ -2082,6 +2347,7 @@ img { max-width: 100%; display: block; }
     .book-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
     .guide-card-full { grid-template-columns: 60px 1fr; gap: 16px; }
     .guide-card-cta { grid-column: 1 / -1; text-align: center; }
+    .guide-card-full .guide-capture-form { grid-column: 1 / -1; }
     .guides-page { padding: 20px 24px 60px; }
     .newsletter-page { padding: 100px 24px 60px; }
     .newsletter-page-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -2381,6 +2647,41 @@ img { max-width: 100%; display: block; }
 .search-result-cat {
     font-size: 0.85rem;
     color: var(--text-muted);
+}
+
+/* ==================== GUIDE CAPTURE FORM ==================== */
+.guide-capture-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 220px;
+    max-width: 260px;
+}
+
+.guide-capture-form .form-input {
+    padding: 11px 14px;
+    font-size: 0.88rem;
+}
+
+.guide-capture-form .form-submit {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+}
+
+.guide-capture-note {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+    .guide-capture-form {
+        grid-column: 1 / -1;
+        max-width: 100%;
+        min-width: 0;
+    }
 }
 
 /* ==================== READING TIME ==================== */

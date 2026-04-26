@@ -2,14 +2,30 @@
 // Injects nav + footer into every page for consistency
 
 function getNavHTML(activePage) {
+    const isResourcesActive = activePage === 'articles' || activePage === 'guides' || activePage === 'booknotes';
     return `
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="/" class="nav-logo" id="nav-logo">KH<span class="nav-logo-dot">.</span></a>
             <div class="nav-links" id="nav-links">
                 <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}" data-num="01">About</a>
-                <a href="/articles" class="nav-link ${activePage === 'articles' ? 'active' : ''}" data-num="02">Articles</a>
-                <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}" data-num="03">Newsletter</a>
+                <div class="nav-dropdown-wrap ${isResourcesActive ? 'active' : ''}" id="nav-resources-wrap">
+                    <button class="nav-link nav-dropdown-trigger ${isResourcesActive ? 'active' : ''}" data-num="03" aria-expanded="false" aria-haspopup="true" id="nav-resources-btn">
+                        Free Resources <span class="nav-dropdown-caret">▾</span>
+                    </button>
+                    <div class="nav-dropdown" id="nav-dropdown" role="menu">
+                        <a href="/articles" class="nav-dropdown-item ${activePage === 'articles' ? 'active' : ''}" data-num="01" role="menuitem">Articles</a>
+                        <a href="/free-guides" class="nav-dropdown-item ${activePage === 'guides' ? 'active' : ''}" data-num="02" role="menuitem">Free Guides</a>
+                        <a href="/book-notes" class="nav-dropdown-item ${activePage === 'booknotes' ? 'active' : ''}" data-num="03" role="menuitem">Book Notes</a>
+                    </div>
+                </div>
+                <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}" data-num="04">Newsletter</a>
+                <div class="mobile-only nav-mobile-resources">
+                    <span class="nav-mobile-resources-label">Free Resources</span>
+                    <a href="/articles" class="nav-link nav-link-sub ${activePage === 'articles' ? 'active' : ''}" data-num="01">Articles</a>
+                    <a href="/free-guides" class="nav-link nav-link-sub ${activePage === 'guides' ? 'active' : ''}" data-num="02">Free Guides</a>
+                    <a href="/book-notes" class="nav-link nav-link-sub ${activePage === 'booknotes' ? 'active' : ''}" data-num="03">Book Notes</a>
+                </div>
                 <a href="/contact" class="nav-cta mobile-only">Contact →</a>
             </div>
             <div class="nav-actions">
@@ -41,6 +57,7 @@ function getFooterHTML() {
                     <span class="footer-col-label">Site</span>
                     <a href="/about">About</a>
                     <a href="/articles">Articles</a>
+                    <a href="/free-resources">Free Resources</a>
                     <a href="/newsletter">Newsletter</a>
                 </div>
                 <div class="footer-col">
@@ -145,9 +162,45 @@ function initSharedLayout(activePage) {
 
         menuOverlay.addEventListener('click', closeMenu);
 
-        navLinks.querySelectorAll('.nav-link').forEach(link => {
+        navLinks.querySelectorAll('.nav-link:not(.nav-dropdown-trigger), .nav-dropdown-item').forEach(link => {
             link.addEventListener('click', closeMenu);
         });
+    }
+
+    // ---- Desktop dropdown: Free Resources ----
+    const resourcesBtn = document.getElementById('nav-resources-btn');
+    const resourcesDropdown = document.getElementById('nav-dropdown');
+    const resourcesWrap = document.getElementById('nav-resources-wrap');
+
+    if (resourcesBtn && resourcesDropdown) {
+        function openDropdown() {
+            resourcesBtn.setAttribute('aria-expanded', 'true');
+            resourcesWrap.classList.add('open');
+        }
+        function closeDropdown() {
+            resourcesBtn.setAttribute('aria-expanded', 'false');
+            resourcesWrap.classList.remove('open');
+        }
+
+        resourcesBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = resourcesWrap.classList.contains('open');
+            isOpen ? closeDropdown() : openDropdown();
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!resourcesWrap.contains(e.target)) closeDropdown();
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDropdown();
+        });
+
+        // Hover on desktop
+        resourcesWrap.addEventListener('mouseenter', openDropdown);
+        resourcesWrap.addEventListener('mouseleave', closeDropdown);
     }
 
     // ---- Scroll animations ----
