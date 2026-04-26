@@ -1593,6 +1593,397 @@ img { max-width: 100%; display: block; }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* ==================== BOOK NOTE DETAIL PAGE ==================== */
+
+/* Hero — two column layout */
+.bn-hero {
+    padding-top: 100px;
+    padding-bottom: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+.bn-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px 64px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 64px;
+    align-items: flex-start;
+}
+
+/* Cover column */
+.bn-cover-col {
+    display: flex;
+    justify-content: center;
+}
+
+.bn-cover-wrap {
+    position: relative;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.bn-cover-img {
+    width: 200px;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    box-shadow:
+        0 4px 8px rgba(0,0,0,0.1),
+        0 16px 48px rgba(0,0,0,0.18),
+        4px 4px 0 rgba(0,0,0,0.06),
+        8px 8px 0 rgba(0,0,0,0.03);
+    background: var(--bg-alt);
+    min-height: 200px;
+}
+
+/* Meta column */
+.bn-meta-col {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+}
+
+.bn-back {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+}
+
+.bn-back:hover { color: var(--accent); }
+
+.bn-category-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+    width: fit-content;
+}
+
+.bn-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.bn-author {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+/* Bullets preview box */
+.bn-bullets-box {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    max-width: 540px;
+}
+
+.bn-bullets-label {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.bn-bullets-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bn-bullets-list li {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    padding-left: 18px;
+    position: relative;
+}
+
+.bn-bullets-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+
+/* ==================== BOOK BODY LAYOUT ==================== */
+.bn-body-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 48px 80px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 64px;
+    align-items: flex-start;
+}
+
+/* Sticky sidebar TOC */
+.bn-toc-sidebar {
+    position: sticky;
+    top: 100px;
+    display: none; /* shown by JS when sections exist */
+}
+
+.bn-toc-label {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.bn-toc-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bn-toc-link {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 4px 0 4px 10px;
+    border-left: 2px solid var(--border);
+    transition: all 0.2s ease;
+    line-height: 1.4;
+    display: block;
+}
+
+.bn-toc-link:hover,
+.bn-toc-link.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+}
+
+/* Main content column */
+.bn-content {
+    max-width: 700px;
+    min-width: 0;
+}
+
+/* Section blocks */
+.bn-section {
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--border);
+}
+
+.bn-section:last-child {
+    border-bottom: none;
+}
+
+.bn-section-title {
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.02em;
+}
+
+.bn-emoji {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.bn-section p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.bn-section ul.bn-list,
+.bn-section ol.bn-list {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bn-section ul.bn-list li {
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    padding-left: 22px;
+    position: relative;
+}
+
+.bn-section ul.bn-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.bn-section ol.bn-list {
+    counter-reset: bn-counter;
+}
+
+.bn-section ol.bn-list li {
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    padding-left: 28px;
+    position: relative;
+    counter-increment: bn-counter;
+}
+
+.bn-section ol.bn-list li::before {
+    content: counter(bn-counter) '.';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 20px;
+}
+
+.bn-quote {
+    border-left: 3px solid var(--accent);
+    padding: 12px 20px;
+    margin: 20px 0;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-light);
+    background: var(--bg-alt);
+    border-radius: 0 8px 8px 0;
+    line-height: 1.7;
+}
+
+.bn-subsection {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 24px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Coming soon state */
+.bn-coming-soon {
+    text-align: center;
+    padding: 80px 0;
+    color: var(--text-muted);
+}
+
+.bn-coming-soon-icon { font-size: 3rem; margin-bottom: 16px; }
+.bn-coming-soon h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.bn-coming-soon p { font-size: 0.95rem; }
+
+/* Mobile TOC pill */
+.bn-toc-pill {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.bn-toc-pill-btn {
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    letter-spacing: 0.3px;
+}
+
+.bn-toc-pill-menu {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 220px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.bn-toc-pill-menu.open { display: block; }
+
+.bn-toc-pill-link {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 7px;
+    transition: all 0.15s ease;
+}
+
+.bn-toc-pill-link:hover { background: var(--bg-alt); color: var(--text); }
+
 /* ==================== BOOK NOTES GRID ==================== */
 .book-grid {
     display: grid;
@@ -2700,4 +3091,68 @@ img { max-width: 100%; display: block; }
     .error-code { font-size: 5rem; }
     .error-title { font-size: 1.8rem; }
     .search-page { padding: 120px 24px 60px; }
+}
+
+/* ==================== BOOK NOTE — MOBILE RESPONSIVE ==================== */
+@media (max-width: 900px) {
+    .bn-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 24px 48px;
+    }
+
+    .bn-cover-col {
+        justify-content: flex-start;
+    }
+
+    .bn-cover-wrap {
+        width: 130px;
+    }
+
+    .bn-cover-img {
+        width: 130px;
+        min-height: 130px;
+    }
+
+    .bn-title {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+    }
+
+    .bn-body-wrap {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 40px 24px 60px;
+    }
+
+    .bn-toc-sidebar {
+        display: none !important;
+    }
+
+    /* Show floating pill on mobile if TOC has links */
+    .bn-toc-pill {
+        display: block;
+    }
+
+    .bn-content {
+        max-width: 100%;
+    }
+
+    .bn-section {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .bn-hero {
+        padding-top: 84px;
+    }
+
+    .bn-bullets-box {
+        padding: 16px 18px;
+    }
+
+    .bn-section-title {
+        font-size: 1.1rem;
+    }
 }
