@@ -82,7 +82,7 @@
     function renderBooks(filter) {
         const filtered = filter === 'all' ? books : books.filter(b => b.category === filter);
         list.innerHTML = filtered.map((b, i) => `
-            <a href="book-note-${b.slug}" class="book-card anim-in" style="animation-delay: ${i * 0.04}s">
+            <a href="/book-note-${b.slug}" class="book-card anim-in" style="animation-delay: ${i * 0.04}s">
                 <div class="book-card-cover">
                     <img src="https://covers.openlibrary.org/b/isbn/${b.isbn}-M.jpg" alt="${b.title}" loading="lazy" onerror="this.parentElement.style.display='none'">
                 </div>
