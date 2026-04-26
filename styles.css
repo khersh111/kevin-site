@@ -1604,12 +1604,12 @@ img { max-width: 100%; display: block; }
 }
 
 .bn-hero-inner {
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 48px 64px;
+    padding: 0 32px 56px;
     display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 64px;
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
     align-items: flex-start;
 }
 
@@ -1735,29 +1735,23 @@ img { max-width: 100%; display: block; }
 }
 
 .bn-bullets-list li::before {
-    content: '→';
+    content: '•';
     position: absolute;
     left: 0;
-    color: var(--accent);
-    font-size: 0.8rem;
+    color: var(--text);
+    font-size: 1rem;
 }
 
 /* ==================== BOOK BODY LAYOUT ==================== */
 .bn-body-wrap {
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 64px 48px 80px;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 64px;
-    align-items: flex-start;
+    padding: 56px 32px 80px;
 }
 
-/* Sticky sidebar TOC */
+/* TOC sidebar — hidden, kept for JS compatibility */
 .bn-toc-sidebar {
-    position: sticky;
-    top: 100px;
-    display: none; /* shown by JS when sections exist */
+    display: none !important;
 }
 
 .bn-toc-label {
@@ -1794,10 +1788,9 @@ img { max-width: 100%; display: block; }
     border-left-color: var(--accent);
 }
 
-/* Main content column */
+/* Main content column — full width */
 .bn-content {
-    max-width: 700px;
-    min-width: 0;
+    width: 100%;
 }
 
 /* Section blocks */
@@ -1857,12 +1850,11 @@ img { max-width: 100%; display: block; }
 }
 
 .bn-section ul.bn-list li::before {
-    content: '—';
+    content: '•';
     position: absolute;
     left: 0;
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 0.85rem;
+    color: var(--text);
+    font-size: 1rem;
 }
 
 .bn-section ol.bn-list {
@@ -1883,9 +1875,9 @@ img { max-width: 100%; display: block; }
     content: counter(bn-counter) '.';
     position: absolute;
     left: 0;
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 0.85rem;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.9rem;
     min-width: 20px;
 }
 

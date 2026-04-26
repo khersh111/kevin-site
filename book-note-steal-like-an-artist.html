@@ -32,9 +32,8 @@
                 <h1 class="bn-title" id="book-title">Loading…</h1>
                 <p class="bn-author" id="book-author"></p>
 
-                <!-- Quick summary bullets — filled from JS if available -->
                 <div class="bn-bullets-box" id="bn-bullets-box" style="display:none;">
-                    <div class="bn-bullets-label">📚 The Book in 3 Bullets</div>
+                    <div class="bn-bullets-label">The Book in 3 Bullets</div>
                     <ul class="bn-bullets-list" id="bn-bullets-list"></ul>
                 </div>
             </div>
@@ -126,15 +125,19 @@
         const badge = document.querySelector('.bn-category-badge');
         badge.textContent = meta.category;
 
-        // High-quality cover image via Open Library (L = large)
+        // High-quality cover image via Google Books (primary) + Open Library (fallback)
         const coverImg = document.getElementById('book-cover');
         if (meta.isbn) {
-            coverImg.src = `https://covers.openlibrary.org/b/isbn/${meta.isbn}-L.jpg`;
+            // Google Books gives high-res covers
+            coverImg.src = `https://books.google.com/books/content?vid=ISBN${meta.isbn}&printsec=frontcover&img=1&zoom=1&source=gbs_api`;
             coverImg.alt = `${meta.title} book cover`;
             coverImg.onerror = function() {
-                // Fallback: try medium
-                this.src = `https://covers.openlibrary.org/b/isbn/${meta.isbn}-M.jpg`;
-                this.onerror = function() { this.parentElement.style.display = 'none'; };
+                // Fallback: Open Library large
+                this.onerror = function() {
+                    this.onerror = function() { this.closest('.bn-cover-col').style.display = 'none'; };
+                    this.src = `https://covers.openlibrary.org/b/isbn/${meta.isbn}-M.jpg`;
+                };
+                this.src = `https://covers.openlibrary.org/b/isbn/${meta.isbn}-L.jpg`;
             };
         }
 

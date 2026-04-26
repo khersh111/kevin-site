@@ -2,8 +2,8 @@
 // Do not edit manually
 
 const BOOK_NOTE_CONTENT = {
-  "stillness-is-the-key": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "stillness-is-the-key": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>If we want to perform our best in any given situation we must be fully present, take our time, sit quietly and reflect, reject distraction, and deliberate without being paralyzed.</li>
 <li>Learn to enjoy all the details of the world. In the hustle and bustle world we live in today, there are abundant opportunities to appreciate all the details that surround us. Put the phone down and observe the world around you as beauty is ubiquitous, you just have to make an emphasis to open your eyes to it.</li>
@@ -11,13 +11,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>👤How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book taught me to stop looking ahead and saying that once I get to this point in life or achieve something, then I'll be happy. If I want to be fulfilled in life, I need to truly appreciate the beauty of the world and seek more moments of stillness. Whether that be getting lost in nature, admiring the architectural beauty of the city, or simply watching an animal just be. This book has taught me that in the end, we don't have the past or the future, all we have is this moment.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️My Top Quotes</h2>
+<h2 class="bn-section-title">️My Top Quotes</h2>
 <ul class="bn-list">
 <li>A wealth of information creates a poverty of attention.</li>
 <li>The world is like muddy water. To see through it, we have to let things settle.</li>
@@ -29,7 +29,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>The quiet street at night as snow falls, watched as the light falls softly on that snow and being warmed by the contentment of being alive—that is stillness.</li>
 <li>Being present demands all of us. It's not nothing. It may be the hardest thing in the world.</li>
@@ -66,8 +66,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "atomic-habits": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "atomic-habits": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>We are what we habitually do. Small improvements every day don’t just add up to big improvements, they compound into great results in the long run.</li>
 <li>Don't give up on a habit even if it feels trivial and you're not making progress. Good things take time and results have a latent period for big goals.</li>
@@ -75,7 +75,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ MyTop quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>The real reason habits matter is not because they can get you better results, but because they can change your beliefs about yourself.</li>
 <li>It is the anticipation of a reward—not the fulfillment of it—that gets us to take action. The greater the anticipation, the greater the dopamine spike.</li>
@@ -84,7 +84,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>A habit is a behavior that has been repeated enough times to become automatic.</li>
 <li>The purpose of habits is to solve the problems of life with as little energy and effort as possible.</li>
@@ -113,19 +113,16 @@ const BOOK_NOTE_CONTENT = {
 <li>Pointing-and-calling raises your level of awareness from a non-conscious habit to a more conscious level by verbalizing your actions.</li>
 <li>The most common habit cues are time and location.</li>
 <li>Use the formula [BEHAVIOR] at [TIME] in [LOCATION]Example: I will meditate for 1 minute after breakfast at the kitchen table.</li>
-<li>Example: I will meditate for 1 minute after breakfast at the kitchen table.</li>
 <li>Habit stacking is a strategy you can pair a new habit with a current habit.</li>
 <li>The habit stacking formula is [CURRENT HABIT], I will [NEW HABIT]</li>
 <li>Every habit is initiated by a cue. We are more likely to notice cues that stand out. Make it obvious.</li>
 <li>Motivation is overrated; the environment often matters more.</li>
 <li>Make the cues of good habits obvious in your environment.Set books in plain sight in areas that you visit often if you want to read more.</li>
-<li>Set books in plain sight in areas that you visit often if you want to read more.</li>
 <li>It is easier to build new habits in a new environment because you are not fighting against old cues.</li>
 <li>Once a habit is formed, it is likely to be forgotten.</li>
 <li>People with high self-control tend to spend less time in tempting situations. It's easier to avoid temptation than resist it.</li>
 <li>Habits are a dopamine-driven feedback loop. When dopamine rises, so does our motivation to act.</li>
 <li>Temptation bundling is one way to make your habits more attractive. The strategy is to pair an action you want to do with something you need to do.Example: watching Netflix and running at the same time.</li>
-<li>Example: watching Netflix and running at the same time.</li>
 <li>The culture we live in determines which behaviors are attractive to us.</li>
 <li>We tend to adopt habits that are praised and approved of by our culture.</li>
 <li>We tend to imitate the habits of three social groups: the close (family and friends), the many (the tribe), and the powerful (those with status and prestige).</li>
@@ -136,15 +133,11 @@ const BOOK_NOTE_CONTENT = {
 <li>The most effective form of learning is practice, not planning.</li>
 <li>Focus on taking action, not being in motion.</li>
 <li>Change your language from “I have to” to “I get to”“I get to wake up early for work, I get to cook dinner for my family”.</li>
-<li>“I get to wake up early for work, I get to cook dinner for my family”.</li>
 <li>Habit formation is the process by which a behavior becomes progressively more automatic through repetition.</li>
 <li>The amount of time you have been performing a habit doesn't matter as much as the number of times you've performed it.</li>
 <li>Create an environment where doing the right thing is as easy as possible.</li>
 <li>Reduce the friction associated with good behaviors. When friction is low, habits are easy.Meal prep healthy snacks that are easy to grab.The opposite of this is to increase the friction for bad habits like leaving your phone in a different room while working. Or deleting social media after using it.</li>
-<li>Meal prep healthy snacks that are easy to grab.</li>
-<li>The opposite of this is to increase the friction for bad habits like leaving your phone in a different room while working. Or deleting social media after using it.</li>
 <li>Prime your environment to make future actions easier.Set out workout clothes the night before your workout.</li>
-<li>Set out workout clothes the night before your workout.</li>
 <li>The 2-minute rule states, that when you start a new habit, it should take less than two minutes to do.</li>
 <li>Standardize before you optimize. You can't improve a habit that doesn't exist.</li>
 <li>Many habits occur at decisive moments—choices that are like a fork in the road—and either send you in the direction of a productive day or an unproductive day.</li>
@@ -174,12 +167,11 @@ const BOOK_NOTE_CONTENT = {
 <li>Habits + Deliberate practice = Mastery</li>
 <li>Reflection and review is a process that allows you to remain conscious of your performance over time.</li>
 <li>The tighter we cling to an identity, the harder it becomes to grow beyond it.Have multiple parts of your identity (I am a reader, I am a curious person, I am an exerciser, I am a nature enthusiast)</li>
-<li>Have multiple parts of your identity (I am a reader, I am a curious person, I am an exerciser, I am a nature enthusiast)</li>
 </ul>
 </section>`,
 
-  "deep-work": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "deep-work": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Be deliberate in how you schedule your days. We spend too much of our time on autopilot and don’t fully take control of what we do each day.</li>
 <li>Deep work is difficult and requires every ounce of your concentration. It is also the only way that meaningful and creative work is produced.</li>
@@ -187,19 +179,19 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤 Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>People who work in office jobs that require frequent interaction and email with coworkers. And anyone who frequently engages in “Shallow Work” and does not deliberately think about how they spend their time each day.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has changed my perspective on the importance of being deliberate with each part of the day. Yes, scheduling tasks like projects, time at work, and errands that need to be completed is important. But also, being intentional with how you spend your free time is valuable. As Seneca said, “It’s not that we don’t have enough time, it’s that we waste too much of it.”</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Three to four hours a day, five days a week, of uninterrupted and carefully directed concentration, can produce a lot of value.</li>
 <li>A focused life is the best kind there is.</li>
@@ -211,7 +203,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>Deep Work: Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit. These efforts create new value, improve your skill, and are hard to replicate.</li>
 <li>Shallow Work: Noncognitively demanding, logistical-style tasks, often performed while distracted. These efforts tend to not create much new value in the world and are easy to replicate.</li>
@@ -221,7 +213,6 @@ const BOOK_NOTE_CONTENT = {
 <li>To learn hard things quickly, you must focus intensely without distraction.</li>
 <li>To produce at your peak level you need to work for extended periods with full concentration on a single task free from distraction.</li>
 <li>Our brains construct our worldviews based on what we pay attention to. If you focus on a cancer diagnosis, you and your life become unhappy and dark, but if you focus instead on an evening martini, you and your life become more pleasant—even though the circumstances in both scenarios are the same.Who you are, what you think, feel, and do is the sum of what you focus on. Pay attention to where you’re paying attention.</li>
-<li>Who you are, what you think, feel, and do is the sum of what you focus on. Pay attention to where you’re paying attention.</li>
 <li>We enjoy things that stretch us to our capabilities. Like tasks that have built-in goals, feedback rules, and challenges. This makes an argument for being more in flow at work than when you have free time. Which is unstructured and requires greater effort to be shaped into something that can be enjoyed.</li>
 <li>People will usually respect your right to become inaccessible if these periods are well-defined and well-advertised, and outside these stretches, you’re once again easy to find.</li>
 </ul>
@@ -237,7 +228,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Downtime helps recharge the energy needed to work deeply. Spending time in nature can improve your ability to concentrate.</li>
 <li>When walking through nature, you’re freed from having to direct your attention, as there are few challenges to navigate (like crowded street crossings), and experience enough interesting stimuli to keep your mind sufficiently occupied to avoid the need to actively aim your attention.</li>
 <li>The work that evening downtime replaces is usually not that important.By evening, you’re beyond the point where you can effectively work deeply. Any work you do at night, won’t be the high-value activities that advance your career.Focus on restoring the mind and recovering from the day.</li>
-<li>By evening, you’re beyond the point where you can effectively work deeply. Any work you do at night, won’t be the high-value activities that advance your career.Focus on restoring the mind and recovering from the day.</li>
 <li>Once you're wired for distraction, you crave it. So taking a day off from social media does not do much for your attention span in the long run.</li>
 <li>Instead of scheduling the occasional break from distraction so you can focus, you should instead schedule the occasional break from focus to give in to distraction.</li>
 <li>To succeed with deep work you must rewire your brain to be comfortable resisting distracting stimuli.</li>
@@ -248,24 +238,17 @@ const BOOK_NOTE_CONTENT = {
 <li>If you want to eliminate the addictive pull of entertainment sites on your time and attention, give your brain a quality alternative.</li>
 <li>Be suspicious of shallow work. Its value is overestimated and its damage is underestimated. This type of work is inevitable, but you must not let it suck away time from quality deep work.</li>
 <li>Schedule every minute of your day.Divide the hours of the day into blocks and assign activities to the blocks. There might be blocks for lunch or relaxation breaks.Don’t get discouraged if your schedule gets disrupted. Take a few minutes to revise your schedule. Inevitable situations will arise. Don’t fight them with frustration.</li>
-<li>Divide the hours of the day into blocks and assign activities to the blocks. There might be blocks for lunch or relaxation breaks.</li>
-<li>Don’t get discouraged if your schedule gets disrupted. Take a few minutes to revise your schedule. Inevitable situations will arise. Don’t fight them with frustration.</li>
 <li>Without structure, it’s easy to allow your time to devolve into the shallow—email, social media, and Web surfing.</li>
 <li>Set a sender filter on your email.You may use “I’ll only respond to those proposals that are a good match for my schedule and interests”</li>
-<li>You may use “I’ll only respond to those proposals that are a good match for my schedule and interests”</li>
 <li>The default social convention on email is that unless you’re famous if someone sends you something, you owe him or her a response. You need to reset your correspondents’ expectations to the reality that you’ll probably not respond, the experience is transformed.</li>
 <li>Try to reduce the number of email exchanges you have. For instance, spend more time thoughtfully crafting one email that saves you time playing email ping pong. This may mean giving a person a solution to their problem and sending times that you’re available to talk.</li>
 <li>How to sort your emails in your “respond” and “do not respond” categoriesDon’t respond if:It’s ambiguous or otherwise makes it hard for you to generate a reasonable response.It’s not a question or proposal that interests you.Nothing really good would happen if you did respond and nothing really bad would happen if you didn’t.</li>
-<li>Don’t respond if:It’s ambiguous or otherwise makes it hard for you to generate a reasonable response.It’s not a question or proposal that interests you.Nothing really good would happen if you did respond and nothing really bad would happen if you didn’t.</li>
-<li>It’s ambiguous or otherwise makes it hard for you to generate a reasonable response.</li>
-<li>It’s not a question or proposal that interests you.</li>
-<li>Nothing really good would happen if you did respond and nothing really bad would happen if you didn’t.</li>
 <li>A commitment to deep work is a pragmatic recognition that the ability to concentrate is a skill that gets valuable things done.</li>
 </ul>
 </section>`,
 
-  "factfulness": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "factfulness": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>The world is getting better in almost every aspect even though most people assume it is getting worse. Look at real global statistics before making inferences, not the news networks.</li>
 <li>Often, it is the extremes that get broadcasted, but in reality, the majority is almost always in the middle.</li>
@@ -273,19 +256,19 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤 Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone open to changing their global perception. This book will make you rethink how you think about the world and will give you a bit of hope for the world moving forward.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has made me realize how our assumptions of the world becoming worse and more dangerous are completely wrong. It has opened my eyes to the progress that has been made and has given me hope. This book has also made me want to travel to countries that have higher rates of poverty such as Africa and Asia to see just how different their daily lives are from most of us in the US.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>Over the past 20 years, the proportion of the global population living in extreme poverty has halved.</li>
 <li>Almost all children are vaccinated in the world today. This is amazing. It means that almost all human beings today have some access to basic modern healthcare. But most people do not know this.</li>
@@ -415,8 +398,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "digital-minimalism": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "digital-minimalism": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Digital minimalism is a philosophy of technology use in which you focus your online time on a small number of carefully selected and optimized activities that strongly support things you value, and then happily miss out on everything else.</li>
 <li>Social media makes more money the more time you spend using their product and do it by exploiting our innate vulnerabilities from our hominid ancestors.</li>
@@ -424,19 +407,19 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤 Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone who has used or is currently using social media.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book opened me up to my own social media addiction. It taught me that I’m really not getting any value or happiness from these apps and that my time would be better spent on developing myself and connecting with the people I truly care about.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Prioritize demanding activity over passive consumption.</li>
 <li>Use skills to produce valuable things in the physical world.</li>
@@ -445,7 +428,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>The tycoons of social media need to stop pretending to be harmless nerds starting up in garages. They’re trying to sell our attention and captivate it for as long as possible to make money.</li>
 <li>Unpredictability releases hits of dopamine. Social media apps thrive on unpredictability as you’ll never know what will pop up on your feed as you scroll.</li>
@@ -474,37 +457,29 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "lifespan": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "lifespan": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>The body responds to healthy stress by turning on longevity genes, so it’s good to be uncomfortable sometimes.</li>
-<li>There is no one conclusive reason to why we age. It is the culmination of many factors, ultimately it results in disruption to theepigenome.</li>
+<li>There is no one conclusive reason to why we age. It is the culmination of many factors, ultimately it results in disruption to the epigenome.</li>
 <li>Humans are wildly ingenious. The increase in lifespan will result in a greater population initially, but we have to be able to engineer this planet and become more efficient for all of us to inhabit Earth.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>The Error Catastrophe Hypothesis of aging postulated that mistakes made during the DNA-copying process lead to mutations in genes, including those needed to make the protein machinery that copies DNA.</li>
 <li>The Free Radical Theory of Aging blames aging on unpaired electrons that whiz around within cells, damaging DNA through oxidation, especially in mitochondria, because that is where most free radicals are stored.This has not been substantiated though. Research shows that the positive health effects attainable from an antioxidant-rich diet are more likely caused by stimulating the body’s natural defenses against aging, including boosting the production of the body’s enzymes that eliminate free radicals, not as a result of the antioxidant activity itself.</li>
-<li>This has not been substantiated though. Research shows that the positive health effects attainable from an antioxidant-rich diet are more likely caused by stimulating the body’s natural defenses against aging, including boosting the production of the body’s enzymes that eliminate free radicals, not as a result of the antioxidant activity itself.</li>
 <li>There’s not one single cause of aging, but there are many hallmarks of aging including:Genomic instability caused by DNA damageAttrition of the protective chromosomal endcaps, the telomeresAlterations to the epigenome that control which genes are turned on and offLoss of healthy protein maintenance, known as proteostasisDeregulated nutrient sensing caused by metabolic changesMitochondrial dysfunctionAccumulation of senescent zombielike cells that inflame healthy cells (senescent cells are cells that cannot divide anymore)Exhaustion of stem cellsAltered intercellular communication and the production of inflammatory molecules</li>
-<li>Genomic instability caused by DNA damage</li>
-<li>Attrition of the protective chromosomal endcaps, the telomeres</li>
-<li>Alterations to the epigenome that control which genes are turned on and off</li>
-<li>Loss of healthy protein maintenance, known as proteostasis</li>
-<li>Deregulated nutrient sensing caused by metabolic changes</li>
 <li>Mitochondrial dysfunction</li>
-<li>Accumulation of senescent zombielike cells that inflame healthy cells (senescent cells are cells that cannot divide anymore)</li>
 <li>Exhaustion of stem cells</li>
-<li>Altered intercellular communication and the production of inflammatory molecules</li>
 <li>Epigenome - changes in gene expression due to alterations of DNA outside of the DNA sequence.</li>
 <li>Sirtuins are enzymes that remove acetyl tags from histones and other proteins and, by doing so, change the packaging of the DNA, turning genes off and on when needed.</li>
 <li>Sirtuins order our bodies to “buckle down” in times of stress and protect us against the major diseases of aging: diabetes, heart disease, Alzheimer’s, osteoporosis, and cancer. They mute chronic, overactive inflammation that drives diseases such as atherosclerosis, metabolic disorders, ulcerative colitis, arthritis, and asthma. They prevent cell death and boost mitochondrial function.</li>
 <li>Activating sirtuins can improve DNA repair, boost memory, increase exercise endurance, and help stay thin.</li>
 <li>The loss of NAD as we age, and the resulting decline in sirtuin activity, is thought to be a primary reason our bodies develop diseases when we are old but not when we are young.</li>
 <li>Target of Rapamycin, or TOR, is a complex protein that regulates growth and metabolism. mTOR can signal cells in stress to hunker down and improve survival by boosting such activities as DNA repair, reducing inflammation caused by senescent cells, and perhaps its most important function, digesting old proteins.</li>
-<li>There are plenty of stressors that will activate longevity genes (sirtuins, mTOR, AMPK) without damaging the cell, including certain types of exercise, intermittent fasting, low-protein diets, and exposure to hot and cold temperatures. This is calledhormesis.</li>
+<li>There are plenty of stressors that will activate longevity genes (sirtuins, mTOR, AMPK) without damaging the cell, including certain types of exercise, intermittent fasting, low-protein diets, and exposure to hot and cold temperatures. This is called hormesis.</li>
 <li>When hormesis happens, all is well. The little bit of stress that occurs when the genes are activated prompts the rest of the system to hunker down, conserve, and survive longer.</li>
 <li>Sirtuins stabilize human rDNA. By stabilizing human rDNA, sirtuins prevent cellular senescence.</li>
 <li>SIRT1, SIRT6, and SIRT7 are critical to controlling the epigenome and DNA repair. SIRT3, SIRT4, and SIRT 5 reside in mitochondria, where they control energy metabolism.</li>
@@ -524,8 +499,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Exercise raises NAD levels which turns on the survival network, which turns up energy production and forces muscles to grow extra oxygen-carrying capillaries. The longevity regulator AMPK, mTOR, and sirtuins are all modulated in the right direction by exercise, irrespective of caloric intake, building new blood vessels, improving heart and lung health, making people stronger and live longer. Exercise essentially turns on the genes to make us young again at a cellular level.</li>
 <li>Being hungry is necessary for caloric restriction to work because hunger helps turn on genes in the brain that release longevity hormones.</li>
 <li>Sirtuins are switched on by the cold, which in turn activates protective brown fat in our back and shoulders.Animals with abundant brown fat or subjected to shivering cold for three hours a day have much more of the mitochondrial, UCP-boosting sirtuin, SIRT3, and experience significantly reduced rates of diabetes, obesity, and Alzheimer’s disease.Exercising in the cold, in particular, appears to turbocharge the creation of brown adipose tissue.</li>
-<li>Animals with abundant brown fat or subjected to shivering cold for three hours a day have much more of the mitochondrial, UCP-boosting sirtuin, SIRT3, and experience significantly reduced rates of diabetes, obesity, and Alzheimer’s disease.</li>
-<li>Exercising in the cold, in particular, appears to turbocharge the creation of brown adipose tissue.</li>
 <li>Saunas can help drop heart disease, heart attacks, and all-cause mortality.</li>
 <li>Good stress to our bodies activates AMPK, turns down mTOR, boosts NAD levels, and activates sirtuins—to keep up with the normal wear and tear that comes from living on planet earth.</li>
 <li>Metformin mimics aspects of calorie restriction. But instead of inhibiting tOR, it limits the metabolic reactions in mitochondria, slowing down the process by which our cellular powerhouses convert nutrients into energy. Metformin also inhibits cancer cell metabolism, increases mitochondrial activity, and removes misfolded proteins.</li>
@@ -553,22 +526,22 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "essentialism": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "essentialism": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
-<li>Essentialism is about doingless but better.</li>
+<li>Essentialism is about doing less but better.</li>
 <li>Essentialism isn’t about how to get more things done; it’s about how to get the right things done.</li>
 <li>Don’t be afraid of upsetting or disappointing someone for saying no. You can say no and regret it for a few minutes, or yes and regret it for weeks, months, or years. Protect the little time you have left on this planet.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎  How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book showed me just how little time we have left in this life, and that we need to focus spending our time on what is truly essential and not the trivial BS we spend so much time worrying about.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>If you don’t prioritize your life, someone else will.</li>
 <li>You cannot overestimate the unimportance of practically everything. Few things are truly of importance.</li>
@@ -577,7 +550,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>Ask yourself “is this the most important thing I should be doing with my time and resources right now?” If the answer isn’t a definitive yes, then you shouldn’t be doing it.</li>
 <li>Essentialism is about pausing and asking yourself if you’re investing in the right activities. There are far more activities and opportunities in the world than we have time and resources to invest in.</li>
@@ -600,17 +573,13 @@ const BOOK_NOTE_CONTENT = {
 <li>If we just say yes because it is an easy reward, we run the risk of having to later say no to a more meaningful one.</li>
 <li>Stop spending energy on trying to look good in comparison to other people. Don’t overvalue nonessentials like a nicer car or house or followers on Instagram. Focus on things that truly matter and are essential like time spent with loved ones, things we’re passionate about, and taking care of our health.</li>
 <li>Become good at gracefully saying no like:I am flattered but I’m afraid I don’t have the bandwidth to commit to thisI will check my calendar and get back to youA soft “no” or “no but”I can’t do it, but X might be interested</li>
-<li>I am flattered but I’m afraid I don’t have the bandwidth to commit to this</li>
-<li>I will check my calendar and get back to you</li>
 <li>A soft “no” or “no but”</li>
-<li>I can’t do it, but X might be interested</li>
 <li>The more you think about what you’re giving up by saying yes, the easier it is to say no.</li>
 <li>Make peace by the fact that saying no requires trading in popularity for respect.</li>
 <li>A clear no can be more graceful than a noncommittal yes.</li>
 <li>We need to learn the slow “yes,” and the quick no.</li>
 <li>Have the courage to say I shouldn’t have pursued this direction in the first place and uncommit, no matter the sunk costs.</li>
 <li>We tend to undervalue things that aren’t ours and overvalue things because we already own them.We should ask ourselves if I didn’t own this, how much would I be willing to spend to obtain it?</li>
-<li>We should ask ourselves if I didn’t own this, how much would I be willing to spend to obtain it?</li>
 <li>Don’t be ashamed of making mistakes, after all, we really are only admitting that we are now wiser than we once were.</li>
 <li>Set clear boundaries so you are free to select from a whole range of options.</li>
 <li>Practice extreme and early preparation. Create a buffer to prepare for unforeseen things that will inevitably come up.</li>
@@ -622,8 +591,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "ego-is-the-enemy": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚 The Book in 3 Bullets</h2>
+ "ego-is-the-enemy": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>The people who are the best at something, do not think they're the best. This is the intrinsic drive they have for continuous improvement and development.</li>
 <li>Remain humble. Seek out people who know more than you, and topics you don't know anything about. Be a life-long student.</li>
@@ -631,19 +600,19 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤 Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone who is getting into a new career, or feels like they have everything figured out.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book taught me that I need to keep my ego in check. When I start to feel like I'm getting good at something or that I've figured everything out, I need to check myself. Because most likely I still don't know anything.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Those who know do not speak. Those who speak do not know.</li>
 <li>You can't learn if you already think you know.</li>
@@ -654,7 +623,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>The ego is an unhealthy belief in our own importance. Arrogance. Self-centered ambition.</li>
 <li>If you start believing in your greatness, it is the death of your creativity.</li>
@@ -663,14 +632,8 @@ const BOOK_NOTE_CONTENT = {
 <li>The voice of a generation doesn't call itself that. These are the people that you actually hear very little from. This is like LeBron calling himself the greatest ever. If you are the greatest you shouldn't have to call yourself that.</li>
 <li>Keep your head down and let others slap each other on the back while you're in the lab or gym.</li>
 <li>Become a studentWe don't like knowing that there's someone out there better than us. Or that we have a lot left to learn. We want to be done. We need to keep updating our talents and knowledge because this is the path to mastery.Accept that others know more than you and that you can benefit from their knowledge, and then seek them out to learn more and hush the ego.You cannot get better if you already think you're the best.</li>
-<li>We don't like knowing that there's someone out there better than us. Or that we have a lot left to learn. We want to be done. We need to keep updating our talents and knowledge because this is the path to mastery.</li>
-<li>Accept that others know more than you and that you can benefit from their knowledge, and then seek them out to learn more and hush the ego.</li>
-<li>You cannot get better if you already think you're the best.</li>
 <li>Purpose is about pursuing something outside yourself as opposed to pleasuring yourself.</li>
 <li>When you're just starting out there are a few fundamental realitiesYou're not as good or important as you think.You have an attitude that needs readjusting.Most of what you think you know or most of what you learned in school is out of date or wrong.</li>
-<li>You're not as good or important as you think.</li>
-<li>You have an attitude that needs readjusting.</li>
-<li>Most of what you think you know or most of what you learned in school is out of date or wrong.</li>
 <li>Greatness comes from humble beginnings. It comes from grunt work. It means you're the least important in the room until you change that with results.</li>
 <li>Be lesser, do more. Every person you meet, you should think of some way to help them. This could have a profound cumulative effect. You'd develop a reputation for being indispensable. You'd have an enormous bank of favors to call upon down the road.</li>
 <li>Pride gets in the way of the mind trying to function. Our ability to learn, adapt, and be flexible is all dulled by pride. Pride takes a minor accomplishment and makes it a major one.</li>
@@ -698,8 +661,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "die-with-zero": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "die-with-zero": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>We should be focusing on maximizing our life enjoyment rather than on maximizing wealth.</li>
 <li>Things can buy you temporary happiness but then have a steep depreciation. Experiences, on the other hand, payout memory dividends that appreciate over time.</li>
@@ -707,19 +670,19 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone who wants to shift their mindset from making the most money to getting the most out of their money. This book tears down the notion that we should always save as much money as possible until the day we die, and instead look at ways to spend money on experiences we’ll remember for a lifetime.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>For the majority of my life, I have embraced the identity of a frugal person. To the extent that I have missed out on experiences, that looking back on now, I should’ve taken. This book has opened my eyes to the fact that I can always make more money, but I can’t make more time. Now that I’m in my mid-twenties, I need to take advantage of my health and free time to try new experiences, and visit different places, even if it means I won’t have much money to put into a savings or retirement account yet.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>What good is wealth without health?</li>
 <li>If we didn’t have to work to earn money, most of us would find other things we’d much rather do with our time.</li>
@@ -734,7 +697,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <h4 class="bn-subsection">Rule number 1: Maximize your positive experiences.</h4>
 <ul class="bn-list">
 <li>When the end is near, we start thinking, “What the hell am I doing, and why did I wait so long?”</li>
@@ -762,7 +725,7 @@ const BOOK_NOTE_CONTENT = {
 <li>You definitely need money to survive retirement, but the main thing you’ll be retiring on will be your memories—so make sure you invest enough in those.</li>
 <li>When you think about investing in memory dividends, you realize the earlier you start investing, the more time you have to reap your memory dividends.</li>
 <li>When you’re young and cash poor, you should explore all the free or nearly free experiences you can have.</li>
-<li>Start investing in experiences now! If you’re resisting a certain experience, consider theriskof not having it now.</li>
+<li>Start investing in experiences now! If you’re resisting a certain experience, consider the risk of not having it now.</li>
 </ul>
 <h4 class="bn-subsection">Rule number 3: Aim to die with zero.</h4>
 <ul class="bn-list">
@@ -771,7 +734,6 @@ const BOOK_NOTE_CONTENT = {
 <li>You can leave money to the people and causes that are important to you—but wouldn’t they be better off getting your money sooner rather than later? Why wait until you die?</li>
 <li>Most people who save tend to save too much for too late in their lives.</li>
 <li>Americans’ median net worth keeps rising at least until their mid-seventies.This is because people’s annual incomes tend to rise with age, and people continue to save what they don’t spend.</li>
-<li>This is because people’s annual incomes tend to rise with age, and people continue to save what they don’t spend.</li>
 <li>Most people take delayed gratification too far.</li>
 <li>The common misconception is that people spend more money as they get older and health costs continue to rise. But the opposite tends to happen. As people get older, their spending declines, because most other expenses, such as clothing and entertainment are much lower.</li>
 <li>Healthcare can become insanely costly, but no amount of savings available to most people will cover the costliest healthcare you might possibly need.</li>
@@ -785,7 +747,6 @@ const BOOK_NOTE_CONTENT = {
 <ul class="bn-list">
 <li>Use a life expectancy calculator so you can get an idea of when you might die. Without this, you won’t be able to make optimal decisions about how to optimally live for fulfillment.</li>
 <li>Look into buying an annuity. This can help cover your costs if you outlive your expected death date. Annuities help protect you against dying too old (outliving your savings).You buy an annuity by giving an insurance company a lump sum—say, $500,000 at age 60—and in return, you get a guaranteed monthly payout for the rest of your life, however long that happens to be.</li>
-<li>You buy an annuity by giving an insurance company a lump sum—say, $500,000 at age 60—and in return, you get a guaranteed monthly payout for the rest of your life, however long that happens to be.</li>
 <li>As you age, your health declines and interests diminish, which means that your spending rate won’t remain constant. If you want to die with zero and make the most of the health you have at every point in your lifetime, you will need to spend more in your fifties than in your sixties, and more in your sixties than in your seventies.</li>
 <li>Don’t give up years working for money when you’re young and healthy for extra weeks when you’re old and immobile.</li>
 <li>The reminder of death gives a much-needed urgency to one’s life.</li>
@@ -868,8 +829,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "courage-is-calling": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "courage-is-calling": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Courage is the management of and the triumph over fear.</li>
 <li>It takes courage to stand out, to be different, to be a revolutionary. People will undoubtedly question the bold, but it is the bold that are responsible for history and any great accomplishment.</li>
@@ -877,13 +838,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone who is afraid to raise eyebrows, to stand up for what they think is right, or to challenge the status quo. This book can help instill courage, and why this Stoic virtue is worth pursuing.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Let other people worry over what they will say about you. They will say it in any case.</li>
 <li>There was never a groundbreaking business that wasn’t loudly predicted to fail.</li>
@@ -898,10 +859,9 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>A scare is a temporary rush of feeling. Fear is a state of being, and to allow it to rule is a disgrace.One helps you—makes you alert, wakes you up, informs you of danger. The other drags you down, weakens you, and even paralyzes you.</li>
-<li>One helps you—makes you alert, wakes you up, informs you of danger. The other drags you down, weakens you, and even paralyzes you.</li>
 <li>Defeat fear with logic. See what you’re fearing for what it is: it’s just a bad article, it’s just money, it’s just a meeting with people yelling. Is that something to be afraid of?</li>
 <li>Most of what is beloved now was looked down on at the time of its creation or adoption by people who now pretend that never happened. Don’t be afraid to challenge the status quo.</li>
 <li>People would rather be complicit in a crime than speak up. People would rather stay in a job they hate than explain why they quit to do something less certain.</li>
@@ -953,8 +913,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "outlive": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "outlive": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>The current medical model is based on the treatment of symptoms once a disease arises. If we want to live healthier lives, we need to work on preventing the diseases that lead to a decrease in healthspan and lifespan—cardiovascular disease, metabolic dysfunction, cancer, and neurodegenerative disease.</li>
 <li>Exercise is the number one longevity “drug.” It helps manage metabolic disease, enhance cognitive health, and improve physical functioning.</li>
@@ -962,19 +922,19 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone looking to optimize their physical and emotional health. Dr. Attia does a great job of breaking down complex medical topics into understandable and actionable pieces.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>The book made me reanalyze my training program and goals. Since reading this book, I’ve shifted my focus to improving all aspects of physical fitness—stability, strength, muscle mass, and cardiorespiratory fitness—instead of just training to stay in shape. I’m now thinking of how I can prevent chronic diseases for as long as possible in my life to maximize both healthspan and lifespan.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>There comes a point where we need to stop just pulling people out of the river. We need to go upstream and find out why they’re falling in.</li>
 <li>Just because your parents endured a painful old age, or died younger than they should have, does not mean that you must do the same. The past need not dictate the future. Your longevity is more malleable than you think.</li>
@@ -984,23 +944,18 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>If you’re not engaging in high-risk activities like motorcycle racing or free solo climbing, the odds are overwhelming that you will die as a result of one of the chronic diseases of aging, the so-called Horsemen of deaths: heart disease, cancer, neurodegenerative disease, or type 2 diabetes.</li>
 <li>Longevity has two components. The first is how long you Iive, your chronological lifespan, the second and equally important part is how well you live—the quality of your years.</li>
 <li>When someone dies “suddenly” of a heart attack, the disease had likely been progressing in their coronary arteries for two decades. Slow death moves even more slowly than we realize.</li>
 <li>The American Diabetes Association specify that a patient can be diagnosed with diabetes mellitus when they return a hemoglobin A1c (HbA1c) test result of 6.5 percent or higher, corresponding to an average blood glucose level of 140 mg/dL (normal is more like 100 mg/dL, or an HbA1c of 5.1 percent).HbA1c measures the amount of glycosylated hemoglobin in the blood which allows an estimate of the patient’s average level of blood glucose over the past ninety days.If their HbA1c comes back at 6.4 percent, they technically don’t have type 2 diabetes at all. Instead, they have a condition called prediabetes, where the standard-of-care guidelines recommend mild amounts of exercise, vaguely defined dietary changes, possible use of a glucose control medication, and annual monitoring—basically, to wait and see if the patient actually develops diabetes before treating it as an urgent problem.The time to intervene is before a patient gets anywhere near the type 2 diabetes threshold. Even waiting till a patient is diagnosed with prediabetes is too late in the game. It should not be treated like a broken bone, where you either have it or you don’t; it’s not binary.The goal should be to act as early as possible, to try to prevent people from developing type 2 diabetes and all the other Horsemen.We want to delay or prevent these conditions so that we can live longer without disease, rather than lingering with disease.</li>
-<li>HbA1c measures the amount of glycosylated hemoglobin in the blood which allows an estimate of the patient’s average level of blood glucose over the past ninety days.</li>
-<li>If their HbA1c comes back at 6.4 percent, they technically don’t have type 2 diabetes at all. Instead, they have a condition called prediabetes, where the standard-of-care guidelines recommend mild amounts of exercise, vaguely defined dietary changes, possible use of a glucose control medication, and annual monitoring—basically, to wait and see if the patient actually develops diabetes before treating it as an urgent problem.</li>
-<li>The time to intervene is before a patient gets anywhere near the type 2 diabetes threshold. Even waiting till a patient is diagnosed with prediabetes is too late in the game. It should not be treated like a broken bone, where you either have it or you don’t; it’s not binary.</li>
-<li>The goal should be to act as early as possible, to try to prevent people from developing type 2 diabetes and all the other Horsemen.</li>
-<li>We want to delay or prevent these conditions so that we can live longer without disease, rather than lingering with disease.</li>
 <li>The metabolic derangement that leads to type 2 diabetes also helps foster and promote heart disease, cancer, and Alzheimer’s disease. Addressing our metabolic health can lower the risk of each of the Horsemen.</li>
 <li>Exercise is by far the most potent longevity “drug.” No other intervention does nearly as much to prolong our lifespan and preserve our cognitive and physical function.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Medicine 3.0</h2>
+<h2 class="bn-section-title">Medicine 3.0</h2>
 <ul class="bn-list">
 <li>Risk is not something to be avoided at all costs; rather, it’s something we need to understand, analyze, and work with. Every single thing we do, in medicine and in life, is based on some calculation of risk versus reward.</li>
 <li>Sometimes doing no harm is the worst option. Doing what you think will bring the greatest benefit with an adequately matching risk is typically the better option.</li>
@@ -1008,13 +963,12 @@ const BOOK_NOTE_CONTENT = {
 <li>Medicine 1.0 was the earliest form of medicine and was based on direct observation and abetted more or less by pure guesswork, some of which were on target and some not so much.</li>
 <li>Medicine 2.0 arrived in the mid-nineteenth century with the advent of the germ theory of disease, which supplanted the idea that most illnesses were spread by “miasmas,” or bad air.</li>
 <li>Medicine 3.0 is a new school of thought on preventing diseases altogether rather than waiting for them to arise and then treating them like medicine 2.0.Atherosclerosis, for example, begins many decades before the person has a coronary “event” that could result in their death. But that event, even a heart attack, too often marks the point where treatment begins.</li>
-<li>Atherosclerosis, for example, begins many decades before the person has a coronary “event” that could result in their death. But that event, even a heart attack, too often marks the point where treatment begins.</li>
 <li>There are few insurance reimbursement codes for most of the largely preventive interventions that are necessary to extend lifespan and healthspan. Health insurance companies won’t pay a doctor very much to tell a patient to change their diet or monitor blood glucose levels in order to prevent the development of type 2 diabetes.</li>
 <li>Nearly all the money flows to treatment rather than prevention.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Objective, Strategy, Tactics</h2>
+<h2 class="bn-section-title">Objective, Strategy, Tactics</h2>
 <ul class="bn-list">
 <li>The Horsemen have one powerful risk factor in common, and that is age. As you grow older, the risk grows exponentially that one or more of these diseases has begun to take hold in your body.</li>
 <li>Aging is characterized by a progressive loss of physiological integrity, leading to impaired function and increased vulnerability to death.</li>
@@ -1028,7 +982,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Centenarians</h2>
+<h2 class="bn-section-title">Centenarians</h2>
 <ul class="bn-list">
 <li>Genes may be responsible for only about 20-30% of the overall variation in human lifespan. The catch is that the older you get, the more your genes start to matter.</li>
 <li>We want to live longer with good function and without chronic disease, and with a briefer period of morbidity at the end of our lives.</li>
@@ -1045,13 +999,12 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>The Science of Hunger and Health</h2>
+<h2 class="bn-section-title">The Science of Hunger and Health</h2>
 <ul class="bn-list">
 <li>Rapamycin has many diverse applications because it tends to slow down the process of cellular growth and division.</li>
 <li>Rapamycin acts directly on a very important intracellular protein complex called mTOR, for “mechanistic target of rapamycin.”</li>
 <li>The job of mTOR is basically to balance an organism’s need to grow and reproduce against the availability of nutrients. When food is plentiful, mTOR is activated and the cell (or the organism) goes into growth mode, producing new proteins and undergoing cell division, as with the ultimate goal of reproduction. When nutrients are scarce, mTOR is suppressed and cells go into a kind of “recycling” mode, breaking down cellular components and generally cleaning house.</li>
 <li>With rigorous testing of resveratrol, it did not extend the lifespan in a diverse population of normal mice as rapamycin did.The same is true for other well-hyped supplements such as nicotinamide riboside. It also failed to extend the lifespan in mice consistently.</li>
-<li>The same is true for other well-hyped supplements such as nicotinamide riboside. It also failed to extend the lifespan in mice consistently.</li>
 <li>Rapamycin may have the potential as a longevity-enhancing drug.</li>
 <li>The results have been remarkably consistent. Studies dating back to the 1930s have found that limiting caloric intake and length in the lifespan of a mouse or rat by anywhere from 15 to 45%, depending on the age of onset in degree of restriction. Not only that, but the underfed animals also seem to be markedly healthier for their age, developing fewer spontaneous, tumors than normal fat mice. CR seems to improve their health span, in addition to their lifespan.</li>
 <li>It seems that hungry animals become more resilient and better able to survive, at least inside a well-controlled, germ, free laboratory.</li>
@@ -1066,11 +1019,10 @@ const BOOK_NOTE_CONTENT = {
 <li>Historically, rapamycin was approved to treat patients indefinitely following organ transplantation, as part of a cocktail of three or four drugs meant to suppress the part of their immune system that would otherwise attack and destroy their new organ. This immune-suppressing effect explains why there has been some reluctance to consider using (or even studying) rapamycin in the context of delaying aging in healthy people, despite ample animal data suggesting that it might lengthen lifespan and healthspan.</li>
 <li>Rapamycin seems to reduce systemic inflammation, perhaps by tamping down the activity of so-called senescent cells, which are “older” cells that have stopped dividing but have not died; these cells secrete a toxic cocktail of inflammatory cytokines, chemicals that can harm surrounding cells. Rapamycin seems to reduce these inflammatory cytokines. It also improves cancer surveillance, the ways in which our body, most likely the immune system, detects and eliminates cancer cells.</li>
 <li>A small but growing number of people are already taking rapamycin off-label for its potential geroprotective benefits.This drug represents Medicine 3.0, where we would be using a drug to help healthy people stay healthy, rather than to cure or relieve a specific ailment.</li>
-<li>This drug represents Medicine 3.0, where we would be using a drug to help healthy people stay healthy, rather than to cure or relieve a specific ailment.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>The Crisis of Abundance</h2>
+<h2 class="bn-section-title">The Crisis of Abundance</h2>
 <ul class="bn-list">
 <li>More than one in four people on the planet have some degree of nonalcoholic steatohepatitis, NASH, or its precursor, known as nonalcoholic fatty liver disease, or NAFLD. NAFLD is highly correlated with both obesity and hyperlipidemia (excessive cholesterol), yet it often flies under the radar, especially in its early stages.</li>
 <li>NAFLD is caused by more fat entering the liver or being produced there than exiting it.</li>
@@ -1079,10 +1031,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Metabolic dysfunction vastly increases your risk for CVD, cancer, and Alzheimer’s disease.</li>
 <li>Metabolic syndrome is defined in terms of the following five criteria:High blood pressure (>130/85)High triglycerides (>150 mg/dL)Low HDL cholesterol (<40 mg/dL in men or <50 mg/dL in women)Central adiposity (waist circumference >40 inches in men or >35 in women)Elevated fasting glucose (>110 mg/dL)</li>
 <li>High blood pressure (>130/85)</li>
-<li>High triglycerides (>150 mg/dL)</li>
-<li>Low HDL cholesterol (<40 mg/dL in men or <50 mg/dL in women)</li>
-<li>Central adiposity (waist circumference >40 inches in men or >35 in women)</li>
-<li>Elevated fasting glucose (>110 mg/dL)</li>
 <li>If you meet three or more of these criteria, then you have metabolic syndrome.</li>
 <li>Metabolism is the process by which we take in nutrients and break them down for use in the body. In someone who is metabolically healthy, those nutrients are processed and sent to their proper destinations. But when someone is metabolically unhealthy, many of the calories they consume end up where they are non needed or even harmful.</li>
 <li>If you eat a doughnut, your body can convert the carbohydrate into glycogen, the storage form of glucose, suitable for use in the near term. About 75 percent of this glycogen ends up in skeletal muscle and the other 25 percent goes to the liver.</li>
@@ -1114,10 +1062,9 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>The Ticker</h2>
+<h2 class="bn-section-title">The Ticker</h2>
 <ul class="bn-list">
 <li>Heart disease and stroke, which lump together under the single heading of atherosclerotic cardiovascular disease, or ASCVD, represent the leading cause of death, killing an estimated 2,300 people every day in the United States—more than any other cause, including cancer.American women are up to ten times more likely to die from atherosclerotic disease than from breast cancer.</li>
-<li>American women are up to ten times more likely to die from atherosclerotic disease than from breast cancer.</li>
 <li>It should be possible to eliminate much of the morbidity and mortality that is still associated with atherosclerotic cardiovascular and cerebrovascular disease. It should be the tenth leading cause of death, not the first.</li>
 <li>Cholesterol is essential to life. It is required to produce some of the most important structures in the body, including cell membranes; hormones such as testosterone, progesterone, estrogen, and cortisol; and bile acids, which are necessary for digesting food.</li>
 <li>Because cholesterol belongs to the lipid family, it is not water-soluble and thus cannot dissolve in our plasma like glucose or sodium and travel freely through our circulation. So it must be carted around in tiny spherical particles called lipoproteins—the final “L” in LEL and HDL—which act like little cargo submarines.</li>
@@ -1127,8 +1074,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Eating lots of saturated fat can increase levels of atherosclerosis causing lipoproteins in the blood, but most of the actual cholesterol that we consume in our food ends up being excreted out our backsides. The vast majority of the cholesterol in our circulation is actually produced by our own cells.</li>
 <li>Most of the basic research into cholesterol and atherosclerosis had been conducted in rabbits, which have a unique ability to absorb cholesterol into their blood from their food and form atherosclerotic plaques from it; the mistake was to assume that humans also absorb dietary cholesterol as readily. But there is no connection whatsoever between cholesterol in food and cholesterol in the blood. Cholesterol in the diet doesn’t matter at all unless you happen to be a chicken or a rabbit.</li>
 <li>The trouble starts when LDL particles stick in the arterial wall and subsequently become oxidized, meaning the cholesterol (and phospholipid) molecules they contain come into contact with a highly reactive molecule known as a reactive oxygen species, or ROS, the cause of oxidative stress. It’s the oxidation of the lipids on the LDL that kicks off the entire atherosclerotic cascade.Now that it is lodged in the subendothelial space and oxidized, rendering it somewhat toxic, the LDL/apoB particle stops behaving like a polite guest, refusing to leave and inviting its friends, other LDLs, to join the party. It is not an accident that the two biggest risk factors for heart disease, smoking and high blood pressure, cause damage to the endothelium. Smoking damages it chemically, while high blood pressure does so mechanically, but the end result is endothelial harm that, in turn, leads to greater retention of LDL. As oxidized LDL accumulates, it causes still more damage to the endothelium.The more of these particles that you have in your circulation, not only LDL but VLDL and some others, the greater the risk that some of them will penetrate the endothelium and get stuck.</li>
-<li>Now that it is lodged in the subendothelial space and oxidized, rendering it somewhat toxic, the LDL/apoB particle stops behaving like a polite guest, refusing to leave and inviting its friends, other LDLs, to join the party. It is not an accident that the two biggest risk factors for heart disease, smoking and high blood pressure, cause damage to the endothelium. Smoking damages it chemically, while high blood pressure does so mechanically, but the end result is endothelial harm that, in turn, leads to greater retention of LDL. As oxidized LDL accumulates, it causes still more damage to the endothelium.</li>
-<li>The more of these particles that you have in your circulation, not only LDL but VLDL and some others, the greater the risk that some of them will penetrate the endothelium and get stuck.</li>
 <li>So to gauge the true extent of your risk, we have to know how many of these apoB particles are circulating in your bloodstream. That number is much more relevant than the total quantity of cholesterol that these particles are carrying.</li>
 <li>As many as a third of sixteen- to twenty-year-olds already have actual atherosclerotic lesions or plaques in their coronary arteries. This means we need to take steps to reduce CVD early.</li>
 <li>Newer research suggests that HDL has multiple atheroprotective functions that include helping maintain the integrity of the endothelium, lowering inflammation, and neutralizing or stopping the oxidation of LDL, like a kind of arterial antioxidant.</li>
@@ -1153,8 +1098,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Smoking cessation and blood pressure control are non-negotiable first steps in reducing CVD risk.</li>
 <li>Monounsaturated fats, found in high quantities in extra virgin olive oil, macadamia nuts, and avocados don’t appear to increase apoB particles like saturated fats do.</li>
 <li>Statins are far and away the most prescribed class of drugs for lipid management. They help decrease apoB and LDL concentrations.Mostly this is done by amplifying the activity of LDL receptors in the liver, which absorb cholesterol from the bloodstream.Statins inhibit cholesterol synthesis, prompting the liver to increase the expression of LDLR, taking more LDL out of circulation.</li>
-<li>Mostly this is done by amplifying the activity of LDL receptors in the liver, which absorb cholesterol from the bloodstream.</li>
-<li>Statins inhibit cholesterol synthesis, prompting the liver to increase the expression of LDLR, taking more LDL out of circulation.</li>
 <li>If we want to reduce deaths from cardiovascular disease, we need to begin thinking about prevention in people in their forties and even thirties.</li>
 <li>Looking at a thirty-year time frame rather than the standard ten years and taking aggressive precautionary measures early, like beginning statin treatment earlier in certain patients, could prevent hundreds of thousands more cardiac events.</li>
 <li>Risk is proportional to apoB exposure over time. The sooner we lower apoB exposure, thus lowering risk, the more benefits compound over time, and the greater our overall risk reduction.</li>
@@ -1164,7 +1107,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>The Runaway Cell</h2>
+<h2 class="bn-section-title">The Runaway Cell</h2>
 <ul class="bn-list">
 <li>Cancer is the second leading cause of death in the United States, right behind heart disease.</li>
 <li>Our ability to detect cancer at an early stage is still very weak. We usually discover tumors only when they cause other symptoms, by which point they are often too locally advanced to be removed—or worse, the cancer has already spread to other parts of the body.</li>
@@ -1183,7 +1126,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🧠</span>Chasing Memory</h2>
+<h2 class="bn-section-title">Chasing Memory</h2>
 <ul class="bn-list">
 <li>The APOE e4 allele, which is associated with a greater risk of Alzheimer’s disease—and not just one copy, but two (e4/e4) can increase the risk of developing Alzheimer’s disease by twelve times greater than that of someone with two copies of the common e3 allele. The e2 version of the APOE appears to protect carriers against Alzheimer’s disease: 10 percent reduced risk for someone with e2/e3, and about 20 percent for e2/e2.</li>
 <li>In the United States, about 6 million people are diagnosed with Alzheimer’s disease, while about 1.4 million have Lewy body dementia, and 1 million have been diagnosed with Parkinson’s which is the fastest-growing neurodegenerative disease.</li>
@@ -1221,14 +1164,10 @@ const BOOK_NOTE_CONTENT = {
 <li>Regular sauna use can help also decrease the risk of developing neurodegenerative disease. At least four sessions per week, of at least twenty minutes per session, at 179 degrees Fahrenheit or hotter seems to be the sweet spot to reduce the risk of Alzheimer’s by about 65 percent (and the risk of ASCVD by 50 percent).</li>
 <li>The longer we can go without developing dementia, the better our odds of living longer, and living in better health.</li>
 <li>Tips for preventing Alzheimer’s and other forms of neurodegenerative disease:Vascular health (meaning low apoB, low inflammation, and low oxidative stress) is crucial to brain health.What’s good for the liver (and pancreas) is good for the brain. Get your metabolic health in check.Time is key. Start thinking about prevention early.Our most powerful tool for preventing cognitive decline is exercise.</li>
-<li>Vascular health (meaning low apoB, low inflammation, and low oxidative stress) is crucial to brain health.</li>
-<li>What’s good for the liver (and pancreas) is good for the brain. Get your metabolic health in check.</li>
-<li>Time is key. Start thinking about prevention early.</li>
-<li>Our most powerful tool for preventing cognitive decline is exercise.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🎯</span>Thinking Tactically</h2>
+<h2 class="bn-section-title">Thinking Tactically</h2>
 <ul class="bn-list">
 <li>Long ago, when we consumed fructose mainly in the form of fruit and honey, it enabled us to store energy as fat to survive cold winters and periods of scarcity. Fructose was our friend. Now fructose is vastly overabundant in our diet, too much of it in liquid form, which disrupts our metabolism and our overall energy balance.</li>
 <li>Automotive fatality statistics reveal that almost 30 percent of deaths involve excessive speed.</li>
@@ -1252,16 +1191,8 @@ const BOOK_NOTE_CONTENT = {
 <h4 class="bn-subsection">The Centenarian Decathlon</h4>
 <ul class="bn-list">
 <li>Think of the Centenarian Decathlon as the ten most important physical tasks you will want to be able to do for the rest of your life. Some of the items on the list resemble actual athletic events, while some are closer to activities of daily living, and others might reflect personal interests.Hike 1.5 miles on a hilly trail.Get up off the floor under your own power, using a maximum of one arm for support.Pick up a young child from the floor.Carry two five-pound bags of groceries for five blocks.Lift a twenty-pound suitcase into the overhead compartment of a plane.Balance on one leg for thirty seconds, eyes open.Have sex.Climb four flights of stairs in three minutes.Open a jar.Do thirty consecutive jump-rope skips.</li>
-<li>Hike 1.5 miles on a hilly trail.</li>
-<li>Get up off the floor under your own power, using a maximum of one arm for support.</li>
-<li>Pick up a young child from the floor.</li>
-<li>Carry two five-pound bags of groceries for five blocks.</li>
-<li>Lift a twenty-pound suitcase into the overhead compartment of a plane.</li>
-<li>Balance on one leg for thirty seconds, eyes open.</li>
 <li>Have sex.</li>
-<li>Climb four flights of stairs in three minutes.</li>
 <li>Open a jar.</li>
-<li>Do thirty consecutive jump-rope skips.</li>
 <li>The full list can be much longer, with more than fifty different items, but you get the idea.</li>
 <li>Over the next thirty to forty years, your muscle strength will decline by about 8 to 17 percent per decade—accelerating as time goes on. So if you want to pick up that thirty-pound grandkid or great-grandkid when you’re eighty, you’re going to have to be able to lift about fifty to fifty-five pounds now. Without hurting yourself.</li>
 <li>In every case, you need to be doing much more now, to armor yourself against the natural and precipitous decline in strength and aerobic capacity that you will undergo as you age.</li>
@@ -1270,7 +1201,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Training 101</h2>
+<h2 class="bn-section-title">Training 101</h2>
 <ul class="bn-list">
 <li>The three dimensions we want to optimize our fitness are aerobic endurance and efficiency (aka cardio), strength, and stability. All three of these are key to maintaining your health and strength as you age.</li>
 <li>When we say “cardio,” we are talking about not one thing, but a physiologic continuum, ranging from an easy walk to an all-out sprint.</li>
@@ -1304,7 +1235,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Increasing your VO2 max makes you functionally younger.</li>
 <li>VO2 max intervals are a bit longer, ranging from three to eight minutes. They can be done on a bike, rowing machine, or running on a treadmill or track. They should supplement your zone 2 training and be done 1 to 2 times per week.</li>
 <li>The typical exercise prescription for this type of training is four minutes at the maximum pace you can sustain for this amount of time—not an all-out sprint, but still a very hard effort. Then ride or jog for four minutes easily, which should be enough time for your heart rate to come back down to below about one hundred beats per minute. Repeat this four to six times.You want to make sure that you get as close to fully recovered as possible before beginning the next set. Also, make sure you have a proper warm-up and cool-down for this intense effort.</li>
-<li>You want to make sure that you get as close to fully recovered as possible before beginning the next set. Also, make sure you have a proper warm-up and cool-down for this intense effort.</li>
 </ul>
 <h4 class="bn-subsection">Strength</h4>
 <ul class="bn-list">
@@ -1314,10 +1244,7 @@ const BOOK_NOTE_CONTENT = {
 <li>Risk factors for low bone density include menopause because estrogen is essential for bone strength, smoking, long use of corticosteroids, drugs that block estrogen, low muscle mass, and being undernourished.</li>
 <li>Up to one-third of people over sixty-five who fracture their hip are dead within a year.</li>
 <li>When low bone mineral density is detected in a middle-aged person, the treatment is as follows:Optimize nutrition, focusing on protein and total energy needs.Heavy loading-bearing activity. Strength training, especially with heavy weights, stimulates the growth of bone—more than impact sports such as running. Bones respond to mechanical tension and estrogen is the key hormone in mediating the mechanical signal (weight bearing) to a chemical one telling your body to lay down more bone.HRT, if indicated.Drugs to increase bone mineral density, if indicated.</li>
-<li>Optimize nutrition, focusing on protein and total energy needs.</li>
-<li>Heavy loading-bearing activity. Strength training, especially with heavy weights, stimulates the growth of bone—more than impact sports such as running. Bones respond to mechanical tension and estrogen is the key hormone in mediating the mechanical signal (weight bearing) to a chemical one telling your body to lay down more bone.</li>
 <li>HRT, if indicated.</li>
-<li>Drugs to increase bone mineral density, if indicated.</li>
 <li>Carrying stuff over long distances is an essential skill our ancestors had to carry their kills back to camp to feed everyone.</li>
 <li>If you can grip strongly, you can open a jar with ease. If you can pull, you can carry groceries and lift heavy objects. If you can do a hip hinge correctly, you can get up out of a chair with no problem. You’re setting yourself up to age well. It’s not about how much weight you can deadlift now, but how well you will function in twenty or thirty or forty years.</li>
 <li>Training grip strength is not overly complicated. One of the best ways to do it is the classic farmer’s carry, where you walk for a minute or so with a loaded hex bar of a dumbbell or kettlebell in each hand. Men should be able to carry half their body weight in each hand, and females should get close to 75 percent of their body weight in each hand.</li>
@@ -1326,7 +1253,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>The Gospel of Stability</h2>
+<h2 class="bn-section-title">The Gospel of Stability</h2>
 <ul class="bn-list">
 <li>The loftier the building, the deeper the foundation must be laid.</li>
 <li>Older people tend to exercise less, or not at all, because they simply can’t. They have hurt themselves in some way, at some point in their lives, and they just never got back on the horse.</li>
@@ -1336,7 +1263,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Stability is the subconscious ability to harness, decelerate, or stop force. A stable person can react to internal or external stimuli to adjust position and muscular tension appropriately without a tremendous amount of conscious thought.</li>
 <li>We try to cheat or work around our existing injuries and limitations and end up creating new problems.</li>
 <li>We need to train the diaphragm to increase intra-abdominal pressure and local stabilization.Try placing two tennis balls in an athletic sock about four to six inches apart, and position then bout at the level of the kidney, or where your thoracic spine meets the lumbar spine. Then try to breathe and expand fully to feel the tennis balls on both sides.</li>
-<li>Try placing two tennis balls in an athletic sock about four to six inches apart, and position then bout at the level of the kidney, or where your thoracic spine meets the lumbar spine. Then try to breathe and expand fully to feel the tennis balls on both sides.</li>
 <li>Our feet are literally the foundation for any movement we might make.</li>
 <li>Unfortunately, too many of us have lost basic strength and awareness of our feet, thanks to too much time spent in shoes, especially big shoes with thick soles.</li>
 <li>If toe strength is compromised, everything up the chain is more vulnerable—ankle, knee, hip, and spine.</li>
@@ -1347,7 +1273,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Nutrition 3.0</h2>
+<h2 class="bn-section-title">Nutrition 3.0</h2>
 <ul class="bn-list">
 <li>Thanks to the poor quality of the science, we actually don’t know that much about how what we eat affects our health. That creates a tremendous opportunity for a multitude of would-be nutrition gurus to insist, loudly, that only they know the true and righteous diet. There are forty thousand diet books on Amazon; they can’t all be right.</li>
 <li>It’s not about telling you what to eat; it’s about figuring out what works for your body and your goals—and, just as important, what you can stick to.</li>
@@ -1362,7 +1288,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Putting Nutritional Biochemistry into Practice</h2>
+<h2 class="bn-section-title">Putting Nutritional Biochemistry into Practice</h2>
 <ul class="bn-list">
 <li>The Standard American Diet (SAD) disrupts the body’s metabolic equilibrium. It places enormous strain on our ability to control our blood glucose levels and causes us to store fat when we should be utilizing it.</li>
 </ul>
@@ -1370,9 +1296,6 @@ const BOOK_NOTE_CONTENT = {
 <ul class="bn-list">
 <li>If we take in more energy than we require, the surplus ends up in our adipose tissue, one way or another. If this imbalance continues, we exceed the capacity of our “safe” subcutaneous fat tissue, and excess fat spills over into our liver, our viscera, and our muscles.</li>
 <li>The quality of your diet may matter as much as the quantity.Avoiding diabetes and related metabolic dysfunction—especially by eliminating or reducing junk food—is very important to longevity.If you’re on the SAD, then you should be eating less of it.Conversely, if your diet is high quality to begin with, and you are metabolically healthy, then only a slight degree of caloric restriction can still be beneficial.</li>
-<li>Avoiding diabetes and related metabolic dysfunction—especially by eliminating or reducing junk food—is very important to longevity.</li>
-<li>If you’re on the SAD, then you should be eating less of it.</li>
-<li>Conversely, if your diet is high quality to begin with, and you are metabolically healthy, then only a slight degree of caloric restriction can still be beneficial.</li>
 <li>Limiting calories can be helpful for people who are metabolically unhealthy and/or overnourished. But deep caloric restriction may have some trade-offs—including potentially weakened immunity and greater susceptibility to cachexia and sarcopenia, not to mention constant hunger.</li>
 </ul>
 <h4 class="bn-subsection">DR (Dietary Restriction): The Nutritional Biochemistry “Diet”</h4>
@@ -1411,7 +1334,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Right now the US recommended dietary allowance for protein is 0.8 g/kg of body weight. This may reflect how much protein we need to stay alive, but it is a far cry from what we need to thrive.</li>
 <li>Certainly, a number of mouse studies suggest that restricting protein can improve mouse lifespan. But that doesn’t mean these results are applicable to humans. Mice and human beings respond very differently to low protein, and numerous studies suggest that low protein in the elderly leads to low muscle mass, yielding greater morality and worse quality of life.</li>
 <li>We should aim to get 1.6 g/kg/day as the minimum protein intake, which is twice as much as the RDA.This is a lot of protein to eat, and the added challenge is that it should not be taken in one sitting but rather spread out over the day to avoid losing amino acids to oxidation. The literature suggests that the ideal way to achieve this is by consuming four servings of protein per day, each at about 0.25 g/lb of body weight.</li>
-<li>This is a lot of protein to eat, and the added challenge is that it should not be taken in one sitting but rather spread out over the day to avoid losing amino acids to oxidation. The literature suggests that the ideal way to achieve this is by consuming four servings of protein per day, each at about 0.25 g/lb of body weight.</li>
 <li>Most people don’t need to worry about consuming too much protein. It would require an overwhelming effort to eat more than 3.7 g/kg/day, defined as the safe upper limit of protein consumption (too much stress on the kidneys, for one).</li>
 <li>Older people should try to keep track of their lean mass, such as via a DEXA scan, and adjust their protein intake upwards if lean mass declines.</li>
 <li>The protein found in plants is there for the benefit of the plant, which means it is largely tied up in indigestible fiber, and therefore less bioavailable to the person eating it. Because much of the plant’s protein is tied to its roots, leaves, and other structures, only about 60 to 70 percent of what you consume is contributing to your needs.</li>
@@ -1427,7 +1349,6 @@ const BOOK_NOTE_CONTENT = {
 <li>There are three types of fats: saturated fatty acids (SFA), monounsaturated fatty acids (MUFA), and polyunsaturated fatty acids (PUFA). The differences between these have to do with differences in their chemical structure; a “saturated” fat simply has more hydrogen atoms attached to its carbon chain. Within PUFA, we make one more important distinction, which is to separate the omega-6 from the omega-3 variants. We can further subdivide omega-3 PUFA into marine (EPA, DHA) and nonmarine sources (ALA). Salmon and other oil-rich seafood provide the former, nuts and flaxseed the latter.</li>
 <li>Olive oil and safflower oil might be as close as you can get to a pure monounsaturated fat, while palm and coconut oil might be as close as you can get to a pure saturated fat, but all foods that contain fats typically contain all three categories of fat: PUFA, MUFA, and SFA.</li>
 <li>We try to boost MUFA closer to 50-55 percent, while cutting SFA down to 15-20 percent and adjusting total PUFA to fill the gap. We also boost EPA and DHA, those fatty acids that are likely important to brain and cardiovascular health, with marine fat sources and/or supplementation.Putting these changes into practice typically means eating more olive oil and avocados and nuts, cutting back on things like butter and lard, and reducing the omega-6-rich corn, soybean, and sunflower oils—while also looking for ways to increase high-omega-3 marine PUFAs from sources such as salmon and anchovies.</li>
-<li>Putting these changes into practice typically means eating more olive oil and avocados and nuts, cutting back on things like butter and lard, and reducing the omega-6-rich corn, soybean, and sunflower oils—while also looking for ways to increase high-omega-3 marine PUFAs from sources such as salmon and anchovies.</li>
 <li>Trans fats also contribute to atherosclerosis (by raising apoB) and have been banned by the FDA.</li>
 <li>Increasing PUFA probably makes little or no difference to our risk of death, and may make little or no difference to our risk of dying from cardiovascular disease. However, increasing PUFA probably slightly reduces our risk of heart disease events and of combined heart and stroke events.</li>
 <li>Subtle changes in fat intake, particularly of saturated fats, can make a significant difference in lipid levels in some people, but not in others. Some people can consume saturated fats with near impunity, while others can hardly even look at a slice of bacon without their apoB number jumping to the 90th percentile.</li>
@@ -1451,14 +1372,12 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>The Awakening</h2>
+<h2 class="bn-section-title">The Awakening</h2>
 <ul class="bn-list">
 <li>Poor sleep dramatically increases one’s propensity for metabolic dysfunction, up to and including type 2 diabetes, and it can wreak havoc with the body’s hormonal balance.</li>
 <li>Good sleep, in terms of both quantity and quality, is critical to our cognitive function, our memory, and even our emotional equilibrium.</li>
 <li>There is a growing body of evidence that sleeping well is essential to preserving our cognition as we age and staving off Alzheimer’s disease.</li>
 <li>If sleep was so unimportant, then why hasn’t evolution gotten rid of it?When we are asleep, we are accomplishing nothing useful: we are not reproducing, gathering food, or protecting our family. Even worse, in that slumbering state we are extremely vulnerable to predators and enemies.If sleep wasn’t absolutely essential, natural selection would have eliminated the need to sleep hundreds of millions of years ago.</li>
-<li>When we are asleep, we are accomplishing nothing useful: we are not reproducing, gathering food, or protecting our family. Even worse, in that slumbering state we are extremely vulnerable to predators and enemies.</li>
-<li>If sleep wasn’t absolutely essential, natural selection would have eliminated the need to sleep hundreds of millions of years ago.</li>
 <li>A 2014 observational study found that young athletes who slept less than six hours per night were more than two and a half times more likely to experience an injury than their peers who slept eight hours or more.</li>
 <li>Sleep deprivation can cause profound insulin resistance.</li>
 <li>Long sleep is also a sign of problems. People who sleep eleven hours or more nightly have a nearly 50 percent higher risk of all-cause mortality, likely because long sleep = poor quality sleep, but it may also reflect an underlying illness. Similar risk associations have been found between poor and short sleep and hypertension, cardiovascular diseases, coronary heart diseases, and obesity.</li>
@@ -1476,7 +1395,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Work in Progress</h2>
+<h2 class="bn-section-title">Work in Progress</h2>
 <ul class="bn-list">
 <li>Emotional health is the most important component of healthspan. Nothing else about longevity is really worth much without some degree of happiness, fulfillment, and connection to others.</li>
 <li>Children are remarkably resilient, and wounded children become adaptive children. The problems begin when these adaptive children grow up to become maladaptive, dysfunctional adults.</li>
@@ -1492,8 +1411,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "why-we-sleep": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "why-we-sleep": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Stick to a sleep schedule. Go to bed and wake up at the same time every day. Sleeping later on weekends won't make up for a loss of sleep during the week.</li>
 <li>The benefits of sleep are numerous, so getting 7-9 hours of sleep consistently should be a priority in order to be alert, productive, and healthy.</li>
@@ -1501,7 +1420,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️My Top Quotes</h2>
+<h2 class="bn-section-title">️My Top Quotes</h2>
 <ul class="bn-list">
 <li>Wakefulness is low-level brain damage, while sleep is neurological sanitation.</li>
 <li>Relax before bed. Don't over-schedule your day so that you don't have time left to unwind before bed. Choose a relaxing activity such as reading or listening to music before bed.</li>
@@ -1509,7 +1428,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>The circadian rhythm is a 24-hour clock within the brain that communicates to every region of the brain and organs in the body when it's time to be awake and when to sleep.</li>
 <li>This circadian rhythm is generated endogenously even in the absence of external light from the sun.</li>
@@ -1530,7 +1449,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Sleep disruption may increase the risk of cancer development and, if cancer is established, favor its rapid and more rampant growth.</li>
 <li>Alcohol fragments sleep with a brief awakening. Therefore, alcohol-infused sleep is not continuous, nor is it restorative.</li>
 <li>Nocturnal melatonin levels are not only associated with the loss of daylight at dusk but also with the temperature drop that accompanies the nighttime.Having a cold environment to sleep in may improve the quality and quantity of your sleep.</li>
-<li>Having a cold environment to sleep in may improve the quality and quantity of your sleep.</li>
 <li>Heavy use of alcohol robs you of REM sleep and keeps you in the lighter stages of sleep.</li>
 </ul>
 <p>Tips for better sleep</p>
@@ -1543,8 +1461,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "never-split-the-difference": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "never-split-the-difference": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Negotiating is a part of everyday life. Don’t be afraid to embrace conflict directly.</li>
 <li>Ask lots of open-ended questions that start with “how” or “what” to give your counterpart the illusion of control and to find out more information from them.</li>
@@ -1552,7 +1470,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>No deal is better than a bad deal.</li>
 <li>He who has learned to disagree without being disagreeable has discovered the most valuable secret of negotiation.</li>
@@ -1560,7 +1478,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <p>Chapter 1: The new rules</p>
 <ul class="bn-list">
 <li>People just want to be understood and accepted. Listening is the best way to make people feel this way.</li>
@@ -1575,15 +1493,9 @@ const BOOK_NOTE_CONTENT = {
 <li>Most of the time, you should be using a positive/playful voice. Your attitude is light and encouraging. The key here is to relax and smile while you’re talking.</li>
 <li>The late-night FM DJ voice works by reflecting your voice downward and you talk slowly and clearly to convey that you’re in control.</li>
 <li>A mirror is when you repeat the last three words (or the critical one to three words) of what someone has just said.This will trigger your counterpart to elaborate on what was just said and help build rapport and insinuate similarityMirroring can be 70% more effective at building rapport than just positive reinforcement</li>
-<li>This will trigger your counterpart to elaborate on what was just said and help build rapport and insinuate similarity</li>
-<li>Mirroring can be 70% more effective at building rapport than just positive reinforcement</li>
 <li>How to confront—and get your way—without confrontationUse the late-night FM DJ voiceStart with “I’m sorry…”MirrorMirroring and labeling makes your counterpart consider their answer again and should be used if they give you answers that are unacceptableSilence. At least four seconds, to let the mirror work its magic on your counterpart.Repeat</li>
 <li>Use the late-night FM DJ voice</li>
 <li>Start with “I’m sorry…”</li>
-<li>MirrorMirroring and labeling makes your counterpart consider their answer again and should be used if they give you answers that are unacceptable</li>
-<li>Mirroring and labeling makes your counterpart consider their answer again and should be used if they give you answers that are unacceptable</li>
-<li>Silence. At least four seconds, to let the mirror work its magic on your counterpart.</li>
-<li>Repeat</li>
 <li>The intention behind most mirrors should be “Please, help me understand.”</li>
 <li>Mirroring will make you feel awkward as heck when you first try it. This technique takes practice</li>
 <li>Don’t commit to assumptions; instead, view them as hypotheses and use the negotiation to test them rigorously.</li>
@@ -1599,7 +1511,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Once you’ve spotted an emotion you want to highlight, the next step is to label it aloud. Labels can be phrased as statements or questions. No matter how they end, labels almost always begin with roughly the same words:It seems like…It sounds like…It looks like…</li>
 <li>It seems like…</li>
 <li>It sounds like…</li>
-<li>It looks like…</li>
 <li>The last rule of labeling is silence. Once you’ve thrown out a label, be quiet and listen.</li>
 <li>Labeling addresses the underlying emotions. Labeling negatives diffuses them. Labeling positives reinforces them.</li>
 <li>When you make a mistake, acknowledge the other person's anger. Say “look, I’m an asshole” and you’ll be amazed at how many of the problems go away.</li>
@@ -1613,7 +1524,6 @@ const BOOK_NOTE_CONTENT = {
 <ul class="bn-list">
 <li>Don’t try to push a bunch of yes answers from your counterpart. This will make their guard go up. A “no” answer starts the negotiation. Train yourself to hear “no” as something other than rejection. When someone tells you “no” think about what it really means:I’m not yet ready to agreeYou’re making me feel uncomfortableI don’t understandI don’t think I can afford itI want something elseI need more informationThen after pausing, ask solution-based questions or simply label their effect:What about this doesn’t work for you?What would you need to make it work?It seems like there’s something here that bothers you?</li>
 <li>I’m not yet ready to agree</li>
-<li>You’re making me feel uncomfortable</li>
 <li>I don’t understand</li>
 <li>I don’t think I can afford it</li>
 <li>I want something else</li>
@@ -1631,12 +1541,8 @@ const BOOK_NOTE_CONTENT = {
 <p>Chapter 5: Trigger the two words that immediately transform any negotiation</p>
 <ul class="bn-list">
 <li>Trigger a “that’s right!” with a summaryEffective pauses: silence is powerfulMinimal encourages: Besides silence, simple phrases, such as “Yes”, “Ok”, “Uh-huh”, to convey you’re paying attention.MirrorLabeling: Give feelings a name and identify how they feelParaphraseSummarise: A good summary is a combination of rearticulating the meaning of what is said plus the acknowledgment of the emotions underlying what meaning (paraphrasing +labeling = summary)</li>
-<li>Effective pauses: silence is powerful</li>
-<li>Minimal encourages: Besides silence, simple phrases, such as “Yes”, “Ok”, “Uh-huh”, to convey you’re paying attention.</li>
 <li>Mirror</li>
-<li>Labeling: Give feelings a name and identify how they feel</li>
 <li>Paraphrase</li>
-<li>Summarise: A good summary is a combination of rearticulating the meaning of what is said plus the acknowledgment of the emotions underlying what meaning (paraphrasing +labeling = summary)</li>
 <li>Aim for “That’s right” not “You’re right.”</li>
 </ul>
 <p>Chapter 6: Bend their reality</p>
@@ -1650,14 +1556,6 @@ const BOOK_NOTE_CONTENT = {
 <li>You should offer your counterpart a range in negotiation. Just expect them to come in on the low end.</li>
 <li>When you talk numbers, use odd ones. Numbers that end in 0 seem like temporary placeholders or guesstimates. But anything less round like 84,738 feels like a figure that you came to as a result of thoughtful calculation.</li>
 <li>How to negotiate a better salaryBe pleasantly persistent on nonsalary termsAsk with a big smile for an extra week of vacation. Be delightful.Salary terms without success terms is Russian roulette.Once you’ve negotiated a salary, make sure to define success for your position—as well as metrics for your next raise.Spark their interest in your success and gain an unofficial mentor.When you’re selling yourself to a manager, sell yourself as more than a body for a job; sell yourself, and your success, as a way they can validate their own intelligence and broadcast it to the rest of the company.Ask “what does it take to be successful here?”Doing this gives the manager a personal stake in seeing you succeed.</li>
-<li>Be pleasantly persistent on nonsalary termsAsk with a big smile for an extra week of vacation. Be delightful.</li>
-<li>Ask with a big smile for an extra week of vacation. Be delightful.</li>
-<li>Salary terms without success terms is Russian roulette.Once you’ve negotiated a salary, make sure to define success for your position—as well as metrics for your next raise.</li>
-<li>Once you’ve negotiated a salary, make sure to define success for your position—as well as metrics for your next raise.</li>
-<li>Spark their interest in your success and gain an unofficial mentor.When you’re selling yourself to a manager, sell yourself as more than a body for a job; sell yourself, and your success, as a way they can validate their own intelligence and broadcast it to the rest of the company.Ask “what does it take to be successful here?”Doing this gives the manager a personal stake in seeing you succeed.</li>
-<li>When you’re selling yourself to a manager, sell yourself as more than a body for a job; sell yourself, and your success, as a way they can validate their own intelligence and broadcast it to the rest of the company.</li>
-<li>Ask “what does it take to be successful here?”</li>
-<li>Doing this gives the manager a personal stake in seeing you succeed.</li>
 <li>Meeting halfway often leads to bad deals for both sides.</li>
 <li>The word “Fair” is an emotional term people usually exploit to put the other side on the defensive and gain concessions. If your counterpart tries to use this on you, ask them to explain how you’re mistreating them.</li>
 <li>Before you make an offer, emotionally anchor them by saying how bad it will be. When you get to numbers, set an extreme anchor to make your “real” offer seem reasonable, or use a range to seem less aggressive.</li>
@@ -1668,13 +1566,8 @@ const BOOK_NOTE_CONTENT = {
 <li>When you go into a store, instead of telling the salesclerk what you “need”, you can describe what you’re looking for and ask for suggestions</li>
 <li>Then, once you’ve picked something out, instead of hitting them with a hard offer, you can say the price is a bit more than you budgeted and hit them with the “How am I supposed to do that?”</li>
 <li>Calibrated questions avoid verbs like can, is, are, do, or does. Those are closed-ended questions. Instead, use questions that start with “what,” or “how,” and sometimes “why.”Here are some examples:What about this is important to you?How can I help to make this better for us?How would you like me to proceed?How can we solve this problem?What are we trying to accomplish here?How am I supposed to do that?How am I supposed to accept that?</li>
-<li>What about this is important to you?</li>
-<li>How can I help to make this better for us?</li>
-<li>How would you like me to proceed?</li>
 <li>How can we solve this problem?</li>
-<li>What are we trying to accomplish here?</li>
 <li>How am I supposed to do that?</li>
-<li>How am I supposed to accept that?</li>
 <li>Asking calibrated questions can give your counterpart the illusion of control.</li>
 <li>Don’t try to force your opponent to admit that you are right. Aggressive confrontation is the enemy of constructive negotiation.</li>
 <li>Bite your tongue. When you’re attacked in a negotiation, pause and avoid angry emotional reactions. Instead, ask your counterpart a calibrated question.</li>
@@ -1693,12 +1586,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Once you’re clear on what your bottom line is, you have to be willing to walk away. Never be needy for a deal.</li>
 <li>The person across the table is never the problem. The unsolved issue is. So focus on the issue. Avoid emotional escalations.</li>
 <li>Use the Ackerman model for offer-counteroffer situationsSet your target price (your goal)Set your first offer at 65% of your target priceCalculate three raises of decreasing increments (to 85, 95, and 100 percent)Use lots of empathy and different ways of saying “No” to get the other side to counter before you increase your offer.When calculating the final amount, use precise, nonround numbers like $37,934 rather than $38000.On your final number, throw in a nonmonetary item (that they probably don’t want) to show you’re at your limit.</li>
-<li>Set your target price (your goal)</li>
-<li>Set your first offer at 65% of your target price</li>
-<li>Calculate three raises of decreasing increments (to 85, 95, and 100 percent)</li>
-<li>Use lots of empathy and different ways of saying “No” to get the other side to counter before you increase your offer.</li>
-<li>When calculating the final amount, use precise, nonround numbers like $37,934 rather than $38000.</li>
-<li>On your final number, throw in a nonmonetary item (that they probably don’t want) to show you’re at your limit.</li>
 </ul>
 <p>Chapter 10: Find the black swan</p>
 <ul class="bn-list">
@@ -1713,8 +1600,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "the-subtle-art-of-not-giving-a-fck": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "the-subtle-art-of-not-giving-a-fck": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Not giving a fuck doesn't mean being indifferent; it means being comfortable with being different.</li>
 <li>There is nothing to be afraid of. We all die, and we're fortunate enough to experience life.</li>
@@ -1722,13 +1609,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>👤How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has allowed me to let go of trivial problems and save my fucks for things truly worth giving a fuck. It's also opened my eyes to my own mortality. We all eventually die, so start taking more risks and giving less fucks.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️My Top Quotes</h2>
+<h2 class="bn-section-title">️My Top Quotes</h2>
 <ul class="bn-list">
 <li>Wanting a positive experience is a negative experience; accepting a negative experience is a positive experience.</li>
 <li>The key to a good life is not giving a fuck about more; it's giving a fuck about less, giving a fuck about only what is true and immediate and important.</li>
@@ -1736,7 +1623,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>The feedback loop from hell cure: “I feel like shit, but who gives a fuck?”</li>
 </ul>
@@ -1777,8 +1664,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "the-obstacle-is-the-way": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "the-obstacle-is-the-way": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>See things for what they are, do what you can, and endure and bear what you must.</li>
 <li>What blocks the path is the path.</li>
@@ -1786,13 +1673,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎  How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has shown me that obstacles are what gives life its meaning. If there was nothing to overcome or accomplish, what would give you a meaningful life? It has taught me not to shy away from problems, but to embrace them.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>The impediment to action advances action. What stands in the way becomes the way.</li>
 <li>Choose not to be harmed—and you won’t feel harmed. Don’t feel harmed—and you haven’t been.</li>
@@ -1800,7 +1687,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>Stop doing nothing when you’re unsatisfied with your job, relationships, or place in the world. Stop feeling overwhelmed. Get started on the thing that stands in the way of improving these circumstances.</li>
 <li>Don’t blame your boss, the economy, politicians, or other people. The only thing at fault is your attitude and approach to the situation.</li>
@@ -1813,8 +1700,6 @@ const BOOK_NOTE_CONTENT = {
 <li>We still have biological baggage from our early ancestors. We sense danger in situations where our safety is not at risk. Think of stress about money, or when your boss yells at you. Your safety is not truly threatened here, so we can blindly let our primal feeling control us, or we can control and understand them.</li>
 <li>When faced with a seemingly insurmountable task we must try to:be objectivecontrol our emotions and stay level-headedchoose to see the good in the situationplace things in perspectiverevert to the present momentfocus on what can be controlled</li>
 <li>be objective</li>
-<li>control our emotions and stay level-headed</li>
-<li>choose to see the good in the situation</li>
 <li>place things in perspective</li>
 <li>revert to the present moment</li>
 <li>focus on what can be controlled</li>
@@ -1854,8 +1739,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "stumbling-on-happiness": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "stumbling-on-happiness": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>We are terrible at predicting our future emotions and recalling past events. Things typically aren’t as good or bad as we think they will be.</li>
 <li>Our brains fill in extraneous information about past memories and leave-out crucial information about future events. It is important to be cognizant of these tricks the mind can play.</li>
@@ -1863,22 +1748,21 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤 Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone who is interested in how our minds play tricks on us, and what we can do to combat these tricks.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has changed my perception of future events. I have found myself consistently imagining how badly unpleasant future events will make me feel when in reality, things typically aren’t as bad as you think they’ll be.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
-<li>We often say others who claim to be happy despite circumstances that  “they only think they’re happy because they don’t know what they’re missing.” Sure, but that’s the point!Not knowing what we’re missing can mean that we are truly happy under circumstances that would not allow us to be happy once we have experienced the missing thing.</li>
-<li>Not knowing what we’re missing can mean that we are truly happy under circumstances that would not allow us to be happy once we have experienced the missing thing.</li>
+<li>We often say others who claim to be happy despite circumstances that “they only think they’re happy because they don’t know what they’re missing.” Sure, but that’s the point!Not knowing what we’re missing can mean that we are truly happy under circumstances that would not allow us to be happy once we have experienced the missing thing.</li>
 <li>Our brains are constantly doing a filling-in trick that adds extraneous details to the past to help our memories seamlessly recall events. It’s not a bad thing, because it helps us have a functioning memory, but we should be aware that our brains tend to add extra details that may not have actually occurred.</li>
 <li>When humankind imagines the future, it rarely notices what imagination has missed—and the missing pieces are much more important than we realize.</li>
 <li>The logical way to pick a vacation or a job is to consider both the presence and absence of positive and negative attributes, but that’s not what most of us do.</li>
@@ -1899,7 +1783,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Distorted views of reality are made possible by the fact that experiences are ambiguous—that is, they can be credibly viewed in many ways, some of which are more positive than others.</li>
 <li>Being rejected by a large and diverse group of people is a demoralizing experience because it is so thoroughly unambiguous, and hence it is difficult for the psychological immune system to find a way to think about it that is both positive and credible.</li>
 <li>Humans are very good at turning bad experiences into valuable lessons and are able to find silver linings in tough situations.This is because our psychological immune systems respond to intense triggers to help us cope with bad times.</li>
-<li>This is because our psychological immune systems respond to intense triggers to help us cope with bad times.</li>
 <li>In the long run, people of every age and every walk of life seem to regret not having done things much more than they regret the things they did, which is why the most popular regrets include not going to college, not grasping profitable business opportunities, and not spending enough time with family and friends.</li>
 <li>We are more likely to look for and find a positive view of things we are stuck with than of the things we are not.</li>
 <li>Because we tend to remember the best of times and the worst of times instead of the most likely of times, the wealth of experience that young people admire does not always pay clear dividends.</li>
@@ -1910,8 +1793,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "how-to-win-friends-influence-people": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "how-to-win-friends-influence-people": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Talk less about yourself, and get genuinely interested in other people.</li>
 <li>Always get the other person's point of view and their wants and needs.</li>
@@ -1919,7 +1802,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️My Top Quotes</h2>
+<h2 class="bn-section-title">️My Top Quotes</h2>
 <ul class="bn-list">
 <li>Don’t complain about the snow on your neighbor's roof when your own doorstep is unclean.</li>
 <li>We often take our spouses for granted and we never let them know we appreciate them.</li>
@@ -1928,7 +1811,7 @@ const BOOK_NOTE_CONTENT = {
 <li>There is nothing either good or bad, but thinking makes it so.</li>
 <li>Hatred is never ended by hatred but by love.</li>
 </ul>
-<p>📖Summary & Notes</p>
+<p>Summary & Notes</p>
 <ul class="bn-list">
 <li>Don’t criticize, condemn or complain</li>
 </ul>
@@ -1994,14 +1877,7 @@ const BOOK_NOTE_CONTENT = {
 <li>You can never win an argument. Even if you win it, you lose it.</li>
 <li>How to keep a disagreement from becoming an argumentWelcome the disagreementDistrust your first instinctive impression. Our first natural reaction in a disagreeable situation is to be defensive. Be careful.Control your temper. Remember, you can measure the size of a person by what makes him or her angry.Listen first. Give your opponents a chance to talk.Look for areas of agreement.Be honest. Look for areas where you can admit error and say so.Promise to think over your opponent’s ideas and study them carefully.Thank your opponents sincerely for their interest. Anyone who takes the time to disagree with you is interested in the same things as you.Postpone action to give both sides time to think through the problem.</li>
 <li>Welcome the disagreement</li>
-<li>Distrust your first instinctive impression. Our first natural reaction in a disagreeable situation is to be defensive. Be careful.</li>
-<li>Control your temper. Remember, you can measure the size of a person by what makes him or her angry.</li>
-<li>Listen first. Give your opponents a chance to talk.</li>
 <li>Look for areas of agreement.</li>
-<li>Be honest. Look for areas where you can admit error and say so.</li>
-<li>Promise to think over your opponent’s ideas and study them carefully.</li>
-<li>Thank your opponents sincerely for their interest. Anyone who takes the time to disagree with you is interested in the same things as you.</li>
-<li>Postpone action to give both sides time to think through the problem.</li>
 <li>Show respect for the other person’s opinion. Don’t just say “you’re wrong.”</li>
 </ul>
 <ul class="bn-list">
@@ -2084,14 +1960,14 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "a-short-history-of-nearly-everything": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+ "a-short-history-of-nearly-everything": `<section class="bn-section">
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has made me appreciate just how damn lucky we are to be here. And by we, I mean all of life. To attain any kind of life in this universe of ours appears to be extremely difficult. As humans, we are extra lucky because we not only get to experience life, but we are the singular species with the ability to appreciate life and make it even better.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>As far as we can tell, humans are the best shot at discovering other life in the cosmos, monitoring where it's going, and keeping a record of where it's been.</li>
 <li>Every atom you possess in your body has almost certainly passed through several stars and been part of millions of organisms on its way to becoming you.</li>
@@ -2100,7 +1976,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>Pluto is very tiny, it's just 0.25% as massive as Earth.</li>
 <li>Supernovae occur when a giant star, one much bigger than our own Sun, collapses and then spectacularly explodes, releasing in an instant the energy of a hundred billion suns, burning for a time brighter than all the stars in the galaxy.</li>
@@ -2153,8 +2029,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "a-guide-to-the-good-life": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "a-guide-to-the-good-life": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>We should all adopt a philosophy of life in order to avoid misliving, and to know what is worth pursuing in life, and how to obtain the things that are worth pursuing.</li>
 <li>The goal of Stoicism is the attainment of tranquility; to reduce negative emotions such as anger, fear, anxiety, and grief, and to enhance positive emotions such as joy and happiness.</li>
@@ -2162,13 +2038,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone who does not have a philosophy of life, or that feels that they are constantly being pulled by emotions. Stoicism is about using logic and rationality to experience positive emotions and lead a good life.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Pay attention to your enemies, for they are the first to discover your mistakes.</li>
 <li>We should live as if this very moment were our last.</li>
@@ -2179,7 +2055,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>The Stoics realized that a life plagued with negative emotions—including anger, anxiety, fear, grief, and envy—would not be a good life. They therefore became acute observers of the workings of the human mind and as a result became some of the most insightful psychologists of the ancient world. They went on to develop techniques for preventing the onset of negative emotions and for extinguishing them when attempts at prevention failed.</li>
 <li>The goal of the Stoics was not to banish emotion from life but to banish negative emotions.</li>
@@ -2188,7 +2064,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Part One: The Rise of Stoicism</h2>
+<h2 class="bn-section-title">Part One: The Rise of Stoicism</h2>
 <ul class="bn-list">
 <li>Most religions don’t give guidance on what things in life are and aren’t worth pursuing.</li>
 <li>Whatever philosophy of life a person adopts, they will probably have a better life than if they tried to live without a coherent philosophy of life.</li>
@@ -2197,7 +2073,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Part Two: Stoic Psychological Techniques</h2>
+<h2 class="bn-section-title">Part Two: Stoic Psychological Techniques</h2>
 <h4 class="bn-subsection">Negative Visualization</h4>
 <ul class="bn-list">
 <li>Misfortune weighs most heavily on those who expect nothing but good fortune. This is the danger of being an overzealous optimist.</li>
@@ -2247,7 +2123,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Part Three: Stoic Advice</h2>
+<h2 class="bn-section-title">Part Three: Stoic Advice</h2>
 <h4 class="bn-subsection">Duty</h4>
 <ul class="bn-list">
 <li>To do your duty to your kind—you must feel a concern for all mankind. You must remember that we humans were created for one another, that we were born to work together the way our hands or eyelids do.</li>
@@ -2266,7 +2142,6 @@ const BOOK_NOTE_CONTENT = {
 <ul class="bn-list">
 <li>Remember, what is insulting is not the person who abuses you or hits you, but the judgment about them that they are insulting.</li>
 <li>Even if we succeed in removing the sting of an insult, we are left with the question of how best to respond to it. One wonderful way, say the Stoics, is with humor.Of the kinds of humor we might use in response to an insult, self-deprecating humor can be particularly effective.</li>
-<li>Of the kinds of humor we might use in response to an insult, self-deprecating humor can be particularly effective.</li>
 <li>By laughing off an insult, we are implying that we don't take the insulter and his insults seriously.</li>
 <li>A second way to respond to insults is with no response at all.</li>
 <li>Refusing to respond to an insult is, paradoxically, one of the most effective responses possible.</li>
@@ -2317,7 +2192,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Part Four: Stoicism for Modern Lives</h2>
+<h2 class="bn-section-title">Part Four: Stoicism for Modern Lives</h2>
 <ul class="bn-list">
 <li>Philosophies of life have two components: They tell us what things in life are and aren’t worth pursuing, and they tell us how to gain the things that are worth having. The Stoics, as we have seen, thought tranquility was worth pursuing, and the tranquility they sought, it will be remembered, is a psychological state in which we experience few negative emotions, such as anxiety, grief, and fear, but an abundance of positive emotions, especially joy.</li>
 <li>Our evolutionary ancestors benefited from wanting more of everything, which is why we today have this tendency. But our insatiability, if we do not take steps to bridle it, will disrupt our tranquility; instead of enjoying what we already have, we will spend our life working hard to gain things we don’t have, in the sadly mistaken belief that once we have them, we will enjoy them and search no further.</li>
@@ -2336,8 +2211,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "show-your-work": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "show-your-work": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Share your work and thoughts online for free.</li>
 <li>Share things that you’re genuinely interested in, and you will attract like-minded people to your work.</li>
@@ -2345,13 +2220,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book gave me the courage and inspiration to create a website and start a weekly newsletter. I’ve been engrossed in consuming content and information and haven’t thought of sharing the insights I’ve learned from them until coming across this book. I now have a blueprint of what to share, how to share it, and with whom to share it.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>The most important thing is to share our work, whatever it is, and not be ashamed.</li>
 <li>In order for connection to happen, we have to allow ourselves to be seen—really seen.</li>
@@ -2363,12 +2238,11 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>1. You don't have to be a genius. You just have to be yourself.</h2>
+<h2 class="bn-section-title">1. You don't have to be a genius. You just have to be yourself.</h2>
 <ul class="bn-list">
 <li>Creativity is always, in some sense, a collaboration, the result of a mind connected to other minds.</li>
 <li>Blogs, social media sites, email groups, discussion boards—they’re all the same thing: virtual scenes where people go to hang out and talk about the things they care about.</li>
 <li>Be an amateur. Amateurs have little to lose and are willing to try anything and share the results. They take chances, experiment, and follow their whims.In the beginner’s mind, there are many possibilities. In the expert’s mind, there are few.</li>
-<li>In the beginner’s mind, there are many possibilities. In the expert’s mind, there are few.</li>
 <li>The fellow-pupil can help more than the master because he knows less. The difficulty we want him to explain is one he has recently met. The expert met it so long ago he has forgotten.</li>
 <li>The best way to get started on the path to sharing your work is to think about what you want to learn and make a commitment to learning it in front of others.</li>
 <li>Talk about the things you love. Your voice will follow.</li>
@@ -2376,7 +2250,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>2. Think process, not product.</h2>
+<h2 class="bn-section-title">2. Think process, not product.</h2>
 <ul class="bn-list">
 <li>Take people behind the scenes. Show them not only the final product but the process that led you to the product.</li>
 <li>Humans are interested in other humans and what other humans do.</li>
@@ -2384,11 +2258,10 @@ const BOOK_NOTE_CONTENT = {
 <li>By letting go of our egos and sharing our process, we allow for the possibility of people having an ongoing connection with us and our work, which helps us move more of our product.</li>
 <li>Write your thoughts down in a notebook, or speak them into an audio recorder.</li>
 <li>Shoot video of you working. This isn’t about making art, it’s about simply keeping track of what’s going on around you.Whether you share it or not, documenting and recording your process as you go along has its own rewards. And when you’re ready to share, you’ll have a surplus of material to choose from.</li>
-<li>Whether you share it or not, documenting and recording your process as you go along has its own rewards. And when you’re ready to share, you’ll have a surplus of material to choose from.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>3. Share something small every day.</h2>
+<h2 class="bn-section-title">3. Share something small every day.</h2>
 <ul class="bn-list">
 <li>Overnight success is a myth. Dig into almost every overnight success story and you’ll find about a decade’s worth of hard work and perseverance. Building a substantial body of work takes a long time.</li>
 <li>Once a day, after you’ve done your day’s work, go back to your documentation and find one little piece of your process you can share.</li>
@@ -2401,18 +2274,16 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>4. Open up your cabinet of curiosities.</h2>
+<h2 class="bn-section-title">4. Open up your cabinet of curiosities.</h2>
 <ul class="bn-list">
 <li>Before we’re ready to take the leap of sharing our own work with the world, we can share our tastes in the work of others. Where do you get your inspiration? What sorts of things do you fill your head with? What do you read? What music do you listen to? What movies do you see? What do you collect? Who’s work do you admire?Your influences are worth sharing because they clue people in to who you are and what you do.</li>
-<li>Your influences are worth sharing because they clue people in to who you are and what you do.</li>
 <li>The most ordinary things, the most common and familiar, if we could see them in their true light, would turn out to be the grandest miracles.</li>
 <li>When you find things you genuinely enjoy, don’t let anyone else make you feel bad about it. Don’t feel guilty about the pleasure you take in the things you enjoy.</li>
 <li>If you share the work of others, it’s your duty to make sure that the creators of that work get the proper credit.Attribution is about putting little museum labels next to the stuff you share. Online, this can be done by putting a hyperlink to the website of the creator of the work.</li>
-<li>Attribution is about putting little museum labels next to the stuff you share. Online, this can be done by putting a hyperlink to the website of the creator of the work.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>5. Tell good stories.</h2>
+<h2 class="bn-section-title">5. Tell good stories.</h2>
 <ul class="bn-list">
 <li>Stories are such a powerful driver of emotional value that their effect on any given object’s subjective value can actually be measured objectively.</li>
 <li>Stories can even matter more than the product itself.</li>
@@ -2423,13 +2294,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>6. Teach what you know.</h2>
+<h2 class="bn-section-title">6. Teach what you know.</h2>
 <ul class="bn-list">
 <li>The minute you learn something, turn around and teach it to others. Share your reading list. Point to helpful reference materials. Create some tutorials and post them online. Use pictures, words, and video.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>7. Don’t turn into human spam.</h2>
+<h2 class="bn-section-title">7. Don’t turn into human spam.</h2>
 <ul class="bn-list">
 <li>If you want fans, you have to be a fan first. If you’re only pointing to your own stuff online, you’re doing it wrong. You have to be a connector.</li>
 <li>Don’t worry about how many people follow you online and start worrying about the quality of people who follow you.</li>
@@ -2442,19 +2313,15 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>8. Learn to take a punch.</h2>
+<h2 class="bn-section-title">8. Learn to take a punch.</h2>
 <ul class="bn-list">
 <li>When you put your work out into the world, you have to be ready for the good, the bad, and the ugly. The more people come across your work, the more criticism you’ll face. Here’s how to take punches:Relax and breathe:Fear is often just the imagination taking a wrong turn. Bad criticism is not the end of the world.Strengthen your neck:The more criticism you take, the more you realize it can’t hurt you.Roll with the punches:You can’t control what sort of criticism you receive, but you can control how you react to it.Keep your balance:You have to remember that your work is something you do, not who you are.</li>
-<li>Relax and breathe:Fear is often just the imagination taking a wrong turn. Bad criticism is not the end of the world.</li>
-<li>Strengthen your neck:The more criticism you take, the more you realize it can’t hurt you.</li>
-<li>Roll with the punches:You can’t control what sort of criticism you receive, but you can control how you react to it.</li>
-<li>Keep your balance:You have to remember that your work is something you do, not who you are.</li>
 <li>The first step in evaluating feedback is sizing up who it came from. You want feedback from people who care about you and what you do. Be extra wary of feedback from anybody who falls outside of that circle.</li>
 <li>The worst troll is the one that lives in your head. It’s the voice that tells you you’re not good enough, that you suck, and that you’ll never amount to anything.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>9. Sell out.</h2>
+<h2 class="bn-section-title">9. Sell out.</h2>
 <ul class="bn-list">
 <li>Put a little virtual tip jar or a “donate now” button on your website. These links do well with a little bit of human copy, such as “Like this? Buy me a coffee.”</li>
 <li>Whether you ask for donations, crowdfund, or sell your products or services, asking for money in return for your work is a leap you want to take only when you feel confident that you’re putting work out into the world that you think is truly worth something.</li>
@@ -2466,7 +2333,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>10. Stick around.</h2>
+<h2 class="bn-section-title">10. Stick around.</h2>
 <ul class="bn-list">
 <li>Your last book isn’t going to write your next one for you. Whether you’ve just won big or lost big, you still have to face the question “What’s next?”</li>
 <li>Author Ernest Hemingway would stop in the middle of a sentence at the end of his day’s work so he knew where to start in the morning.</li>
@@ -2474,8 +2341,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "steal-like-an-artist": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "steal-like-an-artist": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Nothing is original. Every “original” piece of work was inspired by the work that came before.</li>
 <li>Stealing one person’s work is plagiarism. Stealing from all your favorite people and inspirations is creativity.</li>
@@ -2483,7 +2350,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Every new idea is just a mashup or a remix of one or more previous ideas.</li>
 <li>If you copy from one author, it’s plagiarism, but if you copy from many, it’s research.</li>
@@ -2491,7 +2358,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>1. Steal like an artist.</h2>
+<h2 class="bn-section-title">1. Steal like an artist.</h2>
 <ul class="bn-list">
 <li>First, you figure out what’s worth stealing, then you move on to the next thing.</li>
 <li>A good artist understands that nothing comes from nowhere. All creative work builds on what came before. Nothing is completely original.</li>
@@ -2503,7 +2370,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>2. Don’t wait until you know who you are to get started.</h2>
+<h2 class="bn-section-title">2. Don’t wait until you know who you are to get started.</h2>
 <ul class="bn-list">
 <li>It’s in the act of making things and doing our work that we figure out who we are.</li>
 <li>Fake it ‘til you make it. Pretend to be something you’re not until you are—fake it until you’re successful, until everybody sees you the way you want them to.</li>
@@ -2516,7 +2383,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>3. Write the book you want to read.</h2>
+<h2 class="bn-section-title">3. Write the book you want to read.</h2>
 <ul class="bn-list">
 <li>The best advice is not to write what you know, it’s to write what you like.</li>
 <li>Think about your favorite work and your creative heroes. What did they miss? What didn’t they make?</li>
@@ -2525,14 +2392,14 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>4. Use your hands.</h2>
+<h2 class="bn-section-title">4. Use your hands.</h2>
 <ul class="bn-list">
 <li>The computer is really good for editing your ideas, and it’s really good for getting your ideas ready for publishing out into the world, but it’s not really good forgeneratingideas.</li>
 <li>Stand up while you’re working. Pin things on the walls and look for patterns. Spread things around your space and sort them through.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>5. Side projects and hobbies are important.</h2>
+<h2 class="bn-section-title">5. Side projects and hobbies are important.</h2>
 <ul class="bn-list">
 <li>Take time to be bored. “When we get busy, we get stupid.” Creative people need time to just sit around and do nothing.</li>
 <li>If you’re all out of ideas, wash the dishes. Take a really long walk. Stare at a spot on the wall for as long as you can.</li>
@@ -2542,26 +2409,24 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>6. The secret: Do good work and share it with people.</h2>
+<h2 class="bn-section-title">6. The secret: Do good work and share it with people.</h2>
 <ul class="bn-list">
 <li>It’s not that people are mean or cruel, they’re just busy. Don’t be offended when few people notice your work.This is a good thing because you want attention only after you’re doing really good work. There’s no pressure when you’re unknown.</li>
-<li>This is a good thing because you want attention only after you’re doing really good work. There’s no pressure when you’re unknown.</li>
 <li>The secret of the internet:Step 1: Wonder at something.Step 2: Invite others to wonder with you. You should wonder at the things nobody else is wondering about. The more open you are about sharing your passions, the closer people will feel to your work.</li>
 <li>Step 1: Wonder at something.</li>
-<li>Step 2: Invite others to wonder with you. You should wonder at the things nobody else is wondering about. The more open you are about sharing your passions, the closer people will feel to your work.</li>
 <li>People love it when you give your secrets away, and sometimes, if you’re smart about it, they’ll reward you by buying the things you’re selling.</li>
 <li>Think about what you have to share that could be of some value to people. Share a handy tip you’ve discovered while working. Mention a good book you’re reading, or link an interesting article you discovered.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>7. Geography is no longer our master.</h2>
+<h2 class="bn-section-title">7. Geography is no longer our master.</h2>
 <ul class="bn-list">
 <li>Surround yourself with books and objects that you love. Tape things up on the wall. Create your own world.</li>
 <li>It helps to live around interesting people, and not necessarily people who do what you do.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>8. Be nice. (The world is a small town.)</h2>
+<h2 class="bn-section-title">8. Be nice. (The world is a small town.)</h2>
 <ul class="bn-list">
 <li>You’re only going to be as good as the people you surround yourself with. In the digital space, that means following the best people online—the people who are way smarter and better than you.</li>
 <li>You can’t go looking for validation from external sources. Once you put your work into the world, you have no control over the way people will react to it.</li>
@@ -2570,7 +2435,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>9. Be boring. (It’s the only way to get work done.)</h2>
+<h2 class="bn-section-title">9. Be boring. (It’s the only way to get work done.)</h2>
 <ul class="bn-list">
 <li>Stay out of debt. It’s not the money you make, it’s the money you hold on to. Make yourself a budget. Live within your means. Pack your lunch. Pinch pennies.</li>
 <li>Keep your day job. The truth is that even if you’re lucky enough to make a living off doing what you truly love, it will probably take you a while to get to that point. Until then, you’ll need a day job.</li>
@@ -2580,7 +2445,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>10. Creativity is subtraction.</h2>
+<h2 class="bn-section-title">10. Creativity is subtraction.</h2>
 <ul class="bn-list">
 <li>The way to get over creative block is to simply place some constraints on yourself. It seems contradictory, but when it comes to creative work, limitations mean freedom. Write a song on your lunch break. Shoot a movie with your iPhone.</li>
 <li>The right constraints can lead to your very best work.</li>
@@ -2588,8 +2453,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "benjamin-franklin": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "benjamin-franklin": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Ben Franklin was a pragmatic, frugal man. He believed in thinking things through logically without giving them emotional weight.</li>
 <li>He was averse to established elite and arbitrary power. He believed in the ability to move up the social ladder based on work produced and virtuosity.</li>
@@ -2597,7 +2462,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Man is a sociable being, and it is, for aught I know, one of the worst punishments to be excluded from society.</li>
 <li>Most people act virtuously not because of inner goodness, but because they are afraid of public censure.</li>
@@ -2609,10 +2474,9 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>Ben Franklin was one of 17 children of Josiah Franklin.Children used to be more of a resource rather than a burden. They helped around the house and shop by handling most menial chores.</li>
-<li>Children used to be more of a resource rather than a burden. They helped around the house and shop by handling most menial chores.</li>
 <li>As a young apprentice, Franklin became a vegetarian, not for moral and health reasons, but for financial reasons. This allowed him to save money for more books.</li>
 <li>A secret to being more revered than resented is to have self-deprecating humor, an unpretentious demeanor, and an unaggressive style in conversation.</li>
 <li>Franklin was good at making casual friends, intellectual companions, flirty admirers, but he was less good at nurturing lasting bonds that involved deep personal commitments or emotional relationships, even within his own family.</li>
@@ -2620,23 +2484,8 @@ const BOOK_NOTE_CONTENT = {
 <li>Franklin was not religious, but he thought religious practices were beneficial because they encouraged good behavior and a moral society. He thought that God was best served by doing good works and helping others</li>
 <li>Franklin was more practical than romantic, a man of the head rather than the heart.</li>
 <li>Franklin was not interested in organized religion. Still, he continued to hold some basic religious beliefs, among them the existence of the Deity was doing good to man. He was tolerant toward all sects, particularly those that worked to make the world a better place.His faith was devoid of sectarian dogma, burning spirituality, deep soul-searching, or a personal relationship with Christ.He believed that there was one Supreme most perfect being.He placed little faith in the use of prayers for specific personal requests or miracles.</li>
-<li>His faith was devoid of sectarian dogma, burning spirituality, deep soul-searching, or a personal relationship with Christ.</li>
-<li>He believed that there was one Supreme most perfect being.</li>
-<li>He placed little faith in the use of prayers for specific personal requests or miracles.</li>
 <li>We shall not be examined by what we thought, but by what we did…that we did well to our fellow creatures.</li>
 <li>Franklin’s 12 virtues he thought desirableTemperance. Eat not to dullness; drink not to elationSilence. Speak not but what may benefit others or yourself; avoid trifling conversation.Order. Let all your things have their places; let each part of your business have its time.Resolution. Resolve to perform what you should.Frugality. Make no expense but to do good to others or yourself (waste nothing)Industry. Lose no time; be always employed in something useful; cut off all unnecessary actions.Sincerity. Use no hurtful deceitJustice. Wrong none by doing injuries, or omitting the benefits that are your duty.Moderation. Avoid extremes; forbear resenting injuries so much as you think they deserveCleanliness. Tolerate no uncleanliness in body, clothes, or habitation.Tranquility. Be not disturbed at trifles, or at accidents common or unavoidable.Chastity. Rarely use venery but for health or offspring.</li>
-<li>Temperance. Eat not to dullness; drink not to elation</li>
-<li>Silence. Speak not but what may benefit others or yourself; avoid trifling conversation.</li>
-<li>Order. Let all your things have their places; let each part of your business have its time.</li>
-<li>Resolution. Resolve to perform what you should.</li>
-<li>Frugality. Make no expense but to do good to others or yourself (waste nothing)</li>
-<li>Industry. Lose no time; be always employed in something useful; cut off all unnecessary actions.</li>
-<li>Sincerity. Use no hurtful deceit</li>
-<li>Justice. Wrong none by doing injuries, or omitting the benefits that are your duty.</li>
-<li>Moderation. Avoid extremes; forbear resenting injuries so much as you think they deserve</li>
-<li>Cleanliness. Tolerate no uncleanliness in body, clothes, or habitation.</li>
-<li>Tranquility. Be not disturbed at trifles, or at accidents common or unavoidable.</li>
-<li>Chastity. Rarely use venery but for health or offspring.</li>
 <li>The purpose of religion should be to make men better and to improve society, and any sect or creed that did so was fine with Franklin.</li>
 <li>Freemasonry, a semisecret fraternal organization based on the ancient rituals and symbols of the stone-cutting guilds, had been founded in London in 1717, and its first Philadelphia lodge cropped up in 1727.</li>
 <li>Social mobility was not very common in the eighteenth century. But Franklin proudly made it his mission that a tradesman could rise in the world and stand before kings.</li>
@@ -2649,7 +2498,6 @@ const BOOK_NOTE_CONTENT = {
 <li>He believed in encouraging and providing opportunities for all people to succeed based on their diligence, hard work, virtue, and ambition.</li>
 <li>Franklin owned a slave couple, but in 1751 he decided to sell them because he found them uneconomical.</li>
 <li>He focused more on the uneconomical aspect of owning slaves than the immorality of it.Later in his life, he became an active abolitionist, who denounced slavery on moral grounds and helped advance the rights of blacks.</li>
-<li>Later in his life, he became an active abolitionist, who denounced slavery on moral grounds and helped advance the rights of blacks.</li>
 <li>On the night of April 18, 1775, a contingent of British redcoats headed north from Boston to arrest the tea party planners Samuel Adams and John Hancock and capture the munitions stockpiled by their supporters. Paul Revere spread the alarm, as did others less famously.</li>
 <li>Franklin believed that science should be pursued initially for pure fascination and curiosity, and then practical uses would eventually flow from what was discovered.</li>
 <li>Franklin was on the side of religious tolerance rather than evangelical faith. The side of social mobility rather than an established elite. the side of middle-class virtues rather than more ethereal noble aspirations.</li>
@@ -2663,8 +2511,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "the-48-laws-of-power": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "the-48-laws-of-power": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ol class="bn-list">
 <li>The world runs on power and everyone should know how it works. If you know how it works, you can protect yourself from others who try to gain it at your expense.</li>
 <li>Power may not always be easy to attain and it may bring about morally complex issues.</li>
@@ -2672,195 +2520,62 @@ const BOOK_NOTE_CONTENT = {
 </ol>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ol class="bn-list">
 <li>Never outshine the masterMake the master appear more brilliant than they are and you will attain the heights of powerAll masters want to appear more brilliant than other peopleThose in high power want to feel secure in their position, superior to those around them in intelligence, wit, and charmFirst, you must flatter and puff up your master with discreet flatteryMake your master shine even more in the eyes of others and you will be instantly promoted</li>
-<li>Make the master appear more brilliant than they are and you will attain the heights of power</li>
-<li>All masters want to appear more brilliant than other people</li>
-<li>Those in high power want to feel secure in their position, superior to those around them in intelligence, wit, and charm</li>
-<li>First, you must flatter and puff up your master with discreet flattery</li>
-<li>Make your master shine even more in the eyes of others and you will be instantly promoted</li>
 <li>Never put too much trust in friends, learn how to use enemiesFriends easily become envious and will betray you quickly. Hire a former enemy and he will be more loyal than a friend because he has more to proveWithout enemies around us, we grow lazy. An enemy at our heels keeps us sharp and alert</li>
-<li>Friends easily become envious and will betray you quickly. Hire a former enemy and he will be more loyal than a friend because he has more to prove</li>
-<li>Without enemies around us, we grow lazy. An enemy at our heels keeps us sharp and alert</li>
 <li>Conceal your intentionsMost people are open books. They say what they feel and reveal their plansAvoid telling people your plans. They often find ways to sabotage them or throw you off course</li>
-<li>Most people are open books. They say what they feel and reveal their plans</li>
-<li>Avoid telling people your plans. They often find ways to sabotage them or throw you off course</li>
 <li>Always say less than necessaryWhen you are trying to impress people with words, the more you say, the more common you appear, and the less in controlPowerful people impress and intimidate by saying less. The more you say, the more likely you are to say something foolish</li>
-<li>When you are trying to impress people with words, the more you say, the more common you appear, and the less in control</li>
-<li>Powerful people impress and intimidate by saying less. The more you say, the more likely you are to say something foolish</li>
 <li>Guard your reputation with your lifeReputation is the cornerstone of power. Through reputation alone you can intimidate and win; once it slips, however, you are vulnerable and will be attacked.Learn to destroy your enemy's reputationIn the social realm, appearances are the basis of all judgments.Establish a reputation for yourself that is one of outstanding quality, generosity, and honesty</li>
-<li>Reputation is the cornerstone of power. Through reputation alone you can intimidate and win; once it slips, however, you are vulnerable and will be attacked.</li>
-<li>Learn to destroy your enemy's reputation</li>
-<li>In the social realm, appearances are the basis of all judgments.</li>
-<li>Establish a reputation for yourself that is one of outstanding quality, generosity, and honesty</li>
 <li>Court attention at all costsEverything is judged by its appearance; what is unseen counts for nothing. Stand out. Be conspicuous, at all costs. Make yourself a magnet of attention by appearing larger, more colorful, and more mysterious than the bland and timid massesTo create a crowd you have to do something different and odd.At the start of your career, you must attach your name and reputation to a quality, an image, that sets you apart from other people. This can be something like a characteristic style of dress, or a personality quirk that amuses people and gets talked aboutDon’t be predictable. Hold back, keep silent, and act odd in subtle ways to emanate an aura of mystery</li>
-<li>Everything is judged by its appearance; what is unseen counts for nothing. Stand out. Be conspicuous, at all costs. Make yourself a magnet of attention by appearing larger, more colorful, and more mysterious than the bland and timid masses</li>
-<li>To create a crowd you have to do something different and odd.</li>
-<li>At the start of your career, you must attach your name and reputation to a quality, an image, that sets you apart from other people. This can be something like a characteristic style of dress, or a personality quirk that amuses people and gets talked about</li>
-<li>Don’t be predictable. Hold back, keep silent, and act odd in subtle ways to emanate an aura of mystery</li>
 <li>Get others to do the work for you, but take the creditUse the wisdom, knowledge, and legwork of other people to further your own cause. This will save you time and energy.Never do yourself what others can do for you. Take credit for the work of those below you and graciously give credit to those above youTaking credit is more important than the creation of an inventionEverybody steals in commerce and industry. Just know how to steal</li>
-<li>Use the wisdom, knowledge, and legwork of other people to further your own cause. This will save you time and energy.</li>
-<li>Never do yourself what others can do for you. Take credit for the work of those below you and graciously give credit to those above you</li>
-<li>Taking credit is more important than the creation of an invention</li>
-<li>Everybody steals in commerce and industry. Just know how to steal</li>
 <li>Make other people come to you—use bait if necessaryWhen you force the other person to act, you are the one in control. It is always better to make your opponent come to you.</li>
-<li>When you force the other person to act, you are the one in control. It is always better to make your opponent come to you.</li>
 <li>Win through your actions, never through argumentIt is much more powerful to get others to agree with you through your actions, without saying a word. Demonstrate, do not explicateYou must learn to demonstrate the correctness of your ideas indirectlyEven if you when an argument, the other person often ends up feeling resentful.“The truth is generally seen, rarely heard”Demonstrating your idea avoids your opponents from getting defensive, and are therefore more open to persuasion.</li>
-<li>It is much more powerful to get others to agree with you through your actions, without saying a word. Demonstrate, do not explicate</li>
-<li>You must learn to demonstrate the correctness of your ideas indirectly</li>
-<li>Even if you when an argument, the other person often ends up feeling resentful.</li>
-<li>“The truth is generally seen, rarely heard”</li>
-<li>Demonstrating your idea avoids your opponents from getting defensive, and are therefore more open to persuasion.</li>
 <li>Infection: Avoid the unhappy and unluckyYou can die from someone else’s misery—emotional states are as infectious as diseasesWhen you are in the presence of an infector, don’t argue, don’t try to help, don’t pass the person on to your friends, or you will become enmeshed. Flee the infector’s presenceHumans are extremely susceptible to the moods, emotions, and even the ways of thinking of those with whom they spend their time. Associate with the happy and fortunateIf you are gloomy, gravitate to the cheerful. If you are prone to isolation, force yourself to befriend outgoing people.</li>
-<li>You can die from someone else’s misery—emotional states are as infectious as diseases</li>
-<li>When you are in the presence of an infector, don’t argue, don’t try to help, don’t pass the person on to your friends, or you will become enmeshed. Flee the infector’s presence</li>
-<li>Humans are extremely susceptible to the moods, emotions, and even the ways of thinking of those with whom they spend their time. Associate with the happy and fortunate</li>
-<li>If you are gloomy, gravitate to the cheerful. If you are prone to isolation, force yourself to befriend outgoing people.</li>
 <li>Learn to keep people dependent on youThe more you are relied on, the more freedom you have. Make people depend on you for their happiness and prosperity and you have nothing to fear.</li>
-<li>The more you are relied on, the more freedom you have. Make people depend on you for their happiness and prosperity and you have nothing to fear.</li>
 <li>Use selective honesty and generosity to disarm your victimOne sincere and honest move will cover dozens of dishonest ones.Learn to give before you take. It softens the ground and takes the bite out of a future request</li>
-<li>One sincere and honest move will cover dozens of dishonest ones.</li>
-<li>Learn to give before you take. It softens the ground and takes the bite out of a future request</li>
 <li>When asking for help, appeal to people’s self-interest, never to their mercy or gratitudeEmphasize the benefits the other person will receive and he will be happy to help when he sees something to be gained for himself</li>
-<li>Emphasize the benefits the other person will receive and he will be happy to help when he sees something to be gained for himself</li>
 <li>Pose as a friend, work as a spyKnowing about your rival is critical. In polite social encounters, learn to probe. Ask indirect questions to get people to reveal their weaknesses and intentionsEmphasize friendly chatter, not valuable information. Don’t be too obvious when searching for gems</li>
-<li>Knowing about your rival is critical. In polite social encounters, learn to probe. Ask indirect questions to get people to reveal their weaknesses and intentions</li>
-<li>Emphasize friendly chatter, not valuable information. Don’t be too obvious when searching for gems</li>
 <li>Crush your enemy totallyIf one ember is left alight, no matter how dimly it smolders, a fire will eventually break outHave no mercy. The only peace and security you can hope for from your enemies is their disappearance.</li>
-<li>If one ember is left alight, no matter how dimly it smolders, a fire will eventually break out</li>
-<li>Have no mercy. The only peace and security you can hope for from your enemies is their disappearance.</li>
 <li>Use absence to increase respect and honorThe more you are seen and heard from, the more common you appear. You must learn when to leave. Create value through scarcity.Don’t be too noticeable or available. People will take you for granted and lose respect for youThe sun. It can only be appreciated by its absence. The longer the days of rain, the more the sun is cravedExtend the law of scarcity to your own skills. Make what you are offering the world rare and hard to find to increase your value.</li>
-<li>The more you are seen and heard from, the more common you appear. You must learn when to leave. Create value through scarcity.</li>
-<li>Don’t be too noticeable or available. People will take you for granted and lose respect for you</li>
-<li>The sun. It can only be appreciated by its absence. The longer the days of rain, the more the sun is craved</li>
-<li>Extend the law of scarcity to your own skills. Make what you are offering the world rare and hard to find to increase your value.</li>
 <li>Keep others in suspended terror: cultivate an air of unpredictabilityBe deliberately unpredictable. Behavior that seems to have no consistency or purpose will keep them off-balance, and they will wear themselves out trying to explain your movesScramble your patterns of daily routine. The more capricious you appear, the more respect you will garner.</li>
-<li>Be deliberately unpredictable. Behavior that seems to have no consistency or purpose will keep them off-balance, and they will wear themselves out trying to explain your moves</li>
-<li>Scramble your patterns of daily routine. The more capricious you appear, the more respect you will garner.</li>
 <li>Do not build fortresses to protect yourself—isolation is dangerousA fortress seems the safest. But isolation exposes you to more dangers than it protects you from—it cuts you off from valuable information, it makes you conspicuous and an easy targetIn moments of uncertainty and danger, you need to fight the desire to turn inward. Seek out old allies and make new ones, force yourself into more and more different circlesPower is increased by contact with other people. Be able to be permeable and able to float in and out of different circles and mix with different people</li>
-<li>A fortress seems the safest. But isolation exposes you to more dangers than it protects you from—it cuts you off from valuable information, it makes you conspicuous and an easy target</li>
-<li>In moments of uncertainty and danger, you need to fight the desire to turn inward. Seek out old allies and make new ones, force yourself into more and more different circles</li>
-<li>Power is increased by contact with other people. Be able to be permeable and able to float in and out of different circles and mix with different people</li>
 <li>Know who you’re dealing with—do not offend the wrong personThere are many different kinds of people in the world, and you can never assume that everyone will react to your strategies in the same wayIf you want to turn someone down, do it politely and respectfullyTo test the waters, make a mild joke at the other person’s expense. If they laugh they are confident; an insecure person will react as if personally insultedNever trust appearances</li>
-<li>There are many different kinds of people in the world, and you can never assume that everyone will react to your strategies in the same way</li>
-<li>If you want to turn someone down, do it politely and respectfully</li>
-<li>To test the waters, make a mild joke at the other person’s expense. If they laugh they are confident; an insecure person will react as if personally insulted</li>
-<li>Never trust appearances</li>
 <li>Do not commit to anyoneIt is the fool who always rushes to take sides. Do not commit to any side or cause but yourselfPut yourself in the middle between competing powers. Lure one side with the promise of your help; the other side, always wanting to outdo its enemy, will pursue you as wellFind a way to remain neutral and not pick sides. Let others fight while you stand back</li>
-<li>It is the fool who always rushes to take sides. Do not commit to any side or cause but yourself</li>
-<li>Put yourself in the middle between competing powers. Lure one side with the promise of your help; the other side, always wanting to outdo its enemy, will pursue you as well</li>
-<li>Find a way to remain neutral and not pick sides. Let others fight while you stand back</li>
 <li>Play a sucker to catch a sucker—seem dumber than your markMake your victims feel smart—and not just smart, but smarter than you are. Once convinced of this, they will never suspect that you may have ulterior motivesNever insult a person’s brain power. Subliminally reassure people that they are more intelligent than you are, or even that you are a bit of a moron, and you can run rings around themLook like a harmless pig and no one will believe you harbor dangerous ambitions.Get in the habit of downplaying your intelligence at all times. It rarely pays to show it</li>
-<li>Make your victims feel smart—and not just smart, but smarter than you are. Once convinced of this, they will never suspect that you may have ulterior motives</li>
-<li>Never insult a person’s brain power. Subliminally reassure people that they are more intelligent than you are, or even that you are a bit of a moron, and you can run rings around them</li>
-<li>Look like a harmless pig and no one will believe you harbor dangerous ambitions.</li>
-<li>Get in the habit of downplaying your intelligence at all times. It rarely pays to show it</li>
 <li>Use the surrender tactic: transform weakness into powerWhen you are weaker, never fight for honor’s sake; choose surrender instead. This gives you time to recover.When encountering aggression fight the urge to meet it with aggression and instead turn the other cheek. This will put you in control of the situation and infuriate the other person</li>
-<li>When you are weaker, never fight for honor’s sake; choose surrender instead. This gives you time to recover.</li>
-<li>When encountering aggression fight the urge to meet it with aggression and instead turn the other cheek. This will put you in control of the situation and infuriate the other person</li>
 <li>Concentrate your forcesConserve your forces and energies by keeping them concentrated at their strongest point. Find one source of power and go all in.</li>
-<li>Conserve your forces and energies by keeping them concentrated at their strongest point. Find one source of power and go all in.</li>
 <li>Play the perfect courtierHe has mastered the art of indirection; he flatters, yields to superiors, and asserts power over others in the most oblique and graceful mannerPractice nonchalance. Never seem to be working too hard. your talent must appear to flow naturally, with an ease that makes people take you for a genius rather than a workaholic.Be frugal with flatteryNever criticize those above you directlyBe frugal in asking those above you for favorsExpress admiration for the good work of othersMaster your emotions. Be able to disguise your anger and frustration</li>
-<li>He has mastered the art of indirection; he flatters, yields to superiors, and asserts power over others in the most oblique and graceful manner</li>
-<li>Practice nonchalance. Never seem to be working too hard. your talent must appear to flow naturally, with an ease that makes people take you for a genius rather than a workaholic.</li>
 <li>Be frugal with flattery</li>
-<li>Never criticize those above you directly</li>
-<li>Be frugal in asking those above you for favors</li>
-<li>Express admiration for the good work of others</li>
-<li>Master your emotions. Be able to disguise your anger and frustration</li>
 <li>Re-create yourselfBe the master of your own image rather than letting others define it for you</li>
-<li>Be the master of your own image rather than letting others define it for you</li>
 <li>Keep your hands cleanConceal your mistakes—have a scapegoat around to take the blame or your reputation will sufferAll men make mistakes, but the wise conceal the blunders they have made, while fools make them public. Reputation depends more on what is hidden than on what is seenThe truly powerful never seem to be in a hurry or overburdened. They know how to find the right people to put in the effort while they save their energy.</li>
-<li>Conceal your mistakes—have a scapegoat around to take the blame or your reputation will suffer</li>
-<li>All men make mistakes, but the wise conceal the blunders they have made, while fools make them public. Reputation depends more on what is hidden than on what is seen</li>
-<li>The truly powerful never seem to be in a hurry or overburdened. They know how to find the right people to put in the effort while they save their energy.</li>
 <li>Play on people’s need to believe to create a cultlike followingThe most effective cults mix religion with science.</li>
-<li>The most effective cults mix religion with science.</li>
 <li>Enter action with boldnessIf you are unsure of a course of action, do not attempt it. Everyone admires the bold; no one honors the timid.People can sense the weaknesses of others. In a first impression, if you show a willingness to compromise, back down, and retreat, you will be taken advantage of without mercyAudacity separates you from the herd. Be bold. Don’t be afraid to be seen.You must practice and develop your boldness. This is incredibly useful in negotiations. Don’t put yourself down by asking for too little in an interview.In negotiations, bold demands work better than starting somewhere to meet the other person halfway. Set your value high, and then set it higherYour fears of the consequences of a bold action are way out of proportion to reality.</li>
-<li>If you are unsure of a course of action, do not attempt it. Everyone admires the bold; no one honors the timid.</li>
-<li>People can sense the weaknesses of others. In a first impression, if you show a willingness to compromise, back down, and retreat, you will be taken advantage of without mercy</li>
-<li>Audacity separates you from the herd. Be bold. Don’t be afraid to be seen.</li>
-<li>You must practice and develop your boldness. This is incredibly useful in negotiations. Don’t put yourself down by asking for too little in an interview.</li>
-<li>In negotiations, bold demands work better than starting somewhere to meet the other person halfway. Set your value high, and then set it higher</li>
-<li>Your fears of the consequences of a bold action are way out of proportion to reality.</li>
 <li>Plan all the way to the endImprovisation will only bring you to the next crisis. Always think several steps ahead and plan till the end</li>
-<li>Improvisation will only bring you to the next crisis. Always think several steps ahead and plan till the end</li>
 <li>Make your accomplishments seem effortlessYour actions must seem natural and executed with ease.Avoid the temptation of showing how clever you are—it is far more clever to conceal the mechanisms of your clevernessThe more mystery surrounds your actions, the more awesome your power seems</li>
-<li>Your actions must seem natural and executed with ease.</li>
-<li>Avoid the temptation of showing how clever you are—it is far more clever to conceal the mechanisms of your cleverness</li>
-<li>The more mystery surrounds your actions, the more awesome your power seems</li>
 <li>Control the options: get others to play with the cards you dealThe best deceptions are the ones that seem to give the other person a choice: Your victims feel they are in control but are actually your puppets. Give people options that come out in your favor whichever one they choose.</li>
-<li>The best deceptions are the ones that seem to give the other person a choice: Your victims feel they are in control but are actually your puppets. Give people options that come out in your favor whichever one they choose.</li>
 <li>Play to people’s fantasiesNever appeal to the truth and reality unless you’re prepared for the anger that comes from disenchantment. The truth is often avoided because it is ugly and unpleasant</li>
-<li>Never appeal to the truth and reality unless you’re prepared for the anger that comes from disenchantment. The truth is often avoided because it is ugly and unpleasant</li>
 <li>Discover each man’s thumbscrewEveryone has a weakness, a gap in the castle wall. That weakness is usually an insecurity, an uncontrollable emotion or a need; it can also be a small secret pleasureAn overt trait often conceals its opposite. People who thump their chests are often big cowards; the shy are dying for attentionFill the void. The insecure are suckers for social validation.When looking for sucks, always look for the dissatisfied, the unhappy, the insecure</li>
-<li>Everyone has a weakness, a gap in the castle wall. That weakness is usually an insecurity, an uncontrollable emotion or a need; it can also be a small secret pleasure</li>
-<li>An overt trait often conceals its opposite. People who thump their chests are often big cowards; the shy are dying for attention</li>
-<li>Fill the void. The insecure are suckers for social validation.</li>
-<li>When looking for sucks, always look for the dissatisfied, the unhappy, the insecure</li>
 <li>Be royal in your own fashion: act like a king to be treated like oneThe way you carry yourself will often determine how you are treated. Act confident in your powersKnow your worth and don’t be afraid to ask for what you deserveThe powerful have the common trait of a strong self-beliefIf we believe we are destined for great things, our belief will radiate outwardEven if someone turns down your salary request, they will respect your confidence</li>
-<li>The way you carry yourself will often determine how you are treated. Act confident in your powers</li>
-<li>Know your worth and don’t be afraid to ask for what you deserve</li>
-<li>The powerful have the common trait of a strong self-belief</li>
-<li>If we believe we are destined for great things, our belief will radiate outward</li>
-<li>Even if someone turns down your salary request, they will respect your confidence</li>
 <li>Master the art of timingNever seem to be in a hurry—hurrying betrays a lack of control over yourself, and over time. Always seem patient, as if you know that everything will come to you eventually</li>
-<li>Never seem to be in a hurry—hurrying betrays a lack of control over yourself, and over time. Always seem patient, as if you know that everything will come to you eventually</li>
 <li>Disdain things you cannot have: Ignoring them is the best revengeDon’t give a petty problem existence or credibility, rather, ignore itThe best lesson you can teach an irritating gnat is to consign it to oblivion by ignoring itYOU CHOOSE TO LET THINGS BOTHER YOU. You can just as easily choose not to notice the irritating offender. Don’t waste time and energyBy ignoring people you cancel them out. This unsettles and infuriates them.Desire often is a paradox: the harder you chase something, the more it eludes you.Never show that something has affected or offended you. Contempt is a dish best served cold without attention</li>
-<li>Don’t give a petty problem existence or credibility, rather, ignore it</li>
-<li>The best lesson you can teach an irritating gnat is to consign it to oblivion by ignoring it</li>
-<li>YOU CHOOSE TO LET THINGS BOTHER YOU. You can just as easily choose not to notice the irritating offender. Don’t waste time and energy</li>
-<li>By ignoring people you cancel them out. This unsettles and infuriates them.</li>
-<li>Desire often is a paradox: the harder you chase something, the more it eludes you.</li>
-<li>Never show that something has affected or offended you. Contempt is a dish best served cold without attention</li>
 <li>Create compelling spectaclesNever underestimate the power of images and symbols to drive your point home</li>
-<li>Never underestimate the power of images and symbols to drive your point home</li>
 <li>Think as you like but behave like othersIf you flaunt your unconventional ideas and unorthodox ways, people will think you only want attention and that you look down upon themYou can display conventional behavior and mouth conventional ideas without having to believe in themIf you stick to conventional appearances in public few will believe you think differently in private</li>
-<li>If you flaunt your unconventional ideas and unorthodox ways, people will think you only want attention and that you look down upon them</li>
-<li>You can display conventional behavior and mouth conventional ideas without having to believe in them</li>
-<li>If you stick to conventional appearances in public few will believe you think differently in private</li>
 <li>Stir up waters to catch fishMake your enemies angry while staying calm yourself to gain an advantageTo show your frustration is to show you have lost your powerTantrums never intimidate nor inspire loyalty. They only create doubts of your powerAngry people usually look ridiculous, for their response looks out of proportionDon’t take matters personally and always control your emotions. Then you can play with the emotional responses of others</li>
-<li>Make your enemies angry while staying calm yourself to gain an advantage</li>
-<li>To show your frustration is to show you have lost your power</li>
-<li>Tantrums never intimidate nor inspire loyalty. They only create doubts of your power</li>
-<li>Angry people usually look ridiculous, for their response looks out of proportion</li>
-<li>Don’t take matters personally and always control your emotions. Then you can play with the emotional responses of others</li>
 <li>Despise the free lunchWhat is offered as free is dangerous—it usually involves either a trick or a hidden obligation. What has worth is worth payingfor.Pay your own way to stay clear of gratitude, guild, and deceitProtect your independence and ability to maneuver. Pay the full price to stay out of dangerSudden wealth rarely lasts, for it is built on nothing solidPowerful people give freely, buying influence rather than things. Play the lord of giving freely and circulate your money to create yourself as an equal to the aristocracy</li>
-<li>What is offered as free is dangerous—it usually involves either a trick or a hidden obligation. What has worth is worth payingfor.Pay your own way to stay clear of gratitude, guild, and deceit</li>
-<li>Protect your independence and ability to maneuver. Pay the full price to stay out of danger</li>
-<li>Sudden wealth rarely lasts, for it is built on nothing solid</li>
-<li>Powerful people give freely, buying influence rather than things. Play the lord of giving freely and circulate your money to create yourself as an equal to the aristocracy</li>
 <li>Avoid stepping into a great man’s shoesWhat happens first always appears better and more original than what comes after. Establish your own name and identity by changing course.</li>
-<li>What happens first always appears better and more original than what comes after. Establish your own name and identity by changing course.</li>
 <li>Strike the shepherd and the sheep will scatterGo after the strongest individual and the rest will scatter</li>
-<li>Go after the strongest individual and the rest will scatter</li>
 <li>Work on the hearts and minds of othersThe key to persuasion is softening people up and breaking them down gently. Play on their emotions and their intellectual weaknesses. Aim at the primary emotions—love, hate, jealousy</li>
-<li>The key to persuasion is softening people up and breaking them down gently. Play on their emotions and their intellectual weaknesses. Aim at the primary emotions—love, hate, jealousy</li>
 <li>Disarm and infuriate with the mirror effectdo what your enemies do, following their actions as best you can, and they cannot see what you are up to—they are blinded by your mirrorEveryone is wrapped up in their own ego. By mirroring them, you seduce them into a kind of narcissistic rapture</li>
-<li>do what your enemies do, following their actions as best you can, and they cannot see what you are up to—they are blinded by your mirror</li>
-<li>Everyone is wrapped up in their own ego. By mirroring them, you seduce them into a kind of narcissistic rapture</li>
 <li>Preach the need for change, but never reform too much at onceIf you are new to a position of power, or an outsider trying to build a power base, make a show of respecting the old way of doing thingsIncorporate old traditions with new reforms</li>
-<li>If you are new to a position of power, or an outsider trying to build a power base, make a show of respecting the old way of doing things</li>
-<li>Incorporate old traditions with new reforms</li>
 <li>Never appear too perfectAppearing better than others is always dangerous, most dangerous of all is to appear to have no faults or weaknesses. Envy creates silent enemies. It is smart to occasionally display defects, and admit to harmless vicesNever flaunt your wealth, and carefully conceal the degree to which it has bought influence. Make a display of deferring to others, as if they were more powerful than youEnvy is often disguised as finding ways to criticize someone who makes us feel it: he may be smarter than I am, we say, but he has no moralsRead between the sarcastic remarks, and signs of backstabbing, the excessive praise that is preparing you for a fall.Subtly emphasize how lucky you have been, to make your happiness seem more attainable to other peopleThose who are hypercritical of you are probably just envious of you. Win your revenge by ignoring them</li>
-<li>Appearing better than others is always dangerous, most dangerous of all is to appear to have no faults or weaknesses. Envy creates silent enemies. It is smart to occasionally display defects, and admit to harmless vices</li>
-<li>Never flaunt your wealth, and carefully conceal the degree to which it has bought influence. Make a display of deferring to others, as if they were more powerful than you</li>
-<li>Envy is often disguised as finding ways to criticize someone who makes us feel it: he may be smarter than I am, we say, but he has no morals</li>
-<li>Read between the sarcastic remarks, and signs of backstabbing, the excessive praise that is preparing you for a fall.</li>
-<li>Subtly emphasize how lucky you have been, to make your happiness seem more attainable to other people</li>
-<li>Those who are hypercritical of you are probably just envious of you. Win your revenge by ignoring them</li>
 <li>Do not go past the mark you aimed for; in victory, learn when to stopIn the heat of victory, arrogance and overconfidence can push you past the goal you had aimed for; by going too far, you make more enemies than you defeatSet a goal, and stop when you reach it</li>
-<li>In the heat of victory, arrogance and overconfidence can push you past the goal you had aimed for; by going too far, you make more enemies than you defeat</li>
-<li>Set a goal, and stop when you reach it</li>
 <li>Assume formlessnessAccept the fact that nothing is certain and no law is fixed. The best way to protect yourself is to be as fluid and formless as water; never bet on stability or lasting order. Everything changesLearn to adapt fast or you will be eaten</li>
-<li>Accept the fact that nothing is certain and no law is fixed. The best way to protect yourself is to be as fluid and formless as water; never bet on stability or lasting order. Everything changes</li>
-<li>Learn to adapt fast or you will be eaten</li>
 </ol>
 </section>`,
 
-  "einstein": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+ "einstein": `<section class="bn-section">
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>What science teaches us, very significantly, is the correlation between factual evidence and general theories, something well illustrated in Einstein’s life.</li>
 <li>An appreciation for the glories of science is a joyful trait for a good society. It helps us remain in touch with that childlike capacity for wonder, about such ordinary things as falling apples and elevators.</li>
@@ -2904,8 +2619,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "four-thousand-weeks": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "four-thousand-weeks": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>The more productive we become at a certain task, the more work we will have as a result. Thinking that there will be time to relax is a false narrative, you need to make time for yourself.</li>
 <li>There are too many seemingly important things for any human to spend their time on. There are trade-offs with every decision, just make sure that you’re making them consciously.</li>
@@ -2913,13 +2628,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has changed my thoughts on being productive at all times. Too often, I judge myself on how much I’ve gotten done in a certain period of time. This is futile because there will always be more things to get done regardless of how productive I am. I want to make sure that I am also enjoying the journey of being alive, and not only focusing on how many things I can accomplish.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>The first modern humans appeared on the plains of Africa at least 200,000 years ago, and scientists estimate that life, in some form, will persist for another 1.5 billion years or more. But you? Assuming you live to be eighty, you’ll have had about four thousand weeks.</li>
 <li>When people make enough money to meet their needs, they just find new things to need and new lifestyles to aspire to: they never quite manage to keep up with the Joneses, because whenever they’re in danger of getting close, they nominate new and better Joneses with whom to try to keep up.</li>
@@ -2929,7 +2644,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <h4 class="bn-subsection">The Limit-Embracing Life</h4>
 <ul class="bn-list">
 <li>The invention of the clock is solely to blame for all our time-related troubles today.</li>
@@ -3047,32 +2762,20 @@ const BOOK_NOTE_CONTENT = {
 <h4 class="bn-subsection">Ten Tools for Embracing Your Finitude</h4>
 <ol class="bn-list">
 <li>Adopt a “fixed volume” approach to productivity.It’s better to begin from the assumption that tough choices are inevitable and to focus on making them consciously and well. Any strategy for limiting your work in progress will help.Establish predetermined time boundaries for your daily work. Decide in advance how much time you’ll dedicate to work.</li>
-<li>It’s better to begin from the assumption that tough choices are inevitable and to focus on making them consciously and well. Any strategy for limiting your work in progress will help.</li>
-<li>Establish predetermined time boundaries for your daily work. Decide in advance how much time you’ll dedicate to work.</li>
 <li>Serialize, serialize, serialize.Focus on one big project at a time.</li>
-<li>Focus on one big project at a time.</li>
 <li>Decide in advance what to fail at.You’ll inevitably end up underachieving at something, simply because your time and energy are finite. Focus on strategic underachievement.</li>
-<li>You’ll inevitably end up underachieving at something, simply because your time and energy are finite. Focus on strategic underachievement.</li>
 <li>Focus on what you’ve already completed, not just on what’s left to complete.Keep a “done list,” which starts empty first thing in the morning, and which you gradually fill with whatever you accomplish through the day.</li>
-<li>Keep a “done list,” which starts empty first thing in the morning, and which you gradually fill with whatever you accomplish through the day.</li>
 <li>Consolidate your caring.Social media is a giant machine for getting you to spend your time caring about the wrong things, but for the same reason, it’s also a machine for getting you to care about too many things.</li>
-<li>Social media is a giant machine for getting you to spend your time caring about the wrong things, but for the same reason, it’s also a machine for getting you to care about too many things.</li>
 <li>Embrace boring and single-purpose technology.Make your devices as boring as possible—first by removing social media apps, even email if you dare, and then by switching the screen from color to grayscale.</li>
-<li>Make your devices as boring as possible—first by removing social media apps, even email if you dare, and then by switching the screen from color to grayscale.</li>
 <li>Seek out novelty in the mundane.Pay more attention to every moment, however mundane: to find novelty not by doing radically different things but by plunging more deeply into the life you already have. Experience life with twice the usual intensity, and “your experience of life would be twice as full as it currently is.”Meditation helps here. But so does going on unplanned walks to see where they lead you, using a different route to get to work, or journaling.</li>
-<li>Pay more attention to every moment, however mundane: to find novelty not by doing radically different things but by plunging more deeply into the life you already have. Experience life with twice the usual intensity, and “your experience of life would be twice as full as it currently is.”</li>
-<li>Meditation helps here. But so does going on unplanned walks to see where they lead you, using a different route to get to work, or journaling.</li>
 <li>Be a “researcher” in relationships.When presented with a challenging or boring moment, try deliberately adopting an attitude of curiosity, in which your goal isn’t to achieve any particular outcome, or successfully explain your position, but to figure out who this human being is that we’re with.</li>
-<li>When presented with a challenging or boring moment, try deliberately adopting an attitude of curiosity, in which your goal isn’t to achieve any particular outcome, or successfully explain your position, but to figure out who this human being is that we’re with.</li>
 <li>Cultivate instantaneous generosity.</li>
 <li>Practice doing nothing.When it comes to the challenge of using your four thousand weeks well, the capacity to do nothing is indispensable, because if you can’t bear the discomfort of not acting, you’re far more likely to make poor choices with your time, simply to feel as if you’re acting—choices such as stressfully trying to hurry activities that won’t be rushed or feeling you ought to spend every moment being productive in the service of future goals, thereby postponing fulfillment to a time that never arrives.Try the “Do nothing” meditation. Set a timer for five to ten minutes, sit down in a chair, and then stop trying to do anything.</li>
-<li>When it comes to the challenge of using your four thousand weeks well, the capacity to do nothing is indispensable, because if you can’t bear the discomfort of not acting, you’re far more likely to make poor choices with your time, simply to feel as if you’re acting—choices such as stressfully trying to hurry activities that won’t be rushed or feeling you ought to spend every moment being productive in the service of future goals, thereby postponing fulfillment to a time that never arrives.</li>
-<li>Try the “Do nothing” meditation. Set a timer for five to ten minutes, sit down in a chair, and then stop trying to do anything.</li>
 </ol>
 </section>`,
 
-  "the-psychology-of-money": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "the-psychology-of-money": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Humans are not rational beings, so we should stop treating our finances like we are and aim to be reasonable with our financial decisions.</li>
 <li>Freedom with how to spend your time is what building wealth is for. If you don’t control your time, it’s difficult to be consistently happy.</li>
@@ -3080,7 +2783,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Doing well with money has a little to do with how smart you are and a lot to do with how you behave. And behavior is hard to teach, even to really smart people.</li>
 <li>There is no reason to risk what you have and need for what you don’t have and don’t need.</li>
@@ -3090,7 +2793,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <h4 class="bn-subsection">1. No One’s Crazy: Your personal experiences with money make up maybe 0.000000001% of what’s happened in the world, but maybe 80% of how you think the world works.</h4>
 <ul class="bn-list">
 <li>The person who grew up when inflation was high experienced something the person who grew up with stable prices never had to.</li>
@@ -3252,8 +2955,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "the-4-hour-workweek": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "the-4-hour-workweek": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Time and mobility are now some of the most prized aspects of life. By having more time and mobility available, the ceiling for happiness and life satisfaction increases.</li>
 <li>The concept of working 9-5, 5 days a week is outdated and unnecessary. We have the ability to build systems that require less time and attention from us while generating income.</li>
@@ -3261,13 +2964,13 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has made me shift my view on my working life. It has been ingrained in our culture that working a good 9-5 job will allow us to make money that we can spend on accumulating more things. Well, to make money we don’t need to sell our time for money, we can set up a system that allows us to make money without being strapped down to a single job every day.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>When you find yourself on the side of the majority, it is time to pause and reflect. — Mark Twain</li>
 <li>People don’t want to be millionaires—they want to experience what they believe only millions can buy.</li>
@@ -3287,7 +2990,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Step I: D is for Definition</h2>
+<h2 class="bn-section-title">Step I: D is for Definition</h2>
 <ul class="bn-list">
 <li>The New Rich want to prevent work for work’s sake and to do the minimum necessary for maximum effect. They want to distribute recovery periods and adventures throughout life on a regular basis and recognize that inactivity is not the goal. Doing that which excites you is. They want to be neither the boss nor the employee, but the owner. To own the trains and have someone else ensure they run on time.</li>
 <li>The goal is not to simply eliminate the bad, which does nothing more than leave you with a vacuum, but to pursue and experience the best in the world.</li>
@@ -3311,7 +3014,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Step II: E is for Elimination</h2>
+<h2 class="bn-section-title">Step II: E is for Elimination</h2>
 <ul class="bn-list">
 <li>You shouldn’t be trying to do more each day, trying to fill every second with a work fidget of some type.</li>
 <li>What you do is infinitely more important than how you do it. Efficiency is still important, but it is useless unless applied to the right things.</li>
@@ -3332,7 +3035,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Step III: A is for Automation</h2>
+<h2 class="bn-section-title">Step III: A is for Automation</h2>
 <ul class="bn-list">
 <li>Becoming a member of the NR is not just about working smarter. It’s about building a system to replace yourself.</li>
 <li>It is absolutely necessary that you realize that you can always do something more cheaply yourself. This doesn’t mean you want to spend your time doing it. If you spend your time, worth $20-25 per hour; doing something that someone else will do for $10 per hour, it’s simply a poor use of resources.</li>
@@ -3345,9 +3048,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Look creatively at your resume, work experience, physical habits, and hobbies and compile a list of all the groups, past and present, that you can associate yourself with. Look at products and books you own, including online and offline subscriptions, and ask yourself, “What groups of people purchase the same?”</li>
 <li>People can dislike you, but they should never misunderstand you. The main benefit of your product should be explainable in one sentence or phrase.</li>
 <li>The product or service should cost the customer $50-200.Higher pricing means that we can sell fewer units—and thus manage fewer customers—and fulfill our dreamlines.Higher pricing attracts lower-maintenance customers (better credit, fewer complaints/questions, fewer returns, etc.). It’s less headache.Higher pricing creates higher profit margins. Aim for an 8-10x markup, which means a $100 product can’t cost you more than $10-12.50.</li>
-<li>Higher pricing means that we can sell fewer units—and thus manage fewer customers—and fulfill our dreamlines.</li>
-<li>Higher pricing attracts lower-maintenance customers (better credit, fewer complaints/questions, fewer returns, etc.). It’s less headache.</li>
-<li>Higher pricing creates higher profit margins. Aim for an 8-10x markup, which means a $100 product can’t cost you more than $10-12.50.</li>
 <li>Choose a product that you can fully explain in a good online FAQ.</li>
 <li>Create a product. Information products are low-cost, fast to manufacture, and time-consuming for competitors to duplicate.</li>
 <li>“Expert” in the context of selling a product means that you know more about the topic than the purchaser. No more. It is not necessary to be the best—just better than a small target number of your prospective customers.</li>
@@ -3358,24 +3058,16 @@ const BOOK_NOTE_CONTENT = {
 <li>Contract outsourcing companies that specialize in one function vs. freelancers whenever possible so that if someone is fired, quits, or doesn’t perform, you can replace them without interrupting your business.</li>
 <li>Ensure that all outsourcers are willing to communicate among themselves to solve problems, and give them written permission to make the most inexpensive decisions without consulting you first.</li>
 <li>Phase I: 0-50 total units of product shippedDo it all yourself. Put your phone number on the site for both general questions and order-taking and take customer calls to determine common questions that you will answer later in an online FAQ.</li>
-<li>Do it all yourself. Put your phone number on the site for both general questions and order-taking and take customer calls to determine common questions that you will answer later in an online FAQ.</li>
 <li>Phase II: >10 units shipped per weekAdd the extensive FAQ to your website and continue to add answers to common questions as received.</li>
-<li>Add the extensive FAQ to your website and continue to add answers to common questions as received.</li>
 <li>Phase III: >20 units shipped per weekOptionally, set up an account with one of the call centers your new fulfillment center recommends.Before signing on with a call center, get several 800 numbers they answer for current clients and make test calls, asking difficult product-related questions and gauging sales abilities. Call each number at least three times and note the make-or-break factor: wait time.</li>
-<li>Optionally, set up an account with one of the call centers your new fulfillment center recommends.</li>
-<li>Before signing on with a call center, get several 800 numbers they answer for current clients and make test calls, asking difficult product-related questions and gauging sales abilities. Call each number at least three times and note the make-or-break factor: wait time.</li>
 <li>Reduce the number of decisions your customers can or need to make. Here are a few methods:Offer one or two purchase options (”basic” and “premium”) and no more.Do not offer multiple shipping options. Offer one fast method instead and charge a premium.Do not offer overnight or expedited shipping.Do not offer international shipments.</li>
-<li>Offer one or two purchase options (”basic” and “premium”) and no more.</li>
-<li>Do not offer multiple shipping options. Offer one fast method instead and charge a premium.</li>
-<li>Do not offer overnight or expedited shipping.</li>
-<li>Do not offer international shipments.</li>
 <li>Those who spend the most complain the least.</li>
 <li>Don’t be the CEO or Founder. This screams start-up. Give yourself the mid-level title of “vice president (VP), or “director of sales.”</li>
 <li>Put various e-mail addresses on the “Contact Us” page for different departments, such as “human resources,” “sales,” “general inquiries,” “order status,” and so on. In the beginning, these will all be forwarded to your email address.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📌</span>Step IV: L is for Liberation</h2>
+<h2 class="bn-section-title">Step IV: L is for Liberation</h2>
 <ul class="bn-list">
 <li>The New Rich are defined by a more elusive power than simple cash—unrestricted mobility.</li>
 <li>It’s too big a world to spend most of your life in a cubicle.</li>
@@ -3395,8 +3087,8 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "so-good-they-cant-ignore-you": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "so-good-they-cant-ignore-you": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Don’t obsess over discovering your true calling. Instead, master rare and valuable skills. Once you build up the career capital that these skills generate, invest it wisely. Use it to acquire control over what you do and how you do it.</li>
 <li>Becomingso go they can’t ignore yourequires many hours of deliberate practice that is often unpleasant. This is a necessary sacrifice to build up the skills to give you control over your career.</li>
@@ -3404,12 +3096,11 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <h4 class="bn-subsection">Rule #1: Don’t Follow Your Passion</h4>
 <ul class="bn-list">
 <li>Follow your passion is bad advice. It fails to describe how most people actually end up with compelling careers, and for many people, it can actually make things worse: leading to chronic job shifting and unrelenting angst when one’s reality inevitably falls short of the dream.</li>
 <li>Career passions are rare and passion takes time.A job is a way to pay the bills, a career is a path toward increasingly better work, and a calling is work that’s an important part of your life and a vital part of your identity.</li>
-<li>A job is a way to pay the bills, a career is a path toward increasingly better work, and a calling is work that’s an important part of your life and a vital part of your identity.</li>
 <li>The happiest, most passionate employees are not those who followed their passion into a position, but instead those who have been around long enough to become good at what they do.</li>
 <li>The more we focus on loving what we do, the less we end up loving it.</li>
 </ul>
@@ -3418,9 +3109,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Thecraftsman mindsetis a focus on what value you’re producing in your job, and thepassion mindsetis a focus on what value your job offers you.</li>
 <li>If you want a great job, you need something of great value to offer in return.</li>
 <li>The Career Capital Theory of Great WorkThe traits that define great work are rare and valuable.Supply and demand says that if you want these traits you need rare and valuable skills to offer in return. Think of these rare and valuable skills you can offer as your career capital.The craftsman mindset, with its relentless focus on becoming “so good they can’t ignore you,” is a strategy well suited for acquiring career capital. This is why it trumps the passion mindset if your goal is to create work you love.</li>
-<li>The traits that define great work are rare and valuable.</li>
-<li>Supply and demand says that if you want these traits you need rare and valuable skills to offer in return. Think of these rare and valuable skills you can offer as your career capital.</li>
-<li>The craftsman mindset, with its relentless focus on becoming “so good they can’t ignore you,” is a strategy well suited for acquiring career capital. This is why it trumps the passion mindset if your goal is to create work you love.</li>
 <li>In most types of work, most people are stuck. Let’s assume you’re a knowledge worker, which is a field without a clear training philosophy. If you can figure out how to integrate deliberate practice into your own life, you have the possibility of blowing past your peers in your value, as you’ll likely be alone in your dedication to systematically getting better. That is, deliberate practice might provide the key to quickly becoming so good they can’t ignore you.</li>
 <li>You need to be constantly soliciting feedback from colleagues and professionals.</li>
 <li>Deliberate practice is often the opposite of enjoyable.</li>
@@ -3441,10 +3129,10 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "mastery": ``,
+ "mastery": ``,
 
-  "the-comfort-crisis": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📚</span>📚The Book in 3 Bullets</h2>
+ "the-comfort-crisis": `<section class="bn-section">
+<h2 class="bn-section-title">The Book in 3 Bullets</h2>
 <ul class="bn-list">
 <li>Humans are wired to seek comfort because the early hominids had to fend off predators, walk, and run miles to find food and deal with the elements. Now, just about all our real problems that involve surviving are abolished and our lives have gotten much more comfortable.</li>
 <li>If we want to be happy, at peace, and grow, we need to deliberately practice being uncomfortable. Growth only takes place in the presence of discomfort.</li>
@@ -3452,19 +3140,19 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">👤</span>👤Who Should Read It?</h2>
+<h2 class="bn-section-title">Who Should Read It?</h2>
 <ul class="bn-list">
 <li>Anyone who’s default setting is to be comfortable all the time. Homo sapiens were not built to be comfortable all the time. By seeking discomfort, the significance of everyday problems lessens.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">🌎</span>🌎 How the Book Changed Me</h2>
+<h2 class="bn-section-title">How the Book Changed Me</h2>
 <ul class="bn-list">
 <li>This book has made me actively seek out discomfort every day. Whether it be working out, taking a cold shower, or having a difficult conversation. If I want to continually push myself to get better, I need to find comfort in the uncomfortable.</li>
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>✍️ My Top Quotes</h2>
+<h2 class="bn-section-title">️ My Top Quotes</h2>
 <ul class="bn-list">
 <li>Nothing great in life comes with complete assurance of success. Engaging in an environment where there’s a high probability of failure, even if you execute perfectly, has huge ramifications for helping you lose a fear of failing.</li>
 <li>Despite what productivity gurus will have us believe, the key to improving productivity and performance might be to occasionally do nothing at all. Or, at least, not dive into a screen. It prompts us to think distinctly, in a way that delivers more original ideas.</li>
@@ -3472,7 +3160,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>📖 Summary & Notes</h2>
+<h2 class="bn-section-title">Summary & Notes</h2>
 <ul class="bn-list">
 <li>Humans evolved to seek comfort. We instinctually default to safety, shelter, warmth, extra food, and minimal effort. And that drive through nearly all of human history was beneficial because it pushed us to survive.</li>
 <li>Discomfort is both physical and emotional. It’s hunger, cold, pain, exhaustion, stress, and any other trying sensations and emotions. Our comfort drive led us to find food. To build and take shelter. To avoid overly risky decisions. To do anything and everything that would help us live on and spread our DNA. So it’s really no surprise that today we should still default to that which is most comfortable. Our common problem today is that our environment has changed, but our wiring hasn’t. And this wiring is deeply ingrained.</li>
@@ -3511,10 +3199,10 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>`,
 
-  "the-story-of-the-human-body": ``,
+ "the-story-of-the-human-body": ``,
 
-  "feel-good-productivity": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>Book Summary</h2>
+ "feel-good-productivity": `<section class="bn-section">
+<h2 class="bn-section-title">Book Summary</h2>
 <ul class="bn-list">
 <li>This is not a book about how to get more things done, it’s about getting the things that matter most done and getting them done in a way that leaves you energized.</li>
 <li>By making work more fun, you’re more likely to do a better job, and you’ll enjoy the work more along the way.</li>
@@ -3522,7 +3210,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">✍️</span>Top Quotes</h2>
+<h2 class="bn-section-title">Top Quotes</h2>
 <ul class="bn-list">
 <li>Success doesn’t lead to feeling good. Feeling good leads to success.</li>
 <li>Life is stressful. Play makes it fun.</li>
@@ -3537,7 +3225,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>Notes & Highlights</h2>
+<h2 class="bn-section-title">Notes & Highlights</h2>
 <ul class="bn-list">
 <li>When we’re in a positive mood, we tend to consider a broader range of actions, be more open to new experiences, and better integrate the information we receive.</li>
 <li>When we feel good, we generate energy, which boosts our productivity.</li>
@@ -3561,20 +3249,14 @@ const BOOK_NOTE_CONTENT = {
 <li>Try treating the people you’re working with as comrades rather than competitors.</li>
 <li>The main way uncertainty drives procrastination is by creating ambiguity over our ultimate purpose.</li>
 <li>Try approaching goal-setting a little bit differently by using NICE goals:Near-term: near-term goals ensure that we’re concentrating on the immediate steps we need to take along our journey. They help us avoid being overwhelmed by the bigger picture. Try using a daily or weekly objective.Input-based: this focuses on what your can do in the here and now. These emphasize the process, rather than some distant, abstract end-goal.Controllable: focus on what’s in your control.Energizing: Is there a way to integrate play, power, and people into the goals you set yourself?</li>
-<li>Near-term: near-term goals ensure that we’re concentrating on the immediate steps we need to take along our journey. They help us avoid being overwhelmed by the bigger picture. Try using a daily or weekly objective.</li>
-<li>Input-based: this focuses on what your can do in the here and now. These emphasize the process, rather than some distant, abstract end-goal.</li>
-<li>Controllable: focus on what’s in your control.</li>
-<li>Energizing: Is there a way to integrate play, power, and people into the goals you set yourself?</li>
 <li>If you don’t put the things you want to do into your calendar, they won’t happen.</li>
 <li>Time blocking isn’t about creating a rigid schedule that stresses you out; it’s about providing structure and ensuring there’s dedicated time for what matters most to you.</li>
 <li>Knowledge is power. Getting to know our fears is the first step towards overcoming them.</li>
 <li>If you’re feeling bad about something, chances are that it probably won’t matter that much in the future. Ask yourself: ‘Will this matter in 10 minutes? In 10 weeks? In 10 years?’</li>
 <li>We spend our lives believing a spotlight is always trained on us, and that everyone around is constantly looking at us, analyzing our behaviors, and passing judgement on our worth as human beings.Just say to yourself ‘No one cares.’</li>
-<li>Just say to yourself ‘No one cares.’</li>
 <li>It takes way more energy to get started than it does to keep going. When you’re doing nothing, it’s easy to carry on doing nothing. And when you’re working, it’s much easier to carry on working.</li>
 <li>We need clear, concrete steps to take, rather than distant, abstract goals. Otherwise, we might do nothing at all.</li>
 <li>When dealing with procrastination, ask yourself, ‘What’s the next action step.’This method takes our eyes off the intimidatingly huge long-term goal and focuses our minds on the more achievable one.</li>
-<li>This method takes our eyes off the intimidatingly huge long-term goal and focuses our minds on the more achievable one.</li>
 <li>Tracking your progress provides you with tangible evidence that you’re moving towards your goals.</li>
 <li>Procrastination isn’t something we can always control. Forgiving ourselves is something we can. You can focus on the small losses. Or you can celebrate the small wins.</li>
 <li>We tend to think we can do everything. It’s a myth. Sustainable productivity means recognizing the limitations on our time.</li>
@@ -3584,15 +3266,14 @@ const BOOK_NOTE_CONTENT = {
 <li>Nature, helps us heal and triggers a physiological response that lowers stress levels and rejuvenates our ability to concentrate.</li>
 <li>Sometimes taking a break and not being productive at all can actually lead to improved productivity.</li>
 <li>The Reitoff principle is the idea that we grant ourselves permission to write off a day and intentionally step away from achieving anything.This technique can be a great way to feel less guilty about taking a night off. By doing less today, you can do more of what matters tomorrow.</li>
-<li>This technique can be a great way to feel less guilty about taking a night off. By doing less today, you can do more of what matters tomorrow.</li>
 <li>Think about the very end of your life. And use it to reappraise what matters in the here and now. The ‘eulogy method’ is when ask yourself ‘ What would I feel good about someone saying in my eulogy?’</li>
 <li>By focusing on the immediate, short-term steps—rather than on the whole year ahead—you turn living your values into something immediate.</li>
 <li>“What are 3 actions today that might take you a little step closer to the life you want in a year?”</li>
 </ul>
 </section>`,
 
-  "exercised": `<section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>Book Summary</h2>
+ "exercised": `<section class="bn-section">
+<h2 class="bn-section-title">Book Summary</h2>
 <ul class="bn-list">
 <li>Humans evolved to move, but modern humans don’t “have” to exercise like our ancestors did to find food, shelter, and flee predators.</li>
 <li>Not exercising causes a whole host of problems including but not limited to increased obesity, type 2 diabetes, heart disease, cancer, osteoporosis, and sarcopenia.</li>
@@ -3600,7 +3281,7 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 </section>
 <section class="bn-section">
-<h2 class="bn-section-title"><span class="bn-emoji">📖</span>Notes & Highlights</h2>
+<h2 class="bn-section-title">Notes & Highlights</h2>
 <ul class="bn-list">
 <li>Exercise today is defined as voluntary physical activity undertaken for the sake of health and fitness.</li>
 <li>Human resting metabolisms are flexible.</li>
@@ -3610,7 +3291,6 @@ const BOOK_NOTE_CONTENT = {
 <li>Cortisol shunts sugar and fats into the bloodstream, it makes us crave sugar-rich and fat-rich foods, and it directs us to store organ fat rather than subcutaneous fat.</li>
 <li>There is little evidence that links habitual sitting in flexed or slouched postures with back pain. There is also little good evidence that people who sit longer are more likely to have back pain.</li>
 <li>A good dose of physical activity early in the day helps sleep come more easily at night.Exercise increases sleep pressure, and it stimulates the body to counter the initial fight-and-flight response with a deeper “rest and digest” response.</li>
-<li>Exercise increases sleep pressure, and it stimulates the body to counter the initial fight-and-flight response with a deeper “rest and digest” response.</li>
 <li>Astronauts in the gravity-free environment of space can lose 20 percent of their muscle mass in just a week or two.</li>
 <li>Grip strength in industrialized countries like the United States and the U.K. declines about 25 percent from the age of twenty-five to seventy-five.</li>
 <li>Studies of aging demonstrate that hunter-gatherers, like postindustrial Westerners, lose strength as the years pass, but at a considerably slower rate.</li>
@@ -3630,11 +3310,7 @@ const BOOK_NOTE_CONTENT = {
 <li>Humans evolved to exercise in groups, so workout in a group setting whenever you can.</li>
 <li>Exercise produces a release of endogenous drugs that elevate your mood, alertness, and tranquility. They include dopamine, serotonin, endorphins, and endocannabinoids.</li>
 <li>How to make exercise more fun:Be social: exercise with friends or in a group.Listen to music, podcasts, or watch a movie.Exercise outside.Dance or play sports and games.Mix things up and have a variety of different exercises.</li>
-<li>Be social: exercise with friends or in a group.</li>
-<li>Listen to music, podcasts, or watch a movie.</li>
 <li>Exercise outside.</li>
-<li>Dance or play sports and games.</li>
-<li>Mix things up and have a variety of different exercises.</li>
 <li>In the United States, less than one in four children get at least an hour of physical activity a day.</li>
 <li>Exercising a minimum of 150 minutes per week is as good a prescription as any and has the advantage of being a clear, attainable dose. But there is no optimal, most beneficial dose of exercise. People who exercise the least have the most to gain from just modest added effort, more is better, and the benefits of additional exercise gradually tail off.</li>
 <li>Because plaques contain calcium, which shows up nicely in a CT scan, doctors routinely score plaques by their calcium content: a coronary artery calcium (CAC) score.</li>
