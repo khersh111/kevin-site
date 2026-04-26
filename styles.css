@@ -151,14 +151,6 @@ img { max-width: 100%; display: block; }
     letter-spacing: 0.2px;
 }
 
-.nav-link::before {
-    content: attr(data-num) " ";
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    vertical-align: super;
-    margin-right: 2px;
-}
-
 .nav-link:hover {
     color: var(--text);
     background: rgba(0, 0, 0, 0.04);

@@ -20,7 +20,7 @@
                 <img src="kevin-writing.jpg" alt="Kevin writing and studying">
             </div>
             <div class="newsletter-page-content">
-                <span class="page-hero-label anim-in">04 — Newsletter</span>
+                <span class="page-hero-label anim-in">Newsletter</span>
                 <h1 class="newsletter-page-title anim-in">Move Better,<br><em>Stay Active Longer.</em></h1>
                 <p class="newsletter-page-desc anim-in">Weekly emails with real patient cases, practical injury prevention advice, and training insights you can actually use.</p>
                 
@@ -50,7 +50,6 @@
 
                 <form class="newsletter-form anim-in" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
                     <div class="form-fields">
-                        <input type="text" id="newsletter-first" class="form-input" placeholder="First name" required>
                         <input type="email" id="newsletter-email" class="form-input" placeholder="Email address" required>
                     </div>
                     <button type="submit" class="form-submit" id="newsletter-submit">Subscribe — it's free →</button>
@@ -176,14 +175,13 @@
         e.preventDefault();
         const btn = document.getElementById('newsletter-submit');
         const email = document.getElementById('newsletter-email').value;
-        const firstName = document.getElementById('newsletter-first').value;
         btn.textContent = 'Subscribing...';
         btn.disabled = true;
         try {
             const res = await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, first_name: firstName })
+                body: JSON.stringify({ email })
             });
             if (res.ok) {
                 btn.textContent = '✓ Success!';
