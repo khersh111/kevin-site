@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Notes — Kevin Hershberger</title>
+    <meta name="description" content="Book notes by Dr. Kevin Hershberger.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <!-- ==================== BOOK HERO ==================== -->
+    <div class="bn-hero" id="bn-hero">
+        <div class="bn-hero-inner">
+
+            <!-- LEFT: Book cover -->
+            <div class="bn-cover-col">
+                <div class="bn-cover-wrap">
+                    <img class="bn-cover-img" id="book-cover" alt="" loading="eager">
+                </div>
+            </div>
+
+            <!-- RIGHT: Meta + summary -->
+            <div class="bn-meta-col">
+                <a href="/book-notes" class="bn-back">← Book Notes</a>
+                <div class="bn-category-badge">Book Notes</div>
+                <h1 class="bn-title" id="book-title">Loading…</h1>
+                <p class="bn-author" id="book-author"></p>
+
+                <!-- Quick summary bullets — filled from JS if available -->
+                <div class="bn-bullets-box" id="bn-bullets-box" style="display:none;">
+                    <div class="bn-bullets-label">📚 The Book in 3 Bullets</div>
+                    <ul class="bn-bullets-list" id="bn-bullets-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== BOOK BODY ==================== -->
+    <div class="bn-body-wrap">
+        <!-- Sticky TOC sidebar (desktop) -->
+        <aside class="bn-toc-sidebar" id="bn-toc" aria-label="Table of contents">
+            <div class="bn-toc-label">Contents</div>
+            <nav class="bn-toc-nav" id="bn-toc-nav"></nav>
+        </aside>
+
+        <!-- Main content -->
+        <div class="bn-content" id="book-body">
+            <div class="article-loading">Loading…</div>
+        </div>
+    </div>
+
+    <!-- Mobile TOC pill -->
+    <div class="bn-toc-pill" id="bn-toc-pill">
+        <button class="bn-toc-pill-btn" id="bn-toc-pill-btn">
+            <span>Contents ↓</span>
+        </button>
+        <div class="bn-toc-pill-menu" id="bn-toc-pill-menu"></div>
+    </div>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="article-cta anim-in">
+        <div class="article-cta-inner">
+            <h3>Enjoyed these notes?</h3>
+            <p>Join the weekly newsletter for more practical health insights.</p>
+            <a href="/newsletter" class="article-cta-btn">Subscribe — it's free →</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="shared.js"></script>
+    <script src="book-note-content.js"></script>
+    <script>
+    const slug = window.location.pathname.replace(/^\/book-note-/, '').replace(/\/$/, '');
+
+    const bookMeta = {
+        "atomic-habits":                    { title: "Atomic Habits",                          author: "James Clear",              isbn: "9780735211292", category: "Productivity" },
+        "outlive":                          { title: "Outlive",                                 author: "Peter Attia",              isbn: "9780593236598", category: "Health" },
+        "stillness-is-the-key":            { title: "Stillness Is The Key",                   author: "Ryan Holiday",             isbn: "9780525538585", category: "Mindset" },
+        "deep-work":                        { title: "Deep Work",                               author: "Cal Newport",              isbn: "9781455586691", category: "Productivity" },
+        "factfulness":                      { title: "Factfulness",                             author: "Hans Rosling",             isbn: "9781250123817", category: "Mindset" },
+        "digital-minimalism":              { title: "Digital Minimalism",                      author: "Cal Newport",              isbn: "9780525536512", category: "Productivity" },
+        "lifespan":                         { title: "Lifespan",                                author: "David A. Sinclair",        isbn: "9781501191978", category: "Health" },
+        "essentialism":                     { title: "Essentialism",                            author: "Greg McKeown",             isbn: "9780804137386", category: "Productivity" },
+        "ego-is-the-enemy":                 { title: "Ego Is The Enemy",                        author: "Ryan Holiday",             isbn: "9781591847816", category: "Mindset" },
+        "die-with-zero":                    { title: "Die With Zero",                           author: "Bill Perkins",             isbn: "9780358099765", category: "Finance" },
+        "courage-is-calling":              { title: "Courage Is Calling",                      author: "Ryan Holiday",             isbn: "9780593191187", category: "Mindset" },
+        "why-we-sleep":                     { title: "Why We Sleep",                            author: "Matthew Walker",           isbn: "9781501144325", category: "Health" },
+        "never-split-the-difference":       { title: "Never Split The Difference",              author: "Chris Voss",               isbn: "9780062407801", category: "Mindset" },
+        "the-subtle-art-of-not-giving-a-fck":{ title: "The Subtle Art of Not Giving a F*ck",  author: "Mark Manson",              isbn: "9780062457714", category: "Mindset" },
+        "the-obstacle-is-the-way":          { title: "The Obstacle Is The Way",                 author: "Ryan Holiday",             isbn: "9781591846352", category: "Mindset" },
+        "stumbling-on-happiness":           { title: "Stumbling on Happiness",                  author: "Daniel Gilbert",           isbn: "9781400077427", category: "Mindset" },
+        "how-to-win-friends-influence-people":{ title: "How to Win Friends & Influence People", author: "Dale Carnegie",           isbn: "9780671027032", category: "Mindset" },
+        "a-short-history-of-nearly-everything":{ title: "A Short History of Nearly Everything", author: "Bill Bryson",             isbn: "9780767908177", category: "Mindset" },
+        "a-guide-to-the-good-life":         { title: "A Guide to the Good Life",                author: "William B. Irvine",        isbn: "9780195374612", category: "Mindset" },
+        "show-your-work":                   { title: "Show Your Work",                          author: "Austin Kleon",             isbn: "9780761178972", category: "Productivity" },
+        "steal-like-an-artist":             { title: "Steal Like an Artist",                    author: "Austin Kleon",             isbn: "9780761169253", category: "Productivity" },
+        "benjamin-franklin":                { title: "Benjamin Franklin: An American Life",     author: "Walter Isaacson",          isbn: "9780684807614", category: "Biography" },
+        "the-48-laws-of-power":             { title: "The 48 Laws of Power",                    author: "Robert Greene",            isbn: "9780140280197", category: "Mindset" },
+        "einstein":                         { title: "Einstein: His Life and Universe",         author: "Walter Isaacson",          isbn: "9780743264747", category: "Biography" },
+        "four-thousand-weeks":              { title: "Four Thousand Weeks",                     author: "Oliver Burkeman",          isbn: "9780374159122", category: "Mindset" },
+        "the-psychology-of-money":          { title: "The Psychology of Money",                 author: "Morgan Housel",            isbn: "9780857197689", category: "Finance" },
+        "the-4-hour-workweek":              { title: "The 4-Hour Workweek",                     author: "Tim Ferriss",              isbn: "9780307465351", category: "Productivity" },
+        "so-good-they-cant-ignore-you":     { title: "So Good They Can't Ignore You",           author: "Cal Newport",              isbn: "9781455509126", category: "Productivity" },
+        "mastery":                          { title: "Mastery",                                 author: "Robert Greene",            isbn: "9780670024964", category: "Mindset" },
+        "the-comfort-crisis":              { title: "The Comfort Crisis",                      author: "Michael Easter",           isbn: "9781250274199", category: "Health" },
+        "the-story-of-the-human-body":      { title: "The Story of the Human Body",            author: "Daniel E. Lieberman",      isbn: "9780307741806", category: "Health" },
+        "feel-good-productivity":           { title: "Feel Good Productivity",                  author: "Ali Abdaal",               isbn: "9780593544648", category: "Productivity" },
+        "exercised":                        { title: "Exercised",                               author: "Daniel E. Lieberman",      isbn: "9781524746988", category: "Health" },
+    };
+
+    if (slug && bookMeta[slug]) {
+        const meta = bookMeta[slug];
+        document.getElementById('book-title').textContent = meta.title;
+        document.getElementById('book-author').textContent = `by ${meta.author}`;
+        document.title = `${meta.title} — Book Notes — Kevin Hershberger`;
+        document.querySelector('meta[name="description"]').content =
+            `My notes and key takeaways from ${meta.title} by ${meta.author}.`;
+
+        // Set category badge
+        const badge = document.querySelector('.bn-category-badge');
+        badge.textContent = meta.category;
+
+        // High-quality cover image via Open Library (L = large)
+        const coverImg = document.getElementById('book-cover');
+        if (meta.isbn) {
+            coverImg.src = `https://covers.openlibrary.org/b/isbn/${meta.isbn}-L.jpg`;
+            coverImg.alt = `${meta.title} book cover`;
+            coverImg.onerror = function() {
+                // Fallback: try medium
+                this.src = `https://covers.openlibrary.org/b/isbn/${meta.isbn}-M.jpg`;
+                this.onerror = function() { this.parentElement.style.display = 'none'; };
+            };
+        }
+
+        // Inject content
+        const bodyEl = document.getElementById('book-body');
+        if (BOOK_NOTE_CONTENT && BOOK_NOTE_CONTENT[slug]) {
+            bodyEl.innerHTML = BOOK_NOTE_CONTENT[slug];
+
+            // Extract the "Book in 3 Bullets" section for the hero
+            const bulletsSection = bodyEl.querySelector('.bn-section');
+            if (bulletsSection) {
+                const bulletsTitle = bulletsSection.querySelector('.bn-section-title');
+                if (bulletsTitle && bulletsTitle.textContent.toLowerCase().includes('bullet')) {
+                    const ul = bulletsSection.querySelector('ul');
+                    if (ul) {
+                        const items = Array.from(ul.querySelectorAll('li')).slice(0, 3);
+                        if (items.length) {
+                            const bulletsBox = document.getElementById('bn-bullets-box');
+                            const bulletsList = document.getElementById('bn-bullets-list');
+                            bulletsList.innerHTML = items.map(li =>
+                                `<li>${li.textContent}</li>`
+                            ).join('');
+                            bulletsBox.style.display = '';
+                        }
+                    }
+                }
+            }
+
+            // Build table of contents
+            buildTOC();
+        } else {
+            bodyEl.innerHTML = `
+                <div class="bn-coming-soon">
+                    <div class="bn-coming-soon-icon">📖</div>
+                    <h3>Notes coming soon</h3>
+                    <p>I'm working on my notes for this one. Check back soon.</p>
+                </div>
+            `;
+        }
+
+    } else {
+        document.getElementById('book-title').textContent = 'Book Not Found';
+        document.getElementById('book-body').innerHTML = '<p>This book note could not be found. <a href="/book-notes">Browse all book notes.</a></p>';
+    }
+
+    function buildTOC() {
+        const sections = document.querySelectorAll('#book-body .bn-section');
+        if (sections.length < 2) return;
+
+        const tocNav = document.getElementById('bn-toc-nav');
+        const tocPillMenu = document.getElementById('bn-toc-pill-menu');
+        const tocSidebar = document.getElementById('bn-toc');
+
+        sections.forEach((section, i) => {
+            const title = section.querySelector('.bn-section-title');
+            if (!title) return;
+
+            const id = `section-${i}`;
+            section.id = id;
+
+            const titleText = title.textContent.replace(/^[^\w\s]+\s*/, '').trim();
+
+            // Sidebar link
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.className = 'bn-toc-link';
+            a.textContent = titleText;
+            tocNav.appendChild(a);
+
+            // Mobile pill link
+            const ap = document.createElement('a');
+            ap.href = `#${id}`;
+            ap.className = 'bn-toc-pill-link';
+            ap.textContent = titleText;
+            ap.addEventListener('click', () => {
+                document.getElementById('bn-toc-pill-menu').classList.remove('open');
+            });
+            tocPillMenu.appendChild(ap);
+        });
+
+        tocSidebar.style.display = '';
+
+        // Highlight active section on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.id;
+                const link = tocNav.querySelector(`a[href="#${id}"]`);
+                if (link) link.classList.toggle('active', entry.isIntersecting);
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+    }
+
+    // Mobile TOC toggle
+    const pillBtn = document.getElementById('bn-toc-pill-btn');
+    const pillMenu = document.getElementById('bn-toc-pill-menu');
+    if (pillBtn) {
+        pillBtn.addEventListener('click', () => {
+            pillMenu.classList.toggle('open');
+        });
+    }
+
+    initSharedLayout('booknotes');
+    </script>
+</body>
+</html>
