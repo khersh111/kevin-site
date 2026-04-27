@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Notes — Kevin Hershberger</title>
-    <meta name="description" content="Book notes and summaries by Dr. Kevin Hershberger — health, mindset, productivity, and more.">
+    <meta name="description" content="Book notes and summaries by Dr. Kevin Hershberger — health, mindset, productivity, and living better.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
@@ -22,88 +22,127 @@
         </div>
     </section>
 
-    <section class="listing-page">
-        <div class="listing-filters anim-in">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="health">Health</button>
-            <button class="filter-btn" data-filter="mindset">Mindset</button>
-            <button class="filter-btn" data-filter="productivity">Productivity</button>
-            <button class="filter-btn" data-filter="finance">Finance</button>
-            <button class="filter-btn" data-filter="biography">Biography</button>
+    <!-- Filter pills -->
+    <div class="bn-filters-wrap">
+        <div class="bn-filters" id="bn-filters">
+            <button class="bn-filter-btn active" data-filter="all">All</button>
+            <button class="bn-filter-btn" data-filter="health">Health</button>
+            <button class="bn-filter-btn" data-filter="mindset">Mindset</button>
+            <button class="bn-filter-btn" data-filter="productivity">Productivity</button>
+            <button class="bn-filter-btn" data-filter="finance">Finance</button>
+            <button class="bn-filter-btn" data-filter="biography">Biography</button>
         </div>
+    </div>
 
-        <div class="book-grid" id="book-list">
-            <!-- Books injected by JS -->
-        </div>
+    <!-- Book grid -->
+    <section class="bn-grid-section">
+        <div class="bn-grid" id="book-list"></div>
     </section>
 
     <div id="footer-placeholder"></div>
     <script src="shared.js"></script>
     <script>
     const books = [
-        { slug: "outlive", title: "Outlive", author: "Peter Attia", category: "health", isbn: "9780593236598" },
-        { slug: "exercised", title: "Exercised", author: "Daniel E. Lieberman", category: "health", isbn: "9781524746988" },
-        { slug: "lifespan", title: "Lifespan", author: "David A. Sinclair", category: "health", isbn: "9781501191978" },
-        { slug: "why-we-sleep", title: "Why We Sleep", author: "Matthew Walker", category: "health", isbn: "9781501144325" },
-        { slug: "the-comfort-crisis", title: "The Comfort Crisis", author: "Michael Easter", category: "health", isbn: "9781250274199" },
-        { slug: "the-story-of-the-human-body", title: "The Story of the Human Body", author: "Daniel E. Lieberman", category: "health", isbn: "9780307741806" },
-        { slug: "atomic-habits", title: "Atomic Habits", author: "James Clear", category: "productivity", isbn: "9780735211292" },
-        { slug: "deep-work", title: "Deep Work", author: "Cal Newport", category: "productivity", isbn: "9781455586691" },
-        { slug: "digital-minimalism", title: "Digital Minimalism", author: "Cal Newport", category: "productivity", isbn: "9780525536512" },
-        { slug: "essentialism", title: "Essentialism", author: "Greg McKeown", category: "productivity", isbn: "9780804137386" },
-        { slug: "feel-good-productivity", title: "Feel Good Productivity", author: "Ali Abdaal", category: "productivity", isbn: "9780593544648" },
-        { slug: "so-good-they-cant-ignore-you", title: "So Good They Can't Ignore You", author: "Cal Newport", category: "productivity", isbn: "9781455509126" },
-        { slug: "the-4-hour-workweek", title: "The 4-Hour Workweek", author: "Tim Ferriss", category: "productivity", isbn: "9780307465351" },
-        { slug: "show-your-work", title: "Show Your Work", author: "Austin Kleon", category: "productivity", isbn: "9780761178972" },
-        { slug: "steal-like-an-artist", title: "Steal Like an Artist", author: "Austin Kleon", category: "productivity", isbn: "9780761169253" },
-        { slug: "stillness-is-the-key", title: "Stillness Is The Key", author: "Ryan Holiday", category: "mindset", isbn: "9780525538585" },
-        { slug: "ego-is-the-enemy", title: "Ego Is The Enemy", author: "Ryan Holiday", category: "mindset", isbn: "9781591847816" },
-        { slug: "courage-is-calling", title: "Courage Is Calling", author: "Ryan Holiday", category: "mindset", isbn: "9780593191187" },
-        { slug: "the-obstacle-is-the-way", title: "The Obstacle Is The Way", author: "Ryan Holiday", category: "mindset", isbn: "9781591846352" },
-        { slug: "factfulness", title: "Factfulness", author: "Hans Rosling", category: "mindset", isbn: "9781250123817" },
-        { slug: "the-subtle-art-of-not-giving-a-fck", title: "The Subtle Art of Not Giving a F*ck", author: "Mark Manson", category: "mindset", isbn: "9780062457714" },
-        { slug: "never-split-the-difference", title: "Never Split The Difference", author: "Chris Voss", category: "mindset", isbn: "9780062407801" },
-        { slug: "stumbling-on-happiness", title: "Stumbling on Happiness", author: "Daniel Gilbert", category: "mindset", isbn: "9781400077427" },
-        { slug: "how-to-win-friends-influence-people", title: "How to Win Friends & Influence People", author: "Dale Carnegie", category: "mindset", isbn: "9780671027032" },
-        { slug: "a-guide-to-the-good-life", title: "A Guide to the Good Life", author: "William B. Irvine", category: "mindset", isbn: "9780195374612" },
-        { slug: "four-thousand-weeks", title: "Four Thousand Weeks", author: "Oliver Burkeman", category: "mindset", isbn: "9780374159122" },
-        { slug: "mastery", title: "Mastery", author: "Robert Greene", category: "mindset", isbn: "9780670024964" },
-        { slug: "the-48-laws-of-power", title: "The 48 Laws of Power", author: "Robert Greene", category: "mindset", isbn: "9780140280197" },
-        { slug: "a-short-history-of-nearly-everything", title: "A Short History of Nearly Everything", author: "Bill Bryson", category: "mindset", isbn: "9780767908177" },
-        { slug: "the-psychology-of-money", title: "The Psychology of Money", author: "Morgan Housel", category: "finance", isbn: "9780857197689" },
-        { slug: "die-with-zero", title: "Die With Zero", author: "Bill Perkins", category: "finance", isbn: "9780358099765" },
-        { slug: "benjamin-franklin", title: "Benjamin Franklin: An American Life", author: "Walter Isaacson", category: "biography", isbn: "9780684807614" },
-        { slug: "einstein", title: "Einstein: His Life and Universe", author: "Walter Isaacson", category: "biography", isbn: "9780743264747" },
+        { slug: "outlive",                           title: "Outlive",                                 author: "Peter Attia",          category: "health",      isbn: "9780593236598" },
+        { slug: "exercised",                         title: "Exercised",                               author: "Daniel Lieberman",     category: "health",      isbn: "9781524746988" },
+        { slug: "lifespan",                          title: "Lifespan",                                author: "David Sinclair",       category: "health",      isbn: "9781501191985" },
+        { slug: "why-we-sleep",                      title: "Why We Sleep",                            author: "Matthew Walker",       category: "health",      isbn: "9781501144325" },
+        { slug: "the-comfort-crisis",               title: "The Comfort Crisis",                      author: "Michael Easter",       category: "health",      isbn: "9781250274199" },
+        { slug: "the-story-of-the-human-body",      title: "The Story of the Human Body",            author: "Daniel Lieberman",     category: "health",      isbn: "9780307741806" },
+        { slug: "atomic-habits",                     title: "Atomic Habits",                           author: "James Clear",          category: "productivity",isbn: "9780735211292" },
+        { slug: "deep-work",                         title: "Deep Work",                               author: "Cal Newport",          category: "productivity",isbn: "9781455586691" },
+        { slug: "digital-minimalism",               title: "Digital Minimalism",                      author: "Cal Newport",          category: "productivity",isbn: "9780525536512" },
+        { slug: "essentialism",                      title: "Essentialism",                            author: "Greg McKeown",         category: "productivity",isbn: "9780804137386" },
+        { slug: "feel-good-productivity",           title: "Feel Good Productivity",                  author: "Ali Abdaal",           category: "productivity",isbn: "9780593544648" },
+        { slug: "so-good-they-cant-ignore-you",     title: "So Good They Can't Ignore You",          author: "Cal Newport",          category: "productivity",isbn: "9781455509126" },
+        { slug: "the-4-hour-workweek",              title: "The 4-Hour Workweek",                     author: "Tim Ferriss",          category: "productivity",isbn: "9780307465351" },
+        { slug: "show-your-work",                   title: "Show Your Work",                          author: "Austin Kleon",         category: "productivity",isbn: "9780761178972" },
+        { slug: "steal-like-an-artist",             title: "Steal Like an Artist",                    author: "Austin Kleon",         category: "productivity",isbn: "9780761169253" },
+        { slug: "stillness-is-the-key",            title: "Stillness Is The Key",                   author: "Ryan Holiday",         category: "mindset",     isbn: "9780525538585" },
+        { slug: "ego-is-the-enemy",                 title: "Ego Is The Enemy",                        author: "Ryan Holiday",         category: "mindset",     isbn: "9781591847816" },
+        { slug: "courage-is-calling",              title: "Courage Is Calling",                      author: "Ryan Holiday",         category: "mindset",     isbn: "9780593191187" },
+        { slug: "the-obstacle-is-the-way",         title: "The Obstacle Is The Way",                 author: "Ryan Holiday",         category: "mindset",     isbn: "9781591846352" },
+        { slug: "factfulness",                      title: "Factfulness",                             author: "Hans Rosling",         category: "mindset",     isbn: "9781250123817" },
+        { slug: "the-subtle-art-of-not-giving-a-fck", title: "The Subtle Art of Not Giving a F*ck", author: "Mark Manson",         category: "mindset",     isbn: "9780062457714" },
+        { slug: "never-split-the-difference",      title: "Never Split the Difference",              author: "Chris Voss",           category: "mindset",     isbn: "9780062407801" },
+        { slug: "stumbling-on-happiness",          title: "Stumbling on Happiness",                  author: "Daniel Gilbert",       category: "mindset",     isbn: "9781400077427" },
+        { slug: "how-to-win-friends-influence-people", title: "How to Win Friends & Influence People", author: "Dale Carnegie",    category: "mindset",     isbn: "9780671027032" },
+        { slug: "a-guide-to-the-good-life",       title: "A Guide to the Good Life",                author: "William Irvine",       category: "mindset",     isbn: "9780195374612" },
+        { slug: "four-thousand-weeks",             title: "Four Thousand Weeks",                     author: "Oliver Burkeman",      category: "mindset",     isbn: "9780374159122" },
+        { slug: "mastery",                          title: "Mastery",                                 author: "Robert Greene",        category: "mindset",     isbn: "9780670024964" },
+        { slug: "the-48-laws-of-power",            title: "The 48 Laws of Power",                    author: "Robert Greene",        category: "mindset",     isbn: "9780140280197" },
+        { slug: "a-short-history-of-nearly-everything", title: "A Short History of Nearly Everything", author: "Bill Bryson",     category: "mindset",     isbn: "9780767908177" },
+        { slug: "the-psychology-of-money",         title: "The Psychology of Money",                 author: "Morgan Housel",        category: "finance",     isbn: "9780857197689" },
+        { slug: "die-with-zero",                   title: "Die With Zero",                           author: "Bill Perkins",         category: "finance",     isbn: "9780358099765" },
+        { slug: "benjamin-franklin",               title: "Benjamin Franklin",                       author: "Walter Isaacson",      category: "biography",   isbn: "9780684807614" },
+        { slug: "einstein",                         title: "Einstein",                                author: "Walter Isaacson",      category: "biography",   isbn: "9780743264747" },
     ];
+
+    // Curated high-quality cover image URLs (Open Library L, Google Books zoom=3 chain)
+    function getCoverUrl(isbn) {
+        return `https://books.google.com/books/content?vid=ISBN${isbn}&printsec=frontcover&img=1&zoom=3&source=gbs_api`;
+    }
+
+    function getFallbackUrl(isbn) {
+        return `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+    }
 
     const list = document.getElementById('book-list');
     let currentFilter = 'all';
 
     function renderBooks(filter) {
         const filtered = filter === 'all' ? books : books.filter(b => b.category === filter);
+
         list.innerHTML = filtered.map((b, i) => `
-            <a href="/book-note-${b.slug}" class="book-card anim-in" style="animation-delay: ${i * 0.04}s">
-                <div class="book-card-cover">
-                    <img src="https://covers.openlibrary.org/b/isbn/${b.isbn}-M.jpg" alt="${b.title}" loading="lazy" onerror="this.parentElement.style.display='none'">
+            <a href="/book-note-${b.slug}" class="bn-card" style="--delay: ${i * 0.04}s" data-category="${b.category}">
+                <div class="bn-card-img-wrap">
+                    <img
+                        class="bn-card-img"
+                        src="${getCoverUrl(b.isbn)}"
+                        alt="${b.title}"
+                        loading="lazy"
+                        data-isbn="${b.isbn}"
+                        onerror="this.src='${getFallbackUrl(b.isbn)}'; this.onerror=function(){this.closest('.bn-card-img-wrap').classList.add('no-cover'); this.style.display='none';}">
+                    <div class="bn-card-overlay">
+                        <span class="bn-card-read">Read Notes →</span>
+                    </div>
+                    <div class="bn-card-category">${b.category}</div>
                 </div>
-                <span class="book-card-num">${b.author}</span>
-                <h3 class="book-card-title">${b.title}</h3>
-                <span class="book-card-arrow">→</span>
+                <div class="bn-card-info">
+                    <h3 class="bn-card-title">${b.title}</h3>
+                    <p class="bn-card-author">${b.author}</p>
+                </div>
             </a>
         `).join('');
 
+        // Staggered entrance animation
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        list.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = entry.target.style.getPropertyValue('--delay');
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05 });
+
+        list.querySelectorAll('.bn-card').forEach(el => observer.observe(el));
     }
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    document.querySelectorAll('.bn-filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelector('.filter-btn.active').classList.remove('active');
+            document.querySelector('.bn-filter-btn.active').classList.remove('active');
             btn.classList.add('active');
             currentFilter = btn.dataset.filter;
-            renderBooks(currentFilter);
+
+            // Fade out
+            list.style.opacity = '0';
+            list.style.transform = 'translateY(8px)';
+            setTimeout(() => {
+                renderBooks(currentFilter);
+                list.style.opacity = '';
+                list.style.transform = '';
+            }, 180);
         });
     });
 
