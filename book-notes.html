@@ -78,15 +78,6 @@
         { slug: "einstein",                         title: "Einstein",                                author: "Walter Isaacson",      category: "biography",   isbn: "9780743264747" },
     ];
 
-    // Curated high-quality cover image URLs (Open Library L, Google Books zoom=3 chain)
-    function getCoverUrl(isbn) {
-        return `https://books.google.com/books/content?vid=ISBN${isbn}&printsec=frontcover&img=1&zoom=3&source=gbs_api`;
-    }
-
-    function getFallbackUrl(isbn) {
-        return `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
-    }
-
     const list = document.getElementById('book-list');
     let currentFilter = 'all';
 
@@ -98,11 +89,10 @@
                 <div class="bn-card-img-wrap">
                     <img
                         class="bn-card-img"
-                        src="${getCoverUrl(b.isbn)}"
+                        src="/images/books/${b.slug}.jpg"
                         alt="${b.title}"
                         loading="lazy"
-                        data-isbn="${b.isbn}"
-                        onerror="this.src='${getFallbackUrl(b.isbn)}'; this.onerror=function(){this.closest('.bn-card-img-wrap').classList.add('no-cover'); this.style.display='none';}">
+                        onerror="this.closest('.bn-card-img-wrap').classList.add('no-cover'); this.style.display='none';">
                     <div class="bn-card-overlay">
                         <span class="bn-card-read">Read Notes →</span>
                     </div>

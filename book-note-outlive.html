@@ -125,21 +125,13 @@
         const badge = document.querySelector('.bn-category-badge');
         badge.textContent = meta.category;
 
-        // High-quality cover image via Google Books (primary) + Open Library (fallback)
+        // High-quality local cover image
         const coverImg = document.getElementById('book-cover');
-        if (meta.isbn) {
-            // Google Books gives high-res covers
-            coverImg.src = `https://books.google.com/books/content?vid=ISBN${meta.isbn}&printsec=frontcover&img=1&zoom=1&source=gbs_api`;
-            coverImg.alt = `${meta.title} book cover`;
-            coverImg.onerror = function() {
-                // Fallback: Open Library large
-                this.onerror = function() {
-                    this.onerror = function() { this.closest('.bn-cover-col').style.display = 'none'; };
-                    this.src = `https://covers.openlibrary.org/b/isbn/${meta.isbn}-M.jpg`;
-                };
-                this.src = `https://covers.openlibrary.org/b/isbn/${meta.isbn}-L.jpg`;
-            };
-        }
+        coverImg.src = `/images/books/${slug}.jpg`;
+        coverImg.alt = `${meta.title} book cover`;
+        coverImg.onerror = function() {
+            this.closest('.bn-cover-col').style.display = 'none';
+        };
 
         // Inject content
         const bodyEl = document.getElementById('book-body');

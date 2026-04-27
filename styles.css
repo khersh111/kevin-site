@@ -2027,8 +2027,8 @@ img { max-width: 100%; display: block; }
 /* The grid */
 .bn-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 32px;
     transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
