@@ -2019,16 +2019,16 @@ img { max-width: 100%; display: block; }
 
 /* Grid section */
 .bn-grid-section {
-    max-width: 1200px;
+    max-width: 950px;
     margin: 0 auto;
-    padding: 0 40px 80px;
+    padding: 0 40px 100px;
 }
 
 /* The grid */
 .bn-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 80px 48px;
+    gap: 70px 50px;
     transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
