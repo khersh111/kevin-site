@@ -2292,9 +2292,7 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid var(--border);
 }
 
-.guide-card-full:first-child {
-    border-top: 1px solid var(--border);
-}
+
 
 .guide-card-number {
     font-family: var(--font-serif);
