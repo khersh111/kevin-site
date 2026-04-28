@@ -1113,7 +1113,7 @@ const BOOK_NOTE_CONTENT = {
 <li>Our ability to detect cancer at an early stage is still very weak. We usually discover tumors only when they cause other symptoms, by which point they are often too locally advanced to be removed—or worse, the cancer has already spread to other parts of the body.</li>
 <li>We should be doing early, aggressive, and broad screening—such as a colonoscopy at age forty, as opposed to the standard recommendation of forty-five—because the evidence is overwhelming that it’s much easier to deal with most cancers in their early stages.</li>
 <li>Cancer cells are different from normal cells. They don’t stop growing when they are supposed to. They stop listening to the body’s signals that tell them when to grow and when to stop growing.</li>
-<li>Cancer cells are also able to travel from one part of the body to a distant site where they should not be. This is calledmetastasis,and it is what enables a cancerous cell in the breast to spread to the lung. This spreading is what turns cancer from a local, manageable problem to a fatal, systemic disease.</li>
+<li>Cancer cells are also able to travel from one part of the body to a distant site where they should not be. This is called metastasis, and it is what enables a cancerous cell in the breast to spread to the lung. This spreading is what turns cancer from a local, manageable problem to a fatal, systemic disease.</li>
 <li>Breast cancer kills only when it becomes metastatic. Prostate cancer kills only when it becomes metastatic. You could live without either of those organs. So when you hear of someone dying from breast or prostate cancer, or even pancreatic or colon cancer, they died because the cancer spread to other, more critical organs such as the brain, the lungs, the liver, and the bones. When cancer reaches those places, survival rates drop precipitously.</li>
 <li>In normal aerobic respiration, a cell can turn a molecule of glucose into as many as thirty-six units of ATP. But under anaerobic conditions, that same amount of glucose yields only two net units of ATP. One way to locate potential tumors is by injecting the patient with radioactively labeled glucose and then doing a PET scan to see where most of the glucose is migrating. Areas with abnormally high glucose concentrations indicate the possible presence of a tumor.</li>
 <li>About 12 to 13 percent of all cancer cases are thought to be attributable to obesity. Obesity itself is strongly associated with thirteen different types of cancers, including pancreatic, esophageal, renal, ovarian, and breast cancers, as well as multiple myeloma. Type 2 diabetes also increases the risk of certain cancers. Extreme obesity is associated with a 52 percent greater risk of death from all cancers in men, and 62 percent in women.</li>
@@ -1507,7 +1507,7 @@ const BOOK_NOTE_CONTENT = {
 <li>Once people get upset at one another, rational thinking goes out the window.</li>
 <li>Empathy is paying attention to another human being, asking what they are feeling, and making a commitment to understanding their world.</li>
 <li>Empathy is not about being nice or agreeing with the other side. It’s about understanding them. Empathy helps us learn the position the enemy is in, why their actions make sense (to them), and what might move them.</li>
-<li>Labelingis a way of validating someone’s emotion by acknowledging it. Give someone’s emotion a name and you show you identify with how the person feels. It is a shortcut to intimacy.</li>
+<li>Labeling is a way of validating someone’s emotion by acknowledging it. Give someone’s emotion a name and you show you identify with how the person feels. It is a shortcut to intimacy.</li>
 <li>Once you’ve spotted an emotion you want to highlight, the next step is to label it aloud. Labels can be phrased as statements or questions. No matter how they end, labels almost always begin with roughly the same words: It seems like…It sounds like…It looks like…</li>
 <li>It seems like…</li>
 <li>It sounds like…</li>
@@ -2972,7 +2972,7 @@ const BOOK_NOTE_CONTENT = {
 <ul class="bn-list">
 <li>Time and mobility are now some of the most prized aspects of life. By having more time and mobility available, the ceiling for happiness and life satisfaction increases.</li>
 <li>The concept of working 9-5, 5 days a week is outdated and unnecessary. We have the ability to build systems that require less time and attention from us while generating income.</li>
-<li>Decreasing the amount of time spent commuting to work, being at work, and thinking about work gives us more time to pursue the things wewantto do. Adopting a lifestyle that fosters freedom from the office can help us live the life that we want to live.</li>
+<li>Decreasing the amount of time spent commuting to work, being at work, and thinking about work gives us more time to pursue the things we want to do. Adopting a lifestyle that fosters freedom from the office can help us live the life that we want to live.</li>
 </ul>
 </section>
 <section class="bn-section">
@@ -3118,9 +3118,9 @@ const BOOK_NOTE_CONTENT = {
 </ul>
 <h4 class="bn-subsection">Rule #2: Be So Good They Can’t Ignore You</h4>
 <ul class="bn-list">
-<li>Thecraftsman mindsetis a focus on what value you’re producing in your job, and thepassion mindsetis a focus on what value your job offers you.</li>
+<li>The craftsman mindset is a focus on what value you’re producing in your job, and the passion mindset is a focus on what value your job offers you.</li>
 <li>If you want a great job, you need something of great value to offer in return.</li>
-<li>The Career Capital Theory of Great Work. The traits that define great work are rare and valuable.Supply and demand says that if you want these traits you need rare and valuable skills to offer in return. Think of these rare and valuable skills you can offer as your career capital. The craftsman mindset, with its relentless focus on becoming “so good they can’t ignore you,” is a strategy well suited for acquiring career capital. This is why it trumps the passion mindset if your goal is to create work you love.</li>
+<li>The Career Capital Theory of Great Work. The traits that define great work are rare and valuable. Supply and demand says that if you want these traits you need rare and valuable skills to offer in return. Think of these rare and valuable skills you can offer as your career capital. The craftsman mindset, with its relentless focus on becoming “so good they can’t ignore you,” is a strategy well suited for acquiring career capital. This is why it trumps the passion mindset if your goal is to create work you love.</li>
 <li>In most types of work, most people are stuck. Let’s assume you’re a knowledge worker, which is a field without a clear training philosophy. If you can figure out how to integrate deliberate practice into your own life, you have the possibility of blowing past your peers in your value, as you’ll likely be alone in your dedication to systematically getting better. That is, deliberate practice might provide the key to quickly becoming so good they can’t ignore you.</li>
 <li>You need to be constantly soliciting feedback from colleagues and professionals.</li>
 <li>Deliberate practice is often the opposite of enjoyable.</li>
