@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posture Guide — Free Guide by Kevin Hershberger</title>
+    <meta name="description" content="5 tips to improve your posture even if you work a desk job. Small corrections that make a dramatic difference in how you feel — enter your email and get instant access.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 32px 24px; }
+        .squeeze { max-width: 480px; width: 100%; }
+        .squeeze-logo { font-family: var(--font-sans); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 48px; color: var(--text); }
+        .squeeze-logo-dot { color: var(--accent); }
+        .squeeze-label { font-family: var(--font-sans); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 12px; display: block; }
+        .squeeze-title { font-family: var(--font-sans); font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 16px; }
+        .squeeze-title em { font-family: var(--font-serif); font-weight: 400; color: var(--accent); font-style: italic; }
+        .squeeze-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 36px; }
+        .squeeze-form { display: flex; flex-direction: column; gap: 12px; }
+        .squeeze-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; text-align: center; }
+        .squeeze-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0 20px; }
+        .squeeze-footer { font-size: 0.8rem; color: var(--text-muted); text-align: center; }
+        .squeeze-footer a { color: var(--accent); text-decoration: none; }
+    </style>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+    <div class="squeeze">
+        <div class="squeeze-logo">KH<span class="squeeze-logo-dot">.</span></div>
+        <span class="squeeze-label">Free Guide</span>
+        <h1 class="squeeze-title">Better <em>Posture.</em></h1>
+        <p class="squeeze-desc">5 tips to improve your posture even if you work a desk job. Small corrections that make a dramatic difference in how you feel — enter your email and get instant access.</p>
+        <form class="squeeze-form" id="squeeze-form" onsubmit="handleSubmit(event)">
+            <input type="email" id="email" class="form-input" placeholder="Email address" required>
+            <button type="submit" class="form-submit" id="submit-btn">Get Free Guide →</button>
+            <p class="squeeze-note">Free. No spam. Unsubscribe anytime.</p>
+        </form>
+        <hr class="squeeze-divider">
+        <p class="squeeze-footer">By <a href="/">Dr. Kevin Hershberger</a> — Physical Therapist, DPT</p>
+    </div>
+    <script>
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        const email = document.getElementById('email').value;
+        btn.textContent = 'Loading...';
+        btn.disabled = true;
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            if (res.ok) {
+                window.location.href = '/guide-posture';
+            } else { throw new Error(); }
+        } catch {
+            btn.textContent = 'Something went wrong — try again';
+            btn.disabled = false;
+        }
+    }
+    const t = localStorage.getItem('theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+    </script>
+</body>
+</html>

@@ -9,6 +9,10 @@
     {
       "source": "/article-:slug([a-z0-9].*)",
       "destination": "/article"
+    },
+    {
+      "source": "/book-note-:slug([a-z0-9].*)",
+      "destination": "/book-note"
     }
   ]
 }
