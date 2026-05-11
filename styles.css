@@ -2664,7 +2664,7 @@ img { max-width: 100%; display: block; }
 .article-body .article-inline-img figcaption {
     font-size: 0.85rem;
     color: var(--text-muted);
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     font-style: italic;
 }
 
