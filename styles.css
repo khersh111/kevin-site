@@ -528,7 +528,7 @@ img { max-width: 100%; display: block; }
     width: 100%;
     aspect-ratio: 3/4;
     object-fit: cover;
-    object-position: top center;
+    object-position: center 20%;
     /* Non-standard shape: clipped polygon rather than boring rectangle */
     clip-path: polygon(8% 0, 100% 0, 100% 92%, 92% 100%, 0 100%, 0 8%);
     filter: grayscale(15%) contrast(1.05);
