@@ -80,6 +80,7 @@
                 <input type="email" class="form-input guide-email" placeholder="Email address" required>
                 <button type="submit" class="form-submit guide-capture-btn">Get Free Guide →</button>
                 <p class="guide-capture-note">Free. No spam. Unsubscribe anytime.</p>
+                <a href="/guide-movement-screen" target="_blank" class="guide-open-link">Open guide ↗</a>
             </form>
         </div>
 
@@ -140,13 +141,13 @@
                 body: JSON.stringify({ email })
             });
             if (res.ok) {
-                // Replace form with a success link to the guide
+                // Clear form and show success link inside the same container
+                form.innerHTML = '';
                 const link = document.createElement('a');
                 link.href = guideUrl;
-                link.className = 'form-submit guide-capture-btn';
-                link.style.cssText = 'display:block; text-align:center; text-decoration:none;';
+                link.className = 'guide-success-link';
                 link.textContent = 'View Your Free Guide →';
-                form.replaceWith(link);
+                form.appendChild(link);
             } else {
                 throw new Error('API error');
             }

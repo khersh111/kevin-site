@@ -2280,13 +2280,16 @@ img { max-width: 100%; display: block; }
 .guides-page {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 12px 48px 80px;
+    padding: 0 48px 80px;
 }
 
 /* Tighten gap between hero divider and first guide card */
-.guides-page ~ .guides-page,
 body:has(.guides-page) .page-hero {
-    padding-bottom: 20px;
+    padding-bottom: 0;
+}
+
+body:has(.guides-page) .page-hero-inner {
+    padding-bottom: 24px;
 }
 
 .guide-card-full {
@@ -2847,7 +2850,7 @@ body:has(.guides-page) .page-hero {
     .guide-card-full { grid-template-columns: 60px 1fr; gap: 16px; }
     .guide-card-cta { grid-column: 1 / -1; text-align: center; }
     .guide-card-full .guide-capture-form { grid-column: 1 / -1; }
-    .guides-page { padding: 12px 24px 60px; }
+    .guides-page { padding: 0 24px 60px; }
     .newsletter-page { padding: 100px 24px 60px; }
     .newsletter-page-layout { grid-template-columns: 1fr; gap: 40px; }
     .newsletter-page-image { order: -1; }
@@ -3175,11 +3178,48 @@ body:has(.guides-page) .page-hero {
     margin-top: 2px;
 }
 
+.guide-open-link {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-align: center;
+    margin-top: 6px;
+    text-decoration: none;
+}
+
+.guide-open-link:hover {
+    text-decoration: underline;
+}
+
+/* Success link after form submission */
+.guide-success-link {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: white;
+    background: var(--accent);
+    padding: 14px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.guide-success-link:hover {
+    transform: translateY(-2px);
+}
+
 @media (max-width: 900px) {
     .guide-capture-form {
         grid-column: 1 / -1;
         max-width: 100%;
         min-width: 0;
+    }
+    .guide-success-link {
+        display: block;
+        white-space: normal;
     }
 }
 
