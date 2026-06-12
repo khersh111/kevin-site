@@ -1,21 +1,1163 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Longevity Lift Library — Kevin Hershberger</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; height: 100%; overflow: hidden; }
-        iframe { display: block; width: 100%; height: 100%; border: none; }
-    </style>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Longevity Lift Library — Dr. Kevin Hershberger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+  :root{
+    --ink:#15171B; --ink-soft:#2A2D33;
+    --sky:#38AEEF; --sky-bright:#5BC0F4; --sky-deep:#1683C6;
+    --pass:#1C9C57; --pass-soft:#EBF6EF; --pass-line:#BFE3CC;
+    --flag:#D6433B; --flag-soft:#FBECEB; --flag-line:#F0C4C1;
+    --hair:#E5E6E8; --hair-soft:#EFEFF1; --fine:#717783; --faint:#9AA0A8;
+    --paper:#FFFFFF; --paper-soft:#FAFAFB; --panel:#F4F5F7;
+    --charcoal:#101216; --charcoal-2:#171A1F;
+    --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --serif:'Playfair Display',Georgia,serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#54565a; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden; max-width:100%; }
+  body{ font-family:var(--sans); color:var(--ink); padding:48px 0; }
+  .doc{ display:flex; flex-direction:column; align-items:center; gap:38px; }
+  .page{ position:relative; width:816px; height:1056px; background:var(--paper); overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.34); }
 
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  /* Fit-to-width scaling wrapper (added at runtime by the scaler for narrow viewports). */
+  .page-frame{ position:relative; }
+  .page-frame > .page{ transform-origin:top left; }
+  @media (max-width:600px){
+    body{ padding:18px 0; }
+    .doc{ gap:18px; }
+  }
+
+  em.acc{ font-family:var(--serif); font-style:italic; font-weight:500; color:var(--sky); }
+  .star{ color:var(--sky); font-style:normal; }
+
+  .pad{ position:relative; height:100%; padding:50px 60px 46px; display:flex; flex-direction:column; }
+  .run{ display:flex; justify-content:space-between; align-items:center; padding-bottom:13px; border-bottom:1.5px solid var(--ink); flex:none; }
+  .run__brand{ font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--sky-deep); }
+  .run__ctx{ font-size:10.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--fine); }
+  .pagenum{ position:absolute; left:60px; right:60px; bottom:24px; display:flex; justify-content:space-between; align-items:center; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); }
+
+  .lab{ font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--sky-deep); display:flex; align-items:center; gap:8px; }
+  .lab::before{ content:""; width:14px; height:2px; background:var(--sky); border-radius:2px; }
+  .lab--ink{ color:var(--ink); }
+  .lab--ink::before{ background:var(--ink); }
+
+  /* ===== COVER ===== */
+  .cover{ background:var(--charcoal); color:#fff; display:flex; }
+  .cover__main{ flex:1 1 auto; min-width:0; padding:50px 30px 44px 56px; display:flex; flex-direction:column; position:relative; z-index:2; }
+  .cover__photo{ position:relative; flex:0 0 300px; }
+  .cover__photo img{ width:100%; height:100%; object-fit:cover; object-position:50% 22%; display:block; }
+  .cover__photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(to right, var(--charcoal) 0%, rgba(16,18,22,.55) 9%, rgba(16,18,22,0) 26%), linear-gradient(to top, rgba(16,18,22,.5) 0%, rgba(16,18,22,0) 24%); }
+  .cv__top{ display:flex; justify-content:space-between; align-items:flex-start; gap:18px; }
+  .cv__handle{ font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#fff; }
+  .cv__site{ margin-top:5px; font-size:11px; font-weight:600; letter-spacing:.08em; color:rgba(255,255,255,.5); }
+  .cv__pill{ flex:none; font-size:10px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--sky-bright); border:1.5px solid rgba(91,192,244,.5); border-radius:100px; padding:7px 14px; }
+  .cv__hero{ margin-top:auto; }
+  .cv__eyebrow{ font-size:12px; font-weight:800; letter-spacing:.26em; text-transform:uppercase; color:rgba(255,255,255,.62); }
+  .cv__title{ margin-top:16px; font-weight:800; font-size:66px; line-height:.95; letter-spacing:-.028em; }
+  .cv__title em.acc{ display:block; color:var(--sky-bright); font-size:.98em; }
+  .cv__rule{ width:52px; height:3px; background:var(--sky); margin:24px 0 18px; }
+  .cv__lead{ font-size:16.5px; line-height:1.42; font-weight:600; color:rgba(255,255,255,.86); max-width:32ch; text-wrap:pretty; }
+  .cv__list{ margin-top:26px; display:grid; grid-template-columns:1fr 1fr; gap:1px 30px; }
+  .cv__li{ display:flex; align-items:baseline; gap:11px; padding:7.5px 0; border-top:1px solid rgba(255,255,255,.13); }
+  .cv__li .nn{ font-family:var(--serif); font-style:italic; font-weight:500; font-size:15px; color:var(--sky-bright); width:24px; flex:none; }
+  .cv__li .tt{ font-size:12.5px; font-weight:600; color:rgba(255,255,255,.9); letter-spacing:.005em; }
+  .cv__by{ margin-top:26px; padding-top:18px; border-top:1px solid rgba(255,255,255,.2); }
+  .cv__name{ font-size:15px; font-weight:800; letter-spacing:.01em; }
+  .cv__name span{ color:var(--sky-bright); }
+  .cv__cred{ margin-top:5px; font-size:11px; font-weight:500; line-height:1.45; color:rgba(255,255,255,.55); letter-spacing:.03em; }
+
+  /* ===== INTRO ===== */
+  .phead .eyebrow{ display:block; font-size:12px; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color:var(--sky-deep); margin-bottom:12px; }
+  .ptitle{ font-weight:800; font-size:44px; line-height:1.02; letter-spacing:-.022em; }
+  .intro-lead{ margin-top:18px; font-size:15px; line-height:1.55; color:var(--ink-soft); font-weight:500; max-width:66ch; text-wrap:pretty; }
+
+  .causes{ margin-top:24px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .cause{ border:1px solid var(--hair); border-radius:12px; padding:20px 18px; background:var(--paper); }
+  .cause__n{ font-family:var(--serif); font-style:italic; font-weight:600; font-size:34px; line-height:1; color:var(--sky); }
+  .cause__t{ margin-top:12px; font-size:14px; font-weight:800; letter-spacing:-.01em; line-height:1.2; }
+  .cause__d{ margin-top:9px; font-size:11.5px; line-height:1.5; color:var(--fine); text-wrap:pretty; }
+
+  .keybox{ margin-top:20px; background:var(--charcoal); color:#fff; border-radius:14px; padding:24px 28px; }
+  .keybox__h{ font-size:11.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--sky-bright); }
+  .keybox__p{ margin-top:11px; font-size:12.6px; line-height:1.6; color:rgba(255,255,255,.8); text-wrap:pretty; }
+  .keybox__p b{ color:#fff; font-weight:700; }
+
+  .howto{ margin-top:18px; padding-top:22px; }
+  .howto__h{ font-size:11.5px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); margin-bottom:14px; }
+  .howto__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .howto__step{ display:flex; gap:12px; align-items:flex-start; }
+  .howto__step .b{ flex:none; width:24px; height:24px; border-radius:50%; background:var(--sky); color:#fff; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .howto__step p{ font-size:11.5px; line-height:1.5; color:var(--ink-soft); }
+  .howto__step p b{ font-weight:700; }
+
+  /* ===== LIFT PAGE ===== */
+  .sc-head{ display:flex; gap:20px; align-items:flex-start; margin-top:24px; }
+  .sc-badge{ flex:none; width:54px; height:54px; border-radius:50%; background:var(--charcoal); color:var(--sky-bright); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-style:italic; font-weight:600; font-size:24px; }
+  .sc-head__cat{ font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--sky-deep); }
+  .sc-title{ margin-top:4px; font-weight:800; font-size:37px; line-height:1; letter-spacing:-.022em; }
+  .sc-var{ margin-top:8px; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); }
+  .sc-sub{ margin-top:10px; font-size:13.5px; line-height:1.45; color:var(--fine); font-weight:500; max-width:74ch; text-wrap:pretty; }
+  .sc-hr{ height:1.5px; background:var(--ink); margin:18px 0 0; }
+  .musc{ display:flex; flex-wrap:wrap; gap:6px; margin-top:13px; }
+  .musc span{ font-size:9.5px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--sky-deep); background:#E7F5FD; border:1px solid #C2E6F9; border-radius:6px; padding:4px 9px; }
+
+  .sc-grid{ display:grid; grid-template-columns:1.32fr 1fr; gap:34px; margin-top:22px; }
+  .steps{ list-style:none; display:flex; flex-direction:column; }
+  .steps li{ display:flex; gap:14px; padding:11px 0; border-top:1px solid var(--hair-soft); }
+  .steps li:first-child{ border-top:none; padding-top:4px; }
+  .steps .n{ flex:none; width:23px; height:23px; border-radius:50%; border:1.6px solid var(--sky); color:var(--sky-deep); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+  .steps .t{ font-size:12.6px; line-height:1.5; color:var(--ink-soft); text-wrap:pretty; }
+  .steps .t b{ font-weight:800; color:var(--ink); }
+
+  .verdict{ border-radius:11px; padding:15px 17px; border:1px solid; }
+  .verdict + .verdict{ margin-top:13px; }
+  .verdict--pass{ background:var(--pass-soft); border-color:var(--pass-line); }
+  .verdict--flag{ background:var(--flag-soft); border-color:var(--flag-line); }
+  .verdict__h{ display:flex; align-items:center; gap:9px; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+  .verdict--pass .verdict__h{ color:var(--pass); }
+  .verdict--flag .verdict__h{ color:var(--flag); }
+  .vmark{ flex:none; width:19px; height:19px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; }
+  .verdict--pass .vmark{ background:var(--pass); }
+  .verdict--flag .vmark{ background:var(--flag); }
+  .vmark svg{ width:11px; height:11px; }
+  .verdict p{ margin-top:9px; font-size:12px; line-height:1.5; color:var(--ink); text-wrap:pretty; }
+
+  .why{ margin-top:20px; background:var(--charcoal); border-radius:12px; padding:19px 24px; }
+  .why .lab{ color:var(--sky-bright); }
+  .why .lab::before{ background:var(--sky); }
+  .why p{ margin-top:10px; font-size:12.6px; line-height:1.58; color:rgba(255,255,255,.82); text-wrap:pretty; }
+  .why p b{ color:#fff; font-weight:700; }
+
+  .rx{ margin-top:26px; padding-top:20px; }
+  .rx__grid{ margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1.5px solid var(--ink); }
+  .rx__card{ padding:15px 18px 4px; border-left:1px solid var(--hair); }
+  .rx__card:first-child{ border-left:none; padding-left:0; }
+  .rx__card:last-child{ padding-right:0; }
+  .rx__tier{ font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); }
+  .rx__card.is-std .rx__tier{ color:var(--sky); }
+  .rx__t{ margin-top:6px; font-size:13px; font-weight:800; line-height:1.18; letter-spacing:-.01em; }
+  .rx__dose{ margin-top:6px; font-size:10.5px; font-weight:800; letter-spacing:.04em; color:var(--sky-deep); text-transform:uppercase; }
+  .rx__d{ margin-top:8px; font-size:11px; line-height:1.48; color:var(--fine); text-wrap:pretty; }
+
+  /* ===== PROGRAMMING ===== */
+  .plans{ margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .plan{ border:1px solid var(--hair); border-radius:13px; overflow:hidden; display:flex; flex-direction:column; }
+  .plan__hd{ background:var(--charcoal); color:#fff; padding:16px 18px; }
+  .plan__freq{ font-family:var(--serif); font-style:italic; font-weight:600; font-size:26px; color:var(--sky-bright); line-height:1; }
+  .plan__split{ margin-top:6px; font-size:10.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.7); }
+  .plan__body{ padding:6px 18px 16px; }
+  .plan__day{ padding:12px 0; border-top:1px solid var(--hair-soft); }
+  .plan__day:first-child{ border-top:none; }
+  .plan__day .d{ font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--sky-deep); }
+  .plan__day .m{ margin-top:5px; font-size:12px; line-height:1.45; color:var(--ink-soft); font-weight:600; }
+  .reminder{ margin-top:24px; display:flex; gap:16px; align-items:flex-start; background:var(--charcoal); color:#fff; border-radius:13px; padding:18px 24px; }
+  .reminder__bar{ flex:none; width:3px; align-self:stretch; background:var(--sky); border-radius:3px; }
+  .reminder__h{ font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--sky-bright); }
+  .reminder__p{ margin-top:8px; font-size:12.2px; line-height:1.5; color:rgba(255,255,255,.8); text-wrap:pretty; }
+  .reminder__p b{ color:#fff; font-weight:700; }
+
+  /* ===== SUMMARY ===== */
+  .sum-note{ margin-top:13px; font-size:13px; line-height:1.5; color:var(--ink-soft); font-weight:500; max-width:92ch; text-wrap:pretty; }
+  .sum-note b{ font-weight:700; color:var(--ink); }
+  .tbl{ width:100%; border-collapse:collapse; margin-top:15px; table-layout:fixed; }
+  .tbl thead th{ background:var(--charcoal); color:#fff; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:800; padding:9px 11px; text-align:left; vertical-align:middle; }
+  .tbl col.c-lift{ width:24%; } .tbl col.c-pat{ width:24%; } .tbl col.c-tr{ width:30%; } .tbl col.c-do{ width:22%; }
+  .tbl td{ border:1px solid var(--hair); padding:13px 12px; vertical-align:middle; }
+  .tbl tbody tr:nth-child(even){ background:var(--paper-soft); }
+  .tbl .sn{ display:flex; align-items:center; gap:9px; }
+  .tbl .sn .num{ flex:none; width:23px; height:23px; border-radius:5px; background:var(--ink); color:#fff; font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .tbl .sn .name{ font-size:12px; font-weight:800; line-height:1.15; letter-spacing:-.01em; }
+  .tbl .cell{ font-size:11px; line-height:1.4; color:var(--ink-soft); }
+  .tbl .cell.dose{ font-weight:800; color:var(--sky-deep); letter-spacing:.01em; }
+
+  /* ===== CLOSING ===== */
+  .close{ background:var(--charcoal); color:#fff; }
+  .close .pad{ padding:54px 60px 44px; }
+  .close__run{ display:flex; justify-content:space-between; align-items:center; padding-bottom:13px; border-bottom:1.5px solid rgba(255,255,255,.18); }
+  .close__run .l{ font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--sky-bright); }
+  .close__run .r{ font-size:10.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.45); }
+  .close__body{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; padding:6px 0; }
+  .close__eyebrow{ font-size:12px; font-weight:800; letter-spacing:.26em; text-transform:uppercase; color:var(--sky-bright); }
+  .close__title{ margin-top:18px; font-weight:800; font-size:58px; line-height:.98; letter-spacing:-.028em; }
+  .close__title em.acc{ color:var(--sky-bright); }
+  .close__lead{ margin-top:22px; font-size:15.5px; line-height:1.55; color:rgba(255,255,255,.78); max-width:56ch; text-wrap:pretty; }
+  .get__h{ margin-top:32px; font-size:11.5px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:#fff; }
+  .get{ margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:13px 30px; }
+  .get__i{ display:flex; gap:11px; align-items:flex-start; }
+  .get__i .ck{ flex:none; width:20px; height:20px; border-radius:50%; background:var(--sky); display:flex; align-items:center; justify-content:center; margin-top:1px; }
+  .get__i .ck svg{ width:11px; height:11px; }
+  .get__i p{ font-size:12.3px; line-height:1.45; color:rgba(255,255,255,.82); text-wrap:pretty; }
+  .cta{ margin-top:36px; display:flex; align-items:center; gap:22px; }
+  .cta__btn{ display:inline-flex; align-items:center; gap:10px; background:var(--sky); color:#fff; text-decoration:none; font-size:16px; font-weight:800; letter-spacing:.01em; padding:18px 30px; border-radius:12px; }
+  .cta__note{ font-size:11.5px; font-weight:600; color:rgba(255,255,255,.5); letter-spacing:.03em; }
+  .close__foot{ margin-top:auto; padding-top:20px; border-top:1px solid rgba(255,255,255,.16); display:flex; gap:16px; align-items:center; }
+  .close__avatar{ flex:none; width:46px; height:46px; border-radius:50%; object-fit:cover; object-position:50% 18%; }
+  .close__foot .meta{ flex:1; }
+  .close__foot .who{ font-size:12px; font-weight:800; letter-spacing:.04em; color:#fff; }
+  .close__foot .disc{ margin-top:4px; font-size:10px; line-height:1.45; color:rgba(255,255,255,.42); letter-spacing:.02em; }
+
+  @media print{
+    @page{ size:Letter; margin:0; }
+    html,body{ background:#fff; padding:0; }
+    .doc{ gap:0; }
+    .page{ box-shadow:none; }
+    .page:not(:last-child){ break-after:page; }
+    /* Undo any runtime fit-to-width scaling so print is full-size. */
+    .page-frame{ width:auto !important; height:auto !important; }
+    .page-frame > .page{ transform:none !important; }
+    *, *::before, *::after{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  }
+</style>
 </head>
 <body>
-    <iframe src="/guides/longevity-lift-library.pdf" title="Longevity Lift Library"></iframe>
-</body>
-</html>
+<template id="__bundler_thumbnail" data-bg-color="#1683C6">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#1683C6"/>
+    <g fill="none" stroke="#FFFFFF" stroke-width="34" stroke-linecap="round">
+      <line x1="600" y1="360" x2="600" y2="440"/>
+      <rect x="540" y="330" width="44" height="140" rx="14" fill="#FFFFFF" stroke="none"/>
+      <rect x="616" y="330" width="44" height="140" rx="14" fill="#FFFFFF" stroke="none"/>
+      <rect x="470" y="368" width="40" height="64" rx="12" fill="#FFFFFF" stroke="none"/>
+      <rect x="690" y="368" width="40" height="64" rx="12" fill="#FFFFFF" stroke="none"/>
+      <line x1="510" y1="400" x2="540" y2="400"/>
+      <line x1="660" y1="400" x2="690" y2="400"/>
+    </g>
+    <text x="600" y="560" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="74" fill="#FFFFFF">Longevity Lift Library</text>
+  </svg>
+</template>
+<div class="doc">
+  <section class="page cover" data-screen-label="Cover">
+    <div class="cover__main">
+      <div class="cv__top">
+        <div>
+          <div class="cv__handle">@dr.kevinhershberger</div>
+          <div class="cv__site">khershberger.com</div>
+        </div>
+        <div class="cv__pill">Free Resource</div>
+      </div>
+      <div class="cv__hero">
+        <div class="cv__eyebrow">Strength Training for the Long Haul</div>
+        <h1 class="cv__title">The Longevity<em class="acc">Lift Library</em></h1>
+        <div class="cv__rule"></div>
+        <p class="cv__lead">The ten lifts I'd want you doing at 40, 60, and 80 — and how to scale each one to where you are right now.</p>
+        <div class="cv__list">
+            <div class="cv__li"><span class="nn">01</span><span class="tt">Squat</span></div>
+            <div class="cv__li"><span class="nn">02</span><span class="tt">Deadlift</span></div>
+            <div class="cv__li"><span class="nn">03</span><span class="tt">Lunge</span></div>
+            <div class="cv__li"><span class="nn">04</span><span class="tt">Lateral Lunge</span></div>
+            <div class="cv__li"><span class="nn">05</span><span class="tt">Horizontal Press</span></div>
+            <div class="cv__li"><span class="nn">06</span><span class="tt">Overhead Press</span></div>
+            <div class="cv__li"><span class="nn">07</span><span class="tt">Pull-Up</span></div>
+            <div class="cv__li"><span class="nn">08</span><span class="tt">Row</span></div>
+            <div class="cv__li"><span class="nn">09</span><span class="tt">Hip Thrust</span></div>
+            <div class="cv__li"><span class="nn">10</span><span class="tt">Loaded Carry</span></div>
+        </div>
+        <div class="cv__by">
+          <div class="cv__name">Dr. Kevin Hershberger <span>— DPT, FAAOMPT</span></div>
+          <div class="cv__cred">Doctor of Physical Therapy · Fellow, American Academy<br>of Orthopedic Manual Physical Therapy</div>
+        </div>
+      </div>
+    </div>
+    <div class="cover__photo"><img src="/kevin-about.jpg" alt="Dr. Kevin Hershberger"></div>
+  </section>
+  <section class="page" data-screen-label="Why Lift for Longevity">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">The Case for Lifting</span></div>
+      <div style="margin-top:24px;">
+        <div class="phead">
+          <span class="eyebrow">Section 01</span>
+          <h2 class="ptitle">Why You Should Lift <em class="acc">for Life</em></h2>
+        </div>
+        <p class="intro-lead">I'm not interested in your one-rep max. I'm interested in whether you can get off the floor at 80, carry your own groceries, and take the stairs without thinking about it. That's what this guide trains — the everyday strength that decides how independent you stay as you age.</p>
+      </div>
+      <div class="causes">
+        <div class="cause">
+          <div class="cause__n">01</div>
+          <div class="cause__t">Strength Is the Lever You Control</div>
+          <p class="cause__d">Muscle mass and strength fall as you age. The good news: they respond to training at every age. Of everything that shapes how you grow older, strength is the piece most in your hands.</p>
+        </div>
+        <div class="cause">
+          <div class="cause__n">02</div>
+          <div class="cause__t">Train Function, Not the Mirror</div>
+          <p class="cause__d">The things that predict aging well aren't aesthetic — they're functional: leg strength, grip, balance, how fast you walk. This guide trains the movement patterns you actually use, not muscles in isolation.</p>
+        </div>
+        <div class="cause">
+          <div class="cause__n">03</div>
+          <div class="cause__t">Earn the Range, Then Load It</div>
+          <p class="cause__d">Own a clean rep through a full range before you add weight. Load a good pattern and each lift makes you more durable. Load a bad one and you just reinforce the habits that get people hurt.</p>
+        </div>
+      </div>
+      <div class="keybox">
+        <div class="keybox__h">A Menu, Not a Prescription</div>
+        <p class="keybox__p">You don't need all ten lifts every session. Think of this as a menu built around the six movements your body relies on — <b>squat, hinge, lunge, push, pull, and carry.</b> Hit each one across your week and you've covered your whole body. From there, pick the lifts and the levels that fit your equipment, your joints, and where you are today.</p>
+      </div>
+      <div class="howto">
+        <div class="howto__h">How to Use This Guide</div>
+        <div class="howto__grid">
+          <div class="howto__step"><span class="b">1</span><p>Train these patterns <b>2–4× a week.</b> Pick lifts that cover all six.</p></div>
+          <div class="howto__step"><span class="b">2</span><p>Use a load you can control with clean form. Aim for <b>2–4 sets of 6–12 reps,</b> slow and controlled, unless a lift says otherwise.</p></div>
+          <div class="howto__step"><span class="b">3</span><p>Start where you are. Every lift has an easier and a harder version. Own the one you can do today, then build from there.</p></div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>02 / 15</span></div>
+    </div>
+  </section>
+  <section class="page" data-screen-label="Lift 1 — The Squat">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 1 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">1</div>
+        <div>
+          <div class="sc-head__cat">Lower Body · Squat Pattern</div>
+          <h2 class="sc-title"><em class="acc">Squat</em></h2>
+          <div class="sc-var">Goblet · Front · Back</div>
+        </div>
+      </div>
+      <div class="musc"><span>Quads</span><span>Glutes</span><span>Core</span><span>Ankles</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Set your feet shoulder-width with toes turned out 10–20°. Screw your feet into the floor to build tension through the hips.</span></li>
+            <li><span class="n">2</span><span class="t">Drive your knees out over your toes and descend until your hip crease drops below your knee, heels glued to the floor.</span></li>
+            <li><span class="n">3</span><span class="t">Stand by pushing the floor away and squeezing your glutes at the top. Control the descent — never just drop.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>Knees track over toes, heels stay down, and spine stays in a neutral position. Depth comes from the hips and ankles — not from rounding the low back.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Heels lifting or knees caving inward. Both usually trace back to stiff ankles or weak glutes — fix the mobility, don’t just force the depth.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>Every time you stand up from a chair or off the floor, you're squatting. It's one of the most repeated movements in your day, and in aging research, how easily someone rises from a seated position is one of the better predictors of staying independent. Keep the pattern strong now and you keep it for decades.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Box / Chair Squat</div>
+            <div class="rx__dose">2–3 × 8–10</div>
+            <p class="rx__d">Squat down to lightly touch a bench or chair, then stand. Grooves the pattern and builds confidence in the bottom.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">Goblet Squat</div>
+            <div class="rx__dose">3 × 8–12</div>
+            <p class="rx__d">Hold a weight at the chest; the counterbalance lets you sit deeper with control. The most joint-friendly place to start loading.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Front / Back Squat</div>
+            <div class="rx__dose">3–4 × 5–8</div>
+            <p class="rx__d">Load on the front rack or the back for serious, progressive lower-body strength once the pattern is clean.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>03 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 2 — The Deadlift">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 2 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">2</div>
+        <div>
+          <div class="sc-head__cat">Lower Body · Hinge Pattern</div>
+          <h2 class="sc-title"><em class="acc">Deadlift</em></h2>
+          <div class="sc-var">Trap Bar · Kettlebell · Barbell</div>
+        </div>
+      </div>
+      <div class="musc"><span>Glutes</span><span>Hamstrings</span><span>Back</span><span>Grip</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Stand with the load over your mid-foot, feet hip-width. Hinge by pushing your hips back with soft knees.</span></li>
+            <li><span class="n">2</span><span class="t">Take your grip, then pull the slack out of the bar and set a flat, neutral spine — chest up, lats tight.</span></li>
+            <li><span class="n">3</span><span class="t">Brace hard, then drive the floor away with your legs, keeping the load close to your body the whole way up.</span></li>
+            <li><span class="n">4</span><span class="t">Finish tall with the glutes squeezed — no leaning back. Reverse the exact same path to lower under control.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>The bar travels in a straight vertical line, close to your shins and thighs. Power comes from the legs and hips while the spine stays neutral and braced.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Rounding the low back or yanking the weight up. The back should transmit force, not generate the lift — let the hips and legs do the work.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>Every time you pick something up off the ground — a suitcase, a grandkid, a bag of soil — you're hinging. It's also the pattern people get hurt on most, usually because they round the back under load. Train the hinge well and you build the exact strength that keeps lifting from becoming the thing you're afraid of.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Elevated / KB Deadlift</div>
+            <div class="rx__dose">3 × 8</div>
+            <p class="rx__d">Raise the load on blocks or use a kettlebell to shorten the range while you build the hinge.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">Trap-Bar Deadlift</div>
+            <div class="rx__dose">3 × 6–8</div>
+            <p class="rx__d">The most spine-friendly entry point — the load sits at your sides, keeping you more upright.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Barbell / Romanian DL</div>
+            <div class="rx__dose">3–4 × 5–6</div>
+            <p class="rx__d">Full range from the floor, or a loaded hinge that hits the hamstrings and glutes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>04 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 3 — The Lunge">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 3 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">3</div>
+        <div>
+          <div class="sc-head__cat">Lower Body · Single-Leg</div>
+          <h2 class="sc-title"><em class="acc">Lunge</em></h2>
+          <div class="sc-var">Reverse · Forward · Walking</div>
+        </div>
+      </div>
+      <div class="musc"><span>Quads</span><span>Glutes</span><span>Hip Stabilizers</span><span>Balance</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Stand tall. Step one foot back into a long, stable stride (the reverse lunge).</span></li>
+            <li><span class="n">2</span><span class="t">Lower straight down until both knees reach about 90° — front shin vertical, back knee hovering just off the floor.</span></li>
+            <li><span class="n">3</span><span class="t">Keep your torso upright and your weight through the front heel and mid-foot.</span></li>
+            <li><span class="n">4</span><span class="t">Drive through the front leg to return to standing. Complete all reps, then switch sides.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>The front knee tracks over the 2nd and 3rd toes, hips stay square, torso stays tall. The descent is straight down — not pitching forward onto the knee.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Letting the front knee cave inward or the torso fall forward. Shorten the range until you can own it with control before adding depth or load.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>Stairs, curbs, catching yourself on uneven ground — that's all single-leg strength. The lunge also tends to expose the left-to-right differences most people don't know they have, which is often where a future hip or knee problem starts. Find the weaker side and you can train it back up.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Static Split Squat</div>
+            <div class="rx__dose">2–3 × 8</div>
+            <p class="rx__d">Feet planted in a stride, just travel up and down. Hold a support if you need it.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">Reverse Lunge</div>
+            <div class="rx__dose">3 × 8 / side</div>
+            <p class="rx__d">Stepping back is easier on the knees than stepping forward — the best default for people who have knee pain.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Walking / Loaded Lunge</div>
+            <div class="rx__dose">3 × 10 / side</div>
+            <p class="rx__d">Add dumbbells or travel through space to load the pattern and challenge balance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>05 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 4 — The Lateral Lunge">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 4 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">4</div>
+        <div>
+          <div class="sc-head__cat">Lower Body · Frontal Plane</div>
+          <h2 class="sc-title">Lateral <em class="acc">Lunge</em></h2>
+          <div class="sc-var">Bodyweight · Goblet · Slider</div>
+        </div>
+      </div>
+      <div class="musc"><span>Adductors</span><span>Glutes</span><span>Hip Mobility</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Stand tall with feet together. Take a wide step directly out to one side.</span></li>
+            <li><span class="n">2</span><span class="t">Sit back and down into the stepping-side hip, bending that knee while the other leg stays long and straight.</span></li>
+            <li><span class="n">3</span><span class="t">Keep both feet flat with toes pointing forward as the hips push back.</span></li>
+            <li><span class="n">4</span><span class="t">Push off the bent leg to return to the start. Move slowly and with control throughout.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>Sit into the hip of the bent leg with the knee tracking over the 2nd–3rd toes. The trailing leg stays long.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>The bent knee caving inward, or rushing the rep. Keep it slow — the frontal plane is where most people are weakest and least practiced.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>Catching a slip, stepping out of the way, getting in and out of a car — those are side-to-side demands, and most training ignores them completely. Almost everything we do in the gym happens straight ahead. Train the frontal plane and your hips are ready for the directions real life actually moves.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Assisted Lateral Lunge</div>
+            <div class="rx__dose">2 × 8 / side</div>
+            <p class="rx__d">Hold a support and work a partial, comfortable depth while you build hip mobility.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">Bodyweight Lateral Lunge</div>
+            <div class="rx__dose">3 × 8 / side</div>
+            <p class="rx__d">Slow and controlled to full depth, knee tracking cleanly over the toes.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Goblet Lateral Lunge</div>
+            <div class="rx__dose">3 × 10 / side</div>
+            <p class="rx__d">Hold a weight at the chest to load the adductors and glutes through range.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>06 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 5 — Horizontal Press">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 5 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">5</div>
+        <div>
+          <div class="sc-head__cat">Upper Body · Horizontal Push</div>
+          <h2 class="sc-title">Horizontal <em class="acc">Press</em></h2>
+          <div class="sc-var">Push-Up · Bench · Dumbbell</div>
+        </div>
+      </div>
+      <div class="musc"><span>Chest</span><span>Shoulders</span><span>Triceps</span><span>Core</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Set hands slightly wider than your shoulders, body in one straight line from head to heels.</span></li>
+            <li><span class="n">2</span><span class="t">Brace your core and glutes so the hips don’t sag. Pull your shoulder blades back and down.</span></li>
+            <li><span class="n">3</span><span class="t">Lower with control until your chest is just above the floor, elbows at about 45° to your ribs.</span></li>
+            <li><span class="n">4</span><span class="t">Press the floor away to a full lockout, holding the rigid plank line the entire time.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>A rigid, straight-line body with elbows tucked to roughly 45°. Move through the full range with control — chest to just above the floor, then full lockout.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Sagging hips, flaring elbows, or bouncing the bar off the chest. Own the full range under control instead of chasing reps with half-depth.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>Pushing yourself up off the floor or out of a low chair is horizontal pressing strength. So is getting back up after a fall. Keep that strength and a stumble stays a stumble — something you get up from on your own.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Incline Push-Up</div>
+            <div class="rx__dose">3 × 8–12</div>
+            <p class="rx__d">Hands on a bench, counter, or wall to reduce the load while keeping perfect form.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">Floor Push-Up</div>
+            <div class="rx__dose">3 × 8–15</div>
+            <p class="rx__d">Full range, rigid body, elbows tucked. The most accessible pressing strength builder there is.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Bench / DB Press</div>
+            <div class="rx__dose">3–4 × 6–10</div>
+            <p class="rx__d">Load it for progressive pressing strength once bodyweight reps are easy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>07 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 6 — The Overhead Press">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 6 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">6</div>
+        <div>
+          <div class="sc-head__cat">Upper Body · Vertical Push</div>
+          <h2 class="sc-title">Overhead <em class="acc">Press</em></h2>
+          <div class="sc-var">Dumbbell · Barbell · Landmine</div>
+        </div>
+      </div>
+      <div class="musc"><span>Shoulders</span><span>Upper Back</span><span>Triceps</span><span>Core</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Stand tall with the weights at shoulder height, elbows slightly in front of the body.</span></li>
+            <li><span class="n">2</span><span class="t">Brace your core and squeeze your glutes so you don’t arch the low back.</span></li>
+            <li><span class="n">3</span><span class="t">Press straight overhead, moving your head slightly back and then through as the weights pass your face.</span></li>
+            <li><span class="n">4</span><span class="t">Finish with arms locked out and biceps near your ears. Lower under control back to the shoulders.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>Ribs down, glutes tight, and a straight bar path that finishes with the weight stacked over your mid-foot. The motion comes from the shoulders, not a low-back arch.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Arching the low back to heave the weight up. If you can’t press it without leaning back, the load is too heavy or the shoulder mobility isn’t there yet.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>Overhead reach is one of the first things a desk-bound, rounded-forward lifestyle takes from you. Pressing keeps your shoulders both strong and mobile, so reaching the top shelf or the overhead bin stays easy instead of becoming a chore.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Landmine / ½-Kneel Press</div>
+            <div class="rx__dose">3 × 8</div>
+            <p class="rx__d">A more forgiving angle for stiff shoulders, and the half-kneel removes the low-back cheat.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">DB Overhead Press</div>
+            <div class="rx__dose">3 × 8–10</div>
+            <p class="rx__d">Independent arms even out left-to-right imbalances — a great default for most people.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Barbell Overhead Press</div>
+            <div class="rx__dose">3–4 × 5–6</div>
+            <p class="rx__d">The heaviest, most full-body pressing strength once the pattern is owned.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>08 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 7 — The Pull-Up">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 7 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">7</div>
+        <div>
+          <div class="sc-head__cat">Upper Body · Vertical Pull</div>
+          <h2 class="sc-title"><em class="acc">Pull-Up</em></h2>
+          <div class="sc-var">Assisted · Pulldown · Full</div>
+        </div>
+      </div>
+      <div class="musc"><span>Lats</span><span>Biceps</span><span>Upper Back</span><span>Grip</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Grip the bar slightly wider than your shoulders, palms forward. Start from a full hang with active shoulders.</span></li>
+            <li><span class="n">2</span><span class="t">Set your shoulder blades down and back — think about pulling them into your back pockets.</span></li>
+            <li><span class="n">3</span><span class="t">Drive your elbows down toward your ribs and pull your chest up toward the bar.</span></li>
+            <li><span class="n">4</span><span class="t">Lower all the way to a full, controlled hang. No swinging or kipping for momentum.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>Lead with the shoulder blades, then the elbows — chest up to the bar, full hang at the bottom. Smooth and controlled, never swinging for momentum.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Half-range reps and a dead, passive hang. Pull all the way up and control all the way down — assisted versions count just as much.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>The lats attach all the way down at your lower back, so pulling strength supports both your shoulders and your spine. A strong pull is also what lets you haul your own bodyweight up — out of a pool, over a wall, off the ground.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Lat Pulldown</div>
+            <div class="rx__dose">3 × 10–12</div>
+            <p class="rx__d">Dial the load to exactly your level and groove the pulling pattern.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">Assisted Pull-Up</div>
+            <div class="rx__dose">3 × 6–10</div>
+            <p class="rx__d">Band- or machine-assisted bodyweight pulls that build toward the real thing.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Full Pull-Up</div>
+            <div class="rx__dose">3–4 × 5–8</div>
+            <p class="rx__d">Strict reps from a dead hang; add weight once they’re easy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>09 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 8 — The Row">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 8 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">8</div>
+        <div>
+          <div class="sc-head__cat">Upper Body · Horizontal Pull</div>
+          <h2 class="sc-title"><em class="acc">Row</em></h2>
+          <div class="sc-var">Cable · Dumbbell · Barbell</div>
+        </div>
+      </div>
+      <div class="musc"><span>Upper Back</span><span>Lats</span><span>Biceps</span><span>Rear Delts</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Hinge to a flat-back position, or sit tall at a cable. Let the weight hang with the shoulder blade reaching forward.</span></li>
+            <li><span class="n">2</span><span class="t">Start the pull by drawing the shoulder blade back, then pull the elbow toward your hip.</span></li>
+            <li><span class="n">3</span><span class="t">Bring the handle to your lower ribs or upper belly, squeezing the mid-back hard.</span></li>
+            <li><span class="n">4</span><span class="t">Lower with control to a full stretch. Keep the torso still — no jerking or swinging.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>Pull with the back, not the arm — shoulder blade first, elbow to the hip, full squeeze. A complete range of motion beats a heavier weight.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Heaving the weight with body english and a short range. Slow it down, feel the mid-back work, and let the upper back — not momentum — move the load.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>Your upper back is what holds you upright against gravity and a long day at a desk. Strengthen it and you've got a counter to the rounded, forward-head position that creeps in over years.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Supported Cable / Chest Row</div>
+            <div class="rx__dose">3 × 10–12</div>
+            <p class="rx__d">Torso braced against a pad, removing any low-back demand so you can focus on the squeeze.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">One-Arm DB Row</div>
+            <div class="rx__dose">3 × 8–12 / side</div>
+            <p class="rx__d">Full range, one side at a time, to even out imbalances.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Barbell Row</div>
+            <div class="rx__dose">3–4 × 6–8</div>
+            <p class="rx__d">Heavier bilateral pulling that builds serious upper-back strength.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>10 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 9 — The Hip Thrust">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 9 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">9</div>
+        <div>
+          <div class="sc-head__cat">Posterior Chain · Bridge</div>
+          <h2 class="sc-title">Hip <em class="acc">Thrust</em></h2>
+          <div class="sc-var">Glute Bridge · Hip Thrust · Single-Leg</div>
+        </div>
+      </div>
+      <div class="musc"><span>Glutes</span><span>Hamstrings</span><span>Posterior Chain</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Lie on your back, knees bent, feet flat and hip-width with heels near your glutes.</span></li>
+            <li><span class="n">2</span><span class="t">Tuck your ribs and gently tilt the pelvis to flatten your low back.</span></li>
+            <li><span class="n">3</span><span class="t">Drive through your heels and squeeze your glutes to lift your hips into a straight line from knees to shoulders.</span></li>
+            <li><span class="n">4</span><span class="t">Pause and squeeze at the top, then lower with control. Move the hips and ribs together as one unit.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>Move the hips and ribs as a single unit and finish with a hard glute squeeze — a straight line from knees to shoulders. The glutes lift you, not the low back.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Over-arching and lifting with the lower back instead of the glutes. Keep the ribs down and the spine neutral so the glutes do the work they’re built for.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>When the glutes are weak, the lower back picks up work it wasn't built for — and that's a common driver of the back pain I see in the clinic. Strong glutes drive your walking, your stairs, and every hinge, and they take load off the spine.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Bodyweight Glute Bridge</div>
+            <div class="rx__dose">3 × 12–15</div>
+            <p class="rx__d">Floor-based — master the squeeze and the neutral-spine position first.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">Barbell / DB Hip Thrust</div>
+            <div class="rx__dose">3 × 8–12</div>
+            <p class="rx__d">Upper back on a bench, load across the hips, for the strongest glute training there is.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Single-Leg Hip Thrust</div>
+            <div class="rx__dose">3 × 8 / side</div>
+            <p class="rx__d">One leg at a time exposes and corrects left-to-right asymmetry.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>11 / 15</span></div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Lift 10 — The Loaded Carry">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Lift 10 of 10</span></div>
+      <div class="sc-head">
+        <div class="sc-badge">10</div>
+        <div>
+          <div class="sc-head__cat">Total Body · Loaded Carry</div>
+          <h2 class="sc-title">Loaded <em class="acc">Carry</em></h2>
+          <div class="sc-var">Suitcase · Farmer · Mixed</div>
+        </div>
+      </div>
+      <div class="musc"><span>Grip</span><span>Core</span><span>Trunk Stability</span><span>Traps</span></div>
+      <div class="sc-hr"></div>
+      <div class="sc-grid">
+        <div>
+          <h3 class="lab">How to Perform It</h3>
+          <ol class="steps" style="margin-top:12px;">
+            <li><span class="n">1</span><span class="t">Pick up a heavy weight in one hand (suitcase) or both (farmer).</span></li>
+            <li><span class="n">2</span><span class="t">Stand tall: ribs down, shoulders back, chest proud, eyes ahead.</span></li>
+            <li><span class="n">3</span><span class="t">Brace your core — especially on the suitcase carry, where one side is fighting to tip you over.</span></li>
+            <li><span class="n">4</span><span class="t">Walk slow, smooth, controlled steps for the prescribed time or distance, then set the weight down with a hinge.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="verdict verdict--pass">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> The Coaching Cue</div>
+            <p>Walk tall and slow with ribs stacked over hips — no leaning, no rushing. The core stays braced to resist the load pulling you to one side.</p>
+          </div>
+          <div class="verdict verdict--flag">
+            <div class="verdict__h"><span class="vmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> Common Mistake</div>
+            <p>Hurrying, hunching, or letting the loaded side pull you into a lean. Slow down — the value is in resisting the tilt with a tall, braced trunk.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why">
+        <h3 class="lab">Why It Matters for Longevity</h3>
+        <p>Grip strength is one of the most reliable markers in all of aging research — a stand-in for whole-body strength that tracks with both function and how long people live. And hauling groceries, luggage, and kids around is just a loaded carry you're already doing without calling it one.</p>
+      </div>
+      <div class="rx">
+        <h3 class="lab">Scale It to You</h3>
+        <div class="rx__grid">
+          <div class="rx__card">
+            <div class="rx__tier">Easier</div>
+            <div class="rx__t">Short Suitcase Carry</div>
+            <div class="rx__dose">3 trips · 20–30s</div>
+            <p class="rx__d">A lighter load in one hand for shorter bouts while you build grip and trunk stability.</p>
+          </div>
+          <div class="rx__card is-std">
+            <div class="rx__tier">The Standard</div>
+            <div class="rx__t">Suitcase / Farmer Carry</div>
+            <div class="rx__dose">3 trips · 40–60s</div>
+            <p class="rx__d">Tall and steady for time per side. The everyday-strength staple.</p>
+          </div>
+          <div class="rx__card">
+            <div class="rx__tier">Harder</div>
+            <div class="rx__t">Heavy Farmer Carry</div>
+            <div class="rx__dose">3–4 trips</div>
+            <p class="rx__d">Build toward roughly half your bodyweight split between both hands.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>12 / 15</span></div>
+    </div>
+  </section>
+  <section class="page" data-screen-label="Build Your Week">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Build Your Week</span></div>
+      <div style="margin-top:24px;">
+        <div class="phead">
+          <span class="eyebrow">Section 02</span>
+          <h2 class="ptitle">Putting It <em class="acc">Together</em></h2>
+        </div>
+        <p class="intro-lead">Here's how to turn the menu into an actual week. Each template hits all six patterns — pick the one that matches the days you can train, run it with control, and add a rep or a little load every couple of weeks.</p>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <div class="plan__hd"><div class="plan__freq">2×</div><div class="plan__split">Per Week · Full Body</div></div>
+          <div class="plan__body">
+            <div class="plan__day"><div class="d">Day A</div><div class="m">Squat · Push · Row · Reverse Lunge · Carry</div></div>
+            <div class="plan__day"><div class="d">Day B</div><div class="m">Deadlift · Overhead Press · Pull-Up · Hip Thrust · Lateral Lunge</div></div>
+            <div class="plan__day"><div class="d">Best For</div><div class="m">Busy weeks. Two efficient sessions that still cover every pattern.</div></div>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="plan__hd"><div class="plan__freq">3×</div><div class="plan__split">Per Week · Full Body</div></div>
+          <div class="plan__body">
+            <div class="plan__day"><div class="d">Day 1 · Squat Focus</div><div class="m">Squat · Push · Row · Carry</div></div>
+            <div class="plan__day"><div class="d">Day 2 · Hinge Focus</div><div class="m">Deadlift · Overhead Press · Pull-Up · Hip Thrust</div></div>
+            <div class="plan__day"><div class="d">Day 3 · Single-Leg</div><div class="m">Lunge · Lateral Lunge · Push · Pull · Carry</div></div>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="plan__hd"><div class="plan__freq">4×</div><div class="plan__split">Per Week · Upper / Lower</div></div>
+          <div class="plan__body">
+            <div class="plan__day"><div class="d">Lower A</div><div class="m">Squat · Reverse Lunge · Hip Thrust</div></div>
+            <div class="plan__day"><div class="d">Upper A</div><div class="m">Push · Row · Pull-Up</div></div>
+            <div class="plan__day"><div class="d">Lower B</div><div class="m">Deadlift · Lateral Lunge · Carry</div></div>
+            <div class="plan__day"><div class="d">Upper B</div><div class="m">Overhead Press · Pull-Up · Row</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reminder">
+        <div class="reminder__bar"></div>
+        <div>
+          <div class="reminder__h">The Progressive Overload Reminder</div>
+          <p class="reminder__p">Add a little each week — a rep, a few pounds, a touch more depth. <b>Your tissues adapt to demand, but only when that demand keeps climbing.</b> When a lift starts to feel easy, that's your cue to make it harder.</p>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>13 / 15</span></div>
+    </div>
+  </section>
+  <section class="page" data-screen-label="The Library at a Glance">
+    <div class="pad">
+      <div class="run"><span class="run__brand">The Longevity Lift Library</span><span class="run__ctx">Quick Reference</span></div>
+      <div style="margin-top:24px;">
+        <div class="phead">
+          <span class="eyebrow">Summary</span>
+          <h2 class="ptitle">The Library at a <em class="acc">Glance</em></h2>
+        </div>
+        <p class="sum-note">All ten lifts in one place, sorted by pattern. Use it to build a session at a glance — and on each lift, pick the level you can <b>own with clean, controlled form.</b></p>
+      </div>
+      <table class="tbl">
+        <colgroup><col class="c-lift"><col class="c-pat"><col class="c-tr"><col class="c-do"></colgroup>
+        <thead>
+          <tr><th>Lift</th><th>Pattern</th><th>Trains</th><th>Weekly Dose</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><div class="sn"><span class="num">01</span><span class="name">Squat</span></div></td>
+              <td class="cell">Squat</td>
+              <td class="cell">Quads · Glutes · Core · Ankles</td>
+              <td class="cell dose">3 × 8–12</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">02</span><span class="name">Deadlift</span></div></td>
+              <td class="cell">Hinge</td>
+              <td class="cell">Glutes · Hamstrings · Back · Grip</td>
+              <td class="cell dose">3 × 6–8</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">03</span><span class="name">Lunge</span></div></td>
+              <td class="cell">Single-Leg</td>
+              <td class="cell">Quads · Glutes · Hip Stabilizers · Balance</td>
+              <td class="cell dose">3 × 8 / side</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">04</span><span class="name">Lateral Lunge</span></div></td>
+              <td class="cell">Frontal Plane</td>
+              <td class="cell">Adductors · Glutes · Hip Mobility</td>
+              <td class="cell dose">3 × 8 / side</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">05</span><span class="name">Horizontal Press</span></div></td>
+              <td class="cell">Horizontal Push</td>
+              <td class="cell">Chest · Shoulders · Triceps · Core</td>
+              <td class="cell dose">3 × 8–15</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">06</span><span class="name">Overhead Press</span></div></td>
+              <td class="cell">Vertical Push</td>
+              <td class="cell">Shoulders · Upper Back · Triceps · Core</td>
+              <td class="cell dose">3 × 8–10</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">07</span><span class="name">Pull-Up</span></div></td>
+              <td class="cell">Vertical Pull</td>
+              <td class="cell">Lats · Biceps · Upper Back · Grip</td>
+              <td class="cell dose">3 × 6–10</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">08</span><span class="name">Row</span></div></td>
+              <td class="cell">Horizontal Pull</td>
+              <td class="cell">Upper Back · Lats · Biceps · Rear Delts</td>
+              <td class="cell dose">3 × 8–12 / side</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">09</span><span class="name">Hip Thrust</span></div></td>
+              <td class="cell">Bridge / Hinge</td>
+              <td class="cell">Glutes · Hamstrings · Posterior Chain</td>
+              <td class="cell dose">3 × 8–12</td>
+            </tr>
+            <tr>
+              <td><div class="sn"><span class="num">10</span><span class="name">Loaded Carry</span></div></td>
+              <td class="cell">Loaded Carry</td>
+              <td class="cell">Grip · Core · Trunk Stability · Traps</td>
+              <td class="cell dose">3 trips · 40–60s</td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="reminder">
+        <div class="reminder__bar"></div>
+        <div>
+          <div class="reminder__h">The Big Picture</div>
+          <p class="reminder__p">The best program is the one you'll still be doing in ten years.</p>
+        </div>
+      </div>
+      <div class="pagenum"><span>khershberger.com</span><span>14 / 15</span></div>
+    </div>
+  </section>
+  <section class="page close" data-screen-label="Train for the Decades Ahead">
+    <div class="pad">
+      <div class="close__run"><span class="l">The Longevity Lift Library</span><span class="r">@dr.kevinhershberger</span></div>
+      <div class="close__body">
+        <div class="close__eyebrow">Want More?</div>
+        <h2 class="close__title">Train for the<br>decades <em class="acc">ahead.</em></h2>
+        <p class="close__lead">This guide gives you the movements. My weekly newsletter gives you everything around them — the clinical research, the programming, and the movement principles I use with patients to keep them strong, mobile, and out of my clinic.</p>
+        <div class="cta">
+          <a class="cta__btn" href="https://khershberger.com/newsletter">khershberger.com/newsletter →</a>
+          <span class="cta__note">Free to subscribe. No spam.<br>Unsubscribe anytime.</span>
+        </div>
+      </div>
+      <div class="close__foot">
+        <img class="close__avatar" src="/kevin-about.jpg" alt="Dr. Kevin Hershberger">
+        <div class="meta">
+          <div class="who">© 2026 Dr. Kevin Hershberger · DPT, FAAOMPT</div>
+          <div class="disc">For educational purposes only. Not medical advice. Consult a licensed provider before starting any new exercise program.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+/* Fit-to-width scaler for this fixed 816px (US Letter) print layout.
+   Wraps each .page in a .page-frame whose height collapses to the SCALED
+   height, then scales the page down to fit narrow viewports. This is the
+   only way to show a fixed-size page on a phone without horizontal scroll. */
+(function(){
+  var DESIGN_W = 816, DESIGN_H = 1056;
+  function fit(){
+    var pages = document.querySelectorAll('.page');
+    var vw = document.documentElement.clientWidth;           // excludes scrollbar
+    var sideGutter = vw <= 600 ? 0 : 24;                     // small breathing room on tablet+
+    var avail = Math.min(vw - sideGutter * 2, DESIGN_W);
+    var scale = avail / DESIGN_W;
+    for (var i = 0; i < pages.length; i++){
+      var p = pages[i];
+      var frame = p.parentElement;
+      if (!frame.classList.contains('page-frame')){
+        frame = document.createElement('div');
+        frame.className = 'page-frame';
+        p.parentNode.insertBefore(frame, p);
+        frame.appendChild(p);
+      }
+      if (scale < 0.999){
+        p.style.transform = 'scale(' + scale + ')';
+        frame.style.width  = (DESIGN_W * scale) + 'px';
+        frame.style.height = (DESIGN_H * scale) + 'px';
+      } else {
+        p.style.transform = '';
+        frame.style.width = '';
+        frame.style.height = '';
+      }
+    }
+  }
+  var raf;
+  function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(fit); }
+  window.addEventListener('resize', schedule);
+  window.addEventListener('orientationchange', schedule);
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', fit);
+  } else { fit(); }
+  window.addEventListener('load', fit);   // re-fit after fonts/images settle
+})();
+</script>
+</body></html>
