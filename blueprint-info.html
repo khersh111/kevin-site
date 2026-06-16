@@ -178,20 +178,55 @@
     .about__photo img{ width:260px; height:312px; }
   }
   @media (max-width:600px){
-    .wrap{ padding:0 22px; }
+    /* Prevent horizontal overflow */
+    body{ overflow-x:hidden; }
+    .wrap{ padding:0 20px; }
+
+    /* Header — keep brand + button side by side, shrink button */
+    .hbar{ height:58px; }
     .hbar .brand span.full{ display:none; }
-    .hero{ padding:40px 0 54px; }
-    .hero h1{ font-size:40px; }
-    .hero__sub{ font-size:17px; }
-    .cover{ width:300px; height:388px; }
+    .hbar .btn{
+      padding:9px 14px;
+      font-size:13px;
+      border-radius:8px;
+      width:auto;          /* override the global width:100% below */
+      white-space:nowrap;
+      flex-shrink:0;
+    }
+
+    /* Hero */
+    .hero{ padding:36px 0 48px; }
+    .hero h1{ font-size:34px; line-height:1.08; }
+    .hero__sub{ font-size:16px; }
+
+    /* Cover card — fluid width with side breathing room */
     .coverwrap{ width:100%; }
-    section{ padding:56px 0; }
-    .sec-head h2, .problem h2, .about__body h2{ font-size:31px; }
+    .cover{ width:100%; max-width:320px; height:auto; aspect-ratio:3/4; margin:0 auto; }
+    .cover__title{ font-size:38px; }
+
+    /* Sections */
+    section{ padding:52px 0; }
+    .sec-head h2, .problem h2, .about__body h2{ font-size:30px; }
+
+    /* Cards */
     .inside__grid{ grid-template-columns:1fr; }
     .card--wide{ grid-column:span 1; grid-template-columns:1fr; gap:20px; text-align:left; }
     .moves__grid{ grid-template-columns:1fr; gap:0; }
-    .guarantee{ padding:32px 26px; }
+
+    /* About photo badge — pull it back on-screen */
+    .about__badge{ left:0; bottom:16px; }
+
+    /* Guarantee */
+    .guarantee{ padding:32px 22px; }
+
+    /* Final CTA price */
     .final__price .amt{ font-size:40px; }
+    .final__price{ flex-wrap:wrap; gap:8px; }
+
+    /* Footer */
+    .foot{ flex-direction:column; align-items:flex-start; gap:8px; }
+
+    /* Buttons — full width everywhere EXCEPT the header */
     .btn{ width:100%; }
     .hero__cta{ align-items:stretch; }
     .hero__price{ justify-content:flex-start; }
