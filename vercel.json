@@ -1,7 +1,18 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/blueprint-content",
+      "destination": "/blueprint-info",
+      "permanent": false
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/blueprint",
+      "destination": "/api/blueprint"
+    },
     {
       "source": "/newsletter-:slug([a-z]+-[0-9]+-[0-9]+.*)",
       "destination": "/newsletter-detail"
