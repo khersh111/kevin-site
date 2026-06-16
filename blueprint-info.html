@@ -1,82 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Longevity Movement Blueprint</title>
-  <link rel="stylesheet" href="/styles.css" />
-  <style>
-    .blueprint-hero {
-      max-width: 680px;
-      margin: 80px auto;
-      padding: 0 24px;
-    }
-    .blueprint-hero h1 {
-      font-size: 2.4rem;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .blueprint-hero .subtitle {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-    .blueprint-benefits {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 48px;
-    }
-    .blueprint-benefits li {
-      padding: 12px 0;
-      border-bottom: 1px solid #eee;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    .blueprint-benefits li::before {
-      content: "✓ ";
-      font-weight: bold;
-      color: #000;
-    }
-    .buy-btn {
-      display: inline-block;
-      background: #000;
-      color: #fff;
-      padding: 16px 36px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      cursor: pointer;
-      border: none;
-    }
-    .buy-btn:hover {
-      background: #222;
-    }
-    .price-note {
-      margin-top: 16px;
-      color: #888;
-      font-size: 0.9rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Longevity Movement Blueprint — Dr. Kevin Hershberger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1A1A; --sky:#4FB4E6; --sky-deep:#2E9BD6;
+    --hair:#E2E2E2; --fine:#6B7280; --paper:#FFFFFF; --paper-soft:#FAFAFA;
+    --go:#1F9D57; --go-soft:#EAF6EF;
+    --caution:#E8A317; --caution-soft:#FBF3E2;
+    --stop:#D8423B; --stop-soft:#FBEBEA;
+    --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --serif:'Playfair Display',Georgia,serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; line-height:1.5; }
+  img{ display:block; max-width:100%; }
+  a{ color:inherit; }
+
+  .accent{ font-family:var(--serif); font-style:italic; font-weight:500; color:var(--sky); }
+  .star{ color:var(--sky); font-style:normal; }
+  .eyebrow{ font-size:12.5px; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--sky); display:inline-flex; align-items:center; gap:10px; }
+  .wrap{ width:100%; max-width:1120px; margin:0 auto; padding:0 32px; }
+
+  /* ---------- buttons ---------- */
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:12px; background:var(--sky); color:#fff; text-decoration:none;
+        font-size:16px; font-weight:700; letter-spacing:.005em; padding:17px 30px; border-radius:11px; border:none; cursor:pointer;
+        transition:background .15s ease, transform .15s ease; white-space:nowrap; }
+  .btn:hover{ background:var(--sky-deep); transform:translateY(-1px); }
+  .btn .price{ font-weight:800; }
+  .btn--lg{ font-size:17px; padding:19px 34px; }
+  .btn-note{ font-size:13px; color:var(--fine); margin-top:13px; display:flex; align-items:center; gap:8px; font-weight:500; }
+  .btn-note .dot{ width:5px; height:5px; border-radius:50%; background:var(--go); }
+
+  /* ---------- header ---------- */
+  header{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86); backdrop-filter:blur(12px); border-bottom:1px solid var(--hair); }
+  .hbar{ display:flex; align-items:center; justify-content:space-between; height:66px; }
+  .brand{ display:flex; align-items:baseline; gap:9px; font-weight:800; font-size:16px; letter-spacing:-.01em; }
+  .brand .accent{ font-size:17px; }
+  .hbar .btn{ padding:11px 20px; font-size:14px; border-radius:9px; }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:60px 0 72px; }
+  .hero__grid{ display:grid; grid-template-columns:1fr 396px; gap:64px; align-items:center; }
+  .hero h1{ font-weight:800; font-size:57px; line-height:1.03; letter-spacing:-.026em; text-wrap:balance; margin:22px 0 0; }
+  .hero h1 .accent{ font-weight:500; letter-spacing:0; }
+  .hero__sub{ margin-top:23px; font-size:18.5px; line-height:1.5; color:var(--ink); max-width:36ch; font-weight:500; text-wrap:pretty; }
+  .hero__sub b{ font-weight:700; }
+  .hero__cta{ margin-top:32px; display:flex; flex-direction:column; align-items:flex-start; }
+  .hero__price{ display:flex; align-items:baseline; gap:11px; margin-bottom:16px; }
+  .hero__price .amt{ font-size:30px; font-weight:800; letter-spacing:-.02em; }
+  .hero__price .was{ font-size:17px; color:var(--fine); text-decoration:line-through; font-weight:600; }
+  .hero__price .tag{ font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--go); background:var(--go-soft); padding:4px 10px; border-radius:20px; }
+  .hero__trust{ margin-top:28px; padding-top:24px; border-top:1px solid var(--hair); display:flex; align-items:center; gap:14px; max-width:440px; }
+  .hero__trust img{ width:46px; height:46px; border-radius:50%; object-fit:cover; object-position:center 18%; flex:none; }
+  .hero__trust p{ font-size:13.5px; line-height:1.45; color:var(--fine); font-weight:500; }
+  .hero__trust b{ color:var(--ink); font-weight:700; }
+
+  .coverwrap{ justify-self:center; }
+  .cover{ width:396px; height:512px; background:var(--ink); border-radius:8px; overflow:hidden; position:relative;
+          box-shadow:0 2px 6px rgba(0,0,0,.14), 0 34px 64px -22px rgba(26,26,26,.55); }
+  .cover::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:7px; background:linear-gradient(90deg, rgba(255,255,255,.16), rgba(255,255,255,0)); z-index:2; }
+  .cover::after{ content:""; position:absolute; right:-130px; top:-130px; width:380px; height:380px; border-radius:50%;
+          background:radial-gradient(circle, rgba(79,180,230,.20) 0%, rgba(79,180,230,0) 66%); }
+  .cover__in{ position:relative; z-index:1; height:100%; padding:42px 38px 34px; display:flex; flex-direction:column; color:#fff; }
+  .cover__kick{ display:flex; align-items:center; gap:9px; }
+  .cover__kick .ey{ font-size:9.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#fff; white-space:nowrap; }
+  .cover__kick .ln{ flex:1; height:1px; background:rgba(255,255,255,.18); }
+  .cover__title{ margin-top:auto; font-weight:800; font-size:46px; line-height:1.0; letter-spacing:-.025em; }
+  .cover__title .accent{ font-weight:500; letter-spacing:0; }
+  .cover__rule{ width:40px; height:3px; background:var(--sky); margin:22px 0 18px; }
+  .cover__lead{ font-size:15px; line-height:1.34; font-weight:700; letter-spacing:-.01em; max-width:22ch; color:#fff; }
+  .cover__meta{ margin-top:30px; padding-top:16px; border-top:1px solid rgba(255,255,255,.18); }
+  .cover__byline{ font-size:12px; font-weight:700; }
+  .cover__byline span{ color:#8C9099; font-weight:600; }
+  .cover__site{ margin-top:5px; font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--sky); font-weight:700; }
+  .coverwrap__tag{ margin-top:18px; text-align:center; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--fine); font-weight:700; display:flex; align-items:center; justify-content:center; gap:9px; }
+
+  /* ---------- sections ---------- */
+  section{ padding:76px 0; }
+  .sec-head{ max-width:680px; }
+  .sec-head h2{ font-weight:800; font-size:40px; line-height:1.09; letter-spacing:-.022em; margin-top:16px; text-wrap:balance; }
+  .sec-head h2 .accent{ font-weight:500; }
+  .sec-head p{ margin-top:18px; font-size:17px; line-height:1.6; color:var(--fine); text-wrap:pretty; }
+
+  /* ---------- problem ---------- */
+  .problem{ background:var(--ink); color:#fff; }
+  .problem .eyebrow{ color:var(--sky); }
+  .problem h2{ color:#fff; font-weight:800; font-size:41px; line-height:1.12; letter-spacing:-.022em; margin-top:18px; max-width:17ch; text-wrap:balance; }
+  .problem h2 .accent{ color:var(--sky); }
+  .problem__cols{ display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:36px; }
+  .problem__cols p{ font-size:16px; line-height:1.68; color:#D7D8DA; text-wrap:pretty; }
+  .problem__cols p b{ color:#fff; font-weight:700; }
+  .problem__cols p + p{ margin-top:15px; }
+
+  /* ---------- what's inside ---------- */
+  .inside__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:46px; }
+  .card{ border:1px solid var(--hair); border-radius:16px; padding:28px 26px 30px; background:var(--paper); transition:border-color .15s ease, box-shadow .15s ease; }
+  .card:hover{ border-color:#cfd2d6; box-shadow:0 14px 30px -18px rgba(26,26,26,.22); }
+  .card__ix{ font-family:var(--serif); font-style:italic; font-weight:600; font-size:22px; color:var(--sky); }
+  .card h3{ margin-top:13px; font-size:18.5px; font-weight:700; letter-spacing:-.01em; line-height:1.2; }
+  .card p{ margin-top:9px; font-size:14.5px; line-height:1.55; color:var(--fine); text-wrap:pretty; }
+  .card--wide{ grid-column:span 3; display:grid; grid-template-columns:auto 1fr; gap:30px; align-items:center; background:var(--paper-soft); }
+  .card--wide h3{ margin-top:0; }
+  .card--wide .card__body p{ margin-top:9px; max-width:62ch; }
+
+  .stoplight{ display:flex; gap:12px; }
+  .sl{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .sl__dot{ width:26px; height:26px; border-radius:50%; box-shadow:0 0 0 5px var(--ring); }
+  .sl--g{ --ring:var(--go-soft); } .sl--g .sl__dot{ background:var(--go); }
+  .sl--y{ --ring:var(--caution-soft); } .sl--y .sl__dot{ background:var(--caution); }
+  .sl--r{ --ring:var(--stop-soft); } .sl--r .sl__dot{ background:var(--stop); }
+  .sl span{ font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .sl--g span{ color:var(--go); } .sl--y span{ color:var(--caution); } .sl--r span{ color:var(--stop); }
+
+  .moves{ margin-top:54px; }
+  .moves__lead{ font-size:12.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--fine); padding-bottom:6px; border-bottom:1px solid var(--hair); }
+  .moves__grid{ margin-top:4px; display:grid; grid-template-columns:repeat(2,1fr); gap:0 64px; }
+  .move{ display:flex; align-items:center; gap:18px; padding:17px 0; border-bottom:1px solid var(--hair); }
+  .move__n{ flex:none; width:34px; height:34px; border-radius:50%; border:1.5px solid var(--sky); color:var(--sky);
+            font-family:var(--serif); font-style:italic; font-weight:600; font-size:16px; display:flex; align-items:center; justify-content:center; }
+  .move__name{ font-size:16.5px; font-weight:700; letter-spacing:-.01em; }
+  .move__for{ margin-top:1px; font-size:12.5px; color:var(--fine); font-weight:500; }
+
+  /* ---------- about ---------- */
+  .about{ background:var(--paper-soft); }
+  .about__grid{ display:grid; grid-template-columns:300px 1fr; gap:56px; align-items:center; }
+  .about__photo{ position:relative; }
+  .about__photo img{ width:300px; height:362px; object-fit:cover; object-position:center 18%; border-radius:18px; }
+  .about__badge{ position:absolute; left:-14px; bottom:22px; background:var(--ink); color:#fff; border-radius:12px; padding:13px 18px; box-shadow:0 16px 34px -16px rgba(0,0,0,.5); }
+  .about__badge b{ display:block; font-size:13px; font-weight:800; letter-spacing:.02em; }
+  .about__badge span{ font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--sky); font-weight:700; }
+  .about__body h2{ font-weight:800; font-size:36px; line-height:1.12; letter-spacing:-.02em; margin-top:16px; text-wrap:balance; }
+  .about__body h2 .accent{ font-weight:500; }
+  .about__body p{ margin-top:18px; font-size:16.5px; line-height:1.65; color:var(--ink); text-wrap:pretty; }
+  .about__body p.muted{ color:var(--fine); font-size:15.5px; }
+  .about__cred{ margin-top:22px; display:flex; flex-wrap:wrap; gap:10px; }
+  .chip{ font-size:13px; font-weight:600; color:var(--ink); background:var(--paper); border:1px solid var(--hair); border-radius:30px; padding:8px 15px; display:inline-flex; align-items:center; gap:8px; }
+  .chip .star{ font-size:11px; }
+
+  /* ---------- guarantee + final cta ---------- */
+  .final{ text-align:center; }
+  .guarantee{ max-width:660px; margin:0 auto; border:1px solid var(--hair); border-radius:20px; padding:42px 44px; background:var(--paper); }
+  .guarantee__seal{ width:60px; height:60px; margin:0 auto; border-radius:50%; border:2px solid var(--sky); color:var(--sky);
+                    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-style:italic; font-weight:600; font-size:23px; }
+  .guarantee h3{ margin-top:20px; font-size:24px; font-weight:800; letter-spacing:-.015em; }
+  .guarantee h3 .accent{ font-weight:500; }
+  .guarantee p{ margin-top:13px; font-size:16px; line-height:1.6; color:var(--fine); }
+  .final__cta{ margin-top:46px; display:flex; flex-direction:column; align-items:center; }
+  .final__price{ display:flex; align-items:baseline; justify-content:center; gap:13px; margin-bottom:22px; }
+  .final__price .amt{ font-size:46px; font-weight:800; letter-spacing:-.02em; }
+  .final__price .was{ font-size:20px; color:var(--fine); text-decoration:line-through; font-weight:600; }
+  .final__price .tag{ font-size:12px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--go); background:var(--go-soft); padding:5px 11px; border-radius:20px; align-self:center; }
+  .final__fine{ margin-top:20px; font-size:13px; color:var(--fine); font-weight:500; }
+
+  /* ---------- footer ---------- */
+  footer{ border-top:1px solid var(--hair); padding:34px 0 42px; }
+  .foot{ display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+  .foot__brand{ font-weight:800; font-size:15px; }
+  .foot__brand .accent{ font-size:16px; }
+  .foot p{ font-size:13px; color:var(--fine); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:920px){
+    .hero__grid{ grid-template-columns:1fr; gap:48px; }
+    .coverwrap{ order:-1; }
+    .hero h1{ font-size:48px; }
+    .problem__cols{ grid-template-columns:1fr; gap:14px; }
+    .inside__grid{ grid-template-columns:1fr 1fr; }
+    .card--wide{ grid-column:span 2; }
+    .about__grid{ grid-template-columns:1fr; gap:34px; justify-items:start; }
+    .about__photo img{ width:260px; height:312px; }
+  }
+  @media (max-width:600px){
+    .wrap{ padding:0 22px; }
+    .hbar .brand span.full{ display:none; }
+    .hero{ padding:40px 0 54px; }
+    .hero h1{ font-size:40px; }
+    .hero__sub{ font-size:17px; }
+    .cover{ width:300px; height:388px; }
+    .coverwrap{ width:100%; }
+    section{ padding:56px 0; }
+    .sec-head h2, .problem h2, .about__body h2{ font-size:31px; }
+    .inside__grid{ grid-template-columns:1fr; }
+    .card--wide{ grid-column:span 1; grid-template-columns:1fr; gap:20px; text-align:left; }
+    .moves__grid{ grid-template-columns:1fr; gap:0; }
+    .guarantee{ padding:32px 26px; }
+    .final__price .amt{ font-size:40px; }
+    .btn{ width:100%; }
+    .hero__cta{ align-items:stretch; }
+    .hero__price{ justify-content:flex-start; }
+  }
+</style>
 </head>
 <body>
-  <main class="blueprint-hero">
-    <h1>The Longevity Movement Blueprint</h1>
-    <p class="subtitle">
-      A step-by-step guide to building a body that stays strong, mobile, and pain-free well into your 60s, 70s, and beyond.
-    </p>
 
-    <ul class="blueprint-benefits">
-      <li>The exact movement framework I use with my patients</li>
-      <li>How to build strength that protects your joints for decades</li>
-      <li>The mobility work that actually transfers to real life</li>
-      <li>Video demonstrations for every exercise</li>
-      <li>A simple weekly structure you can start this week</li>
-    </ul>
+  <header>
+    <div class="wrap hbar">
+      <div class="brand"><span class="full">The Longevity Movement</span><span class="accent">Blueprint</span></div>
+      <a class="btn" href="/api/create-checkout">Get the Blueprint — <span class="price">$27</span></a>
+    </div>
+  </header>
 
-    <a href="/api/create-checkout" class="buy-btn">Get the Blueprint — $27</a>
-    <p class="price-note">One-time payment. Lifetime access. Delivered instantly via email.</p>
-  </main>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow">The Field Guide <span class="star">✦</span></span>
+        <h1>Train now so you're still moving well at <span class="accent">80.</span></h1>
+        <p class="hero__sub">A test-and-train system for health-serious adults who intend to stay strong, mobile, and independent deep into their 70s and 80s.</p>
+        <div class="hero__cta" id="buy">
+          <div class="hero__price"><span class="amt">$27</span><span class="was">$47</span><span class="tag">Launch price</span></div>
+          <a class="btn btn--lg" href="/api/create-checkout">Get the Blueprint — <span class="price">$27</span></a>
+          <div class="btn-note"><span class="dot"></span> Instant access · 30-day money-back guarantee</div>
+        </div>
+        <div class="hero__trust">
+          <img src="/kevin-about.jpg" alt="Dr. Kevin Hershberger">
+          <p>Created by <b>Dr. Kevin Hershberger, DPT, FAAOMPT</b> — a fellowship-trained orthopedic physical therapist in Chicago.</p>
+        </div>
+      </div>
+      <div class="coverwrap">
+        <div class="cover">
+          <div class="cover__in">
+            <div class="cover__kick"><span class="ey">The Field Guide</span><span class="ln"></span><span class="star">✦</span></div>
+            <h2 class="cover__title">The Longevity<br>Movement<br><span class="accent">Blueprint</span></h2>
+            <div class="cover__rule"></div>
+            <p class="cover__lead">Train now so you're still moving well at 80.</p>
+            <div class="cover__meta">
+              <div class="cover__byline">Dr. Kevin Hershberger <span>· DPT, FAAOMPT</span></div>
+              <div class="cover__site">khershberger.com</div>
+            </div>
+          </div>
+        </div>
+        <div class="coverwrap__tag">Digital Guide <span class="star">✦</span> Instant Download</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section class="problem">
+    <div class="wrap">
+      <span class="eyebrow">Why It Matters</span>
+      <h2>Independence is rarely lost all at once. It <span class="accent">erodes.</span></h2>
+      <div class="problem__cols">
+        <div>
+          <p>Most people don't lose their independence to one bad fall. They lose it slowly. Strength fades, balance declines, and then one ordinary day the body can't do an ordinary thing.</p>
+          <p>The walker shows up, then the wheelchair, then the room you stop leaving. None of it is random — it's the slow erosion of strength, balance, and mobility.</p>
+        </div>
+        <div>
+          <p>Here's the part most people miss: <b>the capacities that decide how well you move at 80 are built — or lost — in your 30s, 40s, and 50s.</b></p>
+          <p>How fast you walk. The strength in your legs. Your grip. Whether you can stand on one foot. They're not fixed, and they're not luck. They're trainable, starting now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INSIDE ============ -->
+  <section class="inside">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What's Inside</span>
+        <h2>Seven movements. One clear <span class="accent">system.</span></h2>
+        <p>Not a workout to grind through — a diagnostic. Find exactly where your body is quietly losing capacity, then train precisely those gaps.</p>
+      </div>
+
+      <div class="inside__grid">
+        <div class="card">
+          <div class="card__ix">01</div>
+          <h3>The seven key movements</h3>
+          <p>The foundational patterns that predict how you'll move decades from now — squat, hinge, carry, balance, and more.</p>
+        </div>
+        <div class="card">
+          <div class="card__ix">02</div>
+          <h3>Follow-along demo videos</h3>
+          <p>A clear video for every movement, so you can see exactly how each test and drill should look and feel.</p>
+        </div>
+        <div class="card">
+          <div class="card__ix">03</div>
+          <h3>Corrective training</h3>
+          <p>For each movement, the specific drills that rebuild it — so you're training your weak links, not guessing.</p>
+        </div>
+
+        <div class="card card--wide">
+          <div class="stoplight">
+            <div class="sl sl--g"><span class="sl__dot"></span><span>Green</span></div>
+            <div class="sl sl--y"><span class="sl__dot"></span><span>Yellow</span></div>
+            <div class="sl sl--r"><span class="sl__dot"></span><span>Red</span></div>
+          </div>
+          <div class="card__body">
+            <h3>A simple self-test for every movement</h3>
+            <p>Score yourself green, yellow, or red against clear standards — no guesswork. Green means maintain it. Yellow and red show you precisely where to start, so your time goes exactly where it counts.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__ix">04</div>
+          <h3>The re-test scorecard</h3>
+          <p>Re-score at week 6 and week 12 and watch your weak links turn green. Progress you can actually see.</p>
+        </div>
+        <div class="card">
+          <div class="card__ix">05</div>
+          <h3>~20 minutes, no gym</h3>
+          <p>The full self-assessment takes about twenty minutes and almost no equipment. Train from anywhere.</p>
+        </div>
+      </div>
+
+      <div class="moves">
+        <div class="moves__lead">The seven movements you'll test &amp; train</div>
+        <div class="moves__grid">
+          <div class="move"><div class="move__n">1</div><div><div class="move__name">The Deep Squat</div><div class="move__for">Ankle, knee &amp; hip mobility</div></div></div>
+          <div class="move"><div class="move__n">2</div><div><div class="move__name">The Hip Hinge</div><div class="move__for">Hip-dominant bending · back protection</div></div></div>
+          <div class="move"><div class="move__n">3</div><div><div class="move__name">The Step-Up</div><div class="move__for">Single-leg strength · stair capacity</div></div></div>
+          <div class="move"><div class="move__n">4</div><div><div class="move__name">Single-Leg Balance</div><div class="move__for">Stability · fall prevention</div></div></div>
+          <div class="move"><div class="move__n">5</div><div><div class="move__name">The Loaded Carry</div><div class="move__for">Grip · trunk stability under load</div></div></div>
+          <div class="move"><div class="move__n">6</div><div><div class="move__name">The Overhead Press</div><div class="move__for">Shoulder &amp; thoracic mobility</div></div></div>
+          <div class="move"><div class="move__n">7</div><div><div class="move__name">Get Up From the Floor</div><div class="move__for">The capstone · whole-body integration</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about">
+    <div class="wrap about__grid">
+      <div class="about__photo">
+        <img src="/kevin-about.jpg" alt="Dr. Kevin Hershberger">
+        <div class="about__badge"><b>Dr. Kevin Hershberger</b><span>DPT · FAAOMPT</span></div>
+      </div>
+      <div class="about__body">
+        <span class="eyebrow">Who Made This</span>
+        <h2>Built by a fellowship-trained <span class="accent">clinician.</span></h2>
+        <p>I'm Dr. Kevin Hershberger — a Doctor of Physical Therapy and fellowship-trained orthopedic specialist in Chicago. I spend my days helping people understand their bodies and move better, and I built this guide from what the research and the clinic agree on.</p>
+        <p class="muted">This isn't recycled wellness advice. It's the screening and corrective work I use with patients, distilled into something you can run on yourself — restrained, practical, and honest about what actually matters.</p>
+        <div class="about__cred">
+          <span class="chip"><span class="star">✦</span> Doctor of Physical Therapy</span>
+          <span class="chip"><span class="star">✦</span> FAAOMPT — Fellowship-trained</span>
+          <span class="chip"><span class="star">✦</span> Orthopedic specialist, Chicago</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GUARANTEE + FINAL CTA ============ -->
+  <section class="final">
+    <div class="wrap">
+      <div class="guarantee">
+        <div class="guarantee__seal">30</div>
+        <h3>A no-risk <span class="accent">guarantee.</span></h3>
+        <p>Read it, run the self-tests, train with it. If it isn't worth far more than $27 to you, email me within 30 days for a full refund — no friction, no hard feelings.</p>
+      </div>
+
+      <div class="final__cta">
+        <div class="final__price"><span class="amt">$27</span><span class="was">$47</span><span class="tag">Launch price</span></div>
+        <a class="btn btn--lg" href="/api/create-checkout">Get the Blueprint — <span class="price">$27</span></a>
+        <div class="final__fine">Instant digital access · Works on any device · 30-day money-back guarantee</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="foot__brand">The Longevity Movement <span class="accent">Blueprint</span></div>
+      <p>© 2026 Dr. Kevin Hershberger, DPT · khershberger.com</p>
+    </div>
+  </footer>
+
 </body>
 </html>
