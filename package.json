@@ -2,6 +2,9 @@
   "name": "kevin-site",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "build": "node scripts/build-search-index.js"
+  },
   "dependencies": {
     "stripe": "^17.0.0",
     "@upstash/redis": "^1.34.0",

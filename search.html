@@ -35,96 +35,31 @@
     <div id="footer-placeholder"></div>
     <script src="shared.js"></script>
     <script>
-    // Search index — all articles + books
-    const searchIndex = [
-        // Articles
-        { type: 'article', slug: 'the-best-books-i-read-in-2025', title: 'The Best Books I Read in 2025', category: 'Books', url: 'article?slug=the-best-books-i-read-in-2025' },
-        { type: 'article', slug: 'a-guide-to-tracking-your-fitness-progress', title: 'A Guide to Tracking Your Fitness Progress', category: 'Fitness', url: 'article?slug=a-guide-to-tracking-your-fitness-progress' },
-        { type: 'article', slug: 'the-best-books-i-read-in-2024', title: 'The Best Books I Read in 2024', category: 'Books', url: 'article?slug=the-best-books-i-read-in-2024' },
-        { type: 'article', slug: 'why-i-chose-to-do-an-orthopedic-fellowship', title: 'Why I Chose To Do An Orthopedic Fellowship', category: 'Career', url: 'article?slug=why-i-chose-to-do-an-orthopedic-fellowship' },
-        { type: 'article', slug: 'lessons-i-learned-in-my-first-year-working-as-a-physical-therapist', title: 'Lessons I Learned in my First Year Working as a Physical Therapist', category: 'Career', url: 'article?slug=lessons-i-learned-in-my-first-year-working-as-a-physical-therapist' },
-        { type: 'article', slug: 'why-i-became-a-physical-therapist', title: 'Why I Became a Physical Therapist', category: 'Career', url: 'article?slug=why-i-became-a-physical-therapist' },
-        { type: 'article', slug: 'should-you-stretch-your-upper-traps', title: 'Should You Stretch Your Upper Traps?', category: 'Injury', url: 'article?slug=should-you-stretch-your-upper-traps' },
-        { type: 'article', slug: '3-things-ive-learned-from-leonardo-da-vinci', title: "3 Things I've Learned From Leonardo da Vinci", category: 'Wellness', url: 'article?slug=3-things-ive-learned-from-leonardo-da-vinci' },
-        { type: 'article', slug: 'a-needed-paradigm-shift-for-the-physical-therapy-profession', title: 'A Needed Paradigm Shift for the Physical Therapy Profession', category: 'Career', url: 'article?slug=a-needed-paradigm-shift-for-the-physical-therapy-profession' },
-        { type: 'article', slug: 'on-managing-stress', title: 'On Managing Stress', category: 'Wellness', url: 'article?slug=on-managing-stress' },
-        { type: 'article', slug: 'i-quit-alcohol-for-30-days', title: 'I Quit Alcohol For 30 Days', category: 'Wellness', url: 'article?slug=i-quit-alcohol-for-30-days' },
-        { type: 'article', slug: 'supplements-i-take-to-boost-health-and-longevity', title: 'Supplements I Take To Boost Health & Longevity', category: 'Fitness', url: 'article?slug=supplements-i-take-to-boost-health-and-longevity' },
-        { type: 'article', slug: 'show-your-work', title: 'Show Your Work', category: 'Wellness', url: 'article?slug=show-your-work' },
-        { type: 'article', slug: 'whats-in-my-bag', title: "What's in my Bag", category: 'Wellness', url: 'article?slug=whats-in-my-bag' },
-        { type: 'article', slug: 'the-best-books-i-read-in-2023', title: 'The Best Books I Read in 2023', category: 'Books', url: 'article?slug=the-best-books-i-read-in-2023' },
-        { type: 'article', slug: 'on-journaling', title: 'On Journaling', category: 'Mindfulness', url: 'article?slug=on-journaling' },
-        { type: 'article', slug: 'what-5-years-of-meditation-has-taught-me', title: 'What 5 Years of Meditation Has Taught Me', category: 'Mindfulness', url: 'article?slug=what-5-years-of-meditation-has-taught-me' },
-        { type: 'article', slug: 'the-recent-rise-of-stoicism', title: 'The Recent Rise of Stoicism', category: 'Wellness', url: 'article?slug=the-recent-rise-of-stoicism' },
-        { type: 'article', slug: 'maximizing-life-fulfillment', title: 'Maximizing Life Fulfillment', category: 'Wellness', url: 'article?slug=maximizing-life-fulfillment' },
-        { type: 'article', slug: 'how-to-manage-your-time', title: 'How to Manage Your Time', category: 'Wellness', url: 'article?slug=how-to-manage-your-time' },
-        { type: 'article', slug: 'my-fitness-routine-as-a-physical-therapist', title: 'My Fitness Routine as a Physical Therapist', category: 'Fitness', url: 'article?slug=my-fitness-routine-as-a-physical-therapist' },
-        { type: 'article', slug: 'perfecting-your-sleep', title: 'Perfecting Your Sleep', category: 'Wellness', url: 'article?slug=perfecting-your-sleep' },
-        { type: 'article', slug: 'how-reading-changed-my-life', title: 'How Reading Changed My Life And How It Can Change Yours', category: 'Books', url: 'article?slug=how-reading-changed-my-life' },
+    const TYPE_LABELS = { article: 'Article', guide: 'Guide', book: 'Book Note', program: 'Program', newsletter: 'Newsletter' };
 
-        // Free guides
-        { type: 'guide', slug: 'longevity-lift-library', title: 'Longevity Lift Library', category: 'Strength', url: 'guide-longevity-lift-library', keywords: 'squat deadlift hinge lunge hip back shoulder core ankle spine elbow strength exercises' },
-        { type: 'guide', slug: 'movement-screen', title: 'The Movement Screen', category: 'Self-assessment', url: 'guide-movement-screen', keywords: 'ankle knee hip squat mobility assessment screen joints dorsiflexion' },
-        { type: 'guide', slug: 'total-body-mobility', title: 'Total-Body Mobility', category: 'Mobility', url: 'guide-total-body-mobility', keywords: 'hip knee neck core mobility squat stretch thoracic shoulder spine back' },
-        { type: 'guide', slug: '5-tips-posture', title: '5 Tips to Improve Your Posture', category: 'Posture', url: 'guide-5-tips-posture', keywords: 'posture back neck shoulder hip ankle spine' },
-
-        // Programs
-        { type: 'program', slug: 'blueprint', title: 'The Longevity Movement Blueprint', category: 'Program', url: 'blueprint-info', keywords: 'ankle knee hip shoulder mobility strength core squat injury back longevity' },
-
-        // Book notes
-        { type: 'book', slug: 'outlive', title: 'Outlive', author: 'Peter Attia', category: 'health', url: 'book-note-outlive' },
-        { type: 'book', slug: 'exercised', title: 'Exercised', author: 'Daniel Lieberman', category: 'health', url: 'book-note-exercised' },
-        { type: 'book', slug: 'lifespan', title: 'Lifespan', author: 'David Sinclair', category: 'health', url: 'book-note-lifespan' },
-        { type: 'book', slug: 'why-we-sleep', title: 'Why We Sleep', author: 'Matthew Walker', category: 'health', url: 'book-note-why-we-sleep' },
-        { type: 'book', slug: 'the-comfort-crisis', title: 'The Comfort Crisis', author: 'Michael Easter', category: 'health', url: 'book-note-the-comfort-crisis' },
-        { type: 'book', slug: 'the-story-of-the-human-body', title: 'The Story of the Human Body', author: 'Daniel Lieberman', category: 'health', url: 'book-note-the-story-of-the-human-body' },
-        { type: 'book', slug: 'atomic-habits', title: 'Atomic Habits', author: 'James Clear', category: 'productivity', url: 'book-note-atomic-habits' },
-        { type: 'book', slug: 'deep-work', title: 'Deep Work', author: 'Cal Newport', category: 'productivity', url: 'book-note-deep-work' },
-        { type: 'book', slug: 'digital-minimalism', title: 'Digital Minimalism', author: 'Cal Newport', category: 'productivity', url: 'book-note-digital-minimalism' },
-        { type: 'book', slug: 'essentialism', title: 'Essentialism', author: 'Greg McKeown', category: 'productivity', url: 'book-note-essentialism' },
-        { type: 'book', slug: 'feel-good-productivity', title: 'Feel Good Productivity', author: 'Ali Abdaal', category: 'productivity', url: 'book-note-feel-good-productivity' },
-        { type: 'book', slug: 'so-good-they-cant-ignore-you', title: "So Good They Can't Ignore You", author: 'Cal Newport', category: 'productivity', url: 'book-note-so-good-they-cant-ignore-you' },
-        { type: 'book', slug: 'the-4-hour-workweek', title: 'The 4-Hour Workweek', author: 'Tim Ferriss', category: 'productivity', url: 'book-note-the-4-hour-workweek' },
-        { type: 'book', slug: 'show-your-work', title: 'Show Your Work', author: 'Austin Kleon', category: 'productivity', url: 'book-note-show-your-work' },
-        { type: 'book', slug: 'steal-like-an-artist', title: 'Steal Like an Artist', author: 'Austin Kleon', category: 'productivity', url: 'book-note-steal-like-an-artist' },
-        { type: 'book', slug: 'stillness-is-the-key', title: 'Stillness Is The Key', author: 'Ryan Holiday', category: 'mindset', url: 'book-note-stillness-is-the-key' },
-        { type: 'book', slug: 'ego-is-the-enemy', title: 'Ego Is The Enemy', author: 'Ryan Holiday', category: 'mindset', url: 'book-note-ego-is-the-enemy' },
-        { type: 'book', slug: 'courage-is-calling', title: 'Courage Is Calling', author: 'Ryan Holiday', category: 'mindset', url: 'book-note-courage-is-calling' },
-        { type: 'book', slug: 'the-obstacle-is-the-way', title: 'The Obstacle Is The Way', author: 'Ryan Holiday', category: 'mindset', url: 'book-note-the-obstacle-is-the-way' },
-        { type: 'book', slug: 'factfulness', title: 'Factfulness', author: 'Hans Rosling', category: 'mindset', url: 'book-note-factfulness' },
-        { type: 'book', slug: 'the-subtle-art-of-not-giving-a-fck', title: "The Subtle Art of Not Giving a F*ck", author: 'Mark Manson', category: 'mindset', url: 'book-note-the-subtle-art-of-not-giving-a-fck' },
-        { type: 'book', slug: 'never-split-the-difference', title: 'Never Split the Difference', author: 'Chris Voss', category: 'mindset', url: 'book-note-never-split-the-difference' },
-        { type: 'book', slug: 'stumbling-on-happiness', title: 'Stumbling on Happiness', author: 'Daniel Gilbert', category: 'mindset', url: 'book-note-stumbling-on-happiness' },
-        { type: 'book', slug: 'how-to-win-friends-influence-people', title: 'How to Win Friends & Influence People', author: 'Dale Carnegie', category: 'mindset', url: 'book-note-how-to-win-friends-influence-people' },
-        { type: 'book', slug: 'a-guide-to-the-good-life', title: 'A Guide to the Good Life', author: 'William Irvine', category: 'mindset', url: 'book-note-a-guide-to-the-good-life' },
-        { type: 'book', slug: 'four-thousand-weeks', title: 'Four Thousand Weeks', author: 'Oliver Burkeman', category: 'mindset', url: 'book-note-four-thousand-weeks' },
-        { type: 'book', slug: 'mastery', title: 'Mastery', author: 'Robert Greene', category: 'mindset', url: 'book-note-mastery' },
-        { type: 'book', slug: 'the-48-laws-of-power', title: 'The 48 Laws of Power', author: 'Robert Greene', category: 'mindset', url: 'book-note-the-48-laws-of-power' },
-        { type: 'book', slug: 'a-short-history-of-nearly-everything', title: 'A Short History of Nearly Everything', author: 'Bill Bryson', category: 'mindset', url: 'book-note-a-short-history-of-nearly-everything' },
-        { type: 'book', slug: 'the-psychology-of-money', title: 'The Psychology of Money', author: 'Morgan Housel', category: 'finance', url: 'book-note-the-psychology-of-money' },
-        { type: 'book', slug: 'die-with-zero', title: 'Die With Zero', author: 'Bill Perkins', category: 'finance', url: 'book-note-die-with-zero' },
-        { type: 'book', slug: 'benjamin-franklin', title: 'Benjamin Franklin', author: 'Walter Isaacson', category: 'biography', url: 'book-note-benjamin-franklin' },
-        { type: 'book', slug: 'einstein', title: 'Einstein', author: 'Walter Isaacson', category: 'biography', url: 'book-note-einstein' },
+    // Groups of interchangeable terms so a search for one surfaces content that
+    // only mentions a related term — e.g. "patella" finds knee content, and
+    // "rotator cuff" finds shoulder content, even if the exact word isn't there.
+    const SYNONYM_GROUPS = [
+        ['knee', 'knees', 'patella', 'kneecap', 'meniscus', 'acl', 'mcl', 'quad', 'quads', 'quadriceps'],
+        ['shoulder', 'shoulders', 'rotator', 'cuff', 'deltoid', 'scapula', 'scapular'],
+        ['back', 'spine', 'spinal', 'lumbar', 'thoracic', 'lower-back'],
+        ['hip', 'hips', 'glute', 'glutes', 'gluteal', 'piriformis'],
+        ['ankle', 'ankles', 'achilles', 'calf', 'calves', 'shin', 'shins'],
+        ['neck', 'cervical'],
+        ['elbow', 'elbows'],
+        ['wrist', 'wrists', 'carpal'],
+        ['sleep', 'insomnia', 'rest'],
+        ['stress', 'anxiety', 'cortisol'],
+        ['posture', 'alignment', 'ergonomics'],
+        ['mobility', 'flexibility', 'stretching', 'stretch'],
+        ['strength', 'muscle', 'muscles', 'lifting', 'resistance'],
+        ['injury', 'injuries', 'pain'],
     ];
-
-    const input = document.getElementById('search-input');
-    const results = document.getElementById('search-results');
-
-    // Auto-populate from URL string
-    const urlParams = new URLSearchParams(window.location.search);
-    const qParam = urlParams.get('q');
-    if (qParam) {
-        input.value = qParam;
-        setTimeout(doSearch, 50); // slight delay to ensure DOM is ready
-    }
-
-    let debounceTimer;
-    input.addEventListener('input', () => {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(doSearch, 200);
+    const SYNONYMS = {};
+    SYNONYM_GROUPS.forEach(group => {
+        group.forEach(word => { SYNONYMS[word] = group.filter(w => w !== word); });
     });
-
-    const TYPE_LABELS = { article: 'Article', guide: 'Guide', book: 'Book Note', program: 'Program' };
 
     // Naive singular/plural folding so "knee" and "knees" both match ("knees" -> "knee", "box" stays "box")
     function stem(word) {
@@ -133,42 +68,170 @@
         return word;
     }
 
+    function tokenize(text) {
+        return (text.toLowerCase().match(/[a-z0-9']+/g) || []);
+    }
+
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('search-results');
+
+    let searchIndex = null;
+    let indexError = false;
+
+    fetch('/search-index.json')
+        .then(res => { if (!res.ok) throw new Error('bad response'); return res.json(); })
+        .then(data => {
+            searchIndex = data.map(item => ({ ...item, titleTokens: tokenize(item.title) }));
+            // Run any search that was queued while the index was loading
+            const urlParams = new URLSearchParams(window.location.search);
+            const qParam = urlParams.get('q');
+            if (qParam) {
+                input.value = qParam;
+                doSearch();
+            } else if (input.value.trim().length >= 2) {
+                doSearch();
+            }
+        })
+        .catch(() => {
+            indexError = true;
+            if (input.value.trim().length >= 2) doSearch();
+        });
+
+    let debounceTimer;
+    input.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(doSearch, 200);
+    });
+
+    function scoreItem(item, qTokens, qTokenStems) {
+        let score = 0;
+        let distinctMatched = 0;
+
+        const titleStems = item.titleTokens.map(stem);
+        const categoryText = (item.category || '').toLowerCase();
+        const authorText = (item.author || '').toLowerCase();
+        const bodyTokens = item._bodyTokens || (item._bodyTokens = tokenize(item.text || ''));
+
+        qTokens.forEach((qt, i) => {
+            const qs = qTokenStems[i];
+            let matchedThisTerm = false;
+
+            // Title: exact word, stemmed, or prefix match (typing-in-progress)
+            if (item.titleTokens.some((w, idx) => w === qt || titleStems[idx] === qs || (qt.length >= 3 && w.startsWith(qt)))) {
+                score += 14;
+                matchedThisTerm = true;
+            }
+            // Category / author
+            if (categoryText.includes(qt) || authorText.includes(qt)) {
+                score += 5;
+                matchedThisTerm = true;
+            }
+            // Body text — count occurrences, capped so one term can't dominate
+            const occurrences = bodyTokens.reduce((n, w) => (w === qt || stem(w) === qs) ? n + 1 : n, 0);
+            if (occurrences > 0) {
+                score += Math.min(occurrences, 5);
+                matchedThisTerm = true;
+            }
+
+            // Synonyms — same checks, half weight, only if the direct term missed
+            if (!matchedThisTerm) {
+                const syns = SYNONYMS[qt] || SYNONYMS[qs] || [];
+                for (const syn of syns) {
+                    let synHit = false;
+                    if (item.titleTokens.includes(syn)) { score += 7; synHit = true; }
+                    if (categoryText.includes(syn)) { score += 2.5; synHit = true; }
+                    const synOccurrences = bodyTokens.reduce((n, w) => w === syn ? n + 1 : n, 0);
+                    if (synOccurrences > 0) { score += Math.min(synOccurrences, 5) * 0.5; synHit = true; }
+                    if (synHit) matchedThisTerm = true;
+                }
+            }
+
+            if (matchedThisTerm) distinctMatched++;
+        });
+
+        if (distinctMatched === 0) return 0;
+        // Reward matching more of a multi-word query, without zeroing out partial matches
+        const coverage = distinctMatched / qTokens.length;
+        return score * (0.5 + 0.5 * coverage);
+    }
+
+    function buildSnippet(item, qTokens, qTokenStems) {
+        const text = item.text || '';
+        if (!text) return '';
+        const lower = text.toLowerCase();
+        let bestIndex = -1;
+        for (let i = 0; i < qTokens.length && bestIndex === -1; i++) {
+            const idx = lower.indexOf(qTokens[i]);
+            if (idx !== -1) bestIndex = idx;
+        }
+        if (bestIndex === -1) return '';
+
+        const radius = 90;
+        const start = Math.max(0, bestIndex - radius);
+        const end = Math.min(text.length, bestIndex + radius);
+        let snippet = text.slice(start, end).trim();
+        if (start > 0) snippet = '…' + snippet;
+        if (end < text.length) snippet += '…';
+        return highlightTerms(snippet, qTokens);
+    }
+
+    function escapeRegex(s) {
+        return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function highlightTerms(text, terms) {
+        const uniq = [...new Set(terms.filter(Boolean))].sort((a, b) => b.length - a.length);
+        if (uniq.length === 0) return text;
+        const regex = new RegExp(`(${uniq.map(escapeRegex).join('|')})`, 'gi');
+        return text.replace(regex, '<mark>$1</mark>');
+    }
+
     function doSearch() {
-        const q = input.value.trim().toLowerCase();
+        const qRaw = input.value.trim();
+        const q = qRaw.toLowerCase();
         if (q.length < 2) {
             results.innerHTML = '<p class="search-hint">Start typing to search across all articles, guides, book notes, and programs.</p>';
             return;
         }
 
-        const qStem = stem(q);
-
-        const matches = searchIndex.filter(item => {
-            const haystack = [item.title, item.category, item.slug, item.keywords, item.author]
-                .filter(Boolean)
-                .join(' ')
-                .toLowerCase();
-
-            return haystack.split(/\s+/).some(word => word.includes(q) || stem(word).includes(qStem))
-                || haystack.includes(q);
-        });
-
-        if (matches.length === 0) {
-            results.innerHTML = `<p class="search-empty">No results for "<strong>${q}</strong>"</p>`;
+        if (indexError) {
+            results.innerHTML = '<p class="search-empty">Search is temporarily unavailable. Please try again shortly.</p>';
+            return;
+        }
+        if (!searchIndex) {
+            results.innerHTML = '<p class="search-hint">Loading search index…</p>';
             return;
         }
 
-        results.innerHTML = matches.map(item => `
+        const qTokens = tokenize(q);
+        if (qTokens.length === 0) {
+            results.innerHTML = '<p class="search-hint">Start typing to search across all articles, guides, book notes, and programs.</p>';
+            return;
+        }
+        const qTokenStems = qTokens.map(stem);
+
+        const scored = searchIndex
+            .map(item => ({ item, score: scoreItem(item, qTokens, qTokenStems) }))
+            .filter(r => r.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 40);
+
+        if (scored.length === 0) {
+            results.innerHTML = `<p class="search-empty">No results for "<strong>${qRaw}</strong>"</p>`;
+            return;
+        }
+
+        results.innerHTML = scored.map(({ item }) => {
+            const snippet = buildSnippet(item, qTokens, qTokenStems);
+            return `
             <a href="${item.url}" class="search-result">
                 <span class="search-result-type">${TYPE_LABELS[item.type] || 'Page'}</span>
-                <h3 class="search-result-title">${highlight(item.title, q)}</h3>
-                <span class="search-result-cat">${item.author ? `${item.author} · ` : ''}${item.category}</span>
+                <h3 class="search-result-title">${highlightTerms(item.title, qTokens)}</h3>
+                <span class="search-result-cat">${item.author ? `${item.author} · ` : ''}${item.category}${item.date ? ` · ${item.date}` : ''}</span>
+                ${snippet ? `<p class="search-result-excerpt">${snippet}</p>` : ''}
             </a>
-        `).join('');
-    }
-
-    function highlight(text, query) {
-        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
+        `;
+        }).join('');
     }
 
     initSharedLayout('');

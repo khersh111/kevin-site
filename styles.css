@@ -3151,6 +3151,21 @@ body:has(.guides-page) .page-hero-inner {
     color: var(--text-muted);
 }
 
+.search-result-excerpt {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+.search-result-excerpt mark {
+    background: rgba(196, 93, 62, 0.15);
+    color: var(--accent);
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
 /* ==================== GUIDE CAPTURE FORM ==================== */
 .guide-capture-form {
     display: flex;
