@@ -3166,12 +3166,6 @@ body:has(.guides-page) .page-hero-inner {
     border-radius: 2px;
 }
 
-/* Highlight for text deep-linked from search (#:~:text=) landing on any page */
-::target-text {
-    background: var(--accent);
-    color: #fff;
-}
-
 /* ==================== GUIDE CAPTURE FORM ==================== */
 .guide-capture-form {
     display: flex;
