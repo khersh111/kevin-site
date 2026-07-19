@@ -3,3 +3,4 @@ scraped/
 scraped-books/
 scraped-articles-raw/
 .env*.local
+node_modules
