@@ -27,7 +27,7 @@
                 <span class="search-icon">⌕</span>
             </div>
             <div class="search-results" id="search-results">
-                <p class="search-hint">Start typing to search across all articles, guides, book notes, and programs.</p>
+                <p class="search-hint">Start typing to search across all articles, newsletters, and book notes.</p>
             </div>
         </div>
     </section>
@@ -35,7 +35,7 @@
     <div id="footer-placeholder"></div>
     <script src="shared.js"></script>
     <script>
-    const TYPE_LABELS = { article: 'Article', guide: 'Guide', book: 'Book Note', program: 'Program', newsletter: 'Newsletter' };
+    const TYPE_LABELS = { article: 'Article', book: 'Book Note', program: 'Program', newsletter: 'Newsletter' };
 
     // Groups of interchangeable terms so a search for one surfaces content that
     // only mentions a related term — e.g. "patella" finds knee content, and
@@ -155,15 +155,20 @@
         return score * (0.5 + 0.5 * coverage);
     }
 
-    function buildSnippet(item, qTokens, qTokenStems) {
+    // First position where any query token appears in text (case-insensitive substring).
+    function findMatchIndex(text, qTokens) {
+        const lower = text.toLowerCase();
+        for (const qt of qTokens) {
+            const idx = lower.indexOf(qt);
+            if (idx !== -1) return idx;
+        }
+        return -1;
+    }
+
+    function buildSnippet(item, qTokens) {
         const text = item.text || '';
         if (!text) return '';
-        const lower = text.toLowerCase();
-        let bestIndex = -1;
-        for (let i = 0; i < qTokens.length && bestIndex === -1; i++) {
-            const idx = lower.indexOf(qTokens[i]);
-            if (idx !== -1) bestIndex = idx;
-        }
+        const bestIndex = findMatchIndex(text, qTokens);
         if (bestIndex === -1) return '';
 
         const radius = 90;
@@ -173,6 +178,50 @@
         if (start > 0) snippet = '…' + snippet;
         if (end < text.length) snippet += '…';
         return highlightTerms(snippet, qTokens);
+    }
+
+    // Extend [start, end) outward to the nearest whitespace so the slice is a
+    // clean run of whole words — needed so the text fragment below is an
+    // exact substring of the page's real text, not a word cut in half.
+    function trimToWordBoundaries(text, start, end) {
+        if (start > 0) {
+            const before = text.slice(0, start);
+            const lastGap = before.search(/\s\S*$/);
+            if (lastGap !== -1) start = lastGap + 1;
+        }
+        if (end < text.length) {
+            const after = text.slice(end);
+            const nextGap = after.search(/\s/);
+            if (nextGap !== -1) end += nextGap;
+        }
+        return [start, end];
+    }
+
+    // A short, exact-substring phrase centered on the match, for deep-linking
+    // into the destination page via the browser's native text fragment feature
+    // (#:~:text=...) — no changes needed on article/newsletter/book pages,
+    // the browser finds and highlights the phrase itself once the page loads.
+    function buildFragmentPhrase(item, qTokens) {
+        const text = item.text || '';
+        const idx = text ? findMatchIndex(text, qTokens) : -1;
+        if (idx === -1) {
+            // Matched only in the title — that's rendered as the page heading, so target it instead.
+            return item.title || '';
+        }
+        const radius = 35;
+        let start = Math.max(0, idx - radius);
+        let end = Math.min(text.length, idx + radius);
+        [start, end] = trimToWordBoundaries(text, start, end);
+        return text.slice(start, end).trim();
+    }
+
+    function textFragmentSuffix(phrase) {
+        if (!phrase) return '';
+        const encoded = encodeURIComponent(phrase)
+            .replace(/-/g, '%2D')
+            .replace(/,/g, '%2C')
+            .replace(/&/g, '%26');
+        return `#:~:text=${encoded}`;
     }
 
     function escapeRegex(s) {
@@ -190,7 +239,7 @@
         const qRaw = input.value.trim();
         const q = qRaw.toLowerCase();
         if (q.length < 2) {
-            results.innerHTML = '<p class="search-hint">Start typing to search across all articles, guides, book notes, and programs.</p>';
+            results.innerHTML = '<p class="search-hint">Start typing to search across all articles, newsletters, and book notes.</p>';
             return;
         }
 
@@ -205,7 +254,7 @@
 
         const qTokens = tokenize(q);
         if (qTokens.length === 0) {
-            results.innerHTML = '<p class="search-hint">Start typing to search across all articles, guides, book notes, and programs.</p>';
+            results.innerHTML = '<p class="search-hint">Start typing to search across all articles, newsletters, and book notes.</p>';
             return;
         }
         const qTokenStems = qTokens.map(stem);
@@ -222,9 +271,10 @@
         }
 
         results.innerHTML = scored.map(({ item }) => {
-            const snippet = buildSnippet(item, qTokens, qTokenStems);
+            const snippet = buildSnippet(item, qTokens);
+            const fragment = textFragmentSuffix(buildFragmentPhrase(item, qTokens));
             return `
-            <a href="${item.url}" class="search-result">
+            <a href="${item.url}${fragment}" class="search-result">
                 <span class="search-result-type">${TYPE_LABELS[item.type] || 'Page'}</span>
                 <h3 class="search-result-title">${highlightTerms(item.title, qTokens)}</h3>
                 <span class="search-result-cat">${item.author ? `${item.author} · ` : ''}${item.category}${item.date ? ` · ${item.date}` : ''}</span>

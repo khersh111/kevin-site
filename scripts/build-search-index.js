@@ -7,9 +7,10 @@
 //   - articles.html / article-content*.js   -> full article body text
 //   - book-notes.html / book-note-content.js -> full book note text
 //   - newsletters.json                       -> full newsletter body text
-//   - guide-movement-screen.html, blueprint-info.html -> real HTML, stripped
-//   - the remaining guides ship as opaque design-tool export bundles with no
-//     extractable text, so those use a short hand-written description instead
+//   - blueprint-info.html                    -> real HTML, stripped
+//
+// The free guides are intentionally NOT indexed — they're gated behind an
+// email capture form and shouldn't be reachable directly from search.
 
 const fs = require('fs');
 const path = require('path');
@@ -131,23 +132,18 @@ const items = [];
             url: `newsletter-${issue.slug}`,
             category: 'Newsletter',
             date: issue.date || '',
-            text: issue.body || '',
+            text: (issue.body || '').replace(/\s+/g, ' ').trim(),
         });
     }
 }
 
 // -------------------------------------------------- guides & programs (HTML)
+// Note: the free guides (Longevity Lift Library, Movement Screen,
+// Total-Body Mobility, 5 Tips to Improve Your Posture) are deliberately
+// excluded from the index. They're gated behind an email capture form on
+// /free-guides, and surfacing them in search would let people reach the
+// content directly without giving their email.
 {
-    const movementScreenHtml = read('guide-movement-screen.html');
-    const titleMatch = movementScreenHtml.match(/<title>([\s\S]*?)<\/title>/i);
-    items.push({
-        type: 'guide',
-        title: titleMatch ? cleanTitle(titleMatch[1]) : 'The Movement Screen',
-        url: 'guide-movement-screen',
-        category: 'Self-assessment',
-        text: stripHtml(movementScreenHtml),
-    });
-
     const blueprintHtml = read('blueprint-info.html');
     const blueprintTitleMatch = blueprintHtml.match(/<title>([\s\S]*?)<\/title>/i);
     items.push({
@@ -156,34 +152,6 @@ const items = [];
         url: 'blueprint-info',
         category: 'Program',
         text: stripHtml(blueprintHtml),
-    });
-}
-
-// ------------------------------------------ guides shipped as opaque bundles
-// These export as design-tool bundles (embedded base64 images, no readable
-// markup), so there's no body text to extract — hand-written keywords stand
-// in for the topics the guide actually covers.
-{
-    items.push({
-        type: 'guide',
-        title: 'Longevity Lift Library',
-        url: 'guide-longevity-lift-library',
-        category: 'Strength',
-        text: 'squat deadlift hip hinge lunge back shoulder core ankle elbow spine strength exercises longevity lifting weights resistance training',
-    });
-    items.push({
-        type: 'guide',
-        title: 'Total-Body Mobility',
-        url: 'guide-total-body-mobility',
-        category: 'Mobility',
-        text: 'hip knee neck core mobility squat stretch thoracic spine shoulder back ankle exercises',
-    });
-    items.push({
-        type: 'guide',
-        title: '5 Tips to Improve Your Posture',
-        url: 'guide-5-tips-posture',
-        category: 'Posture',
-        text: 'posture back neck shoulder hip ankle spine alignment sitting desk ergonomics',
     });
 }
 
