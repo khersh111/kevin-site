@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-search-index.js"
+    "build": "node scripts/build-search-index.js && node scripts/ensure-analytics.js"
   },
   "dependencies": {
     "stripe": "^17.0.0",
