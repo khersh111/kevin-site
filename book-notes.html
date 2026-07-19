@@ -37,18 +37,6 @@
         </div>
     </section>
 
-    <!-- Filter pills -->
-    <div class="bn-filters-wrap">
-        <div class="bn-filters" id="bn-filters">
-            <button class="bn-filter-btn active" data-filter="all">All</button>
-            <button class="bn-filter-btn" data-filter="health">Health</button>
-            <button class="bn-filter-btn" data-filter="mindset">Mindset</button>
-            <button class="bn-filter-btn" data-filter="productivity">Productivity</button>
-            <button class="bn-filter-btn" data-filter="finance">Finance</button>
-            <button class="bn-filter-btn" data-filter="biography">Biography</button>
-        </div>
-    </div>
-
     <!-- Book grid -->
     <section class="bn-grid-section">
         <div class="bn-grid" id="book-list"></div>
@@ -94,10 +82,9 @@
     ];
 
     const list = document.getElementById('book-list');
-    let currentFilter = 'all';
 
-    function renderBooks(filter) {
-        const filtered = filter === 'all' ? books : books.filter(b => b.category === filter);
+    function renderBooks() {
+        const filtered = books;
 
         list.innerHTML = filtered.map((b, i) => `
             <a href="/book-note-${b.slug}" class="bn-card" style="--delay: ${i * 0.04}s" data-category="${b.category}">
@@ -111,7 +98,6 @@
                     <div class="bn-card-overlay">
                         <span class="bn-card-read">Read Notes →</span>
                     </div>
-                    <div class="bn-card-category">${b.category}</div>
                 </div>
                 <div class="bn-card-info">
                     <h3 class="bn-card-title">${b.title}</h3>
@@ -134,25 +120,8 @@
         list.querySelectorAll('.bn-card').forEach(el => observer.observe(el));
     }
 
-    document.querySelectorAll('.bn-filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelector('.bn-filter-btn.active').classList.remove('active');
-            btn.classList.add('active');
-            currentFilter = btn.dataset.filter;
-
-            // Fade out
-            list.style.opacity = '0';
-            list.style.transform = 'translateY(8px)';
-            setTimeout(() => {
-                renderBooks(currentFilter);
-                list.style.opacity = '';
-                list.style.transform = '';
-            }, 180);
-        });
-    });
-
     initSharedLayout('booknotes');
-    renderBooks('all');
+    renderBooks();
     </script>
 </body>
 </html>
