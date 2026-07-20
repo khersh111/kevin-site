@@ -452,22 +452,30 @@ img { max-width: 100%; display: block; }
     letter-spacing: 0;
 }
 
-.hero-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+.hero-statement {
+    font-family: var(--font-sans);
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    max-width: 52ch;
+    margin-top: 1.75rem;
+    margin-bottom: 1.5rem;
 }
 
-.hero-credentials {
-    display: flex;
-    gap: 10px;
+.hero-statement-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 1.5rem;
 }
 
 .hero-credential-line {
-    font-size: 1.1rem;
-    color: var(--text-muted);
+    font-size: 0.95rem;
+    color: color-mix(in srgb, var(--text-muted) 70%, transparent);
+    letter-spacing: 0.02em;
     line-height: 1.6;
+    max-width: 52ch;
 }
 
 .credential-chip {
@@ -1310,9 +1318,10 @@ img { max-width: 100%; display: block; }
         max-width: 320px;
     }
     
-    .hero-bottom {
-        flex-direction: column;
-        align-items: flex-start;
+    .hero-statement {
+        font-size: 1.3rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
     }
 
     .philosophy-grid {
@@ -1464,6 +1473,10 @@ img { max-width: 100%; display: block; }
     max-width: 600px;
     margin-top: 16px;
     line-height: 1.6;
+}
+
+.hero-left .page-hero-desc {
+    max-width: 52ch;
 }
 
 /* ==================== ABOUT PAGE ==================== */
