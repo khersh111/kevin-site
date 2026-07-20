@@ -464,6 +464,12 @@ img { max-width: 100%; display: block; }
     gap: 10px;
 }
 
+.hero-credential-line {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
 .credential-chip {
     font-family: var(--font-sans);
     font-size: 0.72rem;
