@@ -1373,12 +1373,25 @@ img { max-width: 100%; display: block; }
     }
     
     .writing-item {
-        grid-template-columns: 70px 1fr 32px;
-        gap: 12px;
+        grid-template-columns: 1fr 32px;
+        grid-template-areas:
+            "cat   cat"
+            "title arrow";
+        row-gap: 12px;
+        column-gap: 12px;
     }
-    
+
+    .writing-item-cat {
+        grid-area: cat;
+    }
+
     .writing-item-title {
+        grid-area: title;
         font-size: 1rem;
+    }
+
+    .writing-item-arrow {
+        grid-area: arrow;
     }
 
     .newsletter-layout {
