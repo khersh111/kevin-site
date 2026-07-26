@@ -16,7 +16,13 @@
 <title>The Longevity Movement Blueprint — Dr. Kevin Hershberger</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <style>
   :root{
     --ink:#1A1A1A; --sky:#4FB4E6; --sky-deep:#2E9BD6;
@@ -56,7 +62,7 @@
   .hbar .btn{ padding:11px 20px; font-size:14px; border-radius:9px; }
 
   /* ---------- hero ---------- */
-  .hero{ padding:54px 0 66px; }
+  .hero{ padding:150px 0 66px; }
   .hero__grid{ display:grid; grid-template-columns:1fr 396px; gap:64px; align-items:center; }
   .hero__product{ margin-top:16px; font-weight:800; font-size:16px; letter-spacing:-.01em; color:var(--ink); }
   .hero__product .accent{ font-size:17px; }
@@ -211,7 +217,7 @@
     .hbar .brand{ display:none; }
     .hbar .btn{ width:auto; flex:none; padding:11px 18px; font-size:13.5px; gap:7px; }
     .hbar .btn .bdash{ display:none; }
-    .hero{ padding:36px 0 48px; }
+    .hero{ padding:132px 0 48px; }
     .hero h1{ font-size:33px; }
     .hero__sub{ font-size:15.5px; }
     .hero__steps{ gap:9px; }
@@ -244,12 +250,7 @@
 </head>
 <body>
 
-  <header>
-    <div class="wrap hbar">
-      <div class="brand"><span class="full">The Longevity Movement</span><span class="accent">Blueprint</span></div>
-      <a class="btn" href="/api/create-checkout"><span>Get the Blueprint</span><span class="bdash">—</span><span class="price">$27</span></a>
-    </div>
-  </header>
+  <div id="nav-placeholder"></div>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -437,20 +438,18 @@
       <div class="final__cta">
         <div class="final__price"><span class="amt">$27</span><span class="was">$47</span><span class="tag">Launch price</span></div>
         <a class="btn btn--lg" href="/api/create-checkout"><span>Get the Blueprint</span><span class="bdash">—</span><span class="price">$27</span></a>
-        <div class="final__fine">Instant digital access · Works on any device</div>
+        <div class="final__fine">Instant digital access · Works on any device. Because this is a digital product with instant, permanent access, all sales are final and non-refundable.</div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="wrap foot">
-      <div class="foot__brand">The Longevity Movement <span class="accent">Blueprint</span></div>
-      <p>© 2026 Dr. Kevin Hershberger, DPT · khershberger.com</p>
-    </div>
-    <div class="wrap">
-      <p class="foot__policy">Because this is a digital product with instant, permanent access, all sales are final and non-refundable. Please review what's included before purchasing.</p>
-    </div>
-  </footer>
-
+  <div id="footer-placeholder"></div>
+  <script src="shared.js"></script>
+  <script>
+    initSharedLayout('programs');
+    // This page's sales content has no dark-mode styling of its own,
+    // so it always shows with a light nav regardless of site-wide theme.
+    document.documentElement.removeAttribute('data-theme');
+  </script>
 </body>
 </html>
