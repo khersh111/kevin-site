@@ -1341,7 +1341,8 @@ img { max-width: 100%; display: block; }
     .nav-mobile-resources-toggle:hover { color: var(--text); }
 
     .nav-mobile-resources-caret {
-        font-size: 0.8rem;
+        font-size: 1.25rem;
+        line-height: 1;
         color: var(--text-muted);
         transition: transform 0.28s var(--ease-out);
     }
