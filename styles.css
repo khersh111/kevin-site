@@ -3482,6 +3482,12 @@ body:has(.guides-page) .page-hero-inner {
     background: var(--bg-alt);
 }
 
+/* The hero already carries bottom padding + a rule, so pull the first
+   section up to avoid an oversized gap after it. */
+.page-hero + .content-section {
+    padding-top: 44px;
+}
+
 .content-section-inner {
     max-width: 760px;
     margin: 0 auto;
@@ -3526,7 +3532,7 @@ body:has(.guides-page) .page-hero-inner {
     margin-bottom: 0;
 }
 
-/* "What you get" — card grid matching the homepage "approach" blocks */
+/* "What you get" — serif numeral beside the heading, body aligned beneath */
 .wyg-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -3534,18 +3540,26 @@ body:has(.guides-page) .page-hero-inner {
     margin-top: 4px;
 }
 
+.wyg-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    align-items: baseline;
+}
+
 .wyg-num {
+    grid-column: 1;
+    grid-row: 1;
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 2rem;
+    font-size: 1.7rem;
     line-height: 1;
     color: var(--accent);
-    margin-bottom: 14px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--border);
 }
 
 .wyg-card h3 {
+    grid-column: 2;
+    grid-row: 1;
     font-family: var(--font-sans);
     font-size: 1.3rem;
     font-weight: 600;
@@ -3556,6 +3570,8 @@ body:has(.guides-page) .page-hero-inner {
 }
 
 .wyg-card p {
+    grid-column: 2;
+    grid-row: 2;
     font-size: 1rem;
     line-height: 1.7;
     color: var(--text-muted);
@@ -3586,6 +3602,10 @@ body:has(.guides-page) .page-hero-inner {
 @media (max-width: 900px) {
     .content-section {
         padding: 80px 24px;
+    }
+
+    .page-hero + .content-section {
+        padding-top: 24px;
     }
 
     .wyg-grid {
