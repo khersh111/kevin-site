@@ -353,15 +353,21 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
 }
+.rd-principle-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
 .rd-principle-num {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 2rem;
     line-height: 1;
     color: var(--accent-light);
-    margin-bottom: 14px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
 }
 .rd-principle h3 {
     font-family: var(--font-sans);
@@ -369,7 +375,7 @@
     font-weight: 600;
     letter-spacing: -0.4px;
     color: #fff;
-    margin-bottom: 12px;
+    margin-bottom: 0;
 }
 .rd-principle p {
     font-size: 1rem;
