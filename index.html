@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="redesign.css">
     <script defer src="/_vercel/insights/script.js"></script>
 
     <link rel="canonical" href="https://www.khershberger.com/">
@@ -72,142 +73,181 @@
     <div id="nav-placeholder"></div>
 
     <!-- ==================== HERO ==================== -->
-    <section class="hero" id="hero">
-        <div class="hero-layout">
-            <div class="hero-left">
-                <div class="hero-intro anim-in">
-                    <div class="hero-line"></div>
-                    <span>Dr. Kevin Hershberger — Physical Therapist, Chicago</span>
+    <section class="rd-hero" id="hero">
+        <div class="rd-wrap rd-hero-inner">
+            <div class="rd-hero-copy">
+                <span class="rd-eyebrow anim-in">Dr. Kevin Hershberger · Physical Therapist, Chicago</span>
+                <h1 class="rd-hero-title anim-in">How you <span class="rd-accent-italic">move</span> at 70 gets <span class="rd-accent-italic">built</span> in your 30s.</h1>
+                <p class="rd-hero-sub anim-in">Carrying your own bags. Getting up off the floor without thinking about it. Still lifting. You can build all of it now—by improving how you move and building a body that holds up for the long haul.</p>
+                <div class="rd-hero-proof anim-in">
+                    <span class="rd-hero-proof-dot"></span>
+                    <p>I'm a physical therapist working to keep you out of <b>physical therapy</b>—fellowship-trained in orthopedic manual therapy, a credential fewer than 1% of PTs hold.</p>
                 </div>
-                <h1 class="hero-title anim-in">
-                    <span class="hero-title-line">How you <em class="hero-title-italic">move</em> at 70</span>
-                    <span class="hero-title-line">gets <em class="hero-title-italic">built</em> in your 30s.</span>
-                </h1>
-                <p class="page-hero-desc anim-in">Carrying your own bags. Getting up off the floor without thinking about it. Still lifting. You can build all of it now—by improving how you move and building a body that holds up for the long haul.</p>
-                <p class="hero-statement anim-in">I'm a physical therapist working to keep you out of <em class="hero-title-italic">physical therapy</em>.</p>
-                <div class="hero-statement-divider anim-in"></div>
-                <p class="hero-credential-line anim-in">Fellowship-trained in orthopedic manual therapy—less than 1% of physical therapists hold the credential.</p>
             </div>
-            <div class="hero-right anim-in">
-                <div class="hero-image-container">
-                    <img src="kevin-hero.jpg" alt="Dr. Kevin Hershberger" class="hero-image" id="hero-image">
+            <div class="rd-hero-media anim-in">
+                <div class="rd-hero-accent"></div>
+                <div class="rd-hero-photo">
+                    <img src="kevin-hero.jpg" alt="Dr. Kevin Hershberger">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== PHILOSOPHY ==================== -->
-    <section class="philosophy" id="philosophy">
-        <div class="philosophy-inner">
-            <div class="philosophy-content">
-                <blockquote class="philosophy-quote anim-in">
-                    "Most injuries aren't random. They're the result of movement patterns, training errors, or weaknesses we can <em>identify</em> and <em>fix.</em>"
-                </blockquote>
-                <div class="philosophy-grid">
-                    <div class="philosophy-card anim-in">
-                        <div class="philosophy-card-num">①</div>
-                        <h3>Understand the Why</h3>
-                        <p>No generic advice. I break down the anatomy, biomechanics, and root causes behind your pain so you actually understand what's happening.</p>
+    <!-- ==================== TRUST STRIP ==================== -->
+    <section class="rd-trust">
+        <div class="rd-wrap rd-trust-inner">
+            <div class="rd-trust-item">
+                <div class="rd-trust-num">DPT</div>
+                <div class="rd-trust-label">Doctor of Physical Therapy</div>
+            </div>
+            <div class="rd-trust-item">
+                <div class="rd-trust-num">FAAOMPT</div>
+                <div class="rd-trust-label">Fellowship training, orthopedic physical therapy</div>
+            </div>
+            <div class="rd-trust-item">
+                <div class="rd-trust-num"><span class="rd-accent-italic">&lt;1%</span></div>
+                <div class="rd-trust-label">Of PTs hold the fellowship</div>
+            </div>
+            <div class="rd-trust-item">
+                <div class="rd-trust-num">Chicago</div>
+                <div class="rd-trust-label">Orthopedic &amp; sports injury</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== OFFERS ==================== -->
+    <section class="rd-offers">
+        <div class="rd-wrap">
+            <div class="rd-section-head anim-in">
+                <span class="rd-eyebrow">Start here</span>
+                <h2 class="rd-section-title">A few ways I can help you <span class="rd-accent-italic">move better.</span></h2>
+            </div>
+            <div class="rd-offers-grid">
+                <a href="#newsletter" class="rd-offer-card anim-in">
+                    <div class="rd-offer-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                     </div>
-                    <div class="philosophy-card anim-in">
-                        <div class="philosophy-card-num">②</div>
-                        <h3>Evidence Over BS</h3>
-                        <p>No fear-mongering, no quick fixes. Just practical, evidence-based strategies rooted in how your body actually works.</p>
+                    <h3 class="rd-offer-title">The Newsletter</h3>
+                    <p class="rd-offer-desc">Weekly emails with real patient cases, practical injury-prevention advice, and training insights you can actually use. Free.</p>
+                    <span class="rd-offer-link">Subscribe free →</span>
+                </a>
+                <a href="/free-guides" class="rd-offer-card anim-in">
+                    <div class="rd-offer-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     </div>
-                    <div class="philosophy-card anim-in">
-                        <div class="philosophy-card-num">③</div>
-                        <h3>Active for Life</h3>
-                        <p>I specialize in treating orthopedic and sports injuries for active professionals who want to stay strong and mobile for years to come.</p>
+                    <h3 class="rd-offer-title">Free Guides</h3>
+                    <p class="rd-offer-desc">Self-assessments and follow-along libraries for strength, mobility, and posture—so you can find your weak links and train them.</p>
+                    <span class="rd-offer-link">Browse the guides →</span>
+                </a>
+                <a href="/blueprint-info" class="rd-offer-card anim-in">
+                    <div class="rd-offer-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"></path><path d="m21 21-1-1"></path><path d="m3 3 1 1"></path><path d="m18 22 4-4"></path><path d="m2 6 4-4"></path><path d="m3 10 7-7"></path><path d="m14 21 7-7"></path></svg>
                     </div>
+                    <h3 class="rd-offer-title">The Blueprint</h3>
+                    <p class="rd-offer-desc">A physical therapist's seven-movement self-test that shows exactly where your body is lacking—then trains those gaps with follow-along videos.</p>
+                    <span class="rd-offer-link">See the Blueprint →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRINCIPLES ==================== -->
+    <section class="rd-principles" id="philosophy">
+        <div class="rd-wrap">
+            <span class="rd-eyebrow anim-in">The approach</span>
+            <blockquote class="rd-quote anim-in">Most injuries aren't random. They're the result of movement patterns, training errors, or weaknesses we can <em>identify</em> and <em>fix.</em></blockquote>
+            <div class="rd-principles-grid">
+                <div class="rd-principle anim-in">
+                    <div class="rd-principle-num">①</div>
+                    <h3>Understand the Why</h3>
+                    <p>No generic advice. I break down the anatomy, biomechanics, and root causes behind your pain so you actually understand what's happening.</p>
                 </div>
+                <div class="rd-principle anim-in">
+                    <div class="rd-principle-num">②</div>
+                    <h3>Evidence Over BS</h3>
+                    <p>No fear-mongering, no quick fixes. Just practical, evidence-based strategies rooted in how your body actually works.</p>
+                </div>
+                <div class="rd-principle anim-in">
+                    <div class="rd-principle-num">③</div>
+                    <h3>Active for Life</h3>
+                    <p>I specialize in treating orthopedic and sports injuries for active professionals who want to stay strong and mobile for years to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== START HERE / RESOURCES ==================== -->
+    <section class="rd-resources" id="free-resources">
+        <div class="rd-wrap">
+            <div class="rd-section-head anim-in">
+                <span class="rd-eyebrow">Free resources</span>
+                <h2 class="rd-section-title">Start with these.</h2>
+            </div>
+            <div class="rd-resource-list">
+                <a href="get-longevity-guide" class="rd-resource-item anim-in">
+                    <span class="rd-resource-cat">Strength</span>
+                    <span class="rd-resource-title">Longevity Lift Library</span>
+                    <span class="rd-resource-arrow">→</span>
+                </a>
+                <a href="get-movement-screen" class="rd-resource-item anim-in">
+                    <span class="rd-resource-cat">Self-Assessment</span>
+                    <span class="rd-resource-title">The Movement Screen</span>
+                    <span class="rd-resource-arrow">→</span>
+                </a>
+                <a href="get-mobility-guide" class="rd-resource-item anim-in">
+                    <span class="rd-resource-cat">Mobility</span>
+                    <span class="rd-resource-title">Total-Body Mobility</span>
+                    <span class="rd-resource-arrow">→</span>
+                </a>
+                <a href="get-posture-guide" class="rd-resource-item anim-in">
+                    <span class="rd-resource-cat">Posture</span>
+                    <span class="rd-resource-title">5 Tips to Improve Your Posture</span>
+                    <span class="rd-resource-arrow">→</span>
+                </a>
+            </div>
+            <div class="rd-resources-footer anim-in">
+                <a href="free-guides" class="rd-text-link">View all free guides →</a>
             </div>
         </div>
     </section>
 
     <!-- ==================== ABOUT ==================== -->
-    <section class="about" id="about">
-        <div class="about-strip">
-<div class="about-text-block">
-                <span class="about-label anim-in">About</span>
-                <h2 class="about-headline anim-in">
-                    A back injury during college golf changed everything.
-                </h2>
-                <p class="about-body anim-in">
-                    Going through rehabilitation — understanding the anatomy, biomechanics, and the "why" behind recovery — set me on a path to help others do the same. Today I play pain-free golf, lift weights, run, and compete in beach volleyball because of what I learned during that process.
-                </p>
-                <div class="about-details anim-in">
-                    <div class="about-detail">
-                        <span class="detail-label">Undergrad</span>
-                        <span class="detail-value">University of Wisconsin-Parkside<br>BS Health Science · Golf Team 2016–2020</span>
+    <section class="rd-about" id="about">
+        <div class="rd-wrap rd-about-grid">
+            <div class="rd-about-copy">
+                <span class="rd-eyebrow anim-in">About</span>
+                <h2 class="rd-about-headline anim-in">A back injury during college golf changed everything.</h2>
+                <p class="rd-about-body anim-in">Going through rehabilitation—understanding the anatomy, biomechanics, and the "why" behind recovery—set me on a path to help others do the same. Today I play pain-free golf, lift weights, run, and compete in beach volleyball because of what I learned during that process.</p>
+                <div class="rd-about-stats anim-in">
+                    <div class="rd-about-stat">
+                        <span class="rd-about-stat-label">Undergrad</span>
+                        <span class="rd-about-stat-value">University of Wisconsin-Parkside · BS Health Science · Golf Team 2016–2020</span>
                     </div>
-                    <div class="about-detail">
-                        <span class="detail-label">Education</span>
-                        <span class="detail-value">Rosalind Franklin University<br>Doctorate in Physical Therapy 2020–2022</span>
+                    <div class="rd-about-stat">
+                        <span class="rd-about-stat-label">Education</span>
+                        <span class="rd-about-stat-value">Rosalind Franklin University · Doctorate in Physical Therapy 2020–2022</span>
                     </div>
-                    <div class="about-detail">
-                        <span class="detail-label">Fellowship</span>
-                        <span class="detail-value">FAAOMPT Fellowship<br>Manual Therapy Institute 2022–2025</span>
+                    <div class="rd-about-stat">
+                        <span class="rd-about-stat-label">Fellowship</span>
+                        <span class="rd-about-stat-value">FAAOMPT Fellowship · Manual Therapy Institute 2022–2025</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- ==================== WRITING ==================== -->
-    <section class="writing" id="free-resources">
-        <div class="writing-header">
-            <h2 class="writing-title anim-in">Free Resources</h2>
-        </div>
-        <div class="writing-list">
-            <a href="get-longevity-guide" class="writing-item anim-in" id="resource-1">
-                <span class="writing-item-cat">Strength</span>
-                <h3 class="writing-item-title">Longevity Lift Library</h3>
-                <span class="writing-item-arrow">→</span>
-            </a>
-            <a href="get-movement-screen" class="writing-item anim-in" id="resource-2">
-                <span class="writing-item-cat">Self-Assessment</span>
-                <h3 class="writing-item-title">The Movement Screen</h3>
-                <span class="writing-item-arrow">→</span>
-            </a>
-            <a href="get-mobility-guide" class="writing-item anim-in" id="resource-3">
-                <span class="writing-item-cat">Mobility</span>
-                <h3 class="writing-item-title">Total-Body Mobility</h3>
-                <span class="writing-item-arrow">→</span>
-            </a>
-            <a href="get-posture-guide" class="writing-item anim-in" id="resource-4">
-                <span class="writing-item-cat">Posture</span>
-                <h3 class="writing-item-title">5 Tips to Improve Your Posture</h3>
-                <span class="writing-item-arrow">→</span>
-            </a>
-        </div>
-        <div class="writing-footer anim-in">
-            <a href="free-guides" class="writing-all" id="resources-view-all">View all free guides →</a>
-        </div>
-    </section>
-
     <!-- ==================== NEWSLETTER ==================== -->
-    <section class="newsletter" id="newsletter">
-        <div class="newsletter-layout">
-            <div class="newsletter-image anim-in">
-                <img src="kevin-writing.jpg" alt="Kevin writing and studying" id="newsletter-photo">
-            </div>
-            <div class="newsletter-content">
-                <h2 class="newsletter-headline anim-in">
-                    Move Better,<br>
-                    <em>Stay Active Longer.</em>
-                </h2>
-                <p class="newsletter-desc anim-in">Weekly emails with real patient cases, practical injury prevention advice, and training insights you can actually use.</p>
-                <form class="newsletter-form anim-in" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
-                    <div class="form-fields">
-                        <input type="text" id="newsletter-first" class="form-input" placeholder="First name" required>
-                        <input type="email" id="newsletter-email" class="form-input" placeholder="Email address" required>
-                    </div>
-                    <button type="submit" class="form-submit" id="newsletter-submit">Subscribe — it's free →</button>
-                </form>
-                <p class="newsletter-note anim-in">No spam. No fear-mongering. Unsubscribe anytime.</p>
-            </div>
+    <section class="rd-news" id="newsletter">
+        <div class="rd-wrap">
+            <span class="rd-eyebrow anim-in">The newsletter</span>
+            <h2 class="rd-news-title anim-in">Move better, <em>stay active longer.</em></h2>
+            <p class="rd-news-desc anim-in">Weekly emails with real patient cases, practical injury prevention advice, and training insights you can actually use.</p>
+            <form class="rd-news-form anim-in" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                <input type="text" id="newsletter-first" class="rd-news-input" placeholder="First name" required>
+                <input type="email" id="newsletter-email" class="rd-news-input" placeholder="Email address" required>
+                <button type="submit" class="rd-btn rd-btn--primary" id="newsletter-submit">Subscribe — it's free →</button>
+            </form>
+            <p class="rd-news-note anim-in">No spam. No fear-mongering. Unsubscribe anytime.</p>
         </div>
     </section>
 

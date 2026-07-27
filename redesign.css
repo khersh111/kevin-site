@@ -1,0 +1,671 @@
+/* ==========================================================================
+   HOMEPAGE REDESIGN — preview only (loaded by index-redesign.html)
+   Reuses the site's existing tokens, nav, footer, and .anim-in reveals.
+   All classes are namespaced `rd-` so nothing here affects other pages.
+   Inspiration: Apple (rhythm/scale), James Clear (focus), Ali Abdaal
+   (offer cards + accent-backed portrait), Mark Manson (credibility).
+   ========================================================================== */
+
+.rd-wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.rd-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.rd-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1.5px;
+    background: var(--accent);
+    display: inline-block;
+}
+
+.rd-accent-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0;
+}
+
+/* ---------- shared buttons ---------- */
+.rd-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    padding: 16px 30px;
+    border-radius: 100px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: transform 0.25s var(--ease-out), background 0.25s var(--ease-out),
+                color 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+    white-space: nowrap;
+}
+.rd-btn:hover { transform: translateY(-2px); }
+
+.rd-btn--primary { background: var(--accent); color: #fff; }
+.rd-btn--primary:hover { background: var(--accent-dark); }
+
+.rd-btn--ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+.rd-btn--ghost:hover { border-color: var(--text); }
+
+/* ---------- section heads ---------- */
+.rd-section-head {
+    max-width: 640px;
+    margin-bottom: 56px;
+}
+.rd-section-head.rd-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.rd-section-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-top: 18px;
+    color: var(--text);
+}
+.rd-section-sub {
+    margin-top: 18px;
+    font-size: 1.12rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.rd-hero {
+    padding: 150px 0 90px;
+    overflow: hidden;
+}
+.rd-hero-inner {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 72px;
+    align-items: center;
+}
+.rd-hero-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2.9rem, 5.4vw, 4.6rem);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: -2.5px;
+    margin-top: 26px;
+    color: var(--text);
+}
+.rd-hero-sub {
+    margin-top: 26px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 30ch;
+}
+.rd-hero-cta {
+    margin-top: 38px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.rd-hero-proof {
+    margin-top: 34px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 460px;
+}
+.rd-hero-proof-dot {
+    flex: none;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+.rd-hero-proof p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+.rd-hero-proof b { color: var(--text); font-weight: 600; }
+
+/* portrait with soft accent shape behind it */
+.rd-hero-media {
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 440px;
+}
+.rd-hero-accent {
+    display: none;
+}
+.rd-hero-photo {
+    position: relative;
+    z-index: 1;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+.rd-hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+.rd-hero-badge {
+    position: absolute;
+    z-index: 2;
+    left: -18px;
+    bottom: 26px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 20px;
+    box-shadow: 0 20px 44px -20px rgba(0, 0, 0, 0.35);
+}
+.rd-hero-badge b {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+}
+.rd-hero-badge span {
+    font-size: 0.76rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   TRUST STRIP
+   ========================================================================== */
+.rd-trust {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 0;
+}
+.rd-trust-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.rd-trust-item {
+    text-align: center;
+    padding: 6px 12px;
+}
+.rd-trust-item + .rd-trust-item {
+    border-left: 1px solid var(--border);
+}
+.rd-trust-num {
+    font-family: var(--font-sans);
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    line-height: 1.1;
+}
+.rd-trust-num .rd-accent-italic { font-size: 1.7rem; }
+.rd-trust-label {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   OFFERS
+   ========================================================================== */
+.rd-offers { padding: 110px 0; }
+.rd-offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.rd-offer-card {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 32px 32px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--bg);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out),
+                border-color 0.3s var(--ease-out);
+}
+.rd-offer-card:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    box-shadow: 0 26px 50px -28px rgba(0, 0, 0, 0.32);
+}
+.rd-offer-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+.rd-offer-icon svg { width: 26px; height: 26px; }
+.rd-offer-title {
+    font-family: var(--font-sans);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    color: var(--text);
+}
+.rd-offer-desc {
+    margin-top: 12px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    flex: 1;
+}
+.rd-offer-link {
+    margin-top: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+.rd-offer-card:hover .rd-offer-link { gap: 12px; }
+.rd-offer-link { transition: gap 0.25s var(--ease-out); }
+
+/* ==========================================================================
+   PRINCIPLES (always-dark band — carries over the site's philosophy vibe)
+   ========================================================================== */
+.rd-principles {
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+    padding: 120px 0;
+}
+.rd-principles .rd-eyebrow { color: var(--accent-light); }
+.rd-quote {
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    font-weight: 400;
+    line-height: 1.28;
+    letter-spacing: -0.5px;
+    color: #fff;
+    max-width: 20ch;
+    margin: 22px 0 72px;
+}
+.rd-quote em { font-style: italic; color: var(--accent-light); }
+.rd-principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+.rd-principle-num {
+    font-size: 1.6rem;
+    color: var(--accent-light);
+    margin-bottom: 16px;
+}
+.rd-principle h3 {
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.rd-principle p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* ==========================================================================
+   START HERE / RESOURCES
+   ========================================================================== */
+.rd-resources { padding: 110px 0; }
+.rd-resource-list {
+    border-top: 1px solid var(--border);
+}
+.rd-resource-item {
+    display: grid;
+    grid-template-columns: 190px 1fr auto;
+    align-items: center;
+    gap: 28px;
+    padding: 30px 8px;
+    border-bottom: 1px solid var(--border);
+    transition: padding-left 0.3s var(--ease-out), background 0.3s var(--ease-out);
+}
+.rd-resource-item:hover {
+    padding-left: 22px;
+    background: var(--bg-alt);
+}
+.rd-resource-cat {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.rd-resource-title {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    color: var(--text);
+}
+.rd-resource-arrow {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    transition: transform 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+.rd-resource-item:hover .rd-resource-arrow {
+    transform: translateX(6px);
+    color: var(--accent);
+}
+.rd-resources-footer { margin-top: 40px; }
+.rd-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: gap 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+.rd-text-link:hover { gap: 12px; color: var(--accent); }
+
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
+.rd-about {
+    background: var(--bg-alt);
+    padding: 120px 0;
+}
+.rd-about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 72px;
+    align-items: center;
+}
+.rd-about-copy { max-width: 760px; }
+.rd-about-photo {
+    border-radius: 22px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+.rd-about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.rd-about-headline {
+    font-family: var(--font-sans);
+    font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -1.2px;
+    margin-top: 18px;
+    color: var(--text);
+}
+.rd-about-body {
+    margin-top: 22px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+.rd-about-stats {
+    margin-top: 34px;
+    display: grid;
+    gap: 20px;
+}
+.rd-about-stat {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+.rd-about-stat-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 2px;
+}
+.rd-about-stat-value {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+/* ==========================================================================
+   NEWSLETTER CENTERPIECE (bold dark CTA)
+   ========================================================================== */
+.rd-news {
+    background: var(--bg-dark);
+    color: #fff;
+    padding: 120px 0;
+    text-align: center;
+}
+.rd-news .rd-eyebrow {
+    color: var(--accent-light);
+    justify-content: center;
+}
+.rd-news-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+    margin: 22px auto 0;
+    max-width: 16ch;
+    color: #fff;
+}
+.rd-news-title em { font-style: normal; color: var(--accent-light); }
+.rd-news-desc {
+    margin: 22px auto 0;
+    max-width: 52ch;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+}
+.rd-news-form {
+    margin: 40px auto 0;
+    max-width: 540px;
+    display: flex;
+    gap: 12px;
+}
+.rd-news-input {
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 16px 22px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    transition: border-color 0.25s var(--ease-out);
+}
+.rd-news-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+.rd-news-input:focus { outline: none; border-color: var(--accent); }
+.rd-news-form .rd-btn { flex: none; }
+.rd-news-note {
+    margin: 20px auto 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 980px) {
+    .rd-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .rd-hero-media { order: -1; max-width: 360px; }
+    .rd-hero-sub { max-width: 46ch; }
+    .rd-offers-grid { grid-template-columns: 1fr; }
+    .rd-principles-grid { grid-template-columns: 1fr; gap: 40px; }
+    .rd-about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .rd-about-photo { max-width: 380px; }
+    .rd-trust-inner { grid-template-columns: repeat(2, 1fr); gap: 28px 12px; }
+    .rd-trust-item:nth-child(3) { border-left: none; }
+}
+
+@media (max-width: 640px) {
+    .rd-wrap { padding: 0 22px; }
+    .rd-hero { padding: 120px 0 70px; }
+    .rd-hero-cta { flex-direction: column; align-items: stretch; }
+    .rd-hero-cta .rd-btn { width: 100%; }
+    .rd-hero-badge { left: 12px; }
+    .rd-offers, .rd-resources { padding: 80px 0; }
+    .rd-principles, .rd-about, .rd-news { padding: 90px 0; }
+    .rd-resource-item {
+        grid-template-columns: 1fr auto;
+        gap: 6px 16px;
+        row-gap: 6px;
+    }
+    .rd-resource-cat { grid-column: 1 / -1; }
+    .rd-resource-arrow { grid-row: 2; }
+    .rd-news-form { flex-direction: column; }
+    .rd-news-form .rd-btn { width: 100%; }
+    .rd-trust-item + .rd-trust-item { border-left: none; }
+}
+
+/* ==========================================================================
+   SITE-WIDE REDESIGN LAYER
+   Cosmetic overrides applied to the shared components every other page uses.
+   Loaded AFTER styles.css, so equal-specificity (single-class) rules win by
+   load order. Only cosmetic properties are touched (radius, border, shadow,
+   spacing, hover, eyebrow accents) — layout/structure is left intact so no
+   page reflows unexpectedly.
+   ========================================================================== */
+
+/* ---- Eyebrow labels: leading accent dash, matching the homepage ---- */
+.page-hero-label,
+.article-category,
+.bn-category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+.page-hero-label::before,
+.article-category::before,
+.bn-category-badge::before {
+    content: "";
+    width: 26px;
+    height: 1.5px;
+    background: var(--accent);
+    display: inline-block;
+    flex: none;
+}
+
+/* Give the shared page hero a touch more breathing room + confidence */
+.page-hero-title { letter-spacing: -2.5px; }
+.page-hero-desc { font-size: 1.15rem; max-width: 640px; }
+
+/* ---- Free-guides / free-resources: flat rows -> rounded hover cards ---- */
+.guide-card-full {
+    padding: 30px 32px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 18px;
+    background: var(--bg);
+    transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out),
+                box-shadow 0.3s var(--ease-out);
+}
+.guide-card-full:last-child { border-bottom: 1px solid var(--border); }
+.guide-card-full:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+    box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.3);
+}
+.guide-card-content h2 { font-size: 1.4rem; letter-spacing: -0.6px; }
+
+/* ---- Book-note grid cards: slightly larger radius to match card family ---- */
+.bn-card-img-wrap { border-radius: 14px; }
+.bn-card-overlay { border-radius: 14px; }
+
+/* ---- Listing rows (articles list, homepage resources): richer hover ---- */
+.writing-item { border-radius: 10px; padding-left: 8px; padding-right: 8px; }
+.writing-item:hover {
+    padding-left: 20px;
+    background: var(--bg-alt);
+}
+.writing-item-title { font-size: 1.3rem; letter-spacing: -0.5px; }
+
+/* ---- Filter pills: keep, just a hair more presence ---- */
+.filter-btn, .bn-filter-btn { font-weight: 600; }
+
+/* ---- Buttons: consistent pill + lift across the site ---- */
+.form-submit {
+    border-radius: 100px;
+    transition: transform 0.25s var(--ease-out), background 0.25s var(--ease-out),
+                box-shadow 0.25s var(--ease-out);
+}
+.form-submit:hover { transform: translateY(-2px); }
+
+/* ---- Reading views: premium typography + imagery ---- */
+.article-title, .bn-title { letter-spacing: -1.8px; }
+.article-hero { border-radius: 18px; }
+.article-body { font-size: 1.08rem; }
+.article-body > p:first-of-type {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* ---- Article CTA: contained, rounded dark centerpiece ---- */
+.article-cta {
+    background: transparent;
+    padding: 40px 32px 90px;
+}
+.article-cta-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-dark);
+    border-radius: 24px;
+    padding: 56px 40px;
+}
+.article-cta-inner h3 { font-size: 1.9rem; letter-spacing: -0.8px; }
+.article-cta-inner p { font-size: 1.05rem; color: rgba(255, 255, 255, 0.7); }
+
+/* ---- Newsletter page: rounded imagery + feature polish ---- */
+.newsletter-page-image img,
+.newsletter-page-image { border-radius: 22px; }
+.newsletter-page-title { letter-spacing: -1.5px; }
+.feature-icon { color: var(--accent); }
+
+/* ---- Contact page: rounded, on-brand form container ---- */
+.contact-title { letter-spacing: -1.5px; }
+
+/* ---- Legal / 404 / search: consistent confident headings ---- */
+.legal-page h1, .search-page h1 { letter-spacing: -1.5px; }

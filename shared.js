@@ -8,9 +8,22 @@ function getNavHTML(activePage) {
             <a href="/" class="nav-logo" id="nav-logo">KH<span class="nav-logo-dot">.</span></a>
             <div class="nav-links" id="nav-links">
                 <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
-                <a href="/articles" class="nav-link ${activePage === 'articles' ? 'active' : ''}">Articles</a>
-                <a href="/free-guides" class="nav-link ${activePage === 'guides' ? 'active' : ''}">Free Guides</a>
-                <a href="/book-notes" class="nav-link ${activePage === 'booknotes' ? 'active' : ''}">Book Notes</a>
+                <div class="nav-dropdown-wrap" id="nav-resources-wrap">
+                    <button class="nav-dropdown-trigger ${['articles', 'guides', 'booknotes'].includes(activePage) ? 'active' : ''}" id="nav-resources-btn" aria-haspopup="true" aria-expanded="false">Free Resources<span class="nav-dropdown-caret">▾</span></button>
+                    <div class="nav-dropdown" id="nav-dropdown" role="menu">
+                        <a href="/articles" class="nav-dropdown-item ${activePage === 'articles' ? 'active' : ''}" role="menuitem">Articles</a>
+                        <a href="/free-guides" class="nav-dropdown-item ${activePage === 'guides' ? 'active' : ''}" role="menuitem">Free Guides</a>
+                        <a href="/book-notes" class="nav-dropdown-item ${activePage === 'booknotes' ? 'active' : ''}" role="menuitem">Book Notes</a>
+                    </div>
+                </div>
+                <div class="nav-mobile-resources" id="nav-mobile-resources">
+                    <button class="nav-mobile-resources-toggle" id="nav-mobile-resources-toggle" aria-expanded="false">Free Resources<span class="nav-mobile-resources-caret">▾</span></button>
+                    <div class="nav-mobile-resources-list">
+                        <a href="/articles" class="nav-link nav-link-sub ${activePage === 'articles' ? 'active' : ''}">Articles</a>
+                        <a href="/free-guides" class="nav-link nav-link-sub ${activePage === 'guides' ? 'active' : ''}">Free Guides</a>
+                        <a href="/book-notes" class="nav-link nav-link-sub ${activePage === 'booknotes' ? 'active' : ''}">Book Notes</a>
+                    </div>
+                </div>
                 <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}">Newsletter</a>
                 <a href="/blueprint-info" class="nav-link ${activePage === 'programs' ? 'active' : ''}">Programs</a>
                 <a href="/contact" class="nav-cta mobile-only">Contact →</a>
@@ -151,6 +164,18 @@ function initSharedLayout(activePage) {
 
         navLinks.querySelectorAll('.nav-link:not(.nav-dropdown-trigger), .nav-dropdown-item').forEach(link => {
             link.addEventListener('click', closeMenu);
+        });
+    }
+
+    // ---- Mobile "Free Resources" accordion ----
+    const mobileResToggle = document.getElementById('nav-mobile-resources-toggle');
+    const mobileResWrap = document.getElementById('nav-mobile-resources');
+    if (mobileResToggle && mobileResWrap) {
+        mobileResToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = mobileResWrap.classList.toggle('open');
+            mobileResToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
     }
 
