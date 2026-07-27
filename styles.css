@@ -2133,7 +2133,7 @@ img { max-width: 100%; display: block; }
 .bn-grid-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px 100px;
+    padding: 80px 40px 100px;
 }
 
 /* The grid */
@@ -3391,7 +3391,7 @@ body:has(.guides-page) .page-hero-inner {
     }
 
     .bn-grid-section {
-        padding: 0 24px 60px;
+        padding: 50px 24px 60px;
     }
 
     .bn-grid {
