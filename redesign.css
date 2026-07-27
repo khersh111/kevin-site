@@ -593,16 +593,14 @@
 
 /* ---- Eyebrow labels: leading accent dash, matching the homepage ---- */
 .page-hero-label,
-.article-category,
-.bn-category-badge {
+.article-category {
     display: inline-flex;
     align-items: center;
     gap: 12px;
     font-weight: 600;
 }
 .page-hero-label::before,
-.article-category::before,
-.bn-category-badge::before {
+.article-category::before {
     content: "";
     width: 26px;
     height: 1.5px;
@@ -636,6 +634,9 @@
 /* ---- Book-note grid cards: slightly larger radius to match card family ---- */
 .bn-card-img-wrap { border-radius: 14px; }
 .bn-card-overlay { border-radius: 14px; }
+
+/* Category badge removed from book-note detail pages */
+.bn-category-badge { display: none; }
 
 /* ---- Listing rows (articles list, homepage resources): richer hover ---- */
 .writing-item { border-radius: 10px; padding-left: 8px; padding-right: 8px; }
