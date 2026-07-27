@@ -213,6 +213,9 @@ img { max-width: 100%; display: block; }
     pointer-events: none;
 }
 
+/* Mobile-only in-menu search (hidden on desktop; revealed in the mobile menu) */
+.nav-mobile-search { display: none; }
+
 .nav-theme-toggle {
     display: flex;
     align-items: center;
@@ -1256,6 +1259,21 @@ img { max-width: 100%; display: block; }
         right: 0;
     }
 
+    /* In-menu search on mobile */
+    .nav-links .nav-mobile-search {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .nav-links .nav-mobile-search .nav-search-input {
+        width: 100%;
+    }
+    .nav-links .nav-mobile-search .nav-search-input:focus {
+        width: 100%;
+    }
+
     .nav-actions {
         margin-left: auto;
         margin-right: 16px;
@@ -1559,7 +1577,7 @@ img { max-width: 100%; display: block; }
 
 .about-page-layout {
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
+    grid-template-columns: 300px 1fr;
     gap: 64px;
     align-items: start;
 }
@@ -2932,8 +2950,9 @@ body:has(.guides-page) .page-hero-inner {
 @media (max-width: 900px) {
     .page-hero { padding: 120px 24px 40px; }
     .about-page { padding: 40px 24px 60px; }
-    .about-page-layout { grid-template-columns: 1fr; gap: 32px; }
-    .about-page-image img { aspect-ratio: 1/1; object-position: top center; }
+    .about-page-layout { grid-template-columns: 1fr; gap: 28px; }
+    .about-page-image { max-width: 220px; }
+    .about-page-image img { aspect-ratio: 3/4; object-position: top center; }
     .timeline { grid-template-columns: 1fr; gap: 20px; }
     .listing-page { padding: 20px 24px 60px; }
     .book-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }

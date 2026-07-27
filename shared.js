@@ -7,6 +7,10 @@ function getNavHTML(activePage) {
         <div class="nav-inner">
             <a href="/" class="nav-logo" id="nav-logo">KH<span class="nav-logo-dot">.</span></a>
             <div class="nav-links" id="nav-links">
+                <form class="nav-mobile-search" action="/search" method="get">
+                    <span class="nav-search-icon">⌕</span>
+                    <input type="text" name="q" class="nav-search-input" placeholder="Search..." aria-label="Search" required>
+                </form>
                 <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
                 <div class="nav-dropdown-wrap" id="nav-resources-wrap">
                     <button class="nav-dropdown-trigger ${['articles', 'guides', 'booknotes'].includes(activePage) ? 'active' : ''}" id="nav-resources-btn" aria-haspopup="true" aria-expanded="false">Free Resources<span class="nav-dropdown-caret">▾</span></button>
