@@ -3660,8 +3660,12 @@ body:has(.guides-page) .page-hero-inner {
         padding: 80px 24px;
     }
 
+    .page-hero-inner {
+        padding-bottom: 50px;
+    }
+
     .page-hero + .content-section {
-        padding-top: 80px;
+        padding-top: 50px;
     }
 
     #who-its-for .content-section-inner {
