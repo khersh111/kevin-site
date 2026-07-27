@@ -1523,14 +1523,16 @@ img { max-width: 100%; display: block; }
 
 /* ==================== PAGE HERO (Shared) ==================== */
 .page-hero {
-    padding: 140px 48px 60px;
+    padding: 140px 48px 0;
     max-width: 1100px;
     margin: 0 auto;
 }
 
 .page-hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 40px;
+    padding-bottom: 80px;
 }
 
 .page-hero-label {
@@ -3482,10 +3484,8 @@ body:has(.guides-page) .page-hero-inner {
     background: var(--bg-alt);
 }
 
-/* The hero already carries bottom padding + a rule, so pull the first
-   section up to avoid an oversized gap after it. */
 .page-hero + .content-section {
-    padding-top: 44px;
+    padding-top: 80px;
 }
 
 .content-section-inner {
