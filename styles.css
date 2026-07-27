@@ -3491,8 +3491,6 @@ body:has(.guides-page) .page-hero-inner {
 .content-section-inner {
     max-width: 760px;
     margin: 0 auto;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 40px;
 }
 
 .content-section-inner--wide {
