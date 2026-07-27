@@ -3491,6 +3491,8 @@ body:has(.guides-page) .page-hero-inner {
 .content-section-inner {
     max-width: 760px;
     margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 40px;
 }
 
 .content-section-inner--wide {
@@ -3610,6 +3612,17 @@ body:has(.guides-page) .page-hero-inner {
     font-weight: 600;
     letter-spacing: 0.2px;
     color: var(--text-muted);
+}
+
+/* The apply section is the last visible section — no bottom rule or
+   oversized padding beneath the iframe. */
+#apply {
+    padding-bottom: 40px;
+}
+
+#apply .content-section-inner {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .apply-form-wrap {
