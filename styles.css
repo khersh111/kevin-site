@@ -213,8 +213,8 @@ img { max-width: 100%; display: block; }
     pointer-events: none;
 }
 
-/* Mobile-only in-menu search (hidden on desktop; revealed in the mobile menu) */
-.nav-mobile-search { display: none; }
+/* Mobile-only search icon in the top header (hidden on desktop) */
+.nav-search-mobile-btn { display: none; }
 
 .nav-theme-toggle {
     display: flex;
@@ -1259,20 +1259,17 @@ img { max-width: 100%; display: block; }
         right: 0;
     }
 
-    /* In-menu search on mobile */
-    .nav-links .nav-mobile-search {
+    /* Search icon in the mobile top header */
+    .nav-search-mobile-btn {
         display: flex;
         align-items: center;
-        position: relative;
-        width: 100%;
-        margin-bottom: 16px;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        color: var(--text);
+        transition: color 0.2s ease, transform 0.2s ease;
     }
-    .nav-links .nav-mobile-search .nav-search-input {
-        width: 100%;
-    }
-    .nav-links .nav-mobile-search .nav-search-input:focus {
-        width: 100%;
-    }
+    .nav-search-mobile-btn:hover { color: var(--accent); transform: translateY(-1px); }
 
     .nav-actions {
         margin-left: auto;
@@ -3396,29 +3393,38 @@ body:has(.guides-page) .page-hero-inner {
         gap: 20px 16px;
     }
 
-    /* Existing Book Detail Mobile */
+    /* Book detail hero — cover left, meta (category/title/author) beside it,
+       and the 3-bullets box full-width beneath, so no space is wasted. */
     .bn-hero-inner {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        grid-template-columns: 118px 1fr;
+        column-gap: 22px;
+        row-gap: 10px;
         padding: 0 24px 48px;
+        align-items: start;
     }
 
     .bn-cover-col {
+        grid-column: 1;
+        grid-row: 1 / 5;
         justify-content: flex-start;
     }
 
     .bn-cover-wrap {
-        width: 130px;
+        width: 118px;
     }
 
     .bn-cover-img {
-        width: 130px;
-        min-height: 130px;
+        width: 118px;
+        min-height: 118px;
     }
 
-    .bn-title {
-        font-size: clamp(1.8rem, 6vw, 2.4rem);
-    }
+    /* Promote the meta children into the hero grid so they align beside the cover */
+    .bn-meta-col { display: contents; }
+    .bn-back { grid-column: 2; grid-row: 1; justify-self: start; margin: 0; }
+    .bn-category-badge { grid-column: 2; grid-row: 2; justify-self: start; margin: 0; }
+    .bn-title { grid-column: 2; grid-row: 3; margin: 0; font-size: clamp(1.35rem, 5.2vw, 1.9rem); }
+    .bn-author { grid-column: 2; grid-row: 4; margin: 0; }
+    .bn-bullets-box { grid-column: 1 / -1; grid-row: 5; margin-top: 24px; }
 
     .bn-body-wrap {
         grid-template-columns: 1fr;

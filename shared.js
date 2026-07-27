@@ -7,10 +7,6 @@ function getNavHTML(activePage) {
         <div class="nav-inner">
             <a href="/" class="nav-logo" id="nav-logo">KH<span class="nav-logo-dot">.</span></a>
             <div class="nav-links" id="nav-links">
-                <form class="nav-mobile-search" action="/search" method="get">
-                    <span class="nav-search-icon">⌕</span>
-                    <input type="text" name="q" class="nav-search-input" placeholder="Search..." aria-label="Search" required>
-                </form>
                 <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
                 <div class="nav-dropdown-wrap" id="nav-resources-wrap">
                     <button class="nav-dropdown-trigger ${['articles', 'guides', 'booknotes'].includes(activePage) ? 'active' : ''}" id="nav-resources-btn" aria-haspopup="true" aria-expanded="false">Free Resources<span class="nav-dropdown-caret">▾</span></button>
@@ -37,6 +33,9 @@ function getNavHTML(activePage) {
                     <span class="nav-search-icon">⌕</span>
                     <input type="text" name="q" class="nav-search-input" placeholder="Search..." aria-label="Search" required>
                 </form>
+                <a href="/search" class="nav-search-mobile-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </a>
                 <button class="nav-theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
                 <a href="/contact" class="nav-cta" id="nav-cta">Contact →</a>
             </div>
