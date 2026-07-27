@@ -269,6 +269,12 @@
     border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
     box-shadow: 0 26px 50px -28px rgba(0, 0, 0, 0.32);
 }
+.rd-offer-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
 .rd-offer-icon {
     width: 52px; height: 52px;
     border-radius: 14px;
@@ -277,18 +283,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
+    flex-shrink: 0;
 }
 .rd-offer-icon svg { width: 26px; height: 26px; }
 .rd-offer-title {
     font-family: var(--font-sans);
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.5px;
     color: var(--text);
+    line-height: 1.25;
 }
 .rd-offer-desc {
-    margin-top: 12px;
+    margin-top: 0;
     font-size: 1rem;
     line-height: 1.6;
     color: var(--text-muted);
