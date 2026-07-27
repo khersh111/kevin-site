@@ -3577,6 +3577,41 @@ body:has(.guides-page) .page-hero-inner {
     color: var(--text-muted);
 }
 
+/* The choice — closing CTA spacing */
+.the-choice-cta {
+    margin-top: 36px;
+}
+
+/* Results — testimonial cards (placeholder section, hidden until real quotes) */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 4px;
+}
+
+.testimonial-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 32px;
+}
+
+.testimonial-quote {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.testimonial-attr {
+    margin-top: 20px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: var(--text-muted);
+}
+
 .apply-form-wrap {
     max-width: 100%;
 }
@@ -3607,6 +3642,11 @@ body:has(.guides-page) .page-hero-inner {
     .wyg-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .apply-iframe {
