@@ -1792,10 +1792,10 @@ img { max-width: 100%; display: block; }
 }
 
 .bn-title {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -1.5px;
     line-height: 1.15;
     margin-bottom: 12px;
     color: var(--text);
