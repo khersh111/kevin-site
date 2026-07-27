@@ -320,22 +320,41 @@
     font-family: var(--font-serif);
     font-size: clamp(1.9rem, 3.6vw, 3rem);
     font-weight: 400;
-    line-height: 1.28;
+    line-height: 1.18;
     letter-spacing: -0.5px;
     color: #fff;
-    max-width: 20ch;
-    margin: 22px 0 72px;
+    max-width: 24ch;
+    margin: 22px 0 26px;
 }
 .rd-quote em { font-style: italic; color: var(--accent-light); }
+.rd-principles-lead {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 58ch;
+    margin: 0 0 64px;
+}
+.rd-principles-close {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 66ch;
+    margin-top: 60px;
+}
 .rd-principles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
 }
 .rd-principle-num {
-    font-size: 1.6rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 2rem;
+    line-height: 1;
     color: var(--accent-light);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 .rd-principle h3 {
     font-family: var(--font-sans);
