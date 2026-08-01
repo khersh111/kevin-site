@@ -116,11 +116,18 @@
     font-weight: 700;
     line-height: 1.04;
     letter-spacing: -2.5px;
-    margin-top: 26px;
+    margin-top: 1.5rem;
     color: var(--text);
 }
+/* Optional forced two-line break. Kept off by default: at the current
+   headline size the two phrases are wider than the text column, so forcing
+   two lines would overflow. Flip to `inline` (and drop the headline size to
+   ~3.3rem) only if a literal two-line headline is preferred over the size. */
+.rd-hero-br { display: none; }
+/* keep each phrase intact so "at 70" / "in your 30s." never split */
+.rd-hero-nb { white-space: nowrap; }
 .rd-hero-sub {
-    margin-top: 26px;
+    margin-top: 2rem;
     font-size: 1.2rem;
     line-height: 1.6;
     color: var(--text-muted);
@@ -134,7 +141,7 @@
 }
 /* statement line — serif display, sized between subhead and headline */
 .rd-hero-statement {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     font-family: var(--font-serif);
     font-size: clamp(1.6rem, 2.8vw, 2.1rem);
     line-height: 1.28;
@@ -146,10 +153,12 @@
     width: 40px;
     height: 2px;
     background: var(--accent);
-    margin: 1.25rem 0;
+    margin: 1.25rem 0 1rem;
 }
-/* credential line — quietest, one step smaller than the subhead */
+/* credential line — quietest, one step smaller than the subhead. Serif (same
+   family as the statement line) so the bottom of the stack reads unified. */
 .rd-hero-credential {
+    font-family: var(--font-serif);
     font-size: 1rem;
     line-height: 1.5;
     letter-spacing: 0.3px;
@@ -572,6 +581,8 @@
     .rd-hero-copy .rd-eyebrow { order: 1; }
     .rd-hero-media { order: 2; max-width: 240px; margin: 18px auto 10px; align-self: flex-start; }
     .rd-hero-title { order: 3; }
+    /* let the headline wrap naturally on mobile (no forced two-line break) */
+    .rd-hero-br { display: none; }
     .rd-hero-sub { order: 4; max-width: 46ch; }
     .rd-hero-statement { order: 5; }
     .rd-hero-divider { order: 6; }
