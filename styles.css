@@ -3639,20 +3639,21 @@ body:has(.guides-page) .page-hero-inner {
 
 .apply-form-wrap {
     max-width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-.apply-iframe {
+/* Calendly inline embed — fills the panel edge to edge, no horizontal scroll.
+   min-width override beats the widget's inline 320px so it stays fluid on
+   narrow phones; height is set here (with !important) so the breakpoints
+   below can override the widget's inline height. */
+.calendly-inline-widget {
     display: block;
     width: 100%;
-    height: 2200px;
-    border: 0;
-    border-radius: 12px;
-    background: var(--bg);
-    transition: height 0.3s ease;
-}
-
-.apply-iframe.is-submitted {
-    height: 420px;
+    min-width: 0 !important;
+    height: 700px !important;
 }
 
 @media (max-width: 900px) {
@@ -3686,19 +3687,13 @@ body:has(.guides-page) .page-hero-inner {
         gap: 20px;
     }
 
-    .apply-iframe {
-        height: 2450px;
+    .calendly-inline-widget {
+        height: 760px !important;
     }
 }
 
 @media (max-width: 480px) {
-    .apply-iframe {
-        height: 2650px;
-    }
-}
-
-@media (max-width: 414px) {
-    .apply-iframe {
-        height: 2800px;
+    .calendly-inline-widget {
+        height: 900px !important;
     }
 }
