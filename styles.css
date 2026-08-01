@@ -3653,7 +3653,10 @@ body:has(.guides-page) .page-hero-inner {
     display: block;
     width: 100%;
     min-width: 0 !important;
-    height: 700px !important;
+    /* Calendly top-anchors its card with a fixed offset, so the widget height
+       is sized to leave an equal gap below the card (card ~602px + ~63px above
+       and below) rather than piling the slack at the bottom. */
+    height: 730px !important;
 }
 
 @media (max-width: 900px) {
@@ -3686,14 +3689,13 @@ body:has(.guides-page) .page-hero-inner {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
-    .calendly-inline-widget {
-        height: 760px !important;
-    }
 }
 
 @media (max-width: 480px) {
+    /* Phones get Calendly's stacked "mobile" layout, which is shorter than the
+       desktop card, so the widget is sized to hug it with an even margin
+       rather than leaving a tall empty gap below the calendar. */
     .calendly-inline-widget {
-        height: 900px !important;
+        height: 505px !important;
     }
 }
