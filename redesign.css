@@ -636,6 +636,29 @@
     display: inline-block;
     flex: none;
 }
+/* Repeated "Book a free consultation" CTA that closes each coaching section
+   and links to the standalone booking page. */
+.section-cta { margin-top: 40px; }
+.consult-cta-btn {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    padding: 15px 34px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+@media (hover: hover) {
+    .consult-cta-btn:hover { transform: translateY(-2px); background: var(--accent-dark); }
+}
+/* Consultation landing page: let the booking panel sit clean above the footer */
+#book .content-section-inner { border-bottom: none; }
+
 /* Newsletter header: stack the back link above the dated eyebrow line */
 .article-header--stacked .article-back {
     display: block;

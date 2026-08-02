@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/newsletter", "destination": "/newsletter.html" },
+    { "source": "/articles", "destination": "/articles.html" },
+    { "source": "/book-a-consultation", "destination": "/book-a-consultation.html" },
+    { "source": "/newsletter-**", "destination": "/newsletter-detail.html" },
+    { "source": "/article-**", "destination": "/article.html" }
+  ]
+}
