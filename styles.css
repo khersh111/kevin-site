@@ -1621,6 +1621,8 @@ img { max-width: 100%; display: block; }
     .page-hero-title { order: 2; }
     .page-hero-media { order: 3; max-width: 240px; margin: 18px auto 10px; align-self: flex-start; }
     .page-hero-desc { order: 4; }
+    /* keep the hero CTA after the description (default order 0 would float it up) */
+    .page-hero-copy .section-cta { order: 5; }
 }
 
 /* ==================== ABOUT PAGE ==================== */
