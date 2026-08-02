@@ -673,9 +673,11 @@
 
 /* ---- Listing rows (articles list, homepage resources): richer hover ---- */
 .writing-item { border-radius: 10px; padding-left: 8px; padding-right: 8px; }
-.writing-item:hover {
-    padding-left: 20px;
-    background: var(--bg-alt);
+@media (hover: hover) {
+    .writing-item:hover {
+        padding-left: 20px;
+        background: var(--bg-alt);
+    }
 }
 .writing-item-title { font-size: 1.3rem; letter-spacing: -0.5px; }
 

@@ -953,12 +953,16 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid var(--border);
 }
 
-.writing-item:hover {
-    padding-left: 12px;
-}
+/* Hover effects only on real pointers — on touch devices a :hover rule would
+   make the first tap apply hover and require a second tap to open the link. */
+@media (hover: hover) {
+    .writing-item:hover {
+        padding-left: 12px;
+    }
 
-.writing-item:hover .writing-item-title {
-    color: var(--accent);
+    .writing-item:hover .writing-item-title {
+        color: var(--accent);
+    }
 }
 
 .writing-item-cat {
@@ -985,9 +989,11 @@ img { max-width: 100%; display: block; }
     transition: all 0.2s ease;
 }
 
-.writing-item:hover .writing-item-arrow {
-    color: var(--accent);
-    transform: translateX(4px);
+@media (hover: hover) {
+    .writing-item:hover .writing-item-arrow {
+        color: var(--accent);
+        transform: translateX(4px);
+    }
 }
 
 .writing-footer {
