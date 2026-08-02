@@ -636,6 +636,11 @@
     display: inline-block;
     flex: none;
 }
+/* Newsletter header: stack the back link above the dated eyebrow line */
+.article-header--stacked .article-back {
+    display: block;
+    margin-bottom: 18px;
+}
 
 /* Give the shared page hero a touch more breathing room + confidence */
 .page-hero-title { letter-spacing: -2.5px; }
