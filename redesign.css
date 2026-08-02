@@ -689,11 +689,6 @@
 .article-title, .bn-title { letter-spacing: -1.8px; }
 .article-hero { border-radius: 18px; }
 .article-body { font-size: 1.08rem; }
-.article-body > p:first-of-type {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: var(--text);
-}
 
 /* ---- Article CTA: contained, rounded dark centerpiece ---- */
 .article-cta {
