@@ -659,16 +659,13 @@
 /* Consultation landing page: let the booking panel sit clean above the footer */
 #book .content-section-inner { border-bottom: none; }
 #book { padding-top: 20px; }
-/* Drop the outer panel border so only the Calendly card's own border shows */
-#book .apply-form-wrap { border: none; }
-/* Consultation hero: centered copy (so it lines up with the centered calendar),
-   no divider, and a tight gap to the calendar. */
-.page-hero-inner--flush {
-    border-bottom: none;
-    padding-bottom: 20px;
-    text-align: center;
-}
-.page-hero-inner--flush .page-hero-desc { margin-left: auto; margin-right: auto; }
+/* Pin the calendar to the left, sized to hug it, so it sits directly under
+   the copy with a single clean border. */
+#book .apply-form-wrap { max-width: 560px; margin-left: 0; margin-right: auto; }
+/* Consultation hero: no divider under the intro copy, tight gap to the calendar */
+.page-hero-inner--flush { border-bottom: none; padding-bottom: 20px; }
+/* Coaching page calendar: drop the outer panel border too (single inner border) */
+#apply .apply-form-wrap { border: none; }
 
 /* Newsletter header: stack the back link above the dated eyebrow line */
 .article-header--stacked .article-back {
