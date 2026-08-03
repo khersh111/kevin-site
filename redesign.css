@@ -659,6 +659,8 @@
 /* Consultation landing page: let the booking panel sit clean above the footer */
 #book .content-section-inner { border-bottom: none; }
 #book { padding-top: 40px; }
+/* Drop the outer panel border so only the Calendly card's own border shows */
+#book .apply-form-wrap { border: none; }
 /* Consultation hero: no divider under the intro copy, tighter gap to the calendar */
 .page-hero-inner--flush { border-bottom: none; padding-bottom: 40px; }
 
