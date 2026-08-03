@@ -664,6 +664,9 @@
 #book .apply-form-wrap { border: none; }
 /* Consultation hero: no divider under the intro copy, tight gap to the calendar */
 .page-hero-inner--flush { border-bottom: none; padding-bottom: 20px; }
+/* Let the intro copy run the full width (like the coaching lead) so the
+   centered calendar below reads as centered under the text. */
+.page-hero-inner--flush .page-hero-desc { max-width: none; }
 /* Coaching page calendar: drop the outer panel border too (single inner border) */
 #apply .apply-form-wrap { border: none; }
 
