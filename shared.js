@@ -213,20 +213,6 @@ function initSharedLayout(activePage) {
         resourcesWrap.addEventListener('mouseleave', closeDropdown);
     }
 
-    // ---- Scroll animations ----
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
-    });
-
-    document.querySelectorAll('.anim-in').forEach((el) => observer.observe(el));
-
     // ---- Smooth scroll for anchor links ----
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

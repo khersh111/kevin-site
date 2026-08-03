@@ -95,12 +95,6 @@
                 <span class="writing-item-arrow">→</span>
             </a>
         `).join('');
-
-        // Re-observe animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        list.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
     }
 
     // Filter buttons

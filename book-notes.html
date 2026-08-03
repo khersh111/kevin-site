@@ -106,19 +106,6 @@
                 </div>
             </a>
         `).join('');
-
-        // Staggered entrance animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = entry.target.style.getPropertyValue('--delay');
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.05 });
-
-        list.querySelectorAll('.bn-card').forEach(el => observer.observe(el));
     }
 
     initSharedLayout('booknotes');

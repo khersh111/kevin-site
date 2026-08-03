@@ -137,11 +137,6 @@
                 <span class="writing-item-arrow">→</span>
             </a>
         `).join('');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.05 });
-        list.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
     }
 
     function buildYearFilters(newsletters) {

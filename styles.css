@@ -77,23 +77,9 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 /* ==================== ANIMATIONS ==================== */
-.anim-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
-}
-
-.anim-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Stagger children */
-.anim-in:nth-child(2) { transition-delay: 0.07s; }
-.anim-in:nth-child(3) { transition-delay: 0.14s; }
-.anim-in:nth-child(4) { transition-delay: 0.21s; }
-.anim-in:nth-child(5) { transition-delay: 0.28s; }
-.anim-in:nth-child(6) { transition-delay: 0.35s; }
+/* Scroll-reveal animations removed — content renders at full opacity and its
+   final position immediately, with no scroll-triggered fade/slide-in.
+   .anim-in is kept as an inert marker class so existing markup is untouched. */
 
 /* ==================== NAVIGATION ==================== */
 .nav {
@@ -1748,15 +1734,6 @@ img { max-width: 100%; display: block; }
 }
 
 /* Article list - reuses writing-item styles from homepage */
-.article-list .writing-item {
-    animation: fadeInUp 0.4s ease forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 
 /* ==================== BOOK NOTE DETAIL PAGE ==================== */
 
@@ -2205,14 +2182,6 @@ img { max-width: 100%; display: block; }
     flex-direction: column;
     align-items: center;
     text-align: center;
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.bn-card.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Image wrapper — portrait book aspect ratio */
