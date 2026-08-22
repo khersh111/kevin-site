@@ -54,7 +54,10 @@ function die(msg) {
 
 async function fetchLatestPosts() {
     const url = new URL(`https://api.beehiiv.com/v2/publications/${PUBLICATION_ID}/posts`);
-    url.searchParams.set('expand[]', 'free_web_content');
+    // RSS content is the syndication-clean article body (no page header, byline,
+    // or share buttons); web content is the fallback.
+    url.searchParams.append('expand[]', 'free_rss_content');
+    url.searchParams.append('expand[]', 'free_web_content');
     url.searchParams.set('status', 'confirmed');       // sent issues only
     url.searchParams.set('order_by', 'publish_date');
     url.searchParams.set('direction', 'desc');
@@ -107,15 +110,16 @@ function displayDate(date) {
 // or dropped entirely.
 const KEEP = new Set(['p', 'h3', 'h4', 'blockquote', 'cite', 'ul', 'ol', 'li',
     'strong', 'em', 'a', 'br', 'figure', 'figcaption', 'img']);
-const DROP = new Set(['script', 'style', 'nav', 'header', 'footer', 'form',
+const DROP = new Set(['script', 'style', 'head', 'nav', 'header', 'footer', 'form',
     'button', 'iframe', 'svg', 'table', 'thead', 'tbody', 'tr', 'td', 'th']);
 const ALLOWED_ATTRS = { a: ['href'], img: ['src', 'alt'] };
 
 function cleanBodyHtml(rawHtml) {
     let html = rawHtml || '';
 
-    // Remove comments and any dropped blocks (with their contents).
+    // Remove comments, the doctype, and any dropped blocks (with their contents).
     html = html.replace(/<!--[\s\S]*?-->/g, '');
+    html = html.replace(/<!doctype[^>]*>/gi, '');
     for (const tag of DROP) {
         html = html.replace(new RegExp(`<${tag}\\b[\\s\\S]*?</${tag}>`, 'gi'), '');
         html = html.replace(new RegExp(`<${tag}\\b[^>]*/?>`, 'gi'), '');
@@ -142,8 +146,9 @@ function cleanBodyHtml(rawHtml) {
             return `<${tag}${kept}${sc}>`;
         });
 
-    // Drop links with no href (they became <a> after attr-strip).
+    // Drop links with no href (unwrap), and empty anchors like share buttons.
     html = html.replace(/<a>([\s\S]*?)<\/a>/gi, '$1');
+    html = html.replace(/<a\b[^>]*>\s*<\/a>/gi, '');
 
     // Collapse whitespace and remove now-empty blocks.
     html = html.replace(/\s+/g, ' ');
@@ -227,11 +232,16 @@ async function main() {
         const slug = slugFor(date);
         if (haveSlugs.has(slug)) { console.log(`= ${slug} already published, skipping`); continue; }
 
-        const rawWeb = post.content?.free?.web || post.content?.web || '';
-        if (!rawWeb) { console.warn(`! "${post.title}" has no web content, skipping`); continue; }
+        const free = post.content?.free || {};
+        const raw = free.rss || free.web || post.content?.rss || post.content?.web || '';
+        if (!raw) { console.warn(`! "${post.title}" has no content, skipping`); continue; }
+        if (process.env.DEBUG_DUMP === '1') {
+            console.log(`  [debug] rss:${(free.rss || '').length} web:${(free.web || '').length}`);
+            console.log('  [debug] raw head:\n' + raw.slice(0, 1500));
+        }
 
         console.log(`+ ${slug} — "${post.title}"`);
-        let html = cleanBodyHtml(rawWeb);
+        let html = cleanBodyHtml(raw);
         html = await localizeImages(html, slug);
 
         fresh.push({
@@ -261,7 +271,8 @@ async function main() {
     if (DRY_RUN) {
         console.log(`\n[dry-run] Would add ${fresh.length} issue(s):`);
         for (const n of fresh) console.log(`  ${n.slug} — ${n.title}`);
-        console.log('\n[dry-run] Sample entry:\n' + JSON.stringify(fresh[0], null, 2).slice(0, 1200));
+        console.log('\n[dry-run] Full html_body of newest:\n' + fresh[0].html_body);
+        console.log('\n[dry-run] body (plain text):\n' + fresh[0].body);
         return;
     }
 
