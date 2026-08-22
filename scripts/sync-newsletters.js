@@ -150,10 +150,21 @@ function cleanBodyHtml(rawHtml) {
     html = html.replace(/<a>([\s\S]*?)<\/a>/gi, '$1');
     html = html.replace(/<a\b[^>]*>\s*<\/a>/gi, '');
 
+    // Drop beehiiv's "Powered by beehiiv" footer link.
+    html = html.replace(/<a[^>]*beehiiv\.com\/powered-by[^>]*>[\s\S]*?<\/a>/gi, '');
+
     // Collapse whitespace and remove now-empty blocks.
     html = html.replace(/\s+/g, ' ');
     html = html.replace(/<p>\s*<\/p>/gi, '');
+    html = html.replace(/<blockquote>\s*<\/blockquote>/gi, '');
     html = html.replace(/<figure[^>]*>\s*<\/figure>/gi, '');
+
+    // Remove orphaned section headings — a heading with no content before the
+    // next heading or the end (e.g. a "Quote" section left empty in beehiiv).
+    html = html.replace(/<h([34])>[\s\S]*?<\/h\1>\s*(?=<h[34]|$)/gi, '');
+
+    // Trim stray leading/trailing line breaks.
+    html = html.replace(/^(?:\s*<br\s*\/?>)+/i, '').replace(/(?:<br\s*\/?>\s*)+$/i, '');
     return html.trim();
 }
 
@@ -235,15 +246,6 @@ async function main() {
         const free = post.content?.free || {};
         const raw = free.rss || free.web || post.content?.rss || post.content?.web || '';
         if (!raw) { console.warn(`! "${post.title}" has no content, skipping`); continue; }
-        if (process.env.DEBUG_DUMP === '1') {
-            console.log(`  [debug] rss:${(free.rss || '').length} web:${(free.web || '').length}`);
-            const around = (s, needle) => {
-                const i = (s || '').toLowerCase().indexOf(needle);
-                return i < 0 ? '(not found)' : (s.slice(Math.max(0, i - 60), i + 400));
-            };
-            console.log('  [debug] RSS around "reflecting":\n' + around(free.rss, 'reflecting'));
-            console.log('  [debug] WEB around "reflecting":\n' + around(free.web, 'reflecting'));
-        }
 
         console.log(`+ ${slug} — "${post.title}"`);
         let html = cleanBodyHtml(raw);
