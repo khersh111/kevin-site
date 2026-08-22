@@ -237,7 +237,12 @@ async function main() {
         if (!raw) { console.warn(`! "${post.title}" has no content, skipping`); continue; }
         if (process.env.DEBUG_DUMP === '1') {
             console.log(`  [debug] rss:${(free.rss || '').length} web:${(free.web || '').length}`);
-            console.log('  [debug] raw head:\n' + raw.slice(0, 1500));
+            const around = (s, needle) => {
+                const i = (s || '').toLowerCase().indexOf(needle);
+                return i < 0 ? '(not found)' : (s.slice(Math.max(0, i - 60), i + 400));
+            };
+            console.log('  [debug] RSS around "reflecting":\n' + around(free.rss, 'reflecting'));
+            console.log('  [debug] WEB around "reflecting":\n' + around(free.web, 'reflecting'));
         }
 
         console.log(`+ ${slug} — "${post.title}"`);
