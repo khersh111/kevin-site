@@ -41,6 +41,7 @@ jobs:
         env:
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '0' }}
+          DEBUG_DUMP: '1'
         run: node scripts/sync-newsletters.js
 
       - name: Commit and push

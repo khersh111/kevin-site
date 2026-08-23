@@ -58,6 +58,7 @@ async function fetchLatestPosts() {
     // or share buttons); web content is the fallback.
     url.searchParams.append('expand[]', 'free_rss_content');
     url.searchParams.append('expand[]', 'free_web_content');
+    url.searchParams.append('expand[]', 'free_email_content');
     url.searchParams.set('status', 'confirmed');       // sent issues only
     url.searchParams.set('order_by', 'publish_date');
     url.searchParams.set('direction', 'desc');
@@ -241,11 +242,26 @@ async function main() {
     for (const post of posts) {
         const date = toDate(post.publish_date ?? post.displayed_date ?? post.created);
         const slug = slugFor(date);
-        if (haveSlugs.has(slug)) { console.log(`= ${slug} already published, skipping`); continue; }
+        if (haveSlugs.has(slug) && process.env.DEBUG_DUMP !== '1') { console.log(`= ${slug} already published, skipping`); continue; }
 
         const free = post.content?.free || {};
         const raw = free.rss || free.web || post.content?.rss || post.content?.web || '';
         if (!raw) { console.warn(`! "${post.title}" has no content, skipping`); continue; }
+        if (process.env.DEBUG_DUMP === '1') {
+            const dump = (label, s) => {
+                s = s || '';
+                console.log(`  [debug] ${label} len=${s.length}`);
+                let i = 0, n = 0;
+                while ((i = s.toLowerCase().indexOf('blockquote', i)) >= 0 && n < 4) {
+                    console.log(`    ${label} @${i}: ${s.slice(Math.max(0, i - 90), i + 220)}`);
+                    i += 10; n += 1;
+                }
+                if (!n) console.log(`    ${label}: no <blockquote>`);
+            };
+            dump('rss', free.rss);
+            dump('web', free.web);
+            dump('email', free.email);
+        }
 
         console.log(`+ ${slug} — "${post.title}"`);
         let html = cleanBodyHtml(raw);
