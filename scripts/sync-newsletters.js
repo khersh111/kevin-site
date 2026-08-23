@@ -248,19 +248,18 @@ async function main() {
         const raw = free.rss || free.web || post.content?.rss || post.content?.web || '';
         if (!raw) { console.warn(`! "${post.title}" has no content, skipping`); continue; }
         if (process.env.DEBUG_DUMP === '1') {
-            const dump = (label, s) => {
+            const between = (label, s) => {
                 s = s || '';
-                console.log(`  [debug] ${label} len=${s.length}`);
-                let i = 0, n = 0;
-                while ((i = s.toLowerCase().indexOf('blockquote', i)) >= 0 && n < 4) {
-                    console.log(`    ${label} @${i}: ${s.slice(Math.max(0, i - 90), i + 220)}`);
-                    i += 10; n += 1;
-                }
-                if (!n) console.log(`    ${label}: no <blockquote>`);
+                const lo = s.toLowerCase();
+                const q = lo.indexOf('reflecting');
+                const f = lo.indexOf('fun fact');
+                console.log(`  [debug] ${label} len=${s.length} reflecting@${q} funfact@${f}`);
+                if (q >= 0 && f > q) console.log(`    ${label} quote→funfact: ${s.slice(q, f + 20)}`);
             };
-            dump('rss', free.rss);
-            dump('web', free.web);
-            dump('email', free.email);
+            between('rss', free.rss);
+            between('web', free.web);
+            between('email', free.email);
+            if (post === posts[0]) process.exit(0);   // only need the newest
         }
 
         console.log(`+ ${slug} — "${post.title}"`);
