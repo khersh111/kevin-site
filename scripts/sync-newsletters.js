@@ -184,6 +184,65 @@ function htmlToText(html) {
 }
 
 // ---------------------------------------------------------------------------
+// Quote recovery — beehiiv leaves the "Quote" block empty in the RSS body but
+// renders it in the email version. For each empty <blockquote> in the RSS,
+// find its section id from the preceding heading and rebuild the quote (text +
+// attribution) from the email content, in the site's blockquote/cite format.
+// ---------------------------------------------------------------------------
+
+function textFrom(html) {
+    return (html || '')
+        .replace(/<[^>]+>/g, '')
+        .replace(/&nbsp;/gi, ' ')
+        .replace(/&amp;/gi, '&')
+        .replace(/&#0?39;|&rsquo;|&lsquo;/gi, "'")
+        .replace(/&quot;/gi, '"')
+        .replace(/&ldquo;/gi, '“').replace(/&rdquo;/gi, '”')
+        .replace(/&mdash;/gi, '—').replace(/&ndash;/gi, '–')
+        .replace(/\s+/g, ' ').trim();
+}
+
+// Drop beehiiv tracking query params from an attribution link.
+function cleanUrl(url) {
+    return (url || '').replace(/&amp;/g, '&').split('?')[0];
+}
+
+function quoteFromEmail(emailHtml, id) {
+    if (!emailHtml || !id) return '';
+    const at = emailHtml.indexOf(`id="${id}"`);
+    if (at < 0) return '';
+    // Bound the section to before the next heading id.
+    const after = emailHtml.slice(at + id.length + 5);
+    const next = after.search(/\bid="[^"]+"/);
+    const region = next >= 0 ? after.slice(0, next) : after.slice(0, 4000);
+
+    let quote = '';
+    for (const m of region.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)) {
+        const t = textFrom(m[1]);
+        if (t) { quote = t; break; }
+    }
+    if (!quote) return '';
+
+    let cite = '';
+    const a = region.match(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/i);
+    if (a) {
+        const author = textFrom(a[2]);
+        if (author) cite = `<cite>— <a href="${cleanUrl(a[1])}">${author}</a></cite>`;
+    }
+    return `<blockquote><p>${quote}</p>${cite}</blockquote>`;
+}
+
+function fillQuotesFromEmail(rssHtml, emailHtml) {
+    if (!emailHtml) return rssHtml;
+    return rssHtml.replace(
+        /(<h[1-6][^>]*\bid="([^"]+)"[^>]*>[\s\S]*?<\/h[1-6]>[\s\S]{0,120}?)<blockquote[^>]*>\s*<\/blockquote>/gi,
+        (m, head, id) => {
+            const q = quoteFromEmail(emailHtml, id);
+            return q ? `${head}${q}` : m;
+        });
+}
+
+// ---------------------------------------------------------------------------
 // Images — download remote <img> and rewrite to local figure blocks
 // ---------------------------------------------------------------------------
 
@@ -233,6 +292,10 @@ async function main() {
 
     const existing = JSON.parse(fs.readFileSync(NEWSLETTERS_JSON, 'utf8'));
     const haveSlugs = new Set(existing.map((n) => n.slug));
+    const originalSlugs = new Set(haveSlugs);
+    // Slugs to rebuild even if already published (repair a bad import).
+    const reprocess = new Set((process.env.REPROCESS || '')
+        .split(',').map((s) => s.trim()).filter(Boolean));
 
     console.log(`Fetching up to ${LOOKBACK} latest posts from beehiiv…`);
     const posts = await fetchLatestPosts();
@@ -242,28 +305,16 @@ async function main() {
     for (const post of posts) {
         const date = toDate(post.publish_date ?? post.displayed_date ?? post.created);
         const slug = slugFor(date);
-        if (haveSlugs.has(slug) && process.env.DEBUG_DUMP !== '1') { console.log(`= ${slug} already published, skipping`); continue; }
+        if (haveSlugs.has(slug) && !reprocess.has(slug)) { console.log(`= ${slug} already published, skipping`); continue; }
 
         const free = post.content?.free || {};
         const raw = free.rss || free.web || post.content?.rss || post.content?.web || '';
         if (!raw) { console.warn(`! "${post.title}" has no content, skipping`); continue; }
-        if (process.env.DEBUG_DUMP === '1') {
-            const between = (label, s) => {
-                s = s || '';
-                const lo = s.toLowerCase();
-                const q = lo.indexOf('reflecting');
-                const f = lo.indexOf('fun fact');
-                console.log(`  [debug] ${label} len=${s.length} reflecting@${q} funfact@${f}`);
-                if (q >= 0 && f > q) console.log(`    ${label} quote→funfact: ${s.slice(q, f + 20)}`);
-            };
-            between('rss', free.rss);
-            between('web', free.web);
-            between('email', free.email);
-            if (post === posts[0]) process.exit(0);   // only need the newest
-        }
 
         console.log(`+ ${slug} — "${post.title}"`);
-        let html = cleanBodyHtml(raw);
+        // beehiiv renders the "Quote" block empty in RSS; recover it from email.
+        const filled = free.rss ? fillQuotesFromEmail(raw, free.email) : raw;
+        let html = cleanBodyHtml(filled);
         html = await localizeImages(html, slug);
 
         fresh.push({
@@ -285,26 +336,30 @@ async function main() {
         return;
     }
 
-    // Prepend newest-first, matching the existing file ordering.
-    fresh.sort((a, b) => b._date - a._date);
     fresh.forEach((n) => delete n._date);
-    const updated = [...fresh, ...existing];
+    // Rebuilt issues replace their existing entry in place; brand-new issues
+    // are prepended newest-first.
+    const added = fresh.filter((n) => !originalSlugs.has(n.slug))
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+    const bySlug = new Map(fresh.map((n) => [n.slug, n]));
+    const replacedCount = fresh.length - added.length;
+    const updated = [...added, ...existing.map((e) => bySlug.get(e.slug) || e)];
 
+    const verb = `${added.length} added, ${replacedCount} rebuilt`;
     if (DRY_RUN) {
-        console.log(`\n[dry-run] Would add ${fresh.length} issue(s):`);
+        console.log(`\n[dry-run] ${verb}:`);
         for (const n of fresh) console.log(`  ${n.slug} — ${n.title}`);
-        console.log('\n[dry-run] Full html_body of newest:\n' + fresh[0].html_body);
-        console.log('\n[dry-run] body (plain text):\n' + fresh[0].body);
+        console.log('\n[dry-run] Full html_body:\n' + fresh[0].html_body);
         return;
     }
 
     fs.writeFileSync(NEWSLETTERS_JSON, JSON.stringify(updated, null, 2) + '\n');
-    console.log(`\n✓ Added ${fresh.length} issue(s) to newsletters.json`);
+    console.log(`\n✓ newsletters.json updated (${verb})`);
 
     if (process.env.GITHUB_OUTPUT) {
         fs.appendFileSync(process.env.GITHUB_OUTPUT, 'changed=true\n');
         const titles = fresh.map((n) => n.title).join('; ');
-        fs.appendFileSync(process.env.GITHUB_OUTPUT, `summary=${fresh.length} issue(s): ${titles}\n`);
+        fs.appendFileSync(process.env.GITHUB_OUTPUT, `summary=${verb} — ${titles}\n`);
     }
 }
 

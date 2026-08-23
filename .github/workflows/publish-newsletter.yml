@@ -18,6 +18,10 @@ on:
         description: 'Preview only — do not commit'
         type: boolean
         default: false
+      reprocess:
+        description: 'Comma-separated slugs to rebuild even if already published (e.g. august-23-2026)'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -41,7 +45,7 @@ jobs:
         env:
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '0' }}
-          DEBUG_DUMP: '1'
+          REPROCESS: ${{ github.event.inputs.reprocess }}
         run: node scripts/sync-newsletters.js
 
       - name: Commit and push
