@@ -2519,7 +2519,7 @@ body:has(.guides-page) .page-hero-inner {
 }
 
 /* ==================== NEWSLETTER PAGE ==================== */
-/* Single-column hero on flat background */
+/* Two-column hero: copy left, "What you'll get" right */
 .newsletter-hero {
     background: var(--bg);
     padding: 120px 0 72px;
@@ -2529,10 +2529,18 @@ body:has(.guides-page) .page-hero-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    align-items: center;
 }
 
 .newsletter-hero-copy {
-    max-width: 560px;
+    max-width: 520px;
+}
+
+.newsletter-hero-aside .newsletter-features {
+    margin-bottom: 0;
 }
 
 .newsletter-page-title {
@@ -3057,7 +3065,7 @@ body:has(.guides-page) .page-hero-inner {
     .guide-card-full .guide-capture-form { grid-column: 1 / -1; }
     .guides-page { padding: 0 24px 60px; }
     .newsletter-hero { padding: 96px 0 56px; }
-    .newsletter-hero-inner { padding: 0 24px; }
+    .newsletter-hero-inner { grid-template-columns: 1fr; column-gap: 0; row-gap: 44px; padding: 0 24px; }
     .newsletter-hero-copy { max-width: none; }
     .newsletter-info { padding: 56px 0; }
     .newsletter-info-inner { padding: 0 24px; }
