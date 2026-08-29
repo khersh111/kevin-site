@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDV2KKNZ71"></script>
@@ -30,48 +30,64 @@
 <body>
     <div id="nav-placeholder"></div>
 
-    <section class="newsletter-page">
-        <div class="newsletter-page-layout">
-            <div class="newsletter-page-image anim-in">
-                <img src="kevin-writing.jpg" alt="Kevin writing and studying">
-            </div>
-            <div class="newsletter-page-content">
+    <section class="newsletter-hero">
+        <div class="newsletter-hero-inner">
+            <div class="newsletter-hero-copy">
                 <span class="page-hero-label anim-in">Newsletter</span>
-                <h1 class="newsletter-page-title anim-in">Move Better,<br><em>Stay Active Longer.</em></h1>
-                <p class="newsletter-page-desc anim-in">Weekly emails with real patient cases, practical injury prevention advice, and training insights you can actually use.</p>
-                
-                <div class="newsletter-features anim-in">
-                    <div class="newsletter-feature">
-                        <span class="feature-icon">①</span>
-                        <div>
-                            <strong>Real Patient Cases</strong>
-                            <p>Learn from actual cases I see in the clinic — what went wrong and how we fixed it.</p>
-                        </div>
-                    </div>
-                    <div class="newsletter-feature">
-                        <span class="feature-icon">②</span>
-                        <div>
-                            <strong>Injury Prevention</strong>
-                            <p>Practical strategies to avoid the injuries that sideline active people.</p>
-                        </div>
-                    </div>
-                    <div class="newsletter-feature">
-                        <span class="feature-icon">③</span>
-                        <div>
-                            <strong>Training Insights</strong>
-                            <p>Evidence-based tips to train smarter — not just harder.</p>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="newsletter-page-title anim-in">Move better,<br><em>stay active longer.</em></h1>
+                <p class="newsletter-page-desc anim-in">One email a week on training for the long game—lowering your odds of injury, and keeping your body strong, mobile, and capable well into your later years. Nothing dramatic, nothing trending, just what actually works.</p>
 
                 <form class="newsletter-form anim-in" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
                     <div class="form-fields">
+                        <input type="text" id="newsletter-first" class="form-input" placeholder="First name" required>
                         <input type="email" id="newsletter-email" class="form-input" placeholder="Email address" required>
                     </div>
                     <button type="submit" class="form-submit" id="newsletter-submit">Subscribe — it's free →</button>
                 </form>
                 <p class="newsletter-note anim-in">No spam. No fear-mongering. Unsubscribe anytime.</p>
             </div>
+            <div class="newsletter-hero-photo anim-in">
+                <img src="/kevin-hero.png" alt="Kevin Hershberger">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHAT YOU'LL GET ==================== -->
+    <section class="newsletter-info">
+        <div class="newsletter-info-inner">
+            <h2 class="newsletter-info-title anim-in">What you'll get</h2>
+            <div class="newsletter-features anim-in">
+                <div class="newsletter-feature">
+                    <span class="feature-icon">①</span>
+                    <div>
+                        <strong>Load vs. capacity</strong>
+                        <p>What you ask of your body has to match what it can handle. I'll show you how to read the gap and close it.</p>
+                    </div>
+                </div>
+                <div class="newsletter-feature">
+                    <span class="feature-icon">②</span>
+                    <div>
+                        <strong>What breaks down active people</strong>
+                        <p>Patterns from the clinic—where strong, healthy people run into trouble, and what turns it around.</p>
+                    </div>
+                </div>
+                <div class="newsletter-feature">
+                    <span class="feature-icon">③</span>
+                    <div>
+                        <strong>Training that holds up</strong>
+                        <p>Practical, evidence-based programming for the long game—so you can train hard without grinding yourself down.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHY ME ==================== -->
+    <section class="newsletter-info newsletter-info--why">
+        <div class="newsletter-info-inner">
+            <h2 class="newsletter-info-title anim-in">Why me</h2>
+            <p class="newsletter-info-text anim-in">I'm a fellowship-trained Doctor of Physical Therapy. Not recycled fitness content—a clinician who spends his days figuring out why active bodies break down, writing to help you make sure yours doesn't.</p>
+            <button type="button" class="form-submit newsletter-info-cta anim-in" onclick="scrollToSubscribe()">Subscribe — it's free →</button>
         </div>
     </section>
 
@@ -187,17 +203,26 @@
 
     initSharedLayout('newsletter');
 
+    function scrollToSubscribe() {
+        const form = document.getElementById('newsletter-form');
+        if (!form) return;
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const email = document.getElementById('newsletter-email');
+        if (email) setTimeout(() => email.focus(), 500);
+    }
+
     async function handleNewsletterSubmit(e) {
         e.preventDefault();
         const btn = document.getElementById('newsletter-submit');
         const email = document.getElementById('newsletter-email').value;
+        const first_name = document.getElementById('newsletter-first').value;
         btn.textContent = 'Subscribing...';
         btn.disabled = true;
         try {
             const res = await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email })
+                body: JSON.stringify({ email, first_name })
             });
             if (res.ok) {
                 btn.textContent = '✓ Success!';

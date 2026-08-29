@@ -2519,24 +2519,39 @@ body:has(.guides-page) .page-hero-inner {
 }
 
 /* ==================== NEWSLETTER PAGE ==================== */
-.newsletter-page {
+/* Two-column hero: flat black edge-to-edge, photo bleeds off the bottom */
+.newsletter-hero {
+    background: var(--bg);
+    padding-top: 120px;
+    overflow: hidden;
+}
+
+.newsletter-hero-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 120px 48px 80px;
-}
-
-.newsletter-page-layout {
+    padding: 0 48px;
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 64px;
-    align-items: center;
+    grid-template-columns: 1.1fr 0.9fr;
+    column-gap: 56px;
+    align-items: end;
 }
 
-.newsletter-page-image img {
+.newsletter-hero-copy {
+    padding-bottom: 28px;
+    max-width: 500px;
+}
+
+.newsletter-hero-photo {
+    align-self: end;
+    justify-self: end;
+}
+
+.newsletter-hero-photo img {
+    display: block;
     width: 100%;
-    border-radius: 4px;
-    aspect-ratio: 4/5;
-    object-fit: cover;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: -1px;
 }
 
 .newsletter-page-title {
@@ -2595,6 +2610,49 @@ body:has(.guides-page) .page-hero-inner {
     color: var(--text);
     opacity: 0.95;
     line-height: 1.5;
+}
+
+/* ==================== NEWSLETTER INFO SECTIONS (ON NEWSLETTER PAGE) ==================== */
+.newsletter-info {
+    border-top: 1px solid var(--border);
+    padding: 72px 0;
+}
+
+.newsletter-info--why {
+    background: var(--bg-alt);
+}
+
+.newsletter-info-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.newsletter-info-title {
+    font-family: var(--font-sans);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 32px;
+}
+
+.newsletter-info .newsletter-features {
+    max-width: 680px;
+    margin-bottom: 0;
+}
+
+.newsletter-info-text {
+    max-width: 680px;
+    font-size: 1.05rem;
+    color: var(--text);
+    opacity: 0.95;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.newsletter-info-cta {
+    width: auto;
+    padding: 16px 32px;
 }
 
 /* ==================== NEWSLETTER ARCHIVE (ON NEWSLETTER PAGE) ==================== */
@@ -3017,10 +3075,13 @@ body:has(.guides-page) .page-hero-inner {
     .guide-card-cta { grid-column: 1 / -1; text-align: center; }
     .guide-card-full .guide-capture-form { grid-column: 1 / -1; }
     .guides-page { padding: 0 24px 60px; }
-    .newsletter-page { padding: 100px 24px 60px; }
-    .newsletter-page-layout { grid-template-columns: 1fr; gap: 40px; }
-    .newsletter-page-image { order: -1; }
-    .newsletter-page-image img { aspect-ratio: 4/3; }
+    .newsletter-hero { padding-top: 96px; }
+    .newsletter-hero-inner { grid-template-columns: 1fr; padding: 0 24px; row-gap: 8px; }
+    .newsletter-hero-photo { order: -1; justify-self: center; align-self: auto; }
+    .newsletter-hero-photo img { max-width: 300px; margin: 0 auto; }
+    .newsletter-hero-copy { align-self: auto; max-width: none; padding-bottom: 48px; }
+    .newsletter-info { padding: 56px 0; }
+    .newsletter-info-inner { padding: 0 24px; }
     .contact-page { padding: 120px 24px 60px; }
     .contact-layout { grid-template-columns: 1fr; gap: 40px; }
     .article-page { padding: 120px 24px 60px; }
