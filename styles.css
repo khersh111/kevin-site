@@ -3766,6 +3766,23 @@ body:has(.guides-page) .page-hero-inner {
     overflow: hidden;
 }
 
+/* Fallback contact line shown below Calendly embeds (see shared.js) */
+.booking-fallback {
+    margin-top: 28px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.booking-fallback a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.booking-fallback a:hover {
+    text-decoration: underline;
+}
+
 /* Calendly inline embed — fills the panel edge to edge, no horizontal scroll.
    min-width override beats the widget's inline 320px so it stays fluid on
    narrow phones; height is set here (with !important) so the breakpoints

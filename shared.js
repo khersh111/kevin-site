@@ -256,6 +256,15 @@ function initSharedLayout(activePage) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // ---- Booking fallback line (rendered below every Calendly embed) ----
+    document.querySelectorAll('.apply-form-wrap').forEach(wrap => {
+        if (wrap.nextElementSibling && wrap.nextElementSibling.classList.contains('booking-fallback')) return;
+        const note = document.createElement('p');
+        note.className = 'booking-fallback';
+        note.innerHTML = 'Can\'t find a time that works? Email me at <a href="mailto:info@khershberger.com">info@khershberger.com</a> and we\'ll set something up.';
+        wrap.insertAdjacentElement('afterend', note);
+    });
+
     // ---- Reading time estimate ----
     const articleBody = document.getElementById('article-body') || document.getElementById('book-body');
     if (articleBody) {
