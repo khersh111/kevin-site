@@ -38,7 +38,6 @@
 
             <form class="newsletter-form anim-in" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
                 <div class="form-fields">
-                    <input type="text" id="newsletter-first" class="form-input" placeholder="First name" required>
                     <input type="email" id="newsletter-email" class="form-input" placeholder="Email address" required>
                 </div>
                 <button type="submit" class="form-submit" id="newsletter-submit">Subscribe — it's free →</button>
@@ -163,14 +162,13 @@
         e.preventDefault();
         const btn = document.getElementById('newsletter-submit');
         const email = document.getElementById('newsletter-email').value;
-        const first_name = document.getElementById('newsletter-first').value;
         btn.textContent = 'Subscribing...';
         btn.disabled = true;
         try {
             const res = await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, first_name })
+                body: JSON.stringify({ email })
             });
             if (res.ok) {
                 btn.textContent = '✓ Success!';

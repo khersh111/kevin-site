@@ -2542,6 +2542,11 @@ body:has(.guides-page) .page-hero-inner {
     margin: 0 auto;
 }
 
+/* Single email field spans full width */
+.newsletter-form .form-fields {
+    grid-template-columns: 1fr;
+}
+
 .newsletter-page-title {
     font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 3rem);

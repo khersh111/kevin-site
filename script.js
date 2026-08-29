@@ -3,7 +3,6 @@ async function handleNewsletterSubmit(e) {
     e.preventDefault();
     const btn = document.getElementById('newsletter-submit');
     const email = document.getElementById('newsletter-email').value;
-    const firstName = document.getElementById('newsletter-first').value;
 
     btn.textContent = 'Subscribing...';
     btn.disabled = true;
@@ -12,7 +11,7 @@ async function handleNewsletterSubmit(e) {
         const res = await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, first_name: firstName })
+            body: JSON.stringify({ email })
         });
 
         if (res.ok) {
