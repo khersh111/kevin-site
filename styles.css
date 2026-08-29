@@ -2524,30 +2524,25 @@ body:has(.guides-page) .page-hero-inner {
     background: var(--bg);
     max-width: 1200px;
     margin: 0 auto;
-    padding: 150px 40px 110px;
-    text-align: left;
+    padding: 150px 40px 120px;
+    text-align: center;
 }
 
-/* Two-column hero matching the homepage rd-hero proportions */
-.newsletter-hero-inner {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 72px;
-    align-items: center;
+/* Eyebrow pinned to the shared container left edge; everything else centered */
+.newsletter-hero .page-hero-label {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .newsletter-hero .newsletter-page-desc {
     max-width: 520px;
-    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .newsletter-hero .newsletter-form {
-    max-width: 440px;
-    margin: 0;
-}
-
-.newsletter-hero-signup .newsletter-note {
-    margin-top: 16px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 /* Single email field spans full width */
@@ -3077,8 +3072,6 @@ body:has(.guides-page) .page-hero-inner {
     .guide-card-full .guide-capture-form { grid-column: 1 / -1; }
     .guides-page { padding: 0 24px 60px; }
     .newsletter-hero { padding: 116px 24px 72px; }
-    .newsletter-hero-inner { grid-template-columns: 1fr; gap: 0; row-gap: 36px; }
-    .newsletter-hero .newsletter-page-desc { margin-bottom: 0; }
     .newsletter-info { padding: 56px 0; }
     .newsletter-info-inner { padding: 0 24px; }
     .contact-page { padding: 120px 24px 60px; }
