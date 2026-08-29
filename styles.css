@@ -585,7 +585,7 @@ img { max-width: 100%; display: block; }
 }
 
 .philosophy-inner {
-    max-width: 1280px;
+    max-width: 1120px;
     margin: 0 auto;
     position: relative;
 }
@@ -1529,14 +1529,14 @@ img { max-width: 100%; display: block; }
 
 /* ==================== PAGE HERO (Shared) ==================== */
 .page-hero {
-    padding: 140px 48px 0;
-    max-width: 1100px;
+    padding: 140px 40px 0;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .page-hero-inner {
     max-width: 760px;
-    margin: 0 auto;
+    margin: 0;
     border-bottom: 1px solid var(--border);
     padding-bottom: 80px;
 }
@@ -1627,9 +1627,9 @@ img { max-width: 100%; display: block; }
 
 /* ==================== ABOUT PAGE ==================== */
 .about-page {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 48px 80px;
+    padding: 60px 40px 80px;
 }
 
 .about-page-layout {
@@ -1709,9 +1709,9 @@ img { max-width: 100%; display: block; }
 
 /* ==================== LISTING PAGE ==================== */
 .listing-page {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 48px 80px;
+    padding: 20px 40px 80px;
 }
 
 /* Filter buttons */
@@ -2443,9 +2443,9 @@ img { max-width: 100%; display: block; }
 
 /* ==================== FREE GUIDES PAGE ==================== */
 .guides-page {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 48px 80px;
+    padding: 0 40px 80px;
 }
 
 /* Tighten gap between hero divider and first guide card */
@@ -2522,24 +2522,32 @@ body:has(.guides-page) .page-hero-inner {
 /* Centered single-column hero */
 .newsletter-hero {
     background: var(--bg);
-    padding: 160px 24px 128px;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px 40px 110px;
+    text-align: left;
 }
 
+/* Two-column hero matching the homepage rd-hero proportions */
 .newsletter-hero-inner {
-    max-width: 640px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 72px;
+    align-items: center;
 }
 
 .newsletter-hero .newsletter-page-desc {
     max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 0;
 }
 
 .newsletter-hero .newsletter-form {
     max-width: 440px;
-    margin: 0 auto;
+    margin: 0;
+}
+
+.newsletter-hero-signup .newsletter-note {
+    margin-top: 16px;
 }
 
 /* Single email field spans full width */
@@ -2656,9 +2664,9 @@ body:has(.guides-page) .page-hero-inner {
 }
 
 .newsletter-archive-inner {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 40px;
 }
 
 .newsletter-archive-header {
@@ -2700,9 +2708,9 @@ body:has(.guides-page) .page-hero-inner {
 
 /* ==================== CONTACT PAGE ==================== */
 .contact-page {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 140px 48px 80px;
+    padding: 140px 40px 80px;
 }
 
 .contact-layout {
@@ -3069,6 +3077,8 @@ body:has(.guides-page) .page-hero-inner {
     .guide-card-full .guide-capture-form { grid-column: 1 / -1; }
     .guides-page { padding: 0 24px 60px; }
     .newsletter-hero { padding: 116px 24px 72px; }
+    .newsletter-hero-inner { grid-template-columns: 1fr; gap: 0; row-gap: 36px; }
+    .newsletter-hero .newsletter-page-desc { margin-bottom: 0; }
     .newsletter-info { padding: 56px 0; }
     .newsletter-info-inner { padding: 0 24px; }
     .contact-page { padding: 120px 24px 60px; }
@@ -3592,7 +3602,7 @@ body:has(.guides-page) .page-hero-inner {
 }
 
 .content-section-inner {
-    max-width: 760px;
+    max-width: 1120px;
     margin: 0 auto;
 }
 
@@ -3611,8 +3621,13 @@ body:has(.guides-page) .page-hero-inner {
 }
 
 .content-section-inner--wide {
-    max-width: 1100px;
+    max-width: 1120px;
 }
+
+/* Keep prose readable and left-anchored within the shared-width container */
+.content-section-title { max-width: 820px; }
+.content-section-lead,
+.content-section-body { max-width: 720px; }
 
 .content-section-title {
     font-family: var(--font-sans);

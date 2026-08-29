@@ -580,7 +580,7 @@
 }
 
 @media (max-width: 640px) {
-    .rd-wrap { padding: 0 22px; }
+    .rd-wrap { padding: 0 24px; }
     .rd-hero { padding: 120px 0 70px; }
     .rd-hero-cta { flex-direction: column; align-items: stretch; }
     .rd-hero-cta .rd-btn { width: 100%; }
