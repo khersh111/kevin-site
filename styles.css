@@ -2532,17 +2532,27 @@ body:has(.guides-page) .page-hero-inner {
 .newsletter-hero .page-hero-label {
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 40px;
+}
+
+.newsletter-hero .newsletter-page-title {
+    margin-bottom: 32px;
 }
 
 .newsletter-hero .newsletter-page-desc {
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 56px;
 }
 
 .newsletter-hero .newsletter-form {
     max-width: 400px;
     margin: 0 auto;
+}
+
+.newsletter-hero .newsletter-note {
+    margin-top: 28px;
 }
 
 /* Single email field spans full width */
@@ -2552,7 +2562,7 @@ body:has(.guides-page) .page-hero-inner {
 
 .newsletter-page-title {
     font-family: var(--font-sans);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.5rem, 5.5vw, 4rem);
     font-weight: 700;
     letter-spacing: -1.5px;
     line-height: 1.1;
