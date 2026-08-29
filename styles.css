@@ -2519,28 +2519,27 @@ body:has(.guides-page) .page-hero-inner {
 }
 
 /* ==================== NEWSLETTER PAGE ==================== */
-/* Two-column hero: copy left, "What you'll get" right */
+/* Centered single-column hero */
 .newsletter-hero {
     background: var(--bg);
-    padding: 120px 0 72px;
+    padding: 160px 24px 128px;
+    text-align: center;
 }
 
 .newsletter-hero-inner {
-    max-width: 1100px;
+    max-width: 640px;
     margin: 0 auto;
-    padding: 0 48px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 64px;
-    align-items: center;
 }
 
-.newsletter-hero-copy {
+.newsletter-hero .newsletter-page-desc {
     max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.newsletter-hero-aside .newsletter-features {
-    margin-bottom: 0;
+.newsletter-hero .newsletter-form {
+    max-width: 440px;
+    margin: 0 auto;
 }
 
 .newsletter-page-title {
@@ -3064,9 +3063,7 @@ body:has(.guides-page) .page-hero-inner {
     .guide-card-cta { grid-column: 1 / -1; text-align: center; }
     .guide-card-full .guide-capture-form { grid-column: 1 / -1; }
     .guides-page { padding: 0 24px 60px; }
-    .newsletter-hero { padding: 96px 0 56px; }
-    .newsletter-hero-inner { grid-template-columns: 1fr; column-gap: 0; row-gap: 44px; padding: 0 24px; }
-    .newsletter-hero-copy { max-width: none; }
+    .newsletter-hero { padding: 116px 24px 72px; }
     .newsletter-info { padding: 56px 0; }
     .newsletter-info-inner { padding: 0 24px; }
     .contact-page { padding: 120px 24px 60px; }

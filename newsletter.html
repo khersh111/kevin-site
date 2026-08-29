@@ -32,56 +32,18 @@
 
     <section class="newsletter-hero">
         <div class="newsletter-hero-inner">
-            <div class="newsletter-hero-copy">
-                <span class="page-hero-label anim-in">Newsletter</span>
-                <h1 class="newsletter-page-title anim-in">Move better,<br><em>stay active longer.</em></h1>
-                <p class="newsletter-page-desc anim-in">One email a week on training for the long game—lowering your odds of injury, and keeping your body strong, mobile, and capable well into your later years. Nothing dramatic, nothing trending, just what actually works.</p>
+            <span class="page-hero-label anim-in">Newsletter</span>
+            <h1 class="newsletter-page-title anim-in">Move better,<br><em>stay active longer.</em></h1>
+            <p class="newsletter-page-desc anim-in">One email a week on training for the long game—lowering your odds of injury, and keeping your body strong, mobile, and capable well into your later years. Nothing dramatic, nothing trending, just what actually works.</p>
 
-                <form class="newsletter-form anim-in" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
-                    <div class="form-fields">
-                        <input type="text" id="newsletter-first" class="form-input" placeholder="First name" required>
-                        <input type="email" id="newsletter-email" class="form-input" placeholder="Email address" required>
-                    </div>
-                    <button type="submit" class="form-submit" id="newsletter-submit">Subscribe — it's free →</button>
-                </form>
-                <p class="newsletter-note anim-in">No spam. No fear-mongering. Unsubscribe anytime.</p>
-            </div>
-
-            <aside class="newsletter-hero-aside">
-                <h2 class="newsletter-info-title anim-in">What you'll get</h2>
-                <div class="newsletter-features anim-in">
-                    <div class="newsletter-feature">
-                        <span class="feature-icon">①</span>
-                        <div>
-                            <strong>Load vs. capacity</strong>
-                            <p>What you ask of your body has to match what it can handle. I'll show you how to read the gap and close it.</p>
-                        </div>
-                    </div>
-                    <div class="newsletter-feature">
-                        <span class="feature-icon">②</span>
-                        <div>
-                            <strong>What breaks down active people</strong>
-                            <p>Patterns from the clinic—where strong, healthy people run into trouble, and what turns it around.</p>
-                        </div>
-                    </div>
-                    <div class="newsletter-feature">
-                        <span class="feature-icon">③</span>
-                        <div>
-                            <strong>Training that holds up</strong>
-                            <p>Practical, evidence-based programming for the long game—so you can train hard without grinding yourself down.</p>
-                        </div>
-                    </div>
+            <form class="newsletter-form anim-in" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                <div class="form-fields">
+                    <input type="text" id="newsletter-first" class="form-input" placeholder="First name" required>
+                    <input type="email" id="newsletter-email" class="form-input" placeholder="Email address" required>
                 </div>
-            </aside>
-        </div>
-    </section>
-
-    <!-- ==================== WHY ME ==================== -->
-    <section class="newsletter-info newsletter-info--why">
-        <div class="newsletter-info-inner">
-            <h2 class="newsletter-info-title anim-in">Why me</h2>
-            <p class="newsletter-info-text anim-in">I'm a fellowship-trained Doctor of Physical Therapy. Not recycled fitness content—a clinician who spends his days figuring out why active bodies break down, writing to help you make sure yours doesn't.</p>
-            <button type="button" class="form-submit newsletter-info-cta anim-in" onclick="scrollToSubscribe()">Subscribe — it's free →</button>
+                <button type="submit" class="form-submit" id="newsletter-submit">Subscribe — it's free →</button>
+            </form>
+            <p class="newsletter-note anim-in">No spam. No fear-mongering. Unsubscribe anytime.</p>
         </div>
     </section>
 
@@ -196,14 +158,6 @@
         });
 
     initSharedLayout('newsletter');
-
-    function scrollToSubscribe() {
-        const form = document.getElementById('newsletter-form');
-        if (!form) return;
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        const email = document.getElementById('newsletter-email');
-        if (email) setTimeout(() => email.focus(), 500);
-    }
 
     async function handleNewsletterSubmit(e) {
         e.preventDefault();
