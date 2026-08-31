@@ -26,7 +26,8 @@ function getNavHTML(activePage) {
                 </div>
                 <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}">Newsletter</a>
                 <a href="/blueprint-info" class="nav-link ${activePage === 'programs' ? 'active' : ''}">Programs</a>
-                <a href="/coaching" class="nav-link ${activePage === 'coaching' ? 'active' : ''}">Coaching</a>
+                <!-- ARCHIVED: coaching page taken down 2026-08-31 -->
+                <!-- <a href="/coaching" class="nav-link ${activePage === 'coaching' ? 'active' : ''}">Coaching</a> -->
                 <a href="/contact" class="nav-cta mobile-only">Contact →</a>
             </div>
             <div class="nav-actions">
