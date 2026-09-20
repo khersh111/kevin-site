@@ -1,17 +1,26 @@
 name: Publish newsletter
 
 # Every Sunday, pull any newly-sent beehiiv issue and commit it to the site.
-# You send at 7am Central; these run comfortably after that. The job is
-# idempotent, so the second run each Sunday is just a safety net if the first
-# ran before the issue was sent — it won't create duplicates.
+# You send at 7am Central; these all run after that. The job is idempotent —
+# each run skips issues already on the site — so the extra runs never create
+# duplicates. We schedule several because GitHub Actions routinely delays or
+# silently drops individual scheduled runs under load; spreading attempts
+# across the day means one dropped run no longer means a missed publish.
 #
 # One-time setup: add your beehiiv API key as a repo secret named
 # BEEHIIV_API_KEY  (Settings -> Secrets and variables -> Actions -> New secret).
 
 on:
   schedule:
+    # Times are UTC. 7am Central send = 12:00 UTC (CDT) / 13:00 UTC (CST),
+    # so the first attempt sits ~1-2h after you send, then retries hourly-ish
+    # through early afternoon Central. Any single run publishes the issue; the
+    # rest are no-ops once it's live.
+    - cron: '0 14 * * 0'   # 14:00 UTC Sun = 8am CST / 9am CDT
     - cron: '0 15 * * 0'   # 15:00 UTC Sun = 9am CST / 10am CDT
-    - cron: '0 19 * * 0'   # 19:00 UTC Sun = 1pm CST / 2pm CDT (safety net)
+    - cron: '0 17 * * 0'   # 17:00 UTC Sun = 11am CST / 12pm CDT
+    - cron: '0 19 * * 0'   # 19:00 UTC Sun = 1pm CST / 2pm CDT
+    - cron: '0 21 * * 0'   # 21:00 UTC Sun = 3pm CST / 4pm CDT (final safety net)
   workflow_dispatch:
     inputs:
       dry_run:
