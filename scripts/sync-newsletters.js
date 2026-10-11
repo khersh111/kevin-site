@@ -165,9 +165,11 @@ function cleanBodyHtml(rawHtml) {
     html = html.replace(/<h([34])>[\s\S]*?<\/h\1>\s*(?=<h[34]|$)/gi, '');
 
     // Drop the "Another way I can help you" CTA block Kevin appends in
-    // beehiiv — that's a newsletter-only pitch, not site content. It's
-    // always the final section, so strip from its paragraph to the end.
-    html = html.replace(/<p>(?:<strong>)?Another way I can help you:?(?:<\/strong>)?<\/p>[\s\S]*$/i, '');
+    // beehiiv — that's a newsletter-only pitch, not site content. beehiiv
+    // has rendered its lead-in as a <p> or an <h3>, with or without
+    // <strong>/a trailing colon, so match any of those. It's always the
+    // final section, so strip from its lead-in to the end.
+    html = html.replace(/<(p|h3|h4)>(?:<strong>)?Another way I can help you:?(?:<\/strong>)?<\/\1>[\s\S]*$/i, '');
 
     // Trim stray leading/trailing line breaks.
     html = html.replace(/^(?:\s*<br\s*\/?>)+/i, '').replace(/(?:<br\s*\/?>\s*)+$/i, '');
