@@ -164,6 +164,11 @@ function cleanBodyHtml(rawHtml) {
     // next heading or the end (e.g. a "Quote" section left empty in beehiiv).
     html = html.replace(/<h([34])>[\s\S]*?<\/h\1>\s*(?=<h[34]|$)/gi, '');
 
+    // Drop the "Another way I can help you" CTA block Kevin appends in
+    // beehiiv — that's a newsletter-only pitch, not site content. It's
+    // always the final section, so strip from its paragraph to the end.
+    html = html.replace(/<p>(?:<strong>)?Another way I can help you:?(?:<\/strong>)?<\/p>[\s\S]*$/i, '');
+
     // Trim stray leading/trailing line breaks.
     html = html.replace(/^(?:\s*<br\s*\/?>)+/i, '').replace(/(?:<br\s*\/?>\s*)+$/i, '');
     return html.trim();
