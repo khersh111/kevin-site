@@ -57,19 +57,23 @@ export default async function handler(req, res) {
       return res.status(200).json({ received: true }); // Return 200 so Stripe doesn't retry
     }
 
-    // Generate a secure random token
-    const token = randomBytes(32).toString('hex');
+    // Reuse an existing token for this email (e.g. on a Stripe retry), otherwise generate a new one
+    let token = await redis.get(`email:${email}`);
+    if (!token) {
+      token = randomBytes(32).toString('hex');
 
-    // Store token → email mapping (no expiry — persistent access)
-    await redis.set(`token:${token}`, JSON.stringify({ email, createdAt: new Date().toISOString() }));
+      // Store token → email mapping (no expiry — persistent access)
+      await redis.set(`token:${token}`, JSON.stringify({ email, createdAt: new Date().toISOString() }));
 
-    // Store email → token mapping (so we can look up by email if needed)
-    await redis.set(`email:${email}`, token);
+      // Store email → token mapping (so we can look up by email if needed)
+      await redis.set(`email:${email}`, token);
+    }
 
     // Send access email via Resend
     const accessLink = `${process.env.SITE_URL}/blueprint?token=${token}`;
 
-    await resend.emails.send({
+    // Resend returns { error } instead of throwing — check it, and return 500 so Stripe retries
+    const { error: sendError } = await resend.emails.send({
       from: 'Kevin <info@khershberger.com>',
       to: email,
       subject: 'Your Blueprint access link',
@@ -91,6 +95,11 @@ export default async function handler(req, res) {
         </div>
       `,
     });
+
+    if (sendError) {
+      console.error(`Failed to send access email to ${email} (session ${session.id}):`, sendError);
+      return res.status(500).json({ error: 'Failed to send access email' });
+    }
 
     // Mark this event as processed (keep for 30 days)
     await redis.set(`processed:${event.id}`, '1', { ex: 60 * 60 * 24 * 30 });
