@@ -26,5 +26,11 @@
       "source": "/book-note-:slug([a-z0-9].*)",
       "destination": "/book-note"
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/keepalive",
+      "schedule": "0 14 * * *"
+    }
   ]
 }
