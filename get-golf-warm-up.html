@@ -91,7 +91,7 @@
             try { data = await res.json(); } catch {}
             if (res.ok) {
                 try { window.va('event', { name: 'Golf warm-up signup succeeded', data: { page: 'get-golf-warm-up' } }); } catch {}
-                window.location.href = '/golf-warm-up-phone';
+                window.location.href = '/guide-golf-warm-up';
                 return;
             }
             errorEl.textContent = data.message || 'Something went wrong. Please try again in a minute.';
