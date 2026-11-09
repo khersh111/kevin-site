@@ -43,6 +43,24 @@
         <div class="guide-card-full anim-in">
             <div class="guide-card-number">01</div>
             <div class="guide-card-content">
+                <h2>The Golfer’s Warm-Up</h2>
+                <p>Seven dynamic drills to do before your first tee shot, then a progressive range routine. Printable PDF plus a phone version for the course.</p>
+                <div class="guide-card-meta">
+                    <span class="guide-tag">7 drills</span>
+                    <span class="guide-tag">Golf</span>
+                    <span class="guide-tag">Free PDF</span>
+                </div>
+            </div>
+            <form class="guide-capture-form" onsubmit="handleGuideSubmit(event, this)" data-guide-url="/golf-warm-up-phone" data-utm-source="golf-warm-up">
+                <input type="email" class="form-input guide-email" placeholder="Email address" required>
+                <button type="submit" class="form-submit guide-capture-btn">Get Free Guide →</button>
+                <p class="guide-capture-note">Free. No spam. Unsubscribe anytime.</p>
+            </form>
+        </div>
+
+        <div class="guide-card-full anim-in">
+            <div class="guide-card-number">02</div>
+            <div class="guide-card-content">
                 <h2>Longevity Lift Library</h2>
                 <p>10 exercises to stay active and healthy for life. Build a foundation of strength that lasts decades.</p>
                 <div class="guide-card-meta">
@@ -59,7 +77,7 @@
         </div>
 
         <div class="guide-card-full anim-in">
-            <div class="guide-card-number">02</div>
+            <div class="guide-card-number">03</div>
             <div class="guide-card-content">
                 <h2>The Movement Screen</h2>
                 <p>7 evidence-based movement tests with corrective exercises for each. Find and fix your weak links before they become injuries.</p>
@@ -77,7 +95,7 @@
         </div>
 
         <div class="guide-card-full anim-in">
-            <div class="guide-card-number">03</div>
+            <div class="guide-card-number">04</div>
             <div class="guide-card-content">
                 <h2>Total-Body Mobility</h2>
                 <p>7 exercises to improve total-body mobility. Move freely without stiffness or restriction holding you back.</p>
@@ -95,7 +113,7 @@
         </div>
 
         <div class="guide-card-full anim-in">
-            <div class="guide-card-number">04</div>
+            <div class="guide-card-number">05</div>
             <div class="guide-card-content">
                 <h2>5 Tips to Improve Your Posture</h2>
                 <p>Simple tips and exercises to improve your posture even if you work a desk job.</p>
@@ -111,7 +129,6 @@
                 <p class="guide-capture-note">Free. No spam. Unsubscribe anytime.</p>
             </form>
         </div>
-
     </section>
 
     <div id="footer-placeholder"></div>
@@ -130,7 +147,7 @@
             const res = await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email })
+                body: JSON.stringify({ email, utm_source: form.dataset.utmSource })
             });
             if (res.ok) {
                 // Clear form and show success link inside the same container
