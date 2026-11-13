@@ -103,7 +103,10 @@
 
   /* ---------- what it is ---------- */
   .g-points{ list-style:none; margin-top:30px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .g-points li{ border-top:3px solid var(--ink); padding-top:16px; font-size:18px; font-weight:700; letter-spacing:-.01em; line-height:1.35; }
+  .g-points li{ border-top:3px solid var(--ink); padding-top:16px; }
+  .g-points__n{ display:block; font-size:13px; font-weight:700; letter-spacing:.16em; color:var(--fine); }
+  .g-points h3{ margin-top:10px; font-size:20px; font-weight:800; letter-spacing:-.015em; line-height:1.25; }
+  .g-points p{ margin-top:8px; font-size:16px; line-height:1.55; color:var(--fine); text-wrap:pretty; }
 
   /* ---------- about ---------- */
   .g-about{ display:grid; grid-template-columns:260px 1fr; gap:48px; align-items:center; }
@@ -118,7 +121,7 @@
     .g-sec{ padding:56px 0; }
     .g-hero{ padding:116px 0 52px; }
     .g-hero__grid, .g-about{ grid-template-columns:1fr; gap:30px; }
-    .g-points{ grid-template-columns:1fr; gap:18px; }
+    .g-points{ grid-template-columns:1fr; gap:26px; }
     .g-about__photo{ width:100%; max-width:340px; }
   }
 </style>
@@ -183,11 +186,23 @@
     <div class="g-wrap">
       <span class="g-eyebrow">What it is</span>
       <h2 class="g-h2" id="g-what">Coaching that looks at both.</h2>
-      <ul class="g-points">
-        <li>Fully remote</li>
-        <li>A program built around your body and your swing</li>
-        <li>Led by an orthopedic PT who played college golf</li>
-      </ul>
+      <ol class="g-points">
+        <li>
+          <span class="g-points__n" aria-hidden="true">01</span>
+          <h3>Fully remote</h3>
+          <p>Film your movement and swing from anywhere.</p>
+        </li>
+        <li>
+          <span class="g-points__n" aria-hidden="true">02</span>
+          <h3>Built around you</h3>
+          <p>Your program targets what’s actually limiting your swing.</p>
+        </li>
+        <li>
+          <span class="g-points__n" aria-hidden="true">03</span>
+          <h3>Body and swing</h3>
+          <p>An orthopedic PT who played college golf, so neither gets missed.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
