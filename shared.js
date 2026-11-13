@@ -24,6 +24,7 @@ function getNavHTML(activePage) {
                         <a href="/book-notes" class="nav-link nav-link-sub ${activePage === 'booknotes' ? 'active' : ''}">Book Notes</a>
                     </div>
                 </div>
+                <a href="/golf" class="nav-link ${activePage === 'golf' ? 'active' : ''}">Golf</a>
                 <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}">Newsletter</a>
                 <a href="/blueprint-info" class="nav-link ${activePage === 'programs' ? 'active' : ''}">Programs</a>
                 <!-- ARCHIVED: coaching page taken down 2026-08-31 -->
@@ -60,6 +61,7 @@ function getFooterHTML() {
                 <div class="footer-col">
                     <span class="footer-col-label">Site</span>
                     <a href="/about">About</a>
+                    <a href="/golf">Golf</a>
                     <a href="/free-resources">Free Resources</a>
                     <a href="/newsletter">Newsletter</a>
                     <a href="/blueprint-info">Programs</a>

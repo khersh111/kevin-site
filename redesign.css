@@ -758,3 +758,42 @@
 
 /* ---- Legal / 404 / search: consistent confident headings ---- */
 .legal-page h1, .search-page h1 { letter-spacing: -1.5px; }
+
+/* ---------- golf band (homepage, links to /golf) ---------- */
+.rd-golf-band {
+    background: #1A1A1A;
+    color: #fff;
+    padding: 44px 0;
+}
+.rd-golf-band-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+.rd-golf-band .rd-eyebrow { color: #4FB4E6; }
+.rd-golf-band .rd-eyebrow::before { background: #4FB4E6; }
+.rd-golf-band-title {
+    font-family: var(--font-sans);
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-top: 12px;
+}
+.rd-golf-band .rd-accent-italic { color: #4FB4E6; }
+.rd-golf-band-desc {
+    margin-top: 10px;
+    max-width: 52ch;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.rd-golf-band-btn { background: #4FB4E6; color: #1A1A1A; flex: none; }
+.rd-golf-band-btn:hover { background: #6CC2EC; }
+.rd-golf-band-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+@media (max-width: 760px) {
+    .rd-golf-band { padding: 36px 0; }
+    .rd-golf-band-inner { flex-direction: column; align-items: flex-start; gap: 22px; }
+    .rd-golf-band-btn { width: 100%; }
+}
