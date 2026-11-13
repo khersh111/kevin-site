@@ -114,13 +114,12 @@
   .g-about__photo img{ width:100%; height:100%; object-fit:cover; }
 
 
-  .g-disclaimer{ padding:26px 0 34px; border-top:1px solid var(--hair); }
-  .g-disclaimer p{ font-size:13px; line-height:1.6; color:var(--fine); }
+  .g-final{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
 
   @media (max-width:820px){
     .g-sec{ padding:56px 0; }
     .g-hero{ padding:116px 0 52px; }
-    .g-hero__grid, .g-about{ grid-template-columns:1fr; gap:30px; }
+    .g-hero__grid, .g-about, .g-final{ grid-template-columns:1fr; gap:30px; }
     .g-points{ grid-template-columns:1fr; gap:26px; }
     .g-about__photo{ width:100%; max-width:340px; }
   }
@@ -132,7 +131,7 @@
 
   <main id="main">
 
-  <!-- Waitlist form (in the hero); posts to /api/golf-waitlist. -->
+  <!-- Waitlist form. Two copies (hero + bottom); both post to /api/golf-waitlist. -->
   <template id="g-form-tpl">
     <form class="g-form" novalidate>
       <div class="g-names">
@@ -221,12 +220,17 @@
     </div>
   </section>
 
-  <!-- ============ 5. DISCLAIMER ============ -->
-  <div class="g-disclaimer">
-    <div class="g-wrap">
-      <p>Education and training only. Not medical advice or treatment.</p>
+  <!-- ============ 5. FINAL SIGNUP ============ -->
+  <section class="g-sec" aria-labelledby="g-final">
+    <div class="g-wrap g-final">
+      <div>
+        <span class="g-eyebrow">The waitlist</span>
+        <h2 class="g-h2" id="g-final">Want to work with me?</h2>
+        <p class="g-body g-muted">Join the waitlist and I’ll be in touch when a spot opens.</p>
+      </div>
+      <div class="g-card" data-golf-form="final"></div>
     </div>
-  </div>
+  </section>
 
   </main>
 
