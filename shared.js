@@ -24,7 +24,7 @@ function getNavHTML(activePage) {
                         <a href="/book-notes" class="nav-link nav-link-sub ${activePage === 'booknotes' ? 'active' : ''}">Book Notes</a>
                     </div>
                 </div>
-                <a href="/golf" class="nav-link ${activePage === 'golf' ? 'active' : ''}">Golf</a>
+                <a href="/golf" class="nav-link ${activePage === 'golf' ? 'active' : ''}">Golf Coaching</a>
                 <a href="/newsletter" class="nav-link ${activePage === 'newsletter' ? 'active' : ''}">Newsletter</a>
                 <a href="/blueprint-info" class="nav-link ${activePage === 'programs' ? 'active' : ''}">Programs</a>
                 <!-- ARCHIVED: coaching page taken down 2026-08-31 -->

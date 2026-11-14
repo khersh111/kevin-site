@@ -3820,3 +3820,13 @@ body:has(.guides-page) .page-hero-inner {
         height: 505px !important;
     }
 }
+
+/* Keep the nav on one line between the phone menu (<=900px) and wide screens,
+   now that it includes the longer "Golf Coaching" link. */
+@media (min-width: 901px) and (max-width: 1100px) {
+    .nav-inner { padding: 0 24px; }
+    .nav-links { gap: 2px; }
+    .nav-link, .nav-dropdown-trigger { padding-left: 10px; padding-right: 10px; white-space: nowrap; }
+    .nav-cta { padding: 8px 14px; white-space: nowrap; }
+    .nav-search-form { width: 150px; }
+}
