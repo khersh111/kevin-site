@@ -75,8 +75,10 @@
   .g-hero__grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:start; }
   .g-hero h1{ margin-top:18px; font-weight:800; font-size:clamp(44px, 12vw, 72px); line-height:1.02; letter-spacing:-.03em; }
   .g-hero__sub{ margin-top:22px; font-size:clamp(17px, 4.4vw, 20px); line-height:1.5; font-weight:500; max-width:38ch; text-wrap:pretty; }
-  .g-hero__by{ margin-top:22px; font-size:14px; color:var(--fine); max-width:46ch; }
-  .g-hero__by b{ color:var(--ink); font-weight:700; }
+  .g-hero__by{ margin-top:26px; display:flex; align-items:center; gap:14px; max-width:46ch; }
+  .g-hero__by img{ flex:none; width:64px; height:64px; border-radius:50%; object-fit:cover; }
+  .g-hero__by p{ font-size:14.5px; line-height:1.45; color:var(--fine); }
+  .g-hero__by b{ display:block; color:var(--ink); font-weight:700; font-size:15.5px; }
 
   /* ---------- form ---------- */
   .g-card{ border:1px solid var(--hair); border-radius:18px; padding:26px 22px; background:var(--paper); box-shadow:0 18px 40px -28px rgba(26,26,26,.35); }
@@ -165,6 +167,10 @@
         <span class="g-eyebrow">Golf coaching</span>
         <h1 id="g-title">Your body shouldn’t be your <span class="g-accent">handicap.</span></h1>
         <p class="g-hero__sub">Remote coaching for golfers whose body is costing them distance, rounds and their best golf, from an orthopedic PT and former college golfer.</p>
+        <div class="g-hero__by">
+          <img src="images/golf/kevin-headshot-square.jpg" alt="Dr. Kevin Hershberger" width="64" height="64" decoding="async">
+          <p><b>Dr. Kevin Hershberger, DPT, FAAOMPT</b>Orthopedic physical therapist and former college golfer</p>
+        </div>
       </div>
       <div class="g-card" data-golf-form="hero"></div>
     </div>
