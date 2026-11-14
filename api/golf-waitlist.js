@@ -133,7 +133,7 @@ async function sendWelcomeEmail({ email, firstName, limiter }) {
             from: 'Kevin <info@khershberger.com>',
             to: email,
             replyTo: 'info@khershberger.com',
-            subject: "You're on the golf waitlist",
+            subject: "You're on the wait list!",
             html,
             text
         });
