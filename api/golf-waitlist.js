@@ -1,3 +1,5 @@
+import { Resend } from 'resend';
+
 // Golf coaching waitlist (/golf).
 // Adds the person to beehiiv (or finds them if they're already a subscriber),
 // tags them "golf-waitlist", and saves their answer in beehiiv custom fields so
@@ -8,6 +10,12 @@
 //
 // Required environment variables (same as api/subscribe.js):
 //   BEEHIIV_API_KEY, BEEHIIV_PUBLICATION_ID
+// Optional:
+//   RESEND_API_KEY  sends the golf welcome email (below). If it's missing, the
+//                   signup still works and the email is skipped with a log line.
+//
+// Golf signups get the golf welcome email from Resend instead of beehiiv's
+// general newsletter welcome, so they receive one relevant email, not two.
 //
 // beehiiv setup (Settings → Custom fields), names must match exactly:
 //   "First Name"   text
@@ -23,7 +31,6 @@
 // Responses:
 //   200 { ok: true, status: 'joined' | 'already_subscribed' }
 //   400 { error: 'invalid_email' | 'missing_name', message }
-
 //   500 { error: 'not_configured', message }
 //   502 { error: 'unavailable', message }
 
@@ -56,6 +63,85 @@ async function beehiiv(path, apiKey, init = {}) {
         },
         signal: AbortSignal.timeout(TIMEOUT_MS)
     });
+}
+
+const WARM_UP_PDF = 'https://www.khershberger.com/downloads/golfers-warm-up.pdf';
+
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Golf welcome email. The "You mentioned" line only appears if they answered the question.
+async function sendWelcomeEmail({ email, firstName, limiter }) {
+    const resendKey = process.env.RESEND_API_KEY;
+    if (!resendKey) {
+        console.warn('golf-waitlist: RESEND_API_KEY not set, skipping welcome email');
+        return;
+    }
+
+    const name = escapeHtml(firstName);
+    const answer = limiter ? escapeHtml(limiter) : '';
+    const p = 'margin:0 0 16px;';
+
+    const html = `
+<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#1A1A1A;max-width:560px;">
+  <p style="${p}">Hi ${name},</p>
+  <p style="${p}">Thanks for joining the waitlist. I'm Kevin, an orthopedic physical therapist and former college golfer. I'm starting to coach a small number of golfers remotely, and I'll email you as soon as a spot opens.</p>
+  ${answer ? `<p style="${p}">You mentioned: &ldquo;${answer}&rdquo;</p>` : ''}
+  <p style="margin:0 0 8px;">I'd like to hear a bit more. Just reply to this email and tell me:</p>
+  <ul style="margin:0 0 16px;padding-left:22px;">
+    <li>How often you play</li>
+    <li>Your handicap or usual score</li>
+    <li>How long that's been holding your game back</li>
+  </ul>
+  <p style="${p}">I read every reply.</p>
+  <p style="${p}">While you wait, here's my free Golfer's Warm-Up, seven exercises to do before the first tee: <a href="${WARM_UP_PDF}" style="color:#1A1A1A;font-weight:600;">download the PDF</a>.</p>
+  <p style="margin:24px 0 0;">Kevin<br>
+  <span style="color:#5F6670;">Dr. Kevin Hershberger, DPT, FAAOMPT<br>
+  <a href="https://www.khershberger.com" style="color:#5F6670;">khershberger.com</a></span></p>
+</div>`;
+
+    const text = [
+        `Hi ${firstName},`,
+        '',
+        "Thanks for joining the waitlist. I'm Kevin, an orthopedic physical therapist and former college golfer. I'm starting to coach a small number of golfers remotely, and I'll email you as soon as a spot opens.",
+        '',
+        ...(limiter ? [`You mentioned: "${limiter}"`, ''] : []),
+        "I'd like to hear a bit more. Just reply to this email and tell me:",
+        '- How often you play',
+        '- Your handicap or usual score',
+        "- How long that's been holding your game back",
+        '',
+        'I read every reply.',
+        '',
+        "While you wait, here's my free Golfer's Warm-Up, seven exercises to do before the first tee:",
+        WARM_UP_PDF,
+        '',
+        'Kevin',
+        'Dr. Kevin Hershberger, DPT, FAAOMPT',
+        'khershberger.com'
+    ].join('\n');
+
+    try {
+        const resend = new Resend(resendKey);
+        const { error } = await resend.emails.send({
+            from: 'Kevin <info@khershberger.com>',
+            to: email,
+            replyTo: 'info@khershberger.com',
+            subject: "You're on the golf waitlist",
+            html,
+            text
+        });
+        // A failed welcome email shouldn't fail the signup; the person is already on the list.
+        if (error) console.error('golf-waitlist: welcome email failed:', JSON.stringify(error));
+    } catch (err) {
+        console.error('golf-waitlist: welcome email failed:', err);
+    }
 }
 
 function logWarnings(step, body) {
@@ -142,7 +228,7 @@ export default async function handler(req, res) {
                 body: JSON.stringify({
                     email,
                     reactivate_existing: reactivating,
-                    send_welcome_email: !reactivating,
+                    send_welcome_email: false, // they get the golf welcome email instead
                     utm_source: cleanUtm(body.utm_source, 'website'),
                     utm_medium: cleanUtm(body.utm_medium, 'website'),
                     utm_campaign: cleanUtm(body.utm_campaign, 'golf-waitlist'),
@@ -180,6 +266,9 @@ export default async function handler(req, res) {
             console.error(`golf-waitlist: beehiiv tag failed with ${tag.status}: ${await tag.text()}`);
             return unavailable(res);
         }
+
+        // 4. Golf welcome email.
+        await sendWelcomeEmail({ email, firstName, limiter });
 
         return res.status(200).json({ ok: true, status });
     } catch (err) {
