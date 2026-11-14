@@ -126,8 +126,27 @@
     .g-about__photo{ width:100%; max-width:340px; }
   }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1139889371843490');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
 </head>
 <body class="golf-page">
+<!-- Meta Pixel Code (noscript) -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1139889371843490&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code (noscript) -->
 
   <div id="nav-placeholder"></div>
 
@@ -308,6 +327,10 @@
                   utm_campaign: utm.utm_campaign || 'none'
                 } });
               } catch (e3) {}
+              // Meta Pixel: count a Lead only after the signup is saved.
+              try {
+                if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'golf_waitlist' });
+              } catch (e5) {}
               // Show the confirmation in both form slots.
               document.querySelectorAll('[data-golf-form]').forEach(function (s) {
                 s.innerHTML = '<div class="g-done" tabindex="-1" role="status"><h3>You’re on the list.</h3><p>I’ll be in touch when a spot opens.</p></div>';
