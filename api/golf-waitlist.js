@@ -14,8 +14,9 @@ import { Resend } from 'resend';
 //   RESEND_API_KEY  sends the golf welcome email (below). If it's missing, the
 //                   signup still works and the email is skipped with a log line.
 //
-// Golf signups get the golf welcome email from Resend instead of beehiiv's
-// general newsletter welcome, so they receive one relevant email, not two.
+// Golf signups don't get beehiiv's general newsletter welcome. The golf welcome
+// email from Resend is built below but paused (SEND_WELCOME_EMAIL), so right now
+// signups get no automatic email and Kevin follows up personally.
 //
 // beehiiv setup (Settings → Custom fields), names must match exactly:
 //   "First Name"   text
@@ -64,6 +65,10 @@ async function beehiiv(path, apiKey, init = {}) {
         signal: AbortSignal.timeout(TIMEOUT_MS)
     });
 }
+
+// Paused 2026-11-13: Kevin is following up with each golf signup personally.
+// Set to true to turn the automatic golf welcome email back on.
+const SEND_WELCOME_EMAIL = false;
 
 const WARM_UP_PDF = 'https://www.khershberger.com/downloads/golfers-warm-up.pdf';
 
@@ -228,7 +233,7 @@ export default async function handler(req, res) {
                 body: JSON.stringify({
                     email,
                     reactivate_existing: reactivating,
-                    send_welcome_email: false, // they get the golf welcome email instead
+                    send_welcome_email: false, // no general newsletter welcome for golf signups
                     utm_source: cleanUtm(body.utm_source, 'website'),
                     utm_medium: cleanUtm(body.utm_medium, 'website'),
                     utm_campaign: cleanUtm(body.utm_campaign, 'golf-waitlist'),
@@ -267,8 +272,8 @@ export default async function handler(req, res) {
             return unavailable(res);
         }
 
-        // 4. Golf welcome email.
-        await sendWelcomeEmail({ email, firstName, limiter });
+        // 4. Golf welcome email (currently paused, see SEND_WELCOME_EMAIL).
+        if (SEND_WELCOME_EMAIL) await sendWelcomeEmail({ email, firstName, limiter });
 
         return res.status(200).json({ ok: true, status });
     } catch (err) {
