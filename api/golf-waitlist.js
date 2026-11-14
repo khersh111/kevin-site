@@ -11,8 +11,11 @@ import { Resend } from 'resend';
 // Required environment variables (same as api/subscribe.js):
 //   BEEHIIV_API_KEY, BEEHIIV_PUBLICATION_ID
 // Optional:
-//   RESEND_API_KEY  sends the golf welcome email (below). If it's missing, the
-//                   signup still works and the email is skipped with a log line.
+//   RESEND_API_KEY  sends the golf welcome email and Kevin's signup alert (below).
+//                   If it's missing, the signup still works and both emails are
+//                   skipped with a log line.
+//   GOLF_WAITLIST_NOTIFY_EMAIL  where signup alerts go. Falls back to
+//                   CONTACT_TO_EMAIL, then info@khershberger.com.
 //
 // Golf signups don't get beehiiv's general newsletter welcome. The golf welcome
 // email from Resend is built below but paused (SEND_WELCOME_EMAIL), so right now
@@ -149,6 +152,48 @@ async function sendWelcomeEmail({ email, firstName, limiter }) {
     }
 }
 
+// Emails Kevin every time someone joins the waitlist. Reply goes straight to the golfer.
+async function notifyKevin({ email, firstName, lastName, limiter, status, utmSource, utmCampaign }) {
+    const resendKey = process.env.RESEND_API_KEY;
+    if (!resendKey) {
+        console.warn('golf-waitlist: RESEND_API_KEY not set, skipping signup alert');
+        return;
+    }
+
+    const to = process.env.GOLF_WAITLIST_NOTIFY_EMAIL || process.env.CONTACT_TO_EMAIL || 'info@khershberger.com';
+    const fullName = `${firstName} ${lastName}`.trim();
+    const who = status === 'already_subscribed' ? 'Existing newsletter subscriber' : 'New subscriber';
+
+    const text = [
+        `${fullName} just joined the golf coaching waitlist.`,
+        '',
+        `Name:   ${fullName}`,
+        `Email:  ${email}`,
+        `Status: ${who}`,
+        `Source: ${utmSource || 'unknown'}${utmCampaign ? ` / ${utmCampaign}` : ''}`,
+        '',
+        "What's holding their golf game back:",
+        limiter || '(left blank)',
+        '',
+        'Reply to this email to write back to them directly.'
+    ].join('\n');
+
+    try {
+        const resend = new Resend(resendKey);
+        const { error } = await resend.emails.send({
+            from: 'Golf Waitlist <info@khershberger.com>',
+            to: [to],
+            replyTo: email,
+            subject: `New golf waitlist signup: ${fullName}`,
+            text
+        });
+        // A failed alert shouldn't fail the signup; the person is already on the list.
+        if (error) console.error('golf-waitlist: signup alert failed:', JSON.stringify(error));
+    } catch (err) {
+        console.error('golf-waitlist: signup alert failed:', err);
+    }
+}
+
 function logWarnings(step, body) {
     if (body && Array.isArray(body.warnings) && body.warnings.length) {
         console.warn(`golf-waitlist: beehiiv ${step} warnings:`, JSON.stringify(body.warnings));
@@ -274,6 +319,17 @@ export default async function handler(req, res) {
 
         // 4. Golf welcome email (currently paused, see SEND_WELCOME_EMAIL).
         if (SEND_WELCOME_EMAIL) await sendWelcomeEmail({ email, firstName, limiter });
+
+        // 5. Let Kevin know someone joined.
+        await notifyKevin({
+            email,
+            firstName,
+            lastName,
+            limiter,
+            status,
+            utmSource: cleanUtm(body.utm_source, 'website'),
+            utmCampaign: cleanUtm(body.utm_campaign, '')
+        });
 
         return res.status(200).json({ ok: true, status });
     } catch (err) {
