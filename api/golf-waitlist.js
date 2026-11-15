@@ -1,4 +1,3 @@
-import { createHmac, timingSafeEqual } from 'crypto';
 import { Resend } from 'resend';
 
 // Golf coaching waitlist (/golf).
@@ -29,20 +28,13 @@ import { Resend } from 'resend';
 // If a field is missing, beehiiv drops that value and returns a warning,
 // which is logged below.
 //
-// Request body (JSON), signup:
-//   { email, first_name, last_name?, limiter?, utm_source?, utm_medium?, utm_campaign?, company? }
+// Request body (JSON):
+//   { email, first_name, last_name, limiter?, utm_source?, utm_medium?, utm_campaign?, company? }
 //   company is a honeypot field; real visitors never fill it in.
 //
-// Request body (JSON), answer after signup (the page asks the "what's holding
-// your golf game back" question on the success screen):
-//   { step: 'answer', email, first_name?, limiter, answer_token }
-//   answer_token comes from the signup response, so only the person who just
-//   signed up can set their answer.
-//
 // Responses:
-//   200 { ok: true, status: 'joined' | 'already_subscribed', answer_token }
-//   200 { ok: true }                                   (answer saved)
-//   400 { error: 'invalid_email' | 'missing_name' | 'missing_answer' | 'expired', message }
+//   200 { ok: true, status: 'joined' | 'already_subscribed' }
+//   400 { error: 'invalid_email' | 'missing_name', message }
 //   500 { error: 'not_configured', message }
 //   502 { error: 'unavailable', message }
 
@@ -52,27 +44,6 @@ const TAG = 'golf-waitlist';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const UTM_RE = /^[A-Za-z0-9][A-Za-z0-9._-]{0,79}$/;
 const ACTIVE_STATUSES = new Set(['active', 'validating', 'pending', 'needs_attention']);
-
-const ANSWER_TOKEN_TTL_MS = 2 * 60 * 60 * 1000; // 2 hours to answer after signing up
-
-// Signed with the beehiiv key (server-only), so no extra secret to configure.
-function signAnswer(email, ts, secret) {
-    return createHmac('sha256', secret).update(`golf-answer:${ts}:${email}`).digest('base64url');
-}
-
-function makeAnswerToken(email, secret) {
-    const ts = Date.now();
-    return `${ts}.${signAnswer(email, ts, secret)}`;
-}
-
-function answerTokenValid(token, email, secret) {
-    const [tsRaw, sig] = String(token || '').split('.');
-    const ts = Number(tsRaw);
-    if (!ts || !sig || Date.now() - ts > ANSWER_TOKEN_TTL_MS || ts > Date.now() + 60000) return false;
-    const expected = Buffer.from(signAnswer(email, ts, secret));
-    const given = Buffer.from(sig);
-    return expected.length === given.length && timingSafeEqual(expected, given);
-}
 
 function unavailable(res) {
     return res.status(502).json({
@@ -202,7 +173,7 @@ async function notifyKevin({ email, firstName, lastName, limiter, status, utmSou
         `Source: ${utmSource || 'unknown'}${utmCampaign ? ` / ${utmCampaign}` : ''}`,
         '',
         "What's holding their golf game back:",
-        limiter || "(asked right after signup. If they answer, you'll get a second email with it.)",
+        limiter || '(left blank)',
         '',
         'Reply to this email to write back to them directly.'
     ].join('\n');
@@ -220,74 +191,6 @@ async function notifyKevin({ email, firstName, lastName, limiter, status, utmSou
         if (error) console.error('golf-waitlist: signup alert failed:', JSON.stringify(error));
     } catch (err) {
         console.error('golf-waitlist: signup alert failed:', err);
-    }
-}
-
-// Emails Kevin the answer someone gave on the success screen after signing up.
-async function notifyKevinAnswer({ email, firstName, limiter }) {
-    const resendKey = process.env.RESEND_API_KEY;
-    if (!resendKey) {
-        console.warn('golf-waitlist: RESEND_API_KEY not set, skipping answer alert');
-        return;
-    }
-    const to = process.env.GOLF_WAITLIST_NOTIFY_EMAIL || process.env.CONTACT_TO_EMAIL || 'info@khershberger.com';
-    const who = firstName || email;
-    const text = [
-        `${who} (${email}) answered the waitlist question.`,
-        '',
-        "What's holding their golf game back:",
-        limiter,
-        '',
-        'Reply to this email to write back to them directly.'
-    ].join('\n');
-    try {
-        const resend = new Resend(resendKey);
-        const { error } = await resend.emails.send({
-            from: 'Golf Waitlist <info@khershberger.com>',
-            to: [to],
-            replyTo: email,
-            subject: `Golf waitlist answer: ${who}`,
-            text
-        });
-        if (error) console.error('golf-waitlist: answer alert failed:', JSON.stringify(error));
-    } catch (err) {
-        console.error('golf-waitlist: answer alert failed:', err);
-    }
-}
-
-// Saves the answer given after signup to the "Golf Limiter" field.
-async function saveAnswer(req, res, body, email, apiKey, publicationId) {
-    if (!answerTokenValid(body.answer_token, email, apiKey)) {
-        return res.status(400).json({ error: 'expired', message: 'This page has expired. Please reload and sign up again to send your answer.' });
-    }
-    const limiter = String(body.limiter || '').replace(/\s+/g, ' ').trim().slice(0, 1000);
-    if (!limiter) {
-        return res.status(400).json({ error: 'missing_answer', message: 'Type your answer first.' });
-    }
-    const firstName = String(body.first_name || '').trim().slice(0, 80);
-    const pub = encodeURIComponent(publicationId);
-    try {
-        const lookup = await beehiiv(`/publications/${pub}/subscriptions/by_email/${encodeURIComponent(email)}`, apiKey);
-        if (!lookup.ok) {
-            console.error(`golf-waitlist: answer lookup failed with ${lookup.status}: ${await lookup.text()}`);
-            return unavailable(res);
-        }
-        const sub = (await lookup.json()).data;
-        if (!sub || !sub.id) return unavailable(res);
-        const update = await beehiiv(`/publications/${pub}/subscriptions/${encodeURIComponent(sub.id)}`, apiKey, {
-            method: 'PUT',
-            body: JSON.stringify({ custom_fields: [{ name: 'Golf Limiter', value: limiter }] })
-        });
-        if (!update.ok) {
-            console.error(`golf-waitlist: answer update failed with ${update.status}: ${await update.text()}`);
-            return unavailable(res);
-        }
-        logWarnings('answer update', await update.json().catch(() => null));
-        await notifyKevinAnswer({ email, firstName, limiter });
-        return res.status(200).json({ ok: true });
-    } catch (err) {
-        console.error('golf-waitlist: saving answer failed:', err);
-        return unavailable(res);
     }
 }
 
@@ -312,6 +215,15 @@ export default async function handler(req, res) {
     if (!email || email.length > 254 || !EMAIL_RE.test(email)) {
         return res.status(400).json({ error: 'invalid_email', message: 'Please enter a valid email address.' });
     }
+    const firstName = String(body.first_name || '').trim().slice(0, 80);
+    if (!firstName) {
+        return res.status(400).json({ error: 'missing_name', message: 'Please enter your first name.' });
+    }
+    const lastName = String(body.last_name || '').trim().slice(0, 80);
+    if (!lastName) {
+        return res.status(400).json({ error: 'missing_name', message: 'Please enter your last name.' });
+    }
+    const limiter = String(body.limiter || '').replace(/\s+/g, ' ').trim().slice(0, 1000);
 
     const apiKey = process.env.BEEHIIV_API_KEY;
     const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
@@ -324,20 +236,11 @@ export default async function handler(req, res) {
         });
     }
 
-    // Answer to the follow-up question on the success screen.
-    if (body.step === 'answer') return saveAnswer(req, res, body, email, apiKey, publicationId);
-
-    const firstName = String(body.first_name || '').trim().slice(0, 80);
-    if (!firstName) {
-        return res.status(400).json({ error: 'missing_name', message: 'Please enter your first name.' });
-    }
-    // Last name is optional (the form only asks for first name and email).
-    const lastName = String(body.last_name || '').trim().slice(0, 80);
-    const limiter = String(body.limiter || '').replace(/\s+/g, ' ').trim().slice(0, 1000);
-
     const pub = encodeURIComponent(publicationId);
-    const customFields = [{ name: 'First Name', value: firstName }];
-    if (lastName) customFields.push({ name: 'Last Name', value: lastName });
+    const customFields = [
+        { name: 'First Name', value: firstName },
+        { name: 'Last Name', value: lastName }
+    ];
     if (limiter) customFields.push({ name: 'Golf Limiter', value: limiter });
 
     try {
@@ -428,7 +331,7 @@ export default async function handler(req, res) {
             utmCampaign: cleanUtm(body.utm_campaign, '')
         });
 
-        return res.status(200).json({ ok: true, status, answer_token: makeAnswerToken(email, apiKey) });
+        return res.status(200).json({ ok: true, status });
     } catch (err) {
         console.error('golf-waitlist: request to beehiiv failed:', err);
         return unavailable(res);

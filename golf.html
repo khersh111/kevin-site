@@ -104,10 +104,6 @@
   .g-done p{ margin-top:8px; font-size:16px; color:var(--fine); }
   .g-done:focus{ outline:none; }
   .g-hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
-  .g-names{ grid-template-columns:1fr 1.45fr; }
-  .g-followup{ margin-top:20px; padding-top:18px; border-top:1px solid var(--hair); }
-  .g-followup .g-btn{ padding:14px 20px; }
-  .g-thanks{ margin-top:18px; font-size:16px; font-weight:600; }
 
   /* Mobile-only bits, hidden on desktop. */
   .g-sm{ display:none; }
@@ -152,10 +148,13 @@
     .g-hero__by-sm img{ flex:none; width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:50% 22%; }
     .g-card{ padding:16px 16px 18px; border-radius:16px; }
     .g-card__title{ margin-bottom:12px; }
-    .g-form{ gap:12px; }
-    .g-names{ gap:10px; }
-    .g-field{ gap:4px; }
-    .g-field input{ padding:12px 13px; }
+    .g-form{ gap:9px; }
+    .g-names{ gap:9px; }
+    .g-field{ gap:3px; }
+    .g-field label{ font-size:13.5px; line-height:1.3; }
+    .g-field input{ padding:11px 13px; }
+    /* Optional question: 2 rows to start, grows as they type (script below). */
+    .g-field textarea{ min-height:72px; height:72px; padding:11px 13px; line-height:1.4; }
     .g-btn{ padding:15px 20px; }
     /* 16px+ on every field so iOS doesn't zoom in on tap (includes the nav search box on this page). */
     .golf-page .nav-search-input, .g-hp input{ font-size:16px; }
@@ -198,8 +197,7 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
 
   <main id="main">
 
-  <!-- Waitlist form. Two copies (hero + bottom); both post to /api/golf-waitlist.
-       The "what's holding your golf game back" question is asked on the success screen. -->
+  <!-- Waitlist form. Two copies (hero + bottom); both post to /api/golf-waitlist. -->
   <template id="g-form-tpl">
     <form class="g-form" novalidate>
       <div class="g-names">
@@ -208,9 +206,17 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
           <input type="text" data-id="name" name="first_name" autocomplete="given-name" required maxlength="80">
         </div>
         <div class="g-field">
-          <label data-for="email">Email</label>
-          <input type="email" data-id="email" name="email" autocomplete="email" inputmode="email" required maxlength="254">
+          <label data-for="last">Last name</label>
+          <input type="text" data-id="last" name="last_name" autocomplete="family-name" required maxlength="80">
         </div>
+      </div>
+      <div class="g-field">
+        <label data-for="email">Email</label>
+        <input type="email" data-id="email" name="email" autocomplete="email" inputmode="email" required maxlength="254">
+      </div>
+      <div class="g-field">
+        <label data-for="limiter">What's holding your golf game back right now? <span>(optional)</span></label>
+        <textarea data-id="limiter" name="limiter" maxlength="1000" rows="3"></textarea>
       </div>
       <div class="g-hp" aria-hidden="true"><input type="text" name="company" tabindex="-1" autocomplete="off"></div>
       <p class="g-form__err" role="alert"></p>
@@ -323,55 +329,6 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
 
       var signedUp = false;
 
-      // ---- Optional question on the success screen; saved to the same "Golf Limiter" field ----
-      function showFollowup(slot, where, who) {
-        if (!who.answer_token) return;
-        var id = 'g-' + where + '-limiter';
-        var f = document.createElement('form');
-        f.className = 'g-form g-followup';
-        f.noValidate = true;
-        f.innerHTML =
-          '<div class="g-field">' +
-            '<label for="' + id + '">One quick question: what’s holding your golf game back right now? <span>(optional)</span></label>' +
-            '<textarea id="' + id + '" name="limiter" maxlength="1000" rows="3"></textarea>' +
-          '</div>' +
-          '<p class="g-form__err" role="alert"></p>' +
-          '<button type="submit" class="g-btn">Send answer</button>';
-        slot.appendChild(f);
-        var err = f.querySelector('.g-form__err');
-        f.addEventListener('submit', async function (e) {
-          e.preventDefault();
-          var answer = f.limiter.value.trim();
-          err.textContent = '';
-          if (!answer) { err.textContent = 'Type your answer first.'; f.limiter.focus(); return; }
-          var b = f.querySelector('button');
-          b.textContent = 'Sending...';
-          b.disabled = true;
-          try {
-            var r = await fetch('/api/golf-waitlist', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ step: 'answer', email: who.email, first_name: who.first_name, limiter: answer, answer_token: who.answer_token })
-            });
-            var d = {};
-            try { d = await r.json(); } catch (e2) {}
-            if (r.ok) {
-              var t = document.createElement('p');
-              t.className = 'g-thanks';
-              t.setAttribute('role', 'status');
-              t.textContent = 'Got it, thanks.';
-              f.replaceWith(t);
-              return;
-            }
-            err.textContent = d.message || 'Something went wrong. Please try again in a minute.';
-          } catch (e3) {
-            err.textContent = 'We couldn’t connect. Check your connection and try again.';
-          }
-          b.textContent = 'Send answer';
-          b.disabled = false;
-        });
-      }
-
       // ---- Sticky "Join the waitlist" bar (phones only, via CSS) ----
       var sticky = document.querySelector('.g-sticky');
       var heroCard = document.querySelector('[data-golf-form="hero"]');
@@ -417,9 +374,11 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
           e.preventDefault();
           var btn = form.querySelector('button');
           var name = form.first_name.value.trim();
+          var last = form.last_name.value.trim();
           var email = form.email.value.trim();
           errEl.textContent = '';
           if (!name) { errEl.textContent = 'Please enter your first name.'; form.first_name.focus(); return; }
+          if (!last) { errEl.textContent = 'Please enter your last name.'; form.last_name.focus(); return; }
           if (!email || !form.email.checkValidity()) { errEl.textContent = 'Please enter a valid email address.'; form.email.focus(); return; }
 
           var label = btn.textContent;
@@ -431,7 +390,9 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(Object.assign({
                 first_name: name,
+                last_name: last,
                 email: email,
+                limiter: form.limiter.value.trim(),
                 company: form.company.value
               }, utm))
             });
@@ -449,13 +410,12 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
               try {
                 if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'golf_waitlist' });
               } catch (e5) {}
-              // Show the confirmation in both form slots, and the optional question where they signed up.
+              // Show the confirmation in both form slots.
               signedUp = true;
               updateSticky();
               document.querySelectorAll('[data-golf-form]').forEach(function (s) {
                 s.innerHTML = '<div class="g-done" tabindex="-1" role="status"><h3>You’re on the list.</h3><p>I’ll be in touch when a spot opens.</p></div>';
               });
-              showFollowup(slot, where, { email: email, first_name: name, answer_token: data.answer_token });
               slot.querySelector('.g-done').focus();
               return;
             }
@@ -467,6 +427,14 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
           btn.disabled = false;
         });
       });
+      // Optional question box grows with the answer instead of scrolling inside itself.
+      document.querySelectorAll('.golf-page textarea[name=limiter]').forEach(function (ta) {
+        ta.addEventListener('input', function () {
+          ta.style.height = '0px';
+          ta.style.height = Math.min(ta.scrollHeight + 3, 240) + 'px';
+        });
+      });
+
       updateSticky();
     })();
   </script>
