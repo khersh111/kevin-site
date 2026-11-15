@@ -109,7 +109,6 @@
   /* Mobile-only bits, hidden on desktop. */
   .g-sm{ display:none; }
   .g-hero__by-sm{ display:none; }
-  .g-sticky{ display:none; }
 
   /* ---------- what it is ---------- */
   .g-intro{ margin-top:24px; max-width:640px; font-size:17px; line-height:1.6; font-weight:400; color:var(--ink); opacity:.7; text-wrap:pretty; }
@@ -129,17 +128,16 @@
   .g-about__media{ grid-area:media; margin:0; width:100%; max-width:360px; }
   .g-video{ position:relative; aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#1A1A1A; }
   .g-video video{ display:block; width:100%; height:100%; object-fit:cover; }
-  /* Whole poster is the tap target; the round button sits low so it doesn't cover the face. */
-  .g-video__play{ position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center; width:100%;
-                  border:none; padding:0 0 28px; background:transparent; cursor:pointer; }
-  .g-video__play span{ display:flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:50%;
-                       background:var(--sky); transition:transform .15s ease, background .15s ease; }
-  .g-video__play:hover span{ background:#6CC2EC; transform:scale(1.05); }
-  .g-video__play svg{ width:26px; height:26px; margin-left:4px; fill:var(--ink); }
+  /* Whole poster is the tap target; YouTube-style rounded-rectangle button in the center. */
+  .g-video__play{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; width:100%;
+                  border:none; padding:0; background:transparent; cursor:pointer; }
+  .g-video__play span{ display:flex; align-items:center; justify-content:center; width:68px; height:48px; border-radius:14px;
+                       background:rgba(26,26,26,.78); transition:background .15s ease; }
+  .g-video__play:hover span, .g-video__play:focus-visible span{ background:var(--sky); }
+  .g-video__play svg{ width:22px; height:22px; margin-left:2px; fill:#fff; }
+  .g-video__play:hover svg, .g-video__play:focus-visible svg{ fill:var(--ink); }
   .g-video__play:focus-visible{ outline:3px solid var(--sky-deep); outline-offset:-3px; }
   .g-video.is-playing .g-video__play{ display:none; }
-  .g-video__cta{ display:inline-block; margin-top:14px; font-size:15px; font-weight:600; color:var(--ink);
-                 text-decoration:underline; text-decoration-color:var(--sky); text-decoration-thickness:2px; text-underline-offset:4px; }
 
 
   .g-final{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
@@ -183,16 +181,7 @@
     /* 16px+ on every field so iOS doesn't zoom in on tap (includes the nav search box on this page). */
     .golf-page .nav-search-input, .g-hp input{ font-size:16px; }
 
-    /* Sticky "Join the waitlist" bar: shown by script once the hero form is scrolled past. */
-    .g-sticky{ display:flex; align-items:center; justify-content:center; position:fixed; left:0; right:0; bottom:0; z-index:95;
-               height:calc(52px + env(safe-area-inset-bottom)); padding-bottom:env(safe-area-inset-bottom);
-               background:var(--sky); color:var(--ink); border:none; font-family:var(--sans); font-size:16.5px; font-weight:700; cursor:pointer;
-               box-shadow:0 -8px 24px -12px rgba(26,26,26,.35);
-               transform:translateY(100%); visibility:hidden; transition:transform .25s ease, visibility 0s linear .25s; }
-    .g-sticky.is-on{ transform:none; visibility:visible; transition:transform .25s ease; }
-    body.g-sticky-on .scroll-top{ bottom:calc(68px + env(safe-area-inset-bottom)); right:16px; }
   }
-  @media (max-width:767px) and (prefers-reduced-motion: reduce){ .g-sticky, .g-sticky.is-on{ transition:none; } }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -319,7 +308,6 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
             <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span>
           </button>
         </div>
-        <a class="g-video__cta" href="#g-final">Join the coaching waitlist →</a>
       </figure>
       <div class="g-about__text">
         <p class="g-body">I'm a fellowship-trained orthopedic physical therapist (FAAOMPT) and a former college golfer.</p>
@@ -342,8 +330,6 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
 
   </main>
 
-  <button type="button" class="g-sticky" aria-hidden="true" tabindex="-1">Get the free warm-up</button>
-
   <div id="footer-placeholder"></div>
 
   <script src="shared.js"></script>
@@ -363,42 +349,6 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
         if (Object.keys(utm).length) sessionStorage.setItem('golf_utm', JSON.stringify(utm));
         else utm = JSON.parse(sessionStorage.getItem('golf_utm') || '{}');
       } catch (e) {}
-
-      var signedUp = false;
-
-      // ---- Sticky "Join the waitlist" bar (phones only, via CSS) ----
-      var sticky = document.querySelector('.g-sticky');
-      var heroCard = document.querySelector('[data-golf-form="hero"]');
-      var finalCard = document.querySelector('[data-golf-form="final"]');
-      function updateSticky() {
-        // Show once the hero form is fully above the screen, until the bottom form comes into view.
-        var vh = window.innerHeight;
-        var on = !signedUp &&
-          heroCard.getBoundingClientRect().bottom < 0 &&
-          finalCard.getBoundingClientRect().top > vh;
-        sticky.classList.toggle('is-on', on);
-        sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
-        sticky.tabIndex = on ? 0 : -1;
-        document.body.classList.toggle('g-sticky-on', on);
-      }
-      // Two rect reads per scroll event: cheap enough to run directly.
-      window.addEventListener('scroll', updateSticky, { passive: true });
-      window.addEventListener('resize', updateSticky);
-      // Scroll to whichever form is closer to the middle of the screen and focus its email field.
-      function goToNearestForm() {
-        var mid = window.innerHeight / 2;
-        function dist(el) { var b = el.getBoundingClientRect(); return Math.abs((b.top + b.bottom) / 2 - mid); }
-        var target = dist(heroCard) <= dist(finalCard) ? heroCard : finalCard;
-        var input = target.querySelector('input[name=email]') || target.querySelector('input');
-        if (input) input.focus({ preventScroll: true });
-        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
-      }
-      sticky.addEventListener('click', goToNearestForm);
-      document.querySelector('.g-video__cta').addEventListener('click', function (e) {
-        e.preventDefault();
-        goToNearestForm();
-      });
 
       // ---- Story video: poster + play button; native controls once it starts ----
       var vbox = document.querySelector('.g-video');
@@ -472,8 +422,6 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
                 try { window.va('event', { name: 'Golf waitlist signup', data: lead }); } catch (e5) {}
                 try { if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'golf_waitlist' }); } catch (e6) {}
               }
-              signedUp = true;
-              updateSticky();
               window.location.href = '/golf/thanks';
               return;
             }
@@ -493,7 +441,6 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
         });
       });
 
-      updateSticky();
     })();
   </script>
 </body>
