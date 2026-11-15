@@ -98,7 +98,8 @@
   .g-form__err:empty{ display:none; }
   .g-form__note{ font-size:13px; color:var(--fine); text-align:center; }
   .g-done{ padding:8px 2px; }
-  .g-card__title{ font-size:22px; font-weight:800; letter-spacing:-.015em; line-height:1.2; margin-bottom:18px; }
+  .g-card__title{ font-size:27px; font-weight:800; letter-spacing:-.015em; line-height:1.2; margin-bottom:20px; text-align:center; text-wrap:balance; }
+  @media (max-width: 900px){ .g-card__title{ font-size:clamp(17px, calc((100vw - 100px) / 12.5), 27px); } }
   .g-done h3{ font-size:22px; font-weight:800; letter-spacing:-.015em; }
   .g-done p{ margin-top:8px; font-size:16px; color:var(--fine); }
   .g-done:focus{ outline:none; }
@@ -185,7 +186,7 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
   <section class="g-hero" aria-labelledby="g-title">
     <div class="g-wrap g-hero__grid">
       <div>
-        <span class="g-eyebrow">Golf coaching · Opening&nbsp;this&nbsp;winter</span>
+        <span class="g-eyebrow">Golf coaching</span>
         <h1 id="g-title">Your body shouldn’t be your <span class="g-accent">handicap.</span></h1>
         <p class="g-hero__sub">Remote coaching for golfers whose body is costing them distance, rounds and their best golf, from an orthopedic PT and former college golfer.</p>
         <div class="g-hero__by">
@@ -193,7 +194,7 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
           <p><b>Dr. Kevin Hershberger, DPT, FAAOMPT</b>Orthopedic physical therapist and former college golfer</p>
         </div>
       </div>
-      <div class="g-card" data-golf-form="hero"><h2 class="g-card__title">Coaching opens this winter.</h2></div>
+      <div class="g-card" data-golf-form="hero"><h2 class="g-card__title">Coaching opens this winter!</h2></div>
     </div>
   </section>
 
