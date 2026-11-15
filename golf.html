@@ -103,6 +103,9 @@
   .g-done h3{ font-size:22px; font-weight:800; letter-spacing:-.015em; }
   .g-done p{ margin-top:8px; font-size:16px; color:var(--fine); }
   .g-done:focus{ outline:none; }
+  .g-card__title span{ display:inline-block; }  /* wrap only between the two sentences */
+  .g-card__sub{ margin:-12px 0 20px; font-size:15.5px; line-height:1.45; color:var(--fine); text-align:center; text-wrap:balance; }
+  .g-hero__free{ margin-top:14px; font-size:15px; line-height:1.45; color:var(--ink); opacity:.7; max-width:44ch; }
   .g-hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
   /* Mobile-only bits, hidden on desktop. */
@@ -137,17 +140,19 @@
   @media (max-width:767px){
     .g-wrap{ padding-left:max(24px, env(safe-area-inset-left)); padding-right:max(24px, env(safe-area-inset-right)); }
     .g-hero{ padding:108px 0 44px; }            /* nav is 96px; visible gap above the label halved */
-    .g-hero__grid{ gap:18px; }
+    .g-hero__grid{ gap:12px; }
     .g-hero h1{ margin-top:10px; font-size:38px; line-height:1.05; }
     .g-hero .g-accent{ text-decoration-thickness:3px; text-underline-offset:6px; }
     .g-hero__sub{ margin-top:12px; font-size:17px; line-height:1.4; }
     .g-lg{ display:none; }
     .g-sm{ display:inline; }
     .g-hero__by{ display:none; }
-    .g-hero__by-sm{ display:flex; align-items:center; gap:10px; margin-top:14px; font-size:14px; font-weight:700; line-height:1.2; }
+    .g-hero__by-sm{ display:flex; align-items:center; gap:10px; margin-top:8px; font-size:14px; font-weight:700; line-height:1.2; }
     .g-hero__by-sm img{ flex:none; width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:50% 22%; }
-    .g-card{ padding:16px 16px 18px; border-radius:16px; }
-    .g-card__title{ margin-bottom:12px; }
+    .g-card{ padding:12px 16px 18px; border-radius:16px; }
+    .g-card__title{ margin-bottom:6px; }
+    .g-card__sub{ margin:-2px 0 8px; font-size:14.5px; }
+    .g-hero__free{ margin-top:4px; font-size:14px; }
     .g-form{ gap:9px; }
     .g-names{ gap:9px; }
     .g-field{ gap:3px; }
@@ -220,7 +225,7 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
       </div>
       <div class="g-hp" aria-hidden="true"><input type="text" name="company" tabindex="-1" autocomplete="off"></div>
       <p class="g-form__err" role="alert"></p>
-      <button type="submit" class="g-btn">Join the waitlist</button>
+      <button type="submit" class="g-btn">Join + get the warm-up</button>
     </form>
   </template>
 
@@ -231,13 +236,14 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
         <span class="g-eyebrow">Golf coaching</span>
         <h1 id="g-title">Your body shouldn’t be your <span class="g-accent">handicap.</span></h1>
         <p class="g-hero__sub"><span class="g-lg">Remote coaching for golfers whose body is costing them distance, rounds and their best golf, from an orthopedic PT and former college golfer.</span><span class="g-sm">Remote coaching for golfers whose body is costing them distance and rounds.</span></p>
+        <p class="g-hero__free">Free: the 10-minute warm-up I use before every round.</p>
         <p class="g-hero__by-sm"><img src="images/golf/kevin-headshot.jpg" alt="" width="48" height="48" decoding="async">Dr. Kevin Hershberger, DPT, FAAOMPT</p>
         <div class="g-hero__by">
           <img src="images/golf/kevin-headshot.jpg" alt="Dr. Kevin Hershberger" width="112" height="140" decoding="async">
           <p><b>Dr. Kevin Hershberger, DPT, FAAOMPT</b>Orthopedic physical therapist and former college golfer</p>
         </div>
       </div>
-      <div class="g-card" data-golf-form="hero"><h2 class="g-card__title">Coaching opens this winter.</h2></div>
+      <div class="g-card" data-golf-form="hero"><h2 class="g-card__title"><span>Join the waitlist.</span> <span>Get the warm-up free.</span></h2><p class="g-card__sub">My 10-minute pre-round warm-up, sent to your inbox.</p></div>
     </div>
   </section>
 
@@ -299,13 +305,13 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
         <h2 class="g-h2" id="g-final">Coaching opens this winter.</h2>
         <p class="g-body g-muted">Spots are limited. Waitlist members get first access before it opens to anyone else.</p>
       </div>
-      <div class="g-card" data-golf-form="final"></div>
+      <div class="g-card" data-golf-form="final"><h3 class="g-card__title"><span>Join the waitlist.</span> <span>Get the warm-up free.</span></h3><p class="g-card__sub">My 10-minute pre-round warm-up, sent to your inbox.</p></div>
     </div>
   </section>
 
   </main>
 
-  <button type="button" class="g-sticky" aria-hidden="true" tabindex="-1">Join the waitlist</button>
+  <button type="button" class="g-sticky" aria-hidden="true" tabindex="-1">Get the free warm-up</button>
 
   <div id="footer-placeholder"></div>
 
@@ -399,24 +405,19 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
             var data = {};
             try { data = await res.json(); } catch (e2) {}
             if (res.ok) {
-              try {
-                window.va('event', { name: 'Golf waitlist signup', data: {
-                  location: where,
-                  utm_source: utm.utm_source || 'none',
-                  utm_campaign: utm.utm_campaign || 'none'
-                } });
-              } catch (e3) {}
-              // Meta Pixel: count a Lead only after the signup is saved.
-              try {
-                if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'golf_waitlist' });
-              } catch (e5) {}
-              // Show the confirmation in both form slots.
+              // The confirmation lives on /golf/thanks, which fires the Meta Lead and Vercel events
+              // once per signup (this flag), so a direct visit to that page doesn't count as a lead.
+              var lead = { location: where, utm_source: utm.utm_source || 'none', utm_campaign: utm.utm_campaign || 'none' };
+              var flagged = false;
+              try { sessionStorage.setItem('golf_lead', JSON.stringify(lead)); flagged = true; } catch (e3) {}
+              if (!flagged) {
+                // No sessionStorage (rare): count the signup here before leaving.
+                try { window.va('event', { name: 'Golf waitlist signup', data: lead }); } catch (e5) {}
+                try { if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'golf_waitlist' }); } catch (e6) {}
+              }
               signedUp = true;
               updateSticky();
-              document.querySelectorAll('[data-golf-form]').forEach(function (s) {
-                s.innerHTML = '<div class="g-done" tabindex="-1" role="status"><h3>You’re on the list.</h3><p>I’ll be in touch when a spot opens.</p></div>';
-              });
-              slot.querySelector('.g-done').focus();
+              window.location.href = '/golf/thanks';
               return;
             }
             errEl.textContent = data.message || 'Something went wrong. Please try again in a minute.';

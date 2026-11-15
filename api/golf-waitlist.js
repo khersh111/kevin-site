@@ -152,6 +152,61 @@ async function sendWelcomeEmail({ email, firstName, limiter }) {
     }
 }
 
+// The free First-Tee Warm-Up, sent to everyone who signs up on /golf (new or already subscribed).
+const FIRST_TEE_PDF = 'https://www.khershberger.com/golf/first-tee-warm-up.pdf';
+
+async function sendWarmUpEmail({ email, firstName }) {
+    const resendKey = process.env.RESEND_API_KEY;
+    if (!resendKey) {
+        console.warn('golf-waitlist: RESEND_API_KEY not set, skipping warm-up email');
+        return;
+    }
+
+    const name = escapeHtml(firstName);
+    const p = 'margin:0 0 16px;';
+
+    const html = `
+<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#1A1A1A;max-width:560px;">
+  <p style="${p}">Hi ${name},</p>
+  <p style="${p}">Here&rsquo;s the 10-minute warm-up I use before every round: <a href="${FIRST_TEE_PDF}" style="color:#1A1A1A;font-weight:600;">Download the First-Tee Warm-Up</a></p>
+  <p style="${p}">Do it in the parking lot or on the range before your first swing. It&rsquo;s built to get your hips, back and shoulders moving the way a golf swing needs them to.</p>
+  <p style="${p}">You&rsquo;re also on the waitlist for remote golf coaching. I&rsquo;ll email you before spots open this winter.</p>
+  <p style="margin:24px 0 0;">Kevin<br>
+  <span style="color:#5F6670;">Dr. Kevin Hershberger, DPT, FAAOMPT</span></p>
+</div>`;
+
+    const text = [
+        `Hi ${firstName},`,
+        '',
+        "Here's the 10-minute warm-up I use before every round:",
+        `Download the First-Tee Warm-Up: ${FIRST_TEE_PDF}`,
+        '',
+        "Do it in the parking lot or on the range before your first swing. It's built to get your hips, back and shoulders moving the way a golf swing needs them to.",
+        '',
+        "You're also on the waitlist for remote golf coaching. I'll email you before spots open this winter.",
+        '',
+        'Kevin',
+        'Dr. Kevin Hershberger, DPT, FAAOMPT'
+    ].join('\n');
+
+    try {
+        const resend = new Resend(resendKey);
+        const { error } = await resend.emails.send({
+            from: 'Kevin <info@khershberger.com>',
+            to: email,
+            replyTo: 'info@khershberger.com',
+            subject: 'Your First-Tee Warm-Up',
+            html,
+            text
+        });
+        // A failed email shouldn't fail the signup; the person is already on the list
+        // and can download the PDF from /golf/thanks.
+        if (error) console.error('golf-waitlist: warm-up email failed:', JSON.stringify(error));
+    } catch (err) {
+        console.error('golf-waitlist: warm-up email failed:', err);
+    }
+}
+
 // Emails Kevin every time someone joins the waitlist. Reply goes straight to the golfer.
 async function notifyKevin({ email, firstName, lastName, limiter, status, utmSource, utmCampaign }) {
     const resendKey = process.env.RESEND_API_KEY;
@@ -319,6 +374,9 @@ export default async function handler(req, res) {
 
         // 4. Golf welcome email (currently paused, see SEND_WELCOME_EMAIL).
         if (SEND_WELCOME_EMAIL) await sendWelcomeEmail({ email, firstName, limiter });
+
+        // 4b. Deliver the free First-Tee Warm-Up they were promised on the form.
+        await sendWarmUpEmail({ email, firstName });
 
         // 5. Let Kevin know someone joined.
         await notifyKevin({

@@ -11,6 +11,14 @@
   ],
   "rewrites": [
     {
+      "source": "/golf/thanks",
+      "destination": "/golf-thanks"
+    },
+    {
+      "source": "/golf/first-tee-warm-up.pdf",
+      "destination": "/downloads/golfers-warm-up.pdf"
+    },
+    {
       "source": "/blueprint",
       "destination": "/api/blueprint"
     },
