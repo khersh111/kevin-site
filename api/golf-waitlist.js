@@ -153,6 +153,9 @@ async function sendWelcomeEmail({ email, firstName, limiter }) {
 }
 
 // The free First-Tee Warm-Up, sent to everyone who signs up on /golf (new or already subscribed).
+// Off since 2026-11-15: Kevin wants signups to download the PDF from /golf/thanks, with no email.
+// Set to true to email the warm-up to every signup again.
+const SEND_WARM_UP_EMAIL = false;
 const FIRST_TEE_PDF = 'https://www.khershberger.com/golf/first-tee-warm-up.pdf';
 
 async function sendWarmUpEmail({ email, firstName }) {
@@ -375,8 +378,8 @@ export default async function handler(req, res) {
         // 4. Golf welcome email (currently paused, see SEND_WELCOME_EMAIL).
         if (SEND_WELCOME_EMAIL) await sendWelcomeEmail({ email, firstName, limiter });
 
-        // 4b. Deliver the free First-Tee Warm-Up they were promised on the form.
-        await sendWarmUpEmail({ email, firstName });
+        // 4b. Warm-up delivery email (off: they download it from /golf/thanks instead).
+        if (SEND_WARM_UP_EMAIL) await sendWarmUpEmail({ email, firstName });
 
         // 5. Let Kevin know someone joined.
         await notifyKevin({
