@@ -12,7 +12,7 @@
 </script>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Golf Coaching Waitlist | Dr. Kevin Hershberger, DPT, FAAOMPT</title>
 <meta name="description" content="Remote coaching for golfers whose body is costing them distance, rounds and their best golf, from an orthopedic physical therapist and former college golfer. Join the waitlist.">
 <link rel="canonical" href="https://www.khershberger.com/golf">
@@ -99,11 +99,20 @@
   .g-form__note{ font-size:13px; color:var(--fine); text-align:center; }
   .g-done{ padding:8px 2px; }
   .g-card__title{ font-size:27px; font-weight:800; letter-spacing:-.015em; line-height:1.2; margin-bottom:20px; text-align:center; text-wrap:balance; }
-  @media (max-width: 900px){ .g-card__title{ font-size:clamp(17px, calc((100vw - 100px) / 12.5), 27px); } }
+  @media (max-width: 900px){ .g-card__title{ font-size:clamp(17px, calc((100vw - 104px) / 12.3), 27px); } }
   .g-done h3{ font-size:22px; font-weight:800; letter-spacing:-.015em; }
   .g-done p{ margin-top:8px; font-size:16px; color:var(--fine); }
   .g-done:focus{ outline:none; }
   .g-hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+  .g-names{ grid-template-columns:1fr 1.45fr; }
+  .g-followup{ margin-top:20px; padding-top:18px; border-top:1px solid var(--hair); }
+  .g-followup .g-btn{ padding:14px 20px; }
+  .g-thanks{ margin-top:18px; font-size:16px; font-weight:600; }
+
+  /* Mobile-only bits, hidden on desktop. */
+  .g-sm{ display:none; }
+  .g-hero__by-sm{ display:none; }
+  .g-sticky{ display:none; }
 
   /* ---------- what it is ---------- */
   .g-points{ list-style:none; margin-top:30px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
@@ -127,6 +136,40 @@
     .g-points{ grid-template-columns:1fr; gap:26px; }
     .g-about__photo{ width:100%; max-width:340px; }
   }
+
+  /* ---------- phones: get the form onto the first screen ---------- */
+  @media (max-width:767px){
+    .g-wrap{ padding-left:max(24px, env(safe-area-inset-left)); padding-right:max(24px, env(safe-area-inset-right)); }
+    .g-hero{ padding:108px 0 44px; }            /* nav is 96px; visible gap above the label halved */
+    .g-hero__grid{ gap:18px; }
+    .g-hero h1{ margin-top:10px; font-size:38px; line-height:1.05; }
+    .g-hero .g-accent{ text-decoration-thickness:3px; text-underline-offset:6px; }
+    .g-hero__sub{ margin-top:12px; font-size:17px; line-height:1.4; }
+    .g-lg{ display:none; }
+    .g-sm{ display:inline; }
+    .g-hero__by{ display:none; }
+    .g-hero__by-sm{ display:flex; align-items:center; gap:10px; margin-top:14px; font-size:14px; font-weight:700; line-height:1.2; }
+    .g-hero__by-sm img{ flex:none; width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:50% 22%; }
+    .g-card{ padding:16px 16px 18px; border-radius:16px; }
+    .g-card__title{ margin-bottom:12px; }
+    .g-form{ gap:12px; }
+    .g-names{ gap:10px; }
+    .g-field{ gap:4px; }
+    .g-field input{ padding:12px 13px; }
+    .g-btn{ padding:15px 20px; }
+    /* 16px+ on every field so iOS doesn't zoom in on tap (includes the nav search box on this page). */
+    .golf-page .nav-search-input, .g-hp input{ font-size:16px; }
+
+    /* Sticky "Join the waitlist" bar: shown by script once the hero form is scrolled past. */
+    .g-sticky{ display:flex; align-items:center; justify-content:center; position:fixed; left:0; right:0; bottom:0; z-index:95;
+               height:calc(52px + env(safe-area-inset-bottom)); padding-bottom:env(safe-area-inset-bottom);
+               background:var(--sky); color:var(--ink); border:none; font-family:var(--sans); font-size:16.5px; font-weight:700; cursor:pointer;
+               box-shadow:0 -8px 24px -12px rgba(26,26,26,.35);
+               transform:translateY(100%); visibility:hidden; transition:transform .25s ease, visibility 0s linear .25s; }
+    .g-sticky.is-on{ transform:none; visibility:visible; transition:transform .25s ease; }
+    body.g-sticky-on .scroll-top{ bottom:calc(68px + env(safe-area-inset-bottom)); right:16px; }
+  }
+  @media (max-width:767px) and (prefers-reduced-motion: reduce){ .g-sticky, .g-sticky.is-on{ transition:none; } }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -155,7 +198,8 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
 
   <main id="main">
 
-  <!-- Waitlist form. Two copies (hero + bottom); both post to /api/golf-waitlist. -->
+  <!-- Waitlist form. Two copies (hero + bottom); both post to /api/golf-waitlist.
+       The "what's holding your golf game back" question is asked on the success screen. -->
   <template id="g-form-tpl">
     <form class="g-form" novalidate>
       <div class="g-names">
@@ -164,17 +208,9 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
           <input type="text" data-id="name" name="first_name" autocomplete="given-name" required maxlength="80">
         </div>
         <div class="g-field">
-          <label data-for="last">Last name</label>
-          <input type="text" data-id="last" name="last_name" autocomplete="family-name" required maxlength="80">
+          <label data-for="email">Email</label>
+          <input type="email" data-id="email" name="email" autocomplete="email" inputmode="email" required maxlength="254">
         </div>
-      </div>
-      <div class="g-field">
-        <label data-for="email">Email</label>
-        <input type="email" data-id="email" name="email" autocomplete="email" inputmode="email" required maxlength="254">
-      </div>
-      <div class="g-field">
-        <label data-for="limiter">What's holding your golf game back right now? <span>(optional)</span></label>
-        <textarea data-id="limiter" name="limiter" maxlength="1000" rows="3"></textarea>
       </div>
       <div class="g-hp" aria-hidden="true"><input type="text" name="company" tabindex="-1" autocomplete="off"></div>
       <p class="g-form__err" role="alert"></p>
@@ -188,13 +224,14 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
       <div>
         <span class="g-eyebrow">Golf coaching</span>
         <h1 id="g-title">Your body shouldn’t be your <span class="g-accent">handicap.</span></h1>
-        <p class="g-hero__sub">Remote coaching for golfers whose body is costing them distance, rounds and their best golf, from an orthopedic PT and former college golfer.</p>
+        <p class="g-hero__sub"><span class="g-lg">Remote coaching for golfers whose body is costing them distance, rounds and their best golf, from an orthopedic PT and former college golfer.</span><span class="g-sm">Remote coaching for golfers whose body is costing them distance and rounds.</span></p>
+        <p class="g-hero__by-sm"><img src="images/golf/kevin-headshot.jpg" alt="" width="48" height="48" decoding="async">Dr. Kevin Hershberger, DPT, FAAOMPT</p>
         <div class="g-hero__by">
           <img src="images/golf/kevin-headshot.jpg" alt="Dr. Kevin Hershberger" width="112" height="140" decoding="async">
           <p><b>Dr. Kevin Hershberger, DPT, FAAOMPT</b>Orthopedic physical therapist and former college golfer</p>
         </div>
       </div>
-      <div class="g-card" data-golf-form="hero"><h2 class="g-card__title">Coaching opens this winter!</h2></div>
+      <div class="g-card" data-golf-form="hero"><h2 class="g-card__title">Coaching opens this winter.</h2></div>
     </div>
   </section>
 
@@ -262,6 +299,8 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
 
   </main>
 
+  <button type="button" class="g-sticky" aria-hidden="true" tabindex="-1">Join the waitlist</button>
+
   <div id="footer-placeholder"></div>
 
   <script src="shared.js"></script>
@@ -282,6 +321,86 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
         else utm = JSON.parse(sessionStorage.getItem('golf_utm') || '{}');
       } catch (e) {}
 
+      var signedUp = false;
+
+      // ---- Optional question on the success screen; saved to the same "Golf Limiter" field ----
+      function showFollowup(slot, where, who) {
+        if (!who.answer_token) return;
+        var id = 'g-' + where + '-limiter';
+        var f = document.createElement('form');
+        f.className = 'g-form g-followup';
+        f.noValidate = true;
+        f.innerHTML =
+          '<div class="g-field">' +
+            '<label for="' + id + '">One quick question: what’s holding your golf game back right now? <span>(optional)</span></label>' +
+            '<textarea id="' + id + '" name="limiter" maxlength="1000" rows="3"></textarea>' +
+          '</div>' +
+          '<p class="g-form__err" role="alert"></p>' +
+          '<button type="submit" class="g-btn">Send answer</button>';
+        slot.appendChild(f);
+        var err = f.querySelector('.g-form__err');
+        f.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          var answer = f.limiter.value.trim();
+          err.textContent = '';
+          if (!answer) { err.textContent = 'Type your answer first.'; f.limiter.focus(); return; }
+          var b = f.querySelector('button');
+          b.textContent = 'Sending...';
+          b.disabled = true;
+          try {
+            var r = await fetch('/api/golf-waitlist', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ step: 'answer', email: who.email, first_name: who.first_name, limiter: answer, answer_token: who.answer_token })
+            });
+            var d = {};
+            try { d = await r.json(); } catch (e2) {}
+            if (r.ok) {
+              var t = document.createElement('p');
+              t.className = 'g-thanks';
+              t.setAttribute('role', 'status');
+              t.textContent = 'Got it, thanks.';
+              f.replaceWith(t);
+              return;
+            }
+            err.textContent = d.message || 'Something went wrong. Please try again in a minute.';
+          } catch (e3) {
+            err.textContent = 'We couldn’t connect. Check your connection and try again.';
+          }
+          b.textContent = 'Send answer';
+          b.disabled = false;
+        });
+      }
+
+      // ---- Sticky "Join the waitlist" bar (phones only, via CSS) ----
+      var sticky = document.querySelector('.g-sticky');
+      var heroCard = document.querySelector('[data-golf-form="hero"]');
+      var finalCard = document.querySelector('[data-golf-form="final"]');
+      function updateSticky() {
+        // Show once the hero form is fully above the screen, until the bottom form comes into view.
+        var vh = window.innerHeight;
+        var on = !signedUp &&
+          heroCard.getBoundingClientRect().bottom < 0 &&
+          finalCard.getBoundingClientRect().top > vh;
+        sticky.classList.toggle('is-on', on);
+        sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+        sticky.tabIndex = on ? 0 : -1;
+        document.body.classList.toggle('g-sticky-on', on);
+      }
+      // Two rect reads per scroll event: cheap enough to run directly.
+      window.addEventListener('scroll', updateSticky, { passive: true });
+      window.addEventListener('resize', updateSticky);
+      sticky.addEventListener('click', function () {
+        // Nearest form: whichever card is closer to the middle of the screen.
+        var mid = window.innerHeight / 2;
+        function dist(el) { var b = el.getBoundingClientRect(); return Math.abs((b.top + b.bottom) / 2 - mid); }
+        var target = dist(heroCard) <= dist(finalCard) ? heroCard : finalCard;
+        var input = target.querySelector('input[name=email]') || target.querySelector('input');
+        if (input) input.focus({ preventScroll: true });
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      });
+
       var tpl = document.getElementById('g-form-tpl');
       document.querySelectorAll('[data-golf-form]').forEach(function (slot) {
         var where = slot.getAttribute('data-golf-form');
@@ -298,11 +417,9 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
           e.preventDefault();
           var btn = form.querySelector('button');
           var name = form.first_name.value.trim();
-          var last = form.last_name.value.trim();
           var email = form.email.value.trim();
           errEl.textContent = '';
           if (!name) { errEl.textContent = 'Please enter your first name.'; form.first_name.focus(); return; }
-          if (!last) { errEl.textContent = 'Please enter your last name.'; form.last_name.focus(); return; }
           if (!email || !form.email.checkValidity()) { errEl.textContent = 'Please enter a valid email address.'; form.email.focus(); return; }
 
           var label = btn.textContent;
@@ -314,9 +431,7 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(Object.assign({
                 first_name: name,
-                last_name: last,
                 email: email,
-                limiter: form.limiter.value.trim(),
                 company: form.company.value
               }, utm))
             });
@@ -334,10 +449,13 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
               try {
                 if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'golf_waitlist' });
               } catch (e5) {}
-              // Show the confirmation in both form slots.
+              // Show the confirmation in both form slots, and the optional question where they signed up.
+              signedUp = true;
+              updateSticky();
               document.querySelectorAll('[data-golf-form]').forEach(function (s) {
                 s.innerHTML = '<div class="g-done" tabindex="-1" role="status"><h3>You’re on the list.</h3><p>I’ll be in touch when a spot opens.</p></div>';
               });
+              showFollowup(slot, where, { email: email, first_name: name, answer_token: data.answer_token });
               slot.querySelector('.g-done').focus();
               return;
             }
@@ -349,6 +467,7 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
           btn.disabled = false;
         });
       });
+      updateSticky();
     })();
   </script>
 </body>
