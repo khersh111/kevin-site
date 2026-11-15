@@ -104,8 +104,6 @@
   .g-done p{ margin-top:8px; font-size:16px; color:var(--fine); }
   .g-done:focus{ outline:none; }
   .g-card__title span{ display:inline-block; }  /* wrap only between the two sentences */
-  .g-card__sub{ margin:-12px 0 20px; font-size:15.5px; line-height:1.45; color:var(--fine); text-align:center; text-wrap:balance; }
-  .g-hero__free{ margin-top:14px; font-size:15px; line-height:1.45; color:var(--ink); opacity:.7; max-width:44ch; }
   .g-hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
   /* Mobile-only bits, hidden on desktop. */
@@ -139,28 +137,29 @@
   /* ---------- phones: get the form onto the first screen ---------- */
   @media (max-width:767px){
     .g-wrap{ padding-left:max(24px, env(safe-area-inset-left)); padding-right:max(24px, env(safe-area-inset-right)); }
-    .g-hero{ padding:108px 0 44px; }            /* nav is 96px; visible gap above the label halved */
-    .g-hero__grid{ gap:12px; }
-    .g-hero h1{ margin-top:10px; font-size:38px; line-height:1.05; }
+    /* Spacing scale on phones: 8 / 16 / 24 / 32 / 48 (plus 12, 20, 40 where specified). */
+    .g-hero{ padding:113px 0 48px; }            /* nav is 96px; 24px visible gap above the label */
+    .g-hero__grid{ gap:40px; }                  /* photo line to the form's divider */
+    .g-hero h1{ margin-top:16px; font-size:38px; line-height:1.05; }
     .g-hero .g-accent{ text-decoration-thickness:3px; text-underline-offset:6px; }
-    .g-hero__sub{ margin-top:12px; font-size:17px; line-height:1.4; }
+    .g-hero__sub{ margin-top:16px; font-size:17px; line-height:1.4; }
     .g-lg{ display:none; }
     .g-sm{ display:inline; }
     .g-hero__by{ display:none; }
-    .g-hero__by-sm{ display:flex; align-items:center; gap:10px; margin-top:8px; font-size:14px; font-weight:700; line-height:1.2; }
+    .g-hero__by-sm{ display:flex; align-items:center; gap:12px; margin-top:24px; font-size:14px; font-weight:700; line-height:1.2; }
     .g-hero__by-sm img{ flex:none; width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:50% 22%; }
-    .g-card{ padding:12px 16px 18px; border-radius:16px; }
-    .g-card__title{ margin-bottom:6px; }
-    .g-card__sub{ margin:-2px 0 8px; font-size:14.5px; }
-    .g-hero__free{ margin-top:4px; font-size:14px; }
-    .g-form{ gap:9px; }
-    .g-names{ gap:9px; }
-    .g-field{ gap:3px; }
+    /* Form goes full width: no card box, just a thin divider above it. */
+    .g-card{ padding:24px 0 0; border:none; border-top:1px solid #E5E5E5; border-radius:0; box-shadow:none; background:transparent; }
+    .g-card__title{ font-size:22px; line-height:1.25; text-align:left; text-wrap:pretty; margin-bottom:20px; }
+    .g-form{ gap:20px; }
+    .g-names{ gap:12px; }
+    .g-field{ gap:8px; }
     .g-field label{ font-size:13.5px; line-height:1.3; }
-    .g-field input{ padding:11px 13px; }
-    /* Optional question: 2 rows to start, grows as they type (script below). */
-    .g-field textarea{ min-height:72px; height:72px; padding:11px 13px; line-height:1.4; }
-    .g-btn{ padding:15px 20px; }
+    .g-field label span{ white-space:nowrap; font-size:12.5px; }
+    .g-field input{ height:48px; padding:0 14px; }
+    /* Optional question: 3 rows to start, grows as they type (script below). */
+    .g-field textarea{ min-height:94px; height:94px; padding:12px 14px; line-height:1.4; }
+    .g-btn{ height:52px; padding:0 20px; margin-top:4px; }  /* 20px form gap + 4 = 24px above */
     /* 16px+ on every field so iOS doesn't zoom in on tap (includes the nav search box on this page). */
     .golf-page .nav-search-input, .g-hp input{ font-size:16px; }
 
@@ -236,14 +235,13 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
         <span class="g-eyebrow">Golf coaching</span>
         <h1 id="g-title">Your body shouldn’t be your <span class="g-accent">handicap.</span></h1>
         <p class="g-hero__sub"><span class="g-lg">Remote coaching for golfers whose body is costing them distance, rounds and their best golf, from an orthopedic PT and former college golfer.</span><span class="g-sm">Remote coaching for golfers whose body is costing them distance and rounds.</span></p>
-        <p class="g-hero__free">Free: the 10-minute warm-up I use before every round.</p>
         <p class="g-hero__by-sm"><img src="images/golf/kevin-headshot.jpg" alt="" width="48" height="48" decoding="async">Dr. Kevin Hershberger, DPT, FAAOMPT</p>
         <div class="g-hero__by">
           <img src="images/golf/kevin-headshot.jpg" alt="Dr. Kevin Hershberger" width="112" height="140" decoding="async">
           <p><b>Dr. Kevin Hershberger, DPT, FAAOMPT</b>Orthopedic physical therapist and former college golfer</p>
         </div>
       </div>
-      <div class="g-card" data-golf-form="hero"><h2 class="g-card__title"><span>Join the waitlist.</span> <span>Get the warm-up free.</span></h2><p class="g-card__sub">My 10-minute pre-round warm-up, sent to your inbox.</p></div>
+      <div class="g-card" data-golf-form="hero"><h2 class="g-card__title">Join the coaching waitlist and get my <span style="white-space:nowrap">pre-round</span> warm-up for free.</h2></div>
     </div>
   </section>
 
@@ -305,7 +303,7 @@ src="https://www.facebook.com/tr?id=908262508949068&ev=PageView&noscript=1"
         <h2 class="g-h2" id="g-final">Coaching opens this winter.</h2>
         <p class="g-body g-muted">Spots are limited. Waitlist members get first access before it opens to anyone else.</p>
       </div>
-      <div class="g-card" data-golf-form="final"><h3 class="g-card__title"><span>Join the waitlist.</span> <span>Get the warm-up free.</span></h3><p class="g-card__sub">My 10-minute pre-round warm-up, sent to your inbox.</p></div>
+      <div class="g-card" data-golf-form="final"><h3 class="g-card__title">Join the coaching waitlist and get my <span style="white-space:nowrap">pre-round</span> warm-up for free.</h3></div>
     </div>
   </section>
 
