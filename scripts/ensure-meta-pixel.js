@@ -15,6 +15,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const PIXEL_ID = '1139889371843490';
+const DATASET_ID = '908262508949068'; // dataset the ads track; noscript fallback reports here
 const EXCLUDE = new Set(['blueprint-content.html']);
 
 const HEAD_SNIPPET = `<!-- Meta Pixel Code -->
@@ -28,6 +29,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '${PIXEL_ID}');
+fbq('init', '${DATASET_ID}');
 fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
@@ -36,7 +38,7 @@ fbq('track', 'PageView');
 const BODY_SNIPPET = `
 <!-- Meta Pixel Code (noscript) -->
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=${DATASET_ID}&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code (noscript) -->`;
 
